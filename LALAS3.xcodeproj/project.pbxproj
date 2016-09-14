@@ -7,14 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F9A5F5A1D89B2C900C2E133 /* AD_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9A5F591D89B2C900C2E133 /* AD_TableViewCell.swift */; };
+		7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */; };
+		7FA6E8F21D89A50F003F6186 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */; };
+		7FA6E8F41D89A526003F6186 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */; };
+		7FA6E8F61D89A535003F6186 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F51D89A535003F6186 /* FourthViewController.swift */; };
+		7FA6E8F91D89A586003F6186 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F81D89A586003F6186 /* First.storyboard */; };
+		7FA6E8FB1D89A5B4003F6186 /* SaoYiSaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */; };
+		7FA6E8FD1D89A5DF003F6186 /* SendNewMessiageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8FC1D89A5DF003F6186 /* SendNewMessiageViewController.swift */; };
+		7FA6E8FF1D89A5FF003F6186 /* MessiageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8FE1D89A5FF003F6186 /* MessiageDetailViewController.swift */; };
+		7FA6E9071D89A6C6003F6186 /* OnePhoto_H_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E9051D89A6C6003F6186 /* OnePhoto_H_TableViewCell.swift */; };
+		7FA6E9081D89A6C6003F6186 /* OnePhoto_Z_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E9061D89A6C6003F6186 /* OnePhoto_Z_TableViewCell.swift */; };
+		7FA6E90A1D89A6FE003F6186 /* TwoThreePhoto_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E9091D89A6FE003F6186 /* TwoThreePhoto_TableViewCell.swift */; };
+		7FA6E90C1D89A71C003F6186 /* FourFiveSix_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E90B1D89A71C003F6186 /* FourFiveSix_TableViewCell.swift */; };
+		7FA6E90E1D89A74D003F6186 /* SevenEightNinePhoto_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E90D1D89A74D003F6186 /* SevenEightNinePhoto_TableViewCell.swift */; };
+		7FA6E9101D89A768003F6186 /* Words_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E90F1D89A768003F6186 /* Words_TableViewCell.swift */; };
+		7FA6E9121D89A7EF003F6186 /* CommentsPraiseDemote_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E9111D89A7EF003F6186 /* CommentsPraiseDemote_TableViewCell.swift */; };
+		7FA6E9181D89A8E2003F6186 /* Fourth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA6E9171D89A8E2003F6186 /* Fourth.storyboard */; };
+		7FA6E91C1D89A906003F6186 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA6E91B1D89A906003F6186 /* Second.storyboard */; };
+		7FA6E91E1D89A913003F6186 /* Third.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA6E91D1D89A913003F6186 /* Third.storyboard */; };
+		7FA6E9201D89A994003F6186 /* Login_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E91F1D89A994003F6186 /* Login_ViewController.swift */; };
+		7FA6E9221D89A9BC003F6186 /* Register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E9211D89A9BC003F6186 /* Register_ViewController.swift */; };
+		7FA6E9241D89ABCF003F6186 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E9231D89ABCF003F6186 /* Functions.swift */; };
 		7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */; };
-		7FD1014F1D89764D009BB6A6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1014E1D89764D009BB6A6 /* FirstViewController.swift */; };
-		7FD101511D89764D009BB6A6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD101501D89764D009BB6A6 /* SecondViewController.swift */; };
 		7FD101541D89764D009BB6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101521D89764D009BB6A6 /* Main.storyboard */; };
 		7FD101561D89764D009BB6A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101551D89764D009BB6A6 /* Assets.xcassets */; };
 		7FD101591D89764D009BB6A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101571D89764D009BB6A6 /* LaunchScreen.storyboard */; };
 		7FD101641D89764D009BB6A6 /* LALAS3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD101631D89764D009BB6A6 /* LALAS3Tests.swift */; };
 		7FD1016F1D89764D009BB6A6 /* LALAS3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1016E1D89764D009BB6A6 /* LALAS3UITests.swift */; };
+		8E27E0A936834B29C0CA482A /* Pods_LALAS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +56,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EE9647F7DE5B2DCE0C3223C /* Pods-LALAS3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LALAS3.release.xcconfig"; path = "Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3.release.xcconfig"; sourceTree = "<group>"; };
+		73C7DC9B3D33878FCF28F421 /* Pods-LALAS3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LALAS3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3.debug.xcconfig"; sourceTree = "<group>"; };
+		7F9A5F591D89B2C900C2E133 /* AD_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AD_TableViewCell.swift; path = Main/Cell/AD_TableViewCell.swift; sourceTree = "<group>"; };
+		7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Main/FirstViewController.swift; sourceTree = "<group>"; };
+		7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Main/SecondViewController.swift; sourceTree = "<group>"; };
+		7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = Main/ThirdViewController.swift; sourceTree = "<group>"; };
+		7FA6E8F51D89A535003F6186 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FourthViewController.swift; path = Main/FourthViewController.swift; sourceTree = "<group>"; };
+		7FA6E8F81D89A586003F6186 /* First.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = First.storyboard; path = 1/First.storyboard; sourceTree = "<group>"; };
+		7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaoYiSaoViewController.swift; path = 1/SaoYiSaoViewController.swift; sourceTree = "<group>"; };
+		7FA6E8FC1D89A5DF003F6186 /* SendNewMessiageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendNewMessiageViewController.swift; path = 1/SendNewMessiageViewController.swift; sourceTree = "<group>"; };
+		7FA6E8FE1D89A5FF003F6186 /* MessiageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessiageDetailViewController.swift; path = 1/MessiageDetailViewController.swift; sourceTree = "<group>"; };
+		7FA6E9051D89A6C6003F6186 /* OnePhoto_H_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhoto_H_TableViewCell.swift; path = Main/Cell/OnePhoto_H_TableViewCell.swift; sourceTree = "<group>"; };
+		7FA6E9061D89A6C6003F6186 /* OnePhoto_Z_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhoto_Z_TableViewCell.swift; path = Main/Cell/OnePhoto_Z_TableViewCell.swift; sourceTree = "<group>"; };
+		7FA6E9091D89A6FE003F6186 /* TwoThreePhoto_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoThreePhoto_TableViewCell.swift; path = Main/Cell/TwoThreePhoto_TableViewCell.swift; sourceTree = "<group>"; };
+		7FA6E90B1D89A71C003F6186 /* FourFiveSix_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FourFiveSix_TableViewCell.swift; path = Main/Cell/FourFiveSix_TableViewCell.swift; sourceTree = "<group>"; };
+		7FA6E90D1D89A74D003F6186 /* SevenEightNinePhoto_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SevenEightNinePhoto_TableViewCell.swift; path = Main/Cell/SevenEightNinePhoto_TableViewCell.swift; sourceTree = "<group>"; };
+		7FA6E90F1D89A768003F6186 /* Words_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Words_TableViewCell.swift; path = Main/Cell/Words_TableViewCell.swift; sourceTree = "<group>"; };
+		7FA6E9111D89A7EF003F6186 /* CommentsPraiseDemote_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentsPraiseDemote_TableViewCell.swift; path = Main/Cell/CommentsPraiseDemote_TableViewCell.swift; sourceTree = "<group>"; };
+		7FA6E9171D89A8E2003F6186 /* Fourth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fourth.storyboard; sourceTree = "<group>"; };
+		7FA6E91B1D89A906003F6186 /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
+		7FA6E91D1D89A913003F6186 /* Third.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Third.storyboard; sourceTree = "<group>"; };
+		7FA6E91F1D89A994003F6186 /* Login_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login_ViewController.swift; path = Main/Login_ViewController.swift; sourceTree = "<group>"; };
+		7FA6E9211D89A9BC003F6186 /* Register_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Register_ViewController.swift; path = Main/Register_ViewController.swift; sourceTree = "<group>"; };
+		7FA6E9231D89ABCF003F6186 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		7FD101491D89764D009BB6A6 /* LALAS3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LALAS3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7FD1014E1D89764D009BB6A6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		7FD101501D89764D009BB6A6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7FD101531D89764D009BB6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FD101551D89764D009BB6A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FD101581D89764D009BB6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +92,7 @@
 		7FD1016A1D89764D009BB6A6 /* LALAS3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LALAS3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD1016E1D89764D009BB6A6 /* LALAS3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LALAS3UITests.swift; sourceTree = "<group>"; };
 		7FD101701D89764D009BB6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LALAS3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E27E0A936834B29C0CA482A /* Pods_LALAS3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +121,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05DFF5341690B73CF5FBA455 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73C7DC9B3D33878FCF28F421 /* Pods-LALAS3.debug.xcconfig */,
+				1EE9647F7DE5B2DCE0C3223C /* Pods-LALAS3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7FA6E8EE1D899AA4003F6186 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7FD101521D89764D009BB6A6 /* Main.storyboard */,
+				7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */,
+				7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */,
+				7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */,
+				7FA6E8F51D89A535003F6186 /* FourthViewController.swift */,
+				7FA6E91F1D89A994003F6186 /* Login_ViewController.swift */,
+				7FA6E9211D89A9BC003F6186 /* Register_ViewController.swift */,
+				7FA6E9001D89A61C003F6186 /* First_Cells */,
+				7FA6E9131D89A831003F6186 /* Second_Cells */,
+				7FA6E9141D89A835003F6186 /* New Group1 */,
+				7FA6E9151D89A838003F6186 /* New Group2 */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		7FA6E8F71D89A544003F6186 /* First_1 */ = {
+			isa = PBXGroup;
+			children = (
+				7FA6E8F81D89A586003F6186 /* First.storyboard */,
+				7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */,
+				7FA6E8FC1D89A5DF003F6186 /* SendNewMessiageViewController.swift */,
+				7FA6E8FE1D89A5FF003F6186 /* MessiageDetailViewController.swift */,
+			);
+			name = First_1;
+			sourceTree = "<group>";
+		};
+		7FA6E9001D89A61C003F6186 /* First_Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7F9A5F591D89B2C900C2E133 /* AD_TableViewCell.swift */,
+				7FA6E90F1D89A768003F6186 /* Words_TableViewCell.swift */,
+				7FA6E9051D89A6C6003F6186 /* OnePhoto_H_TableViewCell.swift */,
+				7FA6E9061D89A6C6003F6186 /* OnePhoto_Z_TableViewCell.swift */,
+				7FA6E9091D89A6FE003F6186 /* TwoThreePhoto_TableViewCell.swift */,
+				7FA6E90B1D89A71C003F6186 /* FourFiveSix_TableViewCell.swift */,
+				7FA6E90D1D89A74D003F6186 /* SevenEightNinePhoto_TableViewCell.swift */,
+				7FA6E9111D89A7EF003F6186 /* CommentsPraiseDemote_TableViewCell.swift */,
+			);
+			name = First_Cells;
+			sourceTree = "<group>";
+		};
+		7FA6E9131D89A831003F6186 /* Second_Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Second_Cells;
+			sourceTree = "<group>";
+		};
+		7FA6E9141D89A835003F6186 /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group1";
+			sourceTree = "<group>";
+		};
+		7FA6E9151D89A838003F6186 /* New Group2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group2";
+			sourceTree = "<group>";
+		};
+		7FA6E9161D89A8BC003F6186 /* Fourth_4 */ = {
+			isa = PBXGroup;
+			children = (
+				7FA6E9171D89A8E2003F6186 /* Fourth.storyboard */,
+			);
+			name = Fourth_4;
+			sourceTree = "<group>";
+		};
+		7FA6E9191D89A8EA003F6186 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				7FA6E91B1D89A906003F6186 /* Second.storyboard */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		7FA6E91A1D89A8EE003F6186 /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+				7FA6E91D1D89A913003F6186 /* Third.storyboard */,
+			);
+			name = "New Group1";
+			sourceTree = "<group>";
+		};
 		7FD101401D89764C009BB6A6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +226,8 @@
 				7FD101621D89764D009BB6A6 /* LALAS3Tests */,
 				7FD1016D1D89764D009BB6A6 /* LALAS3UITests */,
 				7FD1014A1D89764D009BB6A6 /* Products */,
+				05DFF5341690B73CF5FBA455 /* Pods */,
+				F807D885972D56BFFF9611D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +245,12 @@
 			isa = PBXGroup;
 			children = (
 				7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */,
-				7FD1014E1D89764D009BB6A6 /* FirstViewController.swift */,
-				7FD101501D89764D009BB6A6 /* SecondViewController.swift */,
-				7FD101521D89764D009BB6A6 /* Main.storyboard */,
+				7FA6E9231D89ABCF003F6186 /* Functions.swift */,
+				7FA6E8EE1D899AA4003F6186 /* Main */,
+				7FA6E8F71D89A544003F6186 /* First_1 */,
+				7FA6E9191D89A8EA003F6186 /* New Group */,
+				7FA6E91A1D89A8EE003F6186 /* New Group1 */,
+				7FA6E9161D89A8BC003F6186 /* Fourth_4 */,
 				7FD101551D89764D009BB6A6 /* Assets.xcassets */,
 				7FD101571D89764D009BB6A6 /* LaunchScreen.storyboard */,
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
@@ -128,6 +276,14 @@
 			path = LALAS3UITests;
 			sourceTree = "<group>";
 		};
+		F807D885972D56BFFF9611D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FD101731D89764D009BB6A6 /* Build configuration list for PBXNativeTarget "LALAS3" */;
 			buildPhases = (
+				D0AED5F34A7D7217445C3AB5 /* [CP] Check Pods Manifest.lock */,
 				7FD101451D89764D009BB6A6 /* Sources */,
 				7FD101461D89764D009BB6A6 /* Frameworks */,
 				7FD101471D89764D009BB6A6 /* Resources */,
+				71E7BC174F7A4CC62FF0EF56 /* [CP] Embed Pods Frameworks */,
+				6346C22875C80C4F51413E7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,9 +397,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA6E91C1D89A906003F6186 /* Second.storyboard in Resources */,
 				7FD101591D89764D009BB6A6 /* LaunchScreen.storyboard in Resources */,
+				7FA6E9181D89A8E2003F6186 /* Fourth.storyboard in Resources */,
+				7FA6E91E1D89A913003F6186 /* Third.storyboard in Resources */,
 				7FD101561D89764D009BB6A6 /* Assets.xcassets in Resources */,
 				7FD101541D89764D009BB6A6 /* Main.storyboard in Resources */,
+				7FA6E8F91D89A586003F6186 /* First.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,14 +423,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6346C22875C80C4F51413E7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71E7BC174F7A4CC62FF0EF56 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0AED5F34A7D7217445C3AB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7FD101451D89764D009BB6A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FD101511D89764D009BB6A6 /* SecondViewController.swift in Sources */,
+				7FA6E8F21D89A50F003F6186 /* SecondViewController.swift in Sources */,
+				7FA6E8FF1D89A5FF003F6186 /* MessiageDetailViewController.swift in Sources */,
+				7FA6E90C1D89A71C003F6186 /* FourFiveSix_TableViewCell.swift in Sources */,
+				7FA6E9101D89A768003F6186 /* Words_TableViewCell.swift in Sources */,
+				7FA6E9071D89A6C6003F6186 /* OnePhoto_H_TableViewCell.swift in Sources */,
+				7FA6E9121D89A7EF003F6186 /* CommentsPraiseDemote_TableViewCell.swift in Sources */,
 				7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */,
-				7FD1014F1D89764D009BB6A6 /* FirstViewController.swift in Sources */,
+				7FA6E9081D89A6C6003F6186 /* OnePhoto_Z_TableViewCell.swift in Sources */,
+				7FA6E8FD1D89A5DF003F6186 /* SendNewMessiageViewController.swift in Sources */,
+				7FA6E8F41D89A526003F6186 /* ThirdViewController.swift in Sources */,
+				7FA6E90A1D89A6FE003F6186 /* TwoThreePhoto_TableViewCell.swift in Sources */,
+				7FA6E9241D89ABCF003F6186 /* Functions.swift in Sources */,
+				7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */,
+				7FA6E9201D89A994003F6186 /* Login_ViewController.swift in Sources */,
+				7FA6E90E1D89A74D003F6186 /* SevenEightNinePhoto_TableViewCell.swift in Sources */,
+				7FA6E9221D89A9BC003F6186 /* Register_ViewController.swift in Sources */,
+				7F9A5F5A1D89B2C900C2E133 /* AD_TableViewCell.swift in Sources */,
+				7FA6E8FB1D89A5B4003F6186 /* SaoYiSaoViewController.swift in Sources */,
+				7FA6E8F61D89A535003F6186 /* FourthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +567,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -389,6 +617,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -415,7 +644,9 @@
 		};
 		7FD101741D89764D009BB6A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73C7DC9B3D33878FCF28F421 /* Pods-LALAS3.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5898723MBJ;
 				INFOPLIST_FILE = LALAS3/Info.plist;
@@ -428,7 +659,9 @@
 		};
 		7FD101751D89764D009BB6A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EE9647F7DE5B2DCE0C3223C /* Pods-LALAS3.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5898723MBJ;
 				INFOPLIST_FILE = LALAS3/Info.plist;
@@ -516,6 +749,7 @@
 				7FD101751D89764D009BB6A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FD101761D89764D009BB6A6 /* Build configuration list for PBXNativeTarget "LALAS3Tests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +758,7 @@
 				7FD101781D89764D009BB6A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FD101791D89764D009BB6A6 /* Build configuration list for PBXNativeTarget "LALAS3UITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +767,7 @@
 				7FD1017B1D89764D009BB6A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
