@@ -9,6 +9,10 @@
 import UIKit
 
 class TwoThreePhoto_TableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var UIImageView_1: UIImageView!
+    @IBOutlet weak var UIImageView_2: UIImageView!
+    @IBOutlet weak var UIImageView_3: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

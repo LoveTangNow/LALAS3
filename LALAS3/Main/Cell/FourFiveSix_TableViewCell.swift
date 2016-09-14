@@ -9,6 +9,15 @@
 import UIKit
 
 class FourFiveSix_TableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var UIImageView_1: UIImageView!
+    @IBOutlet weak var UIImageView_2: UIImageView!
+    @IBOutlet weak var UIImageView_3: UIImageView!
+    
+    @IBOutlet weak var UIImageView_4: UIImageView!
+    @IBOutlet weak var UIImageView_5: UIImageView!
+    @IBOutlet weak var UIImageView_6: UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

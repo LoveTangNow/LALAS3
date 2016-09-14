@@ -9,6 +9,20 @@
 import UIKit
 
 class CommentsPraiseDemote_TableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var UIButton_1: UIButton!
+    @IBOutlet weak var UIButton_2: UIButton!
+    @IBOutlet weak var UIButton_3: UIButton!
+    
+    @IBAction func UIButton_1_Click(_ sender: AnyObject) {
+        
+    }
+    @IBAction func UIButton_2_Click(_ sender: AnyObject) {
+        
+    }
+    @IBAction func UIButton_3_Click(_ sender: AnyObject) {
+        
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
