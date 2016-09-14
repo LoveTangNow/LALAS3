@@ -42,16 +42,51 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     //MARK: - TableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Words_TableViewCell", for: indexPath) as! Words_TableViewCell
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Words_TableViewCell", for: indexPath) as! Words_TableViewCell
+            
+            cell.UIImageView_UserIcon.image = Imageload_Black
+            cell.UIImageView_Setting.image = Imageload_Black
+            
+            cell.UILabel_UserName.text = "ThomasLiu"
+            cell.UILabel_TimeAndDevice.text = "lalallalal"
+            cell.UILabel_Detail.text = "wocao"
+            
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_TableViewCell", for: indexPath) as! OnePhoto_H_TableViewCell
+            cell.UIImageView_Main.image = Imageload_Black
+            return cell
+
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_Z_TableViewCell", for: indexPath) as! OnePhoto_Z_TableViewCell
+             cell.UIImageView_Main.image = Imageload_Black
+            return cell
+
+        case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TwoThreePhoto_TableViewCell", for: indexPath) as! TwoThreePhoto_TableViewCell
+            cell.UIImageView_2.image = Imageload_Black
+            return cell
+
+        case 5:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FourFiveSix_TableViewCell", for: indexPath) as! FourFiveSix_TableViewCell
+            cell.UIImageView_2.image = Imageload_Black
+            cell.UIImageView_5.image = Imageload_Black
+            return cell
+
+        case 6:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SevenEightNinePhoto_TableViewCell", for: indexPath) as! SevenEightNinePhoto_TableViewCell
+            cell.UIImageView_5.image = Imageload_Black
+            return cell
+
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AD_TableViewCell", for: indexPath) as! AD_TableViewCell
+            cell.UIImageView_Main.image = Imageload_Black
+            return cell
+
+        }
         
-        cell.UIImageView_UserIcon.image = Imageload_Black
-        cell.UIImageView_Setting.image = Imageload_Black
-        
-        cell.UILabel_UserName.text = "ThomasLiu"
-        cell.UILabel_TimeAndDevice.text = "lalallalal"
-        cell.UILabel_Detail.text = "wocao"
-        
-        return cell
 
     }
     
