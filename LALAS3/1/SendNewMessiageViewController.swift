@@ -8,10 +8,25 @@
 
 import UIKit
 
-class SendNewMessiageViewController: UIViewController {
+class SendNewMessiageViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
+    
+    //MARK: - 绑定 变量
 
+    @IBOutlet weak var UITextView_Main: UITextView!
+    @IBOutlet weak var UITableView_Main: UITableView!
+    
+    var TableViewCellHeight:CGFloat = 0
+    
+    //肌肤默认的图片
+    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
+    var Imageload_Wight:UIImage = UIImage(named: "White.png")!
+    
+    //MARK: - FUNCS
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UITableView_Main.delegate = self
+        UITableView_Main.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -21,15 +36,78 @@ class SendNewMessiageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func Xiala(_ sender: AnyObject) {
+        UITextView_Main.resignFirstResponder()
     }
-    */
+    
+    @IBAction func Send_Click(_ sender: AnyObject) {
+    }
+    
+    //MARK: - TABLEVIEW
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 1:
+            switch indexPath.row {
+            case 0://地点
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OneLable_TableViewCell", for: indexPath) as! OneLable_TableViewCell
+                
+                cell.UILabel_Main.text = "选择地点"
+                TableViewCellHeight = 45
+                
+                return cell
+            default://分享
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Share_TableViewCell", for: indexPath) as! Share_TableViewCell
+                
+                cell.UIImageView_Main.image = Imageload_Black
+                TableViewCellHeight = 45
+                
+                return cell
+            }
+            
+        default://图片
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Images_TableViewCell", for: indexPath) as! Images_TableViewCell
+            
+            cell.UIImageView_1.image = Imageload_Black
+            cell.UIImageView_2.image = Imageload_Wight
+            cell.UIImageView_3.image = Imageload_Black
+            
+            TableViewCellHeight = UIScreen.main.bounds.width / 3
+            
+            return cell
+
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 15
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return TableViewCellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 2
+        default:
+            return 0
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
 
 }
