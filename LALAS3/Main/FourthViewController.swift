@@ -22,6 +22,12 @@ class FourthViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func Setting_Click(_ sender: AnyObject) {
+        let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "Setting_TableViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 
     /*
     // MARK: - Navigation
