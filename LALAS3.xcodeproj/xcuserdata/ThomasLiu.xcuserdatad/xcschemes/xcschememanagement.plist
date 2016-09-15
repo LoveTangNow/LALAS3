@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>StickerPackExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>7F2BCA761D89D26900BFCA82</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7FD101481D89764D009BB6A6</key>
 		<dict>
 			<key>primary</key>

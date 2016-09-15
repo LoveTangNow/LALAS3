@@ -30,6 +30,13 @@
 		7FA6E9201D89A994003F6186 /* Login_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E91F1D89A994003F6186 /* Login_ViewController.swift */; };
 		7FA6E9221D89A9BC003F6186 /* Register_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E9211D89A9BC003F6186 /* Register_ViewController.swift */; };
 		7FA6E9241D89ABCF003F6186 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E9231D89ABCF003F6186 /* Functions.swift */; };
+		7FAECEEE1D8A7399004592EA /* Server.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FAECEED1D8A7399004592EA /* Server.plist */; };
+		7FAECEF01D8ABAD9004592EA /* Setting_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEEF1D8ABAD9004592EA /* Setting_TableViewController.swift */; };
+		7FAECEF31D8ABB25004592EA /* Photo_Lable_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEF21D8ABB25004592EA /* Photo_Lable_TableViewCell.swift */; };
+		7FAECEF51D8ABB3F004592EA /* Lable_Center_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEF41D8ABB3F004592EA /* Lable_Center_TableViewCell.swift */; };
+		7FAECEF81D8AC6C7004592EA /* Images_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEF71D8AC6C7004592EA /* Images_TableViewCell.swift */; };
+		7FAECEFA1D8AC6EF004592EA /* OneLable_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEF91D8AC6EF004592EA /* OneLable_TableViewCell.swift */; };
+		7FAECEFC1D8AC703004592EA /* Share_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEFB1D8AC703004592EA /* Share_TableViewCell.swift */; };
 		7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */; };
 		7FD101541D89764D009BB6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101521D89764D009BB6A6 /* Main.storyboard */; };
 		7FD101561D89764D009BB6A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101551D89764D009BB6A6 /* Assets.xcassets */; };
@@ -82,6 +89,13 @@
 		7FA6E91F1D89A994003F6186 /* Login_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login_ViewController.swift; path = Main/Login_ViewController.swift; sourceTree = "<group>"; };
 		7FA6E9211D89A9BC003F6186 /* Register_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Register_ViewController.swift; path = Main/Register_ViewController.swift; sourceTree = "<group>"; };
 		7FA6E9231D89ABCF003F6186 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		7FAECEED1D8A7399004592EA /* Server.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Server.plist; path = Others/Server.plist; sourceTree = "<group>"; };
+		7FAECEEF1D8ABAD9004592EA /* Setting_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting_TableViewController.swift; path = Fourth_4/Setting_TableViewController.swift; sourceTree = "<group>"; };
+		7FAECEF21D8ABB25004592EA /* Photo_Lable_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo_Lable_TableViewCell.swift; path = Fourth_4/cells/Photo_Lable_TableViewCell.swift; sourceTree = "<group>"; };
+		7FAECEF41D8ABB3F004592EA /* Lable_Center_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lable_Center_TableViewCell.swift; path = Fourth_4/cells/Lable_Center_TableViewCell.swift; sourceTree = "<group>"; };
+		7FAECEF71D8AC6C7004592EA /* Images_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images_TableViewCell.swift; path = 1/cells/Images_TableViewCell.swift; sourceTree = "<group>"; };
+		7FAECEF91D8AC6EF004592EA /* OneLable_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneLable_TableViewCell.swift; path = 1/cells/OneLable_TableViewCell.swift; sourceTree = "<group>"; };
+		7FAECEFB1D8AC703004592EA /* Share_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Share_TableViewCell.swift; path = 1/cells/Share_TableViewCell.swift; sourceTree = "<group>"; };
 		7FD101491D89764D009BB6A6 /* LALAS3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LALAS3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FD101531D89764D009BB6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +171,7 @@
 				7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */,
 				7FA6E8FC1D89A5DF003F6186 /* SendNewMessiageViewController.swift */,
 				7FA6E8FE1D89A5FF003F6186 /* MessiageDetailViewController.swift */,
+				7FAECEF61D8AC6A5004592EA /* cells */,
 			);
 			name = First_1;
 			sourceTree = "<group>";
@@ -201,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				7FA6E9171D89A8E2003F6186 /* Fourth.storyboard */,
+				7FAECEEF1D8ABAD9004592EA /* Setting_TableViewController.swift */,
+				7FAECEF11D8ABADE004592EA /* cells */,
 			);
 			name = Fourth_4;
 			sourceTree = "<group>";
@@ -219,6 +236,32 @@
 				7FA6E91D1D89A913003F6186 /* Third.storyboard */,
 			);
 			name = "New Group1";
+			sourceTree = "<group>";
+		};
+		7FAECEEA1D8A6AC4004592EA /* shit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = shit;
+			sourceTree = "<group>";
+		};
+		7FAECEF11D8ABADE004592EA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				7FAECEF21D8ABB25004592EA /* Photo_Lable_TableViewCell.swift */,
+				7FAECEF41D8ABB3F004592EA /* Lable_Center_TableViewCell.swift */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
+		7FAECEF61D8AC6A5004592EA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				7FAECEF71D8AC6C7004592EA /* Images_TableViewCell.swift */,
+				7FAECEF91D8AC6EF004592EA /* OneLable_TableViewCell.swift */,
+				7FAECEFB1D8AC703004592EA /* Share_TableViewCell.swift */,
+			);
+			name = cells;
 			sourceTree = "<group>";
 		};
 		7FD101401D89764C009BB6A6 = {
@@ -249,11 +292,13 @@
 				7F9A5F5B1D89BFE800C2E133 /* Remarks */,
 				7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */,
 				7FA6E9231D89ABCF003F6186 /* Functions.swift */,
+				7FAECEED1D8A7399004592EA /* Server.plist */,
 				7FA6E8EE1D899AA4003F6186 /* Main */,
 				7FA6E8F71D89A544003F6186 /* First_1 */,
 				7FA6E9191D89A8EA003F6186 /* New Group */,
 				7FA6E91A1D89A8EE003F6186 /* New Group1 */,
 				7FA6E9161D89A8BC003F6186 /* Fourth_4 */,
+				7FAECEEA1D8A6AC4004592EA /* shit */,
 				7FD101551D89764D009BB6A6 /* Assets.xcassets */,
 				7FD101571D89764D009BB6A6 /* LaunchScreen.storyboard */,
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
@@ -360,6 +405,38 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5898723MBJ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 0;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.Siri = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					7FD1015E1D89764D009BB6A6 = {
 						CreatedOnToolsVersion = 8.0;
@@ -406,6 +483,7 @@
 				7FA6E91E1D89A913003F6186 /* Third.storyboard in Resources */,
 				7F9A5F5C1D89BFE800C2E133 /* Remarks in Resources */,
 				7FD101561D89764D009BB6A6 /* Assets.xcassets in Resources */,
+				7FAECEEE1D8A7399004592EA /* Server.plist in Resources */,
 				7FD101541D89764D009BB6A6 /* Main.storyboard in Resources */,
 				7FA6E8F91D89A586003F6186 /* First.storyboard in Resources */,
 			);
@@ -480,8 +558,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FAECEF81D8AC6C7004592EA /* Images_TableViewCell.swift in Sources */,
 				7FA6E8F21D89A50F003F6186 /* SecondViewController.swift in Sources */,
 				7FA6E8FF1D89A5FF003F6186 /* MessiageDetailViewController.swift in Sources */,
+				7FAECEFA1D8AC6EF004592EA /* OneLable_TableViewCell.swift in Sources */,
 				7FA6E90C1D89A71C003F6186 /* FourFiveSix_TableViewCell.swift in Sources */,
 				7FA6E9101D89A768003F6186 /* Words_TableViewCell.swift in Sources */,
 				7FA6E9121D89A7EF003F6186 /* CommentsPraiseDemote_TableViewCell.swift in Sources */,
@@ -495,7 +575,11 @@
 				7FA6E90E1D89A74D003F6186 /* SevenEightNinePhoto_TableViewCell.swift in Sources */,
 				7F9A5F601D89C77D00C2E133 /* OnePhoto_Z_TableViewCell.swift in Sources */,
 				7FA6E9221D89A9BC003F6186 /* Register_ViewController.swift in Sources */,
+				7FAECEFC1D8AC703004592EA /* Share_TableViewCell.swift in Sources */,
+				7FAECEF31D8ABB25004592EA /* Photo_Lable_TableViewCell.swift in Sources */,
+				7FAECEF51D8ABB3F004592EA /* Lable_Center_TableViewCell.swift in Sources */,
 				7F9A5F5A1D89B2C900C2E133 /* AD_TableViewCell.swift in Sources */,
+				7FAECEF01D8ABAD9004592EA /* Setting_TableViewController.swift in Sources */,
 				7FA6E8FB1D89A5B4003F6186 /* SaoYiSaoViewController.swift in Sources */,
 				7F9A5F5E1D89C76500C2E133 /* OnePhoto_H_TableViewCell.swift in Sources */,
 				7FA6E8F61D89A535003F6186 /* FourthViewController.swift in Sources */,
@@ -575,9 +659,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5898723MBJ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -625,9 +711,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5898723MBJ;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -652,10 +740,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5898723MBJ;
 				INFOPLIST_FILE = LALAS3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasLiu.jiacheng.LALAS3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasLiu.jiacheng.link;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -667,10 +757,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5898723MBJ;
 				INFOPLIST_FILE = LALAS3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasLiu.jiacheng.LALAS3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasLiu.jiacheng.link;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

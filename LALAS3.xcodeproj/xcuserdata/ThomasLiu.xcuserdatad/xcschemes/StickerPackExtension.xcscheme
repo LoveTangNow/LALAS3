@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0800"
-   version = "1.3">
+   wasCreatedForAppExtension = "YES"
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +15,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FD101481D89764D009BB6A6"
-               BuildableName = "LALAS3.app"
-               BlueprintName = "LALAS3"
+               BlueprintIdentifier = "7F2BCA761D89D26900BFCA82"
+               BuildableName = "StickerPackExtension.appex"
+               BlueprintName = "StickerPackExtension"
+               ReferencedContainer = "container:LALAS3.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7F2BCA731D89D26900BFCA82"
+               BuildableName = "Biaoqing.app"
+               BlueprintName = "Biaoqing"
                ReferencedContainer = "container:LALAS3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,33 +43,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FD1015E1D89764D009BB6A6"
-               BuildableName = "LALAS3Tests.xctest"
-               BlueprintName = "LALAS3Tests"
-               ReferencedContainer = "container:LALAS3.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FD101691D89764D009BB6A6"
-               BuildableName = "LALAS3UITests.xctest"
-               BlueprintName = "LALAS3UITests"
-               ReferencedContainer = "container:LALAS3.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FD101481D89764D009BB6A6"
-            BuildableName = "LALAS3.app"
-            BlueprintName = "LALAS3"
+            BlueprintIdentifier = "7F2BCA761D89D26900BFCA82"
+            BuildableName = "StickerPackExtension.appex"
+            BlueprintName = "StickerPackExtension"
             ReferencedContainer = "container:LALAS3.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,31 +58,25 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FD101481D89764D009BB6A6"
-            BuildableName = "LALAS3.app"
-            BlueprintName = "LALAS3"
+            BlueprintIdentifier = "7F2BCA731D89D26900BFCA82"
+            BuildableName = "Biaoqing.app"
+            BlueprintName = "Biaoqing"
             ReferencedContainer = "container:LALAS3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -96,14 +85,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
+      debugDocumentVersioning = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FD101481D89764D009BB6A6"
-            BuildableName = "LALAS3.app"
-            BlueprintName = "LALAS3"
+            BlueprintIdentifier = "7F2BCA731D89D26900BFCA82"
+            BuildableName = "Biaoqing.app"
+            BlueprintName = "Biaoqing"
             ReferencedContainer = "container:LALAS3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
