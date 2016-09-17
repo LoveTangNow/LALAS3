@@ -1,19 +1,18 @@
 //
-//  ThirdViewController.swift
+//  SearchResults_ViewController.swift
 //  LALAS3
 //
-//  Created by Thomas Liu on 16/9/14.
+//  Created by Thomas Liu on 16/9/16.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class SearchResults_ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "发现"
         // Do any additional setup after loading the view.
     }
 
