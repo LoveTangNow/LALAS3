@@ -21,6 +21,14 @@ class Register_ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func Finish(_ sender: AnyObject) {
+        let RegisterBool :Bool = true
+        UserDefaults.standard.set(RegisterBool, forKey: "RegisterBool")
+        //设置同步
+        UserDefaults.standard.synchronize()
+        
+        self.dismiss(animated: true, completion:nil)
+    }
 
     /*
     // MARK: - Navigation
