@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="XXE-83-reO">
-            <objects>
-                <navigationController id="cvh-Nq-Xik" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TPF-l9-O6T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="rHZ-QY-PP1" kind="relationship" relationship="rootViewController" id="uwC-jM-5vx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0wj-zf-zxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-354" y="127"/>
-        </scene>
         <!--Send New Messiage View Controller-->
         <scene sceneID="pUk-H4-dxE">
             <objects>

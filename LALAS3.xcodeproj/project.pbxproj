@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F5322B31D8BC9BC00294C62 /* SearchResults_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */; };
+		7F5322B61D8BC9EC00294C62 /* OnePhotoTwoLableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B51D8BC9EC00294C62 /* OnePhotoTwoLableTableViewCell.swift */; };
+		7F5322B81D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */; };
+		7F5322BA1D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */; };
+		7F5322BC1D8BCDEC00294C62 /* ADs_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322BB1D8BCDEC00294C62 /* ADs_TableViewCell.swift */; };
+		7F5322BE1D8BCDFE00294C62 /* More_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */; };
 		7F9A5F5A1D89B2C900C2E133 /* AD_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9A5F591D89B2C900C2E133 /* AD_TableViewCell.swift */; };
 		7F9A5F5C1D89BFE800C2E133 /* Remarks in Resources */ = {isa = PBXBuildFile; fileRef = 7F9A5F5B1D89BFE800C2E133 /* Remarks */; };
 		7F9A5F5E1D89C76500C2E133 /* OnePhoto_H_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9A5F5D1D89C76500C2E133 /* OnePhoto_H_TableViewCell.swift */; };
@@ -66,6 +72,12 @@
 /* Begin PBXFileReference section */
 		1EE9647F7DE5B2DCE0C3223C /* Pods-LALAS3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LALAS3.release.xcconfig"; path = "Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3.release.xcconfig"; sourceTree = "<group>"; };
 		73C7DC9B3D33878FCF28F421 /* Pods-LALAS3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LALAS3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3.debug.xcconfig"; sourceTree = "<group>"; };
+		7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResults_ViewController.swift; path = Third_3/SearchResults_ViewController.swift; sourceTree = "<group>"; };
+		7F5322B51D8BC9EC00294C62 /* OnePhotoTwoLableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoTwoLableTableViewCell.swift; path = Third_3/cells/OnePhotoTwoLableTableViewCell.swift; sourceTree = "<group>"; };
+		7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoOneLable_CollectionViewCell.swift; path = Third_3/cells/OnePhotoOneLable_CollectionViewCell.swift; sourceTree = "<group>"; };
+		7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoTwoLabel_TableViewCell.swift; path = Main/cells3/OnePhotoTwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
+		7F5322BB1D8BCDEC00294C62 /* ADs_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADs_TableViewCell.swift; path = Main/cells3/ADs_TableViewCell.swift; sourceTree = "<group>"; };
+		7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = More_TableViewCell.swift; path = Main/cells3/More_TableViewCell.swift; sourceTree = "<group>"; };
 		7F9A5F591D89B2C900C2E133 /* AD_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AD_TableViewCell.swift; path = Main/Cell/AD_TableViewCell.swift; sourceTree = "<group>"; };
 		7F9A5F5B1D89BFE800C2E133 /* Remarks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Remarks; sourceTree = SOURCE_ROOT; };
 		7F9A5F5D1D89C76500C2E133 /* OnePhoto_H_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhoto_H_TableViewCell.swift; path = Main/Cell/OnePhoto_H_TableViewCell.swift; sourceTree = "<group>"; };
@@ -146,6 +158,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7F5322B41D8BC9C200294C62 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				7F5322B51D8BC9EC00294C62 /* OnePhotoTwoLableTableViewCell.swift */,
+				7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
 		7FA6E8EE1D899AA4003F6186 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,8 +179,8 @@
 				7FA6E9211D89A9BC003F6186 /* Register_ViewController.swift */,
 				7FA6E9001D89A61C003F6186 /* First_Cells */,
 				7FA6E9131D89A831003F6186 /* Second_Cells */,
-				7FA6E9141D89A835003F6186 /* New Group1 */,
-				7FA6E9151D89A838003F6186 /* New Group2 */,
+				7FA6E9141D89A835003F6186 /* Third-cells */,
+				7FA6E9151D89A838003F6186 /* Fourth_Cells */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -198,18 +219,21 @@
 			name = Second_Cells;
 			sourceTree = "<group>";
 		};
-		7FA6E9141D89A835003F6186 /* New Group1 */ = {
+		7FA6E9141D89A835003F6186 /* Third-cells */ = {
 			isa = PBXGroup;
 			children = (
+				7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */,
+				7F5322BB1D8BCDEC00294C62 /* ADs_TableViewCell.swift */,
+				7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */,
 			);
-			name = "New Group1";
+			name = "Third-cells";
 			sourceTree = "<group>";
 		};
-		7FA6E9151D89A838003F6186 /* New Group2 */ = {
+		7FA6E9151D89A838003F6186 /* Fourth_Cells */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "New Group2";
+			name = Fourth_Cells;
 			sourceTree = "<group>";
 		};
 		7FA6E9161D89A8BC003F6186 /* Fourth_4 */ = {
@@ -222,20 +246,22 @@
 			name = Fourth_4;
 			sourceTree = "<group>";
 		};
-		7FA6E9191D89A8EA003F6186 /* New Group */ = {
+		7FA6E9191D89A8EA003F6186 /* Second_2 */ = {
 			isa = PBXGroup;
 			children = (
 				7FA6E91B1D89A906003F6186 /* Second.storyboard */,
 			);
-			name = "New Group";
+			name = Second_2;
 			sourceTree = "<group>";
 		};
-		7FA6E91A1D89A8EE003F6186 /* New Group1 */ = {
+		7FA6E91A1D89A8EE003F6186 /* Third_3 */ = {
 			isa = PBXGroup;
 			children = (
 				7FA6E91D1D89A913003F6186 /* Third.storyboard */,
+				7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */,
+				7F5322B41D8BC9C200294C62 /* cells */,
 			);
-			name = "New Group1";
+			name = Third_3;
 			sourceTree = "<group>";
 		};
 		7FAECEEA1D8A6AC4004592EA /* shit */ = {
@@ -295,8 +321,8 @@
 				7FAECEED1D8A7399004592EA /* Server.plist */,
 				7FA6E8EE1D899AA4003F6186 /* Main */,
 				7FA6E8F71D89A544003F6186 /* First_1 */,
-				7FA6E9191D89A8EA003F6186 /* New Group */,
-				7FA6E91A1D89A8EE003F6186 /* New Group1 */,
+				7FA6E9191D89A8EA003F6186 /* Second_2 */,
+				7FA6E91A1D89A8EE003F6186 /* Third_3 */,
 				7FA6E9161D89A8BC003F6186 /* Fourth_4 */,
 				7FAECEEA1D8A6AC4004592EA /* shit */,
 				7FD101551D89764D009BB6A6 /* Assets.xcassets */,
@@ -565,13 +591,16 @@
 				7FA6E90C1D89A71C003F6186 /* FourFiveSix_TableViewCell.swift in Sources */,
 				7FA6E9101D89A768003F6186 /* Words_TableViewCell.swift in Sources */,
 				7FA6E9121D89A7EF003F6186 /* CommentsPraiseDemote_TableViewCell.swift in Sources */,
+				7F5322B61D8BC9EC00294C62 /* OnePhotoTwoLableTableViewCell.swift in Sources */,
 				7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */,
 				7FA6E8FD1D89A5DF003F6186 /* SendNewMessiageViewController.swift in Sources */,
 				7FA6E8F41D89A526003F6186 /* ThirdViewController.swift in Sources */,
 				7FA6E90A1D89A6FE003F6186 /* TwoThreePhoto_TableViewCell.swift in Sources */,
+				7F5322B81D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift in Sources */,
 				7FA6E9241D89ABCF003F6186 /* Functions.swift in Sources */,
 				7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */,
 				7FA6E9201D89A994003F6186 /* Login_ViewController.swift in Sources */,
+				7F5322BC1D8BCDEC00294C62 /* ADs_TableViewCell.swift in Sources */,
 				7FA6E90E1D89A74D003F6186 /* SevenEightNinePhoto_TableViewCell.swift in Sources */,
 				7F9A5F601D89C77D00C2E133 /* OnePhoto_Z_TableViewCell.swift in Sources */,
 				7FA6E9221D89A9BC003F6186 /* Register_ViewController.swift in Sources */,
@@ -583,6 +612,9 @@
 				7FA6E8FB1D89A5B4003F6186 /* SaoYiSaoViewController.swift in Sources */,
 				7F9A5F5E1D89C76500C2E133 /* OnePhoto_H_TableViewCell.swift in Sources */,
 				7FA6E8F61D89A535003F6186 /* FourthViewController.swift in Sources */,
+				7F5322BE1D8BCDFE00294C62 /* More_TableViewCell.swift in Sources */,
+				7F5322BA1D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift in Sources */,
+				7F5322B31D8BC9BC00294C62 /* SearchResults_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
