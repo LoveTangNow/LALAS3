@@ -1,14 +1,14 @@
 //
-//  SearchResults_ViewController.swift
+//  FanKui_ViewController.swift
 //  LALAS3
 //
-//  Created by Thomas Liu on 16/9/16.
+//  Created by Thomas Liu on 16/9/18.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit
 
-class SearchResults_ViewController: UIViewController {
+class FanKui_ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
