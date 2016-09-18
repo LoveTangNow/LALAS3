@@ -71,4 +71,21 @@ class FFFFFunctions: AnyObject {
             return 24
         }
     }
+
+    
+    //解析 json
+
+    func json(A:Data) -> String {
+        let username:String = ""
+        
+        if let statusesArray = try? JSONSerialization.jsonObject(with: A, options: .allowFragments) as? [[String: AnyObject]],
+            let user = statusesArray?[0]["user"] as? [String: AnyObject],
+            let username = user["name"] as? String {
+            // Finally we got the username
+            return username
+        }
+        return username
+    }
+    
+    
 }
