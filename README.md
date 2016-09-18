@@ -4,13 +4,13 @@
 ## 到现在为止使用到的库：
 - [Alamofire](https://github.com/Alamofire/Alamofire)
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage)
+- [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
 
 ## 想用但是不支持 Swift3的库：
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 
 ## 其他想用的库：
 * [Kingfisher](https://github.com/onevcat/Kingfisher)
-* [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
 * [Onboard](https://github.com/mamaral/Onboard)
 * [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD)
 * [SwiftRecord](https://github.com/arkverse/SwiftRecord)
