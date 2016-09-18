@@ -17,8 +17,12 @@ class Setting_TableViewController: UITableViewController {
     var Imageload_Wight:UIImage = UIImage(named: "White.png")!
     
     //MARK: - FUNCTIONS
+    /*
+    ["账号管理","账号安全"]
+    ["通用设置","通知"]
+    ["清理缓存","意见反馈","关于我们"]*/
     let SettingLists1 = ["账号管理","账号安全"]
-    let SettingLists2 = ["通用设置","通知"]
+    let SettingLists2 = ["通用设置","通知设置"]
     let SettingLists3 = ["清理缓存","意见反馈","关于我们"]
     
 
@@ -36,6 +40,45 @@ class Setting_TableViewController: UITableViewController {
     // MARK: - Tableview
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0://1
+            if indexPath.row == 0 {//账号管理
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountManagement_TableViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {               //账号安全
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountSecurity_TableViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        case 1://2
+            if indexPath.row == 0 {//通用设置
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "TongYong_TableViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {               //通知设置
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "Tongzhi_TableViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        case 2://3
+            switch indexPath.row {
+            case 0:
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "HuanCun_ViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            case 1:
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "FanKui_ViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            default:
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AboutUs_ViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        default://退出
+            
+            //self.view.alpha = 0.5
+
+            //let sb = UIStoryboard(name: "Fourth", bundle:nil)
+            //let vc = sb.instantiateViewController(withIdentifier: "Alfa_ViewController") as UIViewController
+            //self.present(vc, animated: true, completion: nil)
+            
+            break
+        }
         print(indexPath.row)
     }
     
@@ -71,6 +114,39 @@ class Setting_TableViewController: UITableViewController {
         }
         
     }
+    
+    /*
+     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let more = UITableViewRowAction(style: .normal, title: "More") { action, index in
+            print("more button tapped")
+        }
+        more.backgroundColor = UIColor.lightGray
+        
+        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
+            print("favorite button tapped")
+        }
+        favorite.backgroundColor = UIColor.orange
+        
+        let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
+            print("share button tapped")
+        }
+        share.backgroundColor = UIColor.blue
+        
+        return [share, favorite, more]
+    }
+     
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     tableView.reloadData()
+     }
+     
+    */
+    
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
