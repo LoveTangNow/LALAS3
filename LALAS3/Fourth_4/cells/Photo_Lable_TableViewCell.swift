@@ -14,6 +14,10 @@ class Photo_Lable_TableViewCell: UITableViewCell {
     @IBOutlet weak var UILabel_Main: UILabel!
 
     override func awakeFromNib() {
+        
+        UIImageView_Main.layer.cornerRadius = 5
+        UIImageView_Main.clipsToBounds = true
+        
         super.awakeFromNib()
         // Initialization code
     }
