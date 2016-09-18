@@ -9,10 +9,7 @@
 import UIKit
 
 import Alamofire
-//网络请求
 import SVProgressHUD
-
-
 
 
 class FirstViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
@@ -98,6 +95,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
 
+        /*TTTTTTTTTTTTTTTT
+         */
         
         //这里给 Tableview 写数据
     }

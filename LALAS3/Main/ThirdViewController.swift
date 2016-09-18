@@ -32,6 +32,7 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
             默认 还是自己输入的
          然后 完成不同的查询 跳转
          */
+        
         var Words:String = ""
         if UITextField_S.text! == "" {
             Words = UITextField_S.placeholder!
@@ -47,6 +48,8 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "发现"
         
         UITableView_M.dataSource = self
         UITableView_M.delegate = self
