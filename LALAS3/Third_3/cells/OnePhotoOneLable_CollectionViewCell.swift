@@ -10,4 +10,6 @@ import UIKit
 
 class OnePhotoOneLable_CollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var UIImageView_M: UIImageView!
+    
 }
