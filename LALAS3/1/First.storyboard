@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m9N-xo-d63" id="wMd-ay-NGI">
-                                            <frame key="frameInset" width="375" height="104"/>
+                                            <frame key="frameInset" width="375" height="104.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nSK-fP-Bl7">
@@ -66,7 +66,7 @@
                                         <rect key="frame" x="0.0" y="133" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="33r-ug-7Jp" id="E1h-Ss-Iyl">
-                                            <frame key="frameInset" width="342" height="63"/>
+                                            <frame key="frameInset" width="342" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMj-PC-dC2">
@@ -92,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="197" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Fm-v6-1PC" id="PC4-Lm-AUH">
-                                            <frame key="frameInset" width="375" height="104"/>
+                                            <frame key="frameInset" width="375" height="104.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XFA-nC-DTv">
@@ -152,6 +152,52 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-354.39999999999998" y="882.90854572713647"/>
+        </scene>
+        <!--View Photo With Scroll View Controller-->
+        <scene sceneID="f36-xe-1xP">
+            <objects>
+                <viewController storyboardIdentifier="ViewPhotoWithScroll_ViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Jn-oW-xHd" customClass="ViewPhotoWithScroll_ViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eoq-Ne-qNy"/>
+                        <viewControllerLayoutGuide type="bottom" id="MzR-0G-IqB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QM3-N3-JQW" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="kii-MN-fVk">
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="k8x-H3-vU0" appends="YES" id="kBw-cj-c3Y"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IPH-5L-l6U"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IPH-5L-l6U" firstAttribute="centerX" secondItem="QM3-N3-JQW" secondAttribute="centerX" id="Tke-uC-kax"/>
+                            <constraint firstItem="kii-MN-fVk" firstAttribute="centerX" secondItem="QM3-N3-JQW" secondAttribute="centerX" id="UNz-eY-JxZ"/>
+                            <constraint firstItem="kii-MN-fVk" firstAttribute="height" secondItem="QM3-N3-JQW" secondAttribute="height" id="WrY-L9-EZ4"/>
+                            <constraint firstItem="kii-MN-fVk" firstAttribute="width" secondItem="QM3-N3-JQW" secondAttribute="width" id="aab-WV-q2t"/>
+                            <constraint firstItem="MzR-0G-IqB" firstAttribute="top" secondItem="IPH-5L-l6U" secondAttribute="bottom" constant="100" id="nwf-Dl-eft"/>
+                            <constraint firstItem="kii-MN-fVk" firstAttribute="centerY" secondItem="QM3-N3-JQW" secondAttribute="centerY" id="vMW-Bx-aS0"/>
+                        </constraints>
+                        <connections>
+                            <action selector="UIControl_Click:" destination="2Jn-oW-xHd" eventType="touchUpInside" id="nfa-QF-R8Z"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="UIPageControl_M" destination="IPH-5L-l6U" id="NOn-i0-pq2"/>
+                        <outlet property="UIScrollView_MM" destination="kii-MN-fVk" id="1FU-i0-JUR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSG-7m-Ci6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="k8x-H3-vU0">
+                    <connections>
+                        <action selector="Tabeeee:" destination="2Jn-oW-xHd" id="gf4-Td-4Sf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-354" y="1604"/>
         </scene>
     </scenes>
 </document>
