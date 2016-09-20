@@ -7,4 +7,6 @@ target ‘LALAS3’ do
 	pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 	pod 'AlamofireImage', '~> 3.0'
     
+    pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
+    
 end
