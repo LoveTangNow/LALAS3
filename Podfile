@@ -9,4 +9,6 @@ target ‘LALAS3’ do
     
     pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
     
+    pod 'RealmSwift'
+    
 end
