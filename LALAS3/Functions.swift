@@ -87,5 +87,49 @@ class FFFFFunctions: AnyObject {
         return username
     }
     
+   
+     //MARK: - GotServer
+    func GotServer() -> String {
+        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
+        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
+        return data.object(forKey: "Server") as! String
+    }
+    
+     //MARK: - GotImageIconServer
+    func GotImageIconServer() -> String {
+        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
+        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
+        return data.object(forKey: "ServerImageIcon") as! String
+    }
+    
+     //MARK: - GotImageTServer
+    func GotImageTServer() -> String {
+        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
+        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
+        return data.object(forKey: "ServerImageT") as! String
+    }
+     //MARK: - GotImageMainServer
+    func GotImageMainServer() -> String {
+        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
+        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
+        return data.object(forKey: "ServerImageMain") as! String
+
+    }
+     //MARK: - GotImageADServer
+    func GotImageADServer() -> String {
+        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
+        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
+        return data.object(forKey: "ServerImageAD") as! String
+
+    }
+     //MARK: - 
+     //MARK: - 
+     //MARK: -
+     //MARK: - 
+     //MARK: - 
+     //MARK: - 
+     //MARK: - 
+     //MARK: -
+    
     
 }
