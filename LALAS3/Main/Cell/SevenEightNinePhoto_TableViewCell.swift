@@ -22,6 +22,8 @@ class SevenEightNinePhoto_TableViewCell: UITableViewCell {
     @IBOutlet weak var UIImageView_8: UIImageView!
     @IBOutlet weak var UIImageView_9: UIImageView!
     
+    var GotPhoto:Bool = false
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

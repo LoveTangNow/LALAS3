@@ -14,6 +14,8 @@ class TwoThreePhoto_TableViewCell: UITableViewCell {
     @IBOutlet weak var UIImageView_2: UIImageView!
     @IBOutlet weak var UIImageView_3: UIImageView!
 
+    var GotPhoto:Bool = false
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

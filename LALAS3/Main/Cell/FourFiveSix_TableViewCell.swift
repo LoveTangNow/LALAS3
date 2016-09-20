@@ -18,6 +18,7 @@ class FourFiveSix_TableViewCell: UITableViewCell {
     @IBOutlet weak var UIImageView_5: UIImageView!
     @IBOutlet weak var UIImageView_6: UIImageView!
     
+    var GotPhoto:Bool = false
 
     override func awakeFromNib() {
         super.awakeFromNib()
