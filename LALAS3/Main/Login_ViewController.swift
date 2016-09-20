@@ -61,7 +61,6 @@ class Login_ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if  UserDefaults.standard.value(forKey: "RegisterBool") != nil {
-            
             RegisterBool = UserDefaults.standard.value(forKey: "RegisterBool") as! Bool
             if RegisterBool == true {
                 self.dismiss(animated: true, completion:nil)
