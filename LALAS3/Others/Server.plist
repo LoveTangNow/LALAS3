@@ -5,14 +5,14 @@
 	<key>ServerLocalhost</key>
 	<string>http://localhost:80/LALA/</string>
 	<key>Server</key>
-	<string>http://10.6.17.78:80/LALA/</string>
+	<string>http://172.20.10.4:80/LALA/</string>
 	<key>ServerImageT</key>
-	<string>http://10.6.17.78:80/LALA/photo/TEST_PHOTOS/</string>
+	<string>http://172.20.10.4:80/LALA/photo/TEST_PHOTOS/</string>
 	<key>ServerImageIcon</key>
-	<string>http://10.6.17.78:80/LALA/photo/USER_ICONS/</string>
+	<string>http://172.20.10.4:80/LALA/photo/USER_ICONS/</string>
 	<key>ServerImageMain</key>
-	<string>http://10.6.17.78:80/LALA/photo/MAIN_PHOTOS_FROM_USER/</string>
+	<string>http://172.20.10.4:80/LALA/photo/MAIN_PHOTOS_FROM_USER/</string>
 	<key>ServerImageAD</key>
-	<string>http://10.6.17.78:80/LALA/photo/AD_PHOTOS/</string>
+	<string>http://172.20.10.4:80/LALA/photo/AD_PHOTOS/</string>
 </dict>
 </plist>
