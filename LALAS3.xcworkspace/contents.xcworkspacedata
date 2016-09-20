@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:LALAS3/RR+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:LALAS3/RR+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:LALAS3.xcodeproj">
    </FileRef>
    <FileRef

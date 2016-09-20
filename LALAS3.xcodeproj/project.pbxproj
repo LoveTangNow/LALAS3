@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F2475741D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */; };
 		7F5322B31D8BC9BC00294C62 /* SearchResults_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */; };
 		7F5322B81D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */; };
 		7F5322BA1D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */; };
@@ -66,6 +67,8 @@
 		7FE5BF3F1D8ED3C500586166 /* AccountManagement_TwoLabel_Big_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF3E1D8ED3C500586166 /* AccountManagement_TwoLabel_Big_TableViewCell.swift */; };
 		7FE5BF411D8ED3DF00586166 /* AccountManagement_OneLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF401D8ED3DF00586166 /* AccountManagement_OneLabel_TableViewCell.swift */; };
 		7FE5BF431D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF421D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift */; };
+		7FF0C8511D91114400B85248 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF0C8501D91114400B85248 /* libsqlite3.tbd */; };
+		7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0C8531D91173F00B85248 /* R.xcdatamodeld */; };
 		8E27E0A936834B29C0CA482A /* Pods_LALAS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,11 +92,13 @@
 /* Begin PBXFileReference section */
 		1EE9647F7DE5B2DCE0C3223C /* Pods-LALAS3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LALAS3.release.xcconfig"; path = "Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3.release.xcconfig"; sourceTree = "<group>"; };
 		73C7DC9B3D33878FCF28F421 /* Pods-LALAS3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LALAS3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3.debug.xcconfig"; sourceTree = "<group>"; };
+		7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewPhotoWithScroll_ViewController.swift; path = 1/ViewPhotoWithScroll_ViewController.swift; sourceTree = "<group>"; };
 		7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResults_ViewController.swift; path = Third_3/SearchResults_ViewController.swift; sourceTree = "<group>"; };
 		7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoOneLable_CollectionViewCell.swift; path = Third_3/cells/OnePhotoOneLable_CollectionViewCell.swift; sourceTree = "<group>"; };
 		7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoTwoLabel_TableViewCell.swift; path = Main/cells3/OnePhotoTwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7F5322BB1D8BCDEC00294C62 /* ADs_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADs_TableViewCell.swift; path = Main/cells3/ADs_TableViewCell.swift; sourceTree = "<group>"; };
 		7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = More_TableViewCell.swift; path = Main/cells3/More_TableViewCell.swift; sourceTree = "<group>"; };
+		7F95C5091D91953F00D7C447 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		7F9A5F591D89B2C900C2E133 /* AD_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AD_TableViewCell.swift; path = Main/Cell/AD_TableViewCell.swift; sourceTree = "<group>"; };
 		7F9A5F5B1D89BFE800C2E133 /* Remarks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Remarks; sourceTree = SOURCE_ROOT; };
 		7F9A5F5D1D89C76500C2E133 /* OnePhoto_H_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhoto_H_TableViewCell.swift; path = Main/Cell/OnePhoto_H_TableViewCell.swift; sourceTree = "<group>"; };
@@ -154,6 +159,9 @@
 		7FE5BF3E1D8ED3C500586166 /* AccountManagement_TwoLabel_Big_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagement_TwoLabel_Big_TableViewCell.swift; path = Fourth_4/cells/AccountManagement_TwoLabel_Big_TableViewCell.swift; sourceTree = "<group>"; };
 		7FE5BF401D8ED3DF00586166 /* AccountManagement_OneLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagement_OneLabel_TableViewCell.swift; path = Fourth_4/cells/AccountManagement_OneLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7FE5BF421D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoTwoLableTableViewCell.swift; path = Third_3/cells/OnePhotoTwoLableTableViewCell.swift; sourceTree = "<group>"; };
+		7FF0C8501D91114400B85248 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LALAS3-Bridging-Header.h"; sourceTree = "<group>"; };
+		7FF0C8541D91173F00B85248 /* R.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = R.xcdatamodel; sourceTree = "<group>"; };
 		BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LALAS3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -162,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF0C8511D91114400B85248 /* libsqlite3.tbd in Frameworks */,
 				8E27E0A936834B29C0CA482A /* Pods_LALAS3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +235,7 @@
 				7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */,
 				7FA6E8FC1D89A5DF003F6186 /* SendNewMessiageViewController.swift */,
 				7FA6E8FE1D89A5FF003F6186 /* MessiageDetailViewController.swift */,
+				7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */,
 				7FAECEF61D8AC6A5004592EA /* cells */,
 			);
 			name = First_1;
@@ -309,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				7FE5BF301D8EABD400586166 /* Alfa_ViewController.swift */,
+				7F95C5091D91953F00D7C447 /* MyPlayground.playground */,
 			);
 			name = shit;
 			sourceTree = "<group>";
@@ -378,7 +389,9 @@
 				7FD101551D89764D009BB6A6 /* Assets.xcassets */,
 				7FE5BF1C1D8E722800586166 /* L_ViewController.swift */,
 				7FD101571D89764D009BB6A6 /* LaunchScreen.storyboard */,
+				7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */,
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
+				7FF0C8531D91173F00B85248 /* R.xcdatamodeld */,
 			);
 			path = LALAS3;
 			sourceTree = "<group>";
@@ -404,6 +417,7 @@
 		F807D885972D56BFFF9611D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FF0C8501D91114400B85248 /* libsqlite3.tbd */,
 				BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */,
 			);
 			name = Frameworks;
@@ -646,8 +660,10 @@
 				7FE5BF311D8EABD400586166 /* Alfa_ViewController.swift in Sources */,
 				7FA6E9101D89A768003F6186 /* Words_TableViewCell.swift in Sources */,
 				7FE5BF2D1D8E756A00586166 /* AboutUs_ViewController.swift in Sources */,
+				7F2475741D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift in Sources */,
 				7FE5BF291D8E753D00586166 /* HuanCun_ViewController.swift in Sources */,
 				7FA6E9121D89A7EF003F6186 /* CommentsPraiseDemote_TableViewCell.swift in Sources */,
+				7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */,
 				7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */,
 				7FA6E8FD1D89A5DF003F6186 /* SendNewMessiageViewController.swift in Sources */,
 				7FE5BF391D8EBF0600586166 /* AccountSecurityCell_LableSwitch_TableViewCell.swift in Sources */,
@@ -847,6 +863,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasLiu.jiacheng.link;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LALAS3/LALAS3-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -864,6 +881,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasLiu.jiacheng.link;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LALAS3/LALAS3-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -966,6 +984,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7FF0C8531D91173F00B85248 /* R.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FF0C8541D91173F00B85248 /* R.xcdatamodel */,
+			);
+			currentVersion = 7FF0C8541D91173F00B85248 /* R.xcdatamodel */;
+			path = R.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7FD101411D89764C009BB6A6 /* Project object */;
 }
