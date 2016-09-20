@@ -34,6 +34,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     var DataPhotoNames = Dictionary<Int,[String]>()//每一个 ID 对应着一个字符串数组 图片名称们
     var DataPhotos = Dictionary<Int,[UIImage]>()//每一个 ID 对应着一个UIImage数组 图片们
     
+    var row = 0
+    
+    
     
     //MARK: - 函数
     override func viewDidLoad() {
@@ -116,6 +119,21 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
      */
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section > row {
+            //print("xia")
+            if indexPath.section > 3 {
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+            }
+            row = indexPath.section
+        }
+        if indexPath.section < row
+        {
+            //print("shang")
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            row = indexPath.section
+        }
+        
+        
         if DataWords.isEmpty {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AD_TableViewCell", for: indexPath) as! AD_TableViewCell
             return cell
@@ -450,11 +468,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 TableViewCellHeight = 40
                 return cell
             }
-
         }
-
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         
@@ -477,15 +493,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         } else {
             return 15
         }
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-       print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     }
 
 }
