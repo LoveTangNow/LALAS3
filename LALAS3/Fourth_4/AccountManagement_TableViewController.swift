@@ -20,10 +20,17 @@ class AccountManagement_TableViewController: UITableViewController {
     var list4 = ["邮箱","手机","QQ","微博","微信","支付宝"]
     var list5 = ["等级","积分","注册时间"]
     
+    //账号管理：昵称0、性别1、所在地（省2、市3、区4）、生日5、简介6、工作信息7、教育信息（小学8、初中9、\\高中0、大学1、硕士2、博士3、博士后4）、(qq5、手机6、邮箱7、微博8、微信9、支付宝0、)、等级1、积分2、注册时间3
+    var listall = ["","","","","","","","","","","","","","","","","","","","","","","",""]
+    
+    
+    //UserDefaults.standard.value(forKey: FORKEY)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        listall[2] = UserDefaults.standard.value(forKey: "SuoZaiDi_Sheng") as! String
+        listall[3] = UserDefaults.standard.value(forKey: "SuoZaiDi_Sheng") as! String
+        listall[4] = UserDefaults.standard.value(forKey: "SuoZaiDi_Sheng") as! String
     }
 
     override func didReceiveMemoryWarning() {
