@@ -11,35 +11,22 @@ import CoreData
 
 import RealmSwift
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource{
+    
+    
+    let image_l = #imageLiteral(resourceName: "Black")
+    
+    
+    @IBOutlet weak var UITableView_M: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "消息"
         
+        UITableView_M.delegate = self
+        UITableView_M.dataSource = self
         
-        //let newItem = NSEntityDescription.entityForName("RR", inManagedObjectContext: self.managedObjectContext!)
-        
-        /*
-        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
-        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
-        print(data.object(forKey: "ServerImageT") as! String)
-        
-        
-        let array = NSArray(objects: "hangge.com","baidu.com","google.com","163.com","qq.com")
-        let filePath:String = NSHomeDirectory() + "/Documents/webs.plist"
-        array.write(toFile: filePath, atomically: true)
-        
-        
-        let webs = NSArray(contentsOfFile: NSHomeDirectory() + "/Documents/webs.plist")
-        let url = webs![(webs?.count)! - 1] as! String
-        print(url)
-         */
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,5 +34,120 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - tableview
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0 && indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatMe_TableViewCell", for: indexPath) as! ChatMe_TableViewCell
+            cell.UIImageView_MyIcon.backgroundColor = UIColor.red
+            cell.UIImageView_im.backgroundColor = UIColor.green
+            return cell
+
+        }
+        
+        if indexPath.row == 0 && indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatYou_TableViewCell", for: indexPath) as! ChatYou_TableViewCell
+            cell.UIImageView_SenderIcon.backgroundColor = UIColor.red
+            cell.UIImageView_im.backgroundColor = UIColor.green
+            return cell
+            
+        }
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatPeople_TableViewCell") as? ChatPeople_TableViewCell
+        
+        cell?.UIImageView_Main.image = image_l
+        cell?.UIImageView_Zhiding.image = image_l
+        cell?.UIImageView_Readornot.image = image_l
+        
+        return cell!
+        
+    }
+    
+    //T_ViewController
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       // T_ViewController
+        let vc = UIStoryboard(name: "Second", bundle: nil).instantiateViewController(withIdentifier: "T_ViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        /**
+        let uri = "http://www.baidu.com";
+        let url = NSURL(string: uri)!;
+        let request = NSMutableURLRequest(url: url as URL);
+        /**
+         *  .设置缓存策略
+         *  .UseProtocolCachePolicy：依赖于请求头的设置，默认状态;
+         *  .ReloadIgnoringLocalCacheData：忽略缓存，重新请求服务器
+         *  .ReturnCacheDataElseLoad：有缓存使用缓存，无缓存请求服务器
+         *  .ReturnCacheDataDontLoad：离线模式，有缓存使用缓存，无缓存不请求服务器
+         */
+        request.cachePolicy = NSURLRequest.CachePolicy.returnCacheDataElseLoad;
+        // 获得全局缓存对象
+        let cache = URLCache.shared;
+        //
+        let response = cache.cachedResponse(for: request as URLRequest);
+        if response == nil {
+            // 本地无缓存
+            print("no cache");
+        } else {
+            // 本地有缓存
+            print("exist cache");
+            // 将当前请求的缓存数据删除，获取最新数据
+            cache.removeCachedResponse(for: request as URLRequest);
+            // 清除所有缓存
+            // cache.removeAllCachedResponses();
+        }
+        
+        NSURLConnection(request: request as URLRequest, delegate: self);
+ */
+
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 15
+        default:
+            return 0
+        }
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 3
+        case 1:
+            return 100
+        default:
+            return 0
+        }
+    }
+    
+
+    /*
+     let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
+     let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
+     print(data.object(forKey: "ServerImageT") as! String)
+     
+     
+     let array = NSArray(objects: "hangge.com","baidu.com","google.com","163.com","qq.com")
+     let filePath:String = NSHomeDirectory() + "/Documents/webs.plist"
+     array.write(toFile: filePath, atomically: true)
+     
+     
+     let webs = NSArray(contentsOfFile: NSHomeDirectory() + "/Documents/webs.plist")
+     let url = webs![(webs?.count)! - 1] as! String
+     print(url)
+     */
 
 }
