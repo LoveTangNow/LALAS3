@@ -17,6 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        
+        let a = UserDefaults.standard.value(forKey: "isFirst") as? Bool
+        if a == nil {
+            UserDefaults.standard.set(false, forKey: "isFirst")
+            
+            //账号管理：昵称、性别、所在地（省、市、区）、生日、简介、工作信息、教育信息（小学、初中、高中、大学、硕士、博士、博士后）、(qq、手机、邮箱、微博、微信、支付宝、)、等级、积分、注册时间
+            //账号安全：昵称、id、手机、邮箱、证件信息、
+            //通用设置：
+            //通知设置：
+            
+            //设置同步
+            UserDefaults.standard.synchronize()
+        } else {
+            print(UserDefaults.standard.value(forKey: "isFirst") as! Bool)
+        }
+        //let b = UserDefaults.standard.value(forKey: "isFirst")
+        
         return true
     }
     
