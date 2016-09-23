@@ -2,17 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ServerLocalhost</key>
-	<string>http://localhost:80/LALA/</string>
+	<key>ServerAli</key>
+	<string>http://121.42.36.47/lala/photo/</string>
+	<key>ServerAliScripts</key>
+	<string>http://121.42.36.47/lala/scripts/</string>
 	<key>Server</key>
-	<string>http://172.20.10.4:80/LALA/</string>
-	<key>ServerImageT</key>
-	<string>http://172.20.10.4:80/LALA/photo/TEST_PHOTOS/</string>
-	<key>ServerImageIcon</key>
-	<string>http://172.20.10.4:80/LALA/photo/USER_ICONS/</string>
-	<key>ServerImageMain</key>
-	<string>http://172.20.10.4:80/LALA/photo/MAIN_PHOTOS_FROM_USER/</string>
-	<key>ServerImageAD</key>
-	<string>http://172.20.10.4:80/LALA/photo/AD_PHOTOS/</string>
+	<string>http://localhost:80/LALA/</string>
+	<key>ImageT</key>
+	<string>TEST_PHOTOS/</string>
+	<key>ImageIcon</key>
+	<string>USER_ICONS/</string>
+	<key>ImageMain</key>
+	<string>MAIN_PHOTOS_FROM_USER/</string>
+	<key>ImageAD</key>
+	<string>AD_PHOTOS/</string>
 </dict>
 </plist>
