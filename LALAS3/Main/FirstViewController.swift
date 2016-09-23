@@ -36,6 +36,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     var row = 0
     
+    var ali = true
+    
+    
     
     
     //MARK: - 函数
@@ -56,7 +59,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         */
         
         // Both calls are equivalent
-        Alamofire.request(FFFFFunctions().GotServer() + "GIVE_BACK_PHOTO.php", method: .post, parameters: parameters)
+        print(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php")
+        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -99,7 +103,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        print(DataPhotos)
+        //print(DataPhotos)
         //self.UITableView_Main.center.y = -self.view.bounds.height / 2
         
         /*
@@ -149,9 +153,21 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         switch indexPath.row {
-        case 0:
-            break
-        case 1:
+        case 0://文字 携带文字 转移 并且还要携带图片 
+            let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "MessiageDetail_TableViewController") as!  MessiageDetail_TableViewController
+            
+            // detail device newsid newstime photohumber senderid sendername
+            UserDefaults.standard.set(DataWords[indexPath.section]![0], forKey: "detail")
+            UserDefaults.standard.set(DataWords[indexPath.section]![1], forKey: "device")
+            UserDefaults.standard.set(DataWords[indexPath.section]![2], forKey: "newsid")
+            UserDefaults.standard.set(DataWords[indexPath.section]![3], forKey: "newstime")
+            UserDefaults.standard.set(DataWords[indexPath.section]![5], forKey: "senderid")
+            UserDefaults.standard.set(DataWords[indexPath.section]![6], forKey: "sendername")
+            //设置同步
+            UserDefaults.standard.synchronize()
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 1://图片 携带文字转 view view用scrollview展示
             let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "ViewPhotoWithScroll_ViewController") as!  ViewPhotoWithScroll_ViewController
             print(DataPhotos)
             
@@ -356,11 +372,11 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                      */
                     if cell.GotPhoto == false {
                         //print("nnnnnnnn")
-                        Alamofire.request(FFFFFunctions().GotImageMainServer() + "Zhu00001.jpg")
+                        Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu00001.jpg")
                             .responseData { response in
                                 if let data = response.result.value {
                                     cell.UIImageView_Main.image = UIImage(data: data)
-                                    var a:Dictionary<String, UIImage> = ["image0":UIImage(data: data)!]
+                                    let a:Dictionary<String, UIImage> = ["image0":UIImage(data: data)!]
                                     self.DataPhotos[indexPath.section] = [a]
                                     cell.GotPhoto = true
                                 }
@@ -381,7 +397,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         for i in 0..<aa
                         {
                             var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(FFFFFunctions().GotImageMainServer() + "Zhu000" + String(i + 20) + ".jpg")
+                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 20) + ".jpg")
                                 .responseData { response in
                                 if let data = response.result.value {
                                     //print("do23")
@@ -436,52 +452,56 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         for i in 0..<aa
                         {
                             var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(FFFFFunctions().GotImageMainServer() + "Zhu000" + String(i + 20) + ".jpg")
+                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 20) + ".jpg")
                                 .responseData { response in
                                     if let data = response.result.value {
                                         //print("do456")
                                         switch i {
                                         case 0 :
                                             cell.UIImageView_1.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            //aaaaaa.append(["image" + String(i):cell.UIImageView_1.image!])
                                         case 1 :
                                             cell.UIImageView_2.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            //aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         case 2 :
                                             cell.UIImageView_3.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            //aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         case 3 :
                                             cell.UIImageView_4.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            /*aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                             if aa == 4{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
                                                 print(aaaaaa)
                                                 print(4)
                                                 print(self.DataPhotos[indexPath.section])
                                                 cell.GotPhoto = true
-                                            }
+                                            }*/
                                         case 4 :
                                             cell.UIImageView_5.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            /*aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                             if aa == 5{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
                                                 print(aaaaaa)
                                                 print(5)
                                                 print(self.DataPhotos[indexPath.section])
                                                 cell.GotPhoto = true
-                                            }
+                                            }*/
                                         case 5 :
                                             cell.UIImageView_6.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            /*aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                             if aa == 6{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
                                                 print(aaaaaa)
                                                 print(6)
                                                 print(self.DataPhotos[indexPath.section])
                                                 cell.GotPhoto = true
-                                            }
+                                            }*/
                                         default:break
                                         }
+                                    }
+                                    else
+                                    {
+                                        print("fall")
                                     }
                             }
                         }
@@ -525,95 +545,66 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     let aa = Int(DataWords[indexPath.section]![4])!
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SevenEightNinePhoto_TableViewCell", for: indexPath) as! SevenEightNinePhoto_TableViewCell
                     
-                    if cell.GotPhoto == false {
-                        for i in 0..<aa
-                        {
-                            var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(FFFFFunctions().GotImageMainServer() + "Zhu000" + String(i + 30) + ".jpg")
+                    
+                    for i in 0..<aa
+                    {
+                        //print("alaout")
+                        //var aaaaaa = [Dictionary<String, UIImage>]()
+                        //print(FFFFFunctions().GotImageMainServer(ai: ali))
+                        Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 30) + ".jpg")
                                 .responseData { response in
+                                   // print("alain")
                                     if let data = response.result.value {
                                         //print("do789")
                                         switch i {
                                         case 0 :
                                             cell.UIImageView_1.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            //aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         case 1 :
                                             cell.UIImageView_2.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            //aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         case 2 :
                                             cell.UIImageView_3.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            //aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         case 3 :
                                             cell.UIImageView_4.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            //aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         case 4 :
                                             cell.UIImageView_5.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            //aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         case 5 :
                                             cell.UIImageView_6.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            //aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         case 6 :
                                             cell.UIImageView_7.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            /*aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                             if aa == 7{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
                                                 cell.GotPhoto = true
-                                            }
+                                            }*/
                                         case 7 :
                                             cell.UIImageView_8.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            /*aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                             if aa == 8{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
                                                 cell.GotPhoto = true
-                                            }
+                                            }*/
                                         case 8 :
                                             cell.UIImageView_9.image = UIImage(data: data)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
+                                            /*aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                             if aa == 9{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
                                                 cell.GotPhoto = true
-                                            }
+                                            }*/
                                         default:break
                                         }
                                     }
+                                    else
+                                    {
+                                        print("fall")
+                                    }
                             }
                         }
-                    } else {
-                        print("oooo9")
-                        /**
-                        switch DataPhotos[indexPath.section]!.count {
-                        case 7:
-                            cell.UIImageView_1.image = DataPhotos[indexPath.section]?[0]["image0"]
-                            cell.UIImageView_2.image = DataPhotos[indexPath.section]?[1]["image0"]
-                            cell.UIImageView_3.image = DataPhotos[indexPath.section]?[2]["image0"]
-                            cell.UIImageView_1.image = DataPhotos[indexPath.section]?[3]["image0"]
-                            cell.UIImageView_2.image = DataPhotos[indexPath.section]?[4]["image0"]
-                            cell.UIImageView_3.image = DataPhotos[indexPath.section]?[5]["image0"]
-                            cell.UIImageView_1.image = DataPhotos[indexPath.section]?[6]["image0"]
-                        case 8:
-                            cell.UIImageView_1.image = DataPhotos[indexPath.section]?[0]["image0"]
-                            cell.UIImageView_2.image = DataPhotos[indexPath.section]?[1]["image0"]
-                            cell.UIImageView_3.image = DataPhotos[indexPath.section]?[2]["image0"]
-                            cell.UIImageView_1.image = DataPhotos[indexPath.section]?[3]["image0"]
-                            cell.UIImageView_2.image = DataPhotos[indexPath.section]?[4]["image0"]
-                            cell.UIImageView_3.image = DataPhotos[indexPath.section]?[5]["image0"]
-                            cell.UIImageView_1.image = DataPhotos[indexPath.section]?[6]["image0"]
-                            cell.UIImageView_2.image = DataPhotos[indexPath.section]?[7]["image0"]
-                        case 9:
-                            cell.UIImageView_1.image = DataPhotos[indexPath.section]?[0]["image0"]
-                            cell.UIImageView_2.image = DataPhotos[indexPath.section]?[1]["image0"]
-                            cell.UIImageView_3.image = DataPhotos[indexPath.section]?[2]["image0"]
-                            cell.UIImageView_1.image = DataPhotos[indexPath.section]?[3]["image0"]
-                            cell.UIImageView_2.image = DataPhotos[indexPath.section]?[4]["image0"]
-                            cell.UIImageView_3.image = DataPhotos[indexPath.section]?[5]["image0"]
-                            cell.UIImageView_1.image = DataPhotos[indexPath.section]?[6]["image0"]
-                            cell.UIImageView_2.image = DataPhotos[indexPath.section]?[7]["image0"]
-                            cell.UIImageView_3.image = DataPhotos[indexPath.section]?[8]["image0"]
-                        default:
-                            break
-                        }
-                        */
-                    }
                     
                     TableViewCellHeight = DeviceWidth
                     return cell
