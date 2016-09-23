@@ -14,6 +14,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AlamofireNetworkActivityIndicator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Dollar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-LALAS3.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +57,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>075690415EFA1D241126CE2C8ED8193A</key>
+		<key>0F119B24CD10A81311EF9389078F68E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B550A9F62846DC091E4C7E3EE54BBFF</key>
+		<key>1DE93A359FA21F91DFBE81309E851A4A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>228FFC4E78F899B58C33C57F31513A8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,22 +77,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>555713F7637A770AF4C4489B1C4C932C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92FE404360BFA5FBF79916508DFE1505</key>
+		<key>98FFE8D8B44BE29AB22888C39568D353</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB46C5B2B93889388617A15F3312C791</key>
+		<key>C0733D1434C837F165EC70ED0053025F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E19EDA50FB7667DE9789C3C6EB6BD622</key>
+		<key>D3E0D533C7D5A5FED8C12A5F14FC3315</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FFF7791A0F5E5F9BE31BCF196369CE39</key>
 		<dict>
 			<key>primary</key>
 			<true/>
