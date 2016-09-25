@@ -1,19 +1,17 @@
 //
-//  Images_TableViewCell.swift
+//  OnlyOneLabel_TableViewCell.swift
 //  LALAS3
 //
-//  Created by Thomas Liu on 16/9/15.
+//  Created by Thomas Liu on 2016/9/24.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit
 
-class Images_TableViewCell: UITableViewCell {
-
-    @IBOutlet weak var UIImageView_1: UIImageView!
-    @IBOutlet weak var UIImageView_2: UIImageView!
-    @IBOutlet weak var UIImageView_3: UIImageView!
+class OnlyOneLabel_TableViewCell: UITableViewCell {
     
+    @IBOutlet weak var UILabel_M: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

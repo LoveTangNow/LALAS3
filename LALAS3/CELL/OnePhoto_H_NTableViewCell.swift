@@ -1,16 +1,16 @@
 //
-//  OneLable_TableViewCell.swift
+//  OnePhoto_H_NTableViewCell.swift
 //  LALAS3
 //
-//  Created by Thomas Liu on 16/9/15.
+//  Created by Thomas Liu on 2016/9/24.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit
 
-class OneLable_TableViewCell: UITableViewCell {
+class OnePhoto_H_NTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var UILabel_Main: UILabel!
+    @IBOutlet weak var UIImageView_M: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
