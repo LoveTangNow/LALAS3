@@ -2,8 +2,6 @@ PODS:
   - Alamofire (4.0.0)
   - AlamofireImage (3.0.0):
     - Alamofire (~> 4.0)
-  - AlamofireNetworkActivityIndicator (2.0.0):
-    - Alamofire (~> 4.0)
   - Dollar (6.0.0)
   - Kingfisher (3.1.0)
   - Realm (1.1.0):
@@ -17,7 +15,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireImage (~> 3.0)
-  - AlamofireNetworkActivityIndicator (~> 2.0)
   - Dollar
   - Kingfisher (~> 3.1.0)
   - RealmSwift
@@ -42,7 +39,6 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   AlamofireImage: 6594aa1139a67dcd36cde6da79ea4e5b318e60fb
-  AlamofireNetworkActivityIndicator: ba9f481748d954318dd99636abff028cd3fcdc07
   Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
   Kingfisher: 7779f22e977393e9533a89a9685beb8f679d3767
   Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
@@ -50,6 +46,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
 
-PODFILE CHECKSUM: fe6baff5498b3b85f3faa49d9839acb19fac7bd7
+PODFILE CHECKSUM: 55e194089bca29709cd18856692385d8510ffda8
 
 COCOAPODS: 1.1.0.beta.2
