@@ -53,29 +53,23 @@ class SendNewMessiageViewController: UIViewController , UITableViewDelegate , UI
         case 1:
             switch indexPath.row {
             case 0://地点
-                let cell = tableView.dequeueReusableCell(withIdentifier: "OneLable_TableViewCell", for: indexPath) as! OneLable_TableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath) as! OnlyOneLabel_TableViewCell
                 
-                cell.UILabel_Main.text = "选择地点"
+                cell.UILabel_M.text = "选择地点"
                 TableViewCellHeight = 45
                 
                 return cell
             default://分享
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Share_TableViewCell", for: indexPath) as! Share_TableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
                 
-                cell.UIImageView_Main.image = Imageload_Black
+                //cell.UIImageView_Main.image = Imageload_Black
                 TableViewCellHeight = 45
                 
                 return cell
             }
             
         default://图片
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Images_TableViewCell", for: indexPath) as! Images_TableViewCell
-            
-            cell.UIImageView_1.image = Imageload_Black
-            cell.UIImageView_2.image = Imageload_Wight
-            cell.UIImageView_3.image = Imageload_Black
-            
-            TableViewCellHeight = UIScreen.main.bounds.width / 3
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
             
             return cell
 
