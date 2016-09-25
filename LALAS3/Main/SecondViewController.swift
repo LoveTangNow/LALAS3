@@ -27,6 +27,8 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         UITableView_M.delegate = self
         UITableView_M.dataSource = self
         
+        //self.UITableView_M.setEditing(true, animated: true)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -102,6 +104,25 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         NSURLConnection(request: request as URLRequest, delegate: self);
  */
 
+    }
+    
+    /**
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.none
+    }
+    
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let fromerow = [sourceIndexPath]
+        let torow = [destinationIndexPath]
+        
+        UITableView_M.insertRows(at: torow , with: UITableViewRowAnimation.automatic)
+        UITableView_M.deleteRows(at: fromerow , with: UITableViewRowAnimation.automatic)
+    }
+ */
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
