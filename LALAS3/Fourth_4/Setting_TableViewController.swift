@@ -76,7 +76,6 @@ class Setting_TableViewController: UITableViewController {
             //let sb = UIStoryboard(name: "Fourth", bundle:nil)
             //let vc = sb.instantiateViewController(withIdentifier: "Alfa_ViewController") as UIViewController
             //self.present(vc, animated: true, completion: nil)
-            
             break
         }
         print(indexPath.row)
