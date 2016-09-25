@@ -22,10 +22,33 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
     
     var TableViewHeight:CGFloat = 200
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.title = "发现"
+        
+        UITableView_M.dataSource = self
+        UITableView_M.delegate = self
+        
+        UITextField_S.placeholder = "搜索 用户 动态"
+        
+        // Do any additional setup after loading the view.
+    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     
     //MARK: - FUNCTIONS
+    @IBAction func Search_begain_(_ sender: AnyObject) {
+        print("in")
+    }
     
+    @IBAction func Search_End(_ sender: AnyObject) {
+        print("out")
+    }
     @IBAction func Search_Click(_ sender: AnyObject) {
         /*
          判断输入文字的类型
@@ -41,34 +64,20 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
         }
         
         //SearchResults_ViewController
-        let vc = UIStoryboard(name: "Third", bundle: nil).instantiateViewController(withIdentifier: "SearchResults_ViewController")
+        let vc = UIStoryboard(name: "Third", bundle: nil).instantiateViewController(withIdentifier: "SearchResults_ViewController") as! SearchResults_ViewController
+        vc.words = Words
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.title = "发现"
-        
-        UITableView_M.dataSource = self
-        UITableView_M.delegate = self
-        
-        UITextField_S.placeholder = "搜索 用户 动态"
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     //MARK: - Tableview
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UITextField_S.resignFirstResponder()
         print(indexPath.row)
+        //keyboardWillDisappear()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
