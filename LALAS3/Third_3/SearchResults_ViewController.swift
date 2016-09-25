@@ -16,6 +16,9 @@ class SearchResults_ViewController: UIViewController , UITableViewDelegate , UIT
     var Imageload_Black:UIImage = UIImage(named: "Black.png")!
     var Imageload_Wight:UIImage = UIImage(named: "White.png")!
     
+    var words = String()
+    
+    
     @IBOutlet weak var UICollectionView_M: UICollectionView!
     @IBOutlet weak var UITableView_M: UITableView!
     
@@ -34,6 +37,17 @@ class SearchResults_ViewController: UIViewController , UITableViewDelegate , UIT
         
         UICollectionView_M.delegate = self
         UICollectionView_M.dataSource = self
+        
+        print(words)
+        ///來來來 我們來準備數據了！！
+        //搜索的门类有 用户 动态 ！
+        //********请求用户数据
+        
+        
+        
+        //********请求'动态'数据
+        
+        
 
         // Do any additional setup after loading the view.
     }
