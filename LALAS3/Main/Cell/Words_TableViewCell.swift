@@ -25,7 +25,7 @@ class Words_TableViewCell: UITableViewCell {
         // Initialization code
         UIImageView_V.layer.cornerRadius = 6
         UIImageView_V.clipsToBounds = true
-        
+                
         UIImageView_VIP.layer.cornerRadius = 8
         UIImageView_VIP.clipsToBounds = true
         
