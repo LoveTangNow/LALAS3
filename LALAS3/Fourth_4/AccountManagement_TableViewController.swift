@@ -8,7 +8,15 @@
 
 import UIKit
 
-class AccountManagement_TableViewController: UITableViewController {
+enum AccountManagement_modoolllll {
+    case normal
+    case pikerbrithday
+}
+
+class AccountManagement_TableViewController: UITableViewController ,UIPickerViewDelegate,UIPickerViewDataSource{
+    
+    @IBOutlet var UIPickerView_MMM: UIPickerView!
+    var modoooool = AccountManagement_modoolllll.normal
     
     var TableviewHeight:CGFloat = 0
     
@@ -31,25 +39,69 @@ class AccountManagement_TableViewController: UITableViewController {
         listall[2] = UserDefaults.standard.value(forKey: "SuoZaiDi_Sheng") as! String
         listall[3] = UserDefaults.standard.value(forKey: "SuoZaiDi_Sheng") as! String
         listall[4] = UserDefaults.standard.value(forKey: "SuoZaiDi_Sheng") as! String
+        
+        UIPickerView_MMM.frame = CGRect(x:100,y:100,width:100,height:100)
+        UIPickerView_MMM.delegate = self
+        UIPickerView_MMM.dataSource = self
+        UIPickerView_MMM.backgroundColor = UIColor.red
+        
+        self.tableView.sectionIndexColor = UIColor.darkGray
+        self.view.addSubview(UIPickerView_MMM)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        /*UIView.animate(withDuration: 3, animations: {
+            self.UIPickerView_MMM.center.y += 50
+            self.UIPickerView_MMM.frame =  CGRect(x:100,y:100,width:150,height:150)
+        })*/
+        
+        UIView.animate(withDuration: 3,
+            animations:{
+                self.UIPickerView_MMM.center.y += 50
+            },
+            completion: {_ in
+                UIView.animate(withDuration: 3, animations: {
+                    self.UIPickerView_MMM.frame =  CGRect(x:100,y:100,width:150,height:150)
+                }
+                )
+            }
+        )
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        //print("numberOfComponents")
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        //print("numberOfRowsInComponent")
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        //print("titleForRow")
+        return "lala"
+    }
+    
 
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        print(list1)
+        //TViewController
+        //let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
+        //self.navigationController?.pushViewController(vc, animated: true)
+       
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
         case 0:
-            switch indexPath.row {
-            case 0://头像 昵称
+            switch list1[indexPath.row] {//["用户昵称 和 头像","性别","所在地","生日","用户简介"]
+            case "用户昵称 和 头像"://头像 昵称
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_M_TableViewCell", for: indexPath) as! AccountManagement_M_TableViewCell
                 cell.UILabel_M.text = "啦啦同学"
                 cell.UIImageView_M.image = Imageload_Black
@@ -57,7 +109,7 @@ class AccountManagement_TableViewController: UITableViewController {
                 TableviewHeight = 100
                 
                 return cell
-            case 4://简介
+            case "用户简介"://简介
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_TwoLabel_Big_TableViewCell", for: indexPath) as! AccountManagement_TwoLabel_Big_TableViewCell
                 cell.UILabel_m.text = "简介"
                 cell.UILabel_MAX.text = "安老师看到房间爱看书的反馈拉黑谁都快放假哈啥地方哈伦裤水电费哈哈涉及到客服哈啥地方还是"
@@ -138,4 +190,11 @@ class AccountManagement_TableViewController: UITableViewController {
             return list5.count
         }
     }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
 }
