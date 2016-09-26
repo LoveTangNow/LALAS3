@@ -43,7 +43,7 @@ class Setting_TableViewController: UITableViewController {
         switch indexPath.section {
         case 0://1
             if indexPath.row == 0 {//账号管理
-                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountManagement_TableViewController")
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountManagement_ViewController")
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {               //账号安全
                 let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountSecurity_TableViewController")
