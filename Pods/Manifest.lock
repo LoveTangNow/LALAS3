@@ -19,22 +19,16 @@ DEPENDENCIES:
   - Kingfisher (~> 3.1.0)
   - RealmSwift
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
-  - SwiftyJSON (from `https://github.com/appsailor/SwiftyJSON.git`, branch `swift3`)
+  - SwiftyJSON
 
 EXTERNAL SOURCES:
   SVProgressHUD:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
-  SwiftyJSON:
-    :branch: swift3
-    :git: https://github.com/appsailor/SwiftyJSON.git
 
 CHECKOUT OPTIONS:
   SVProgressHUD:
     :commit: cc5f7d68fe76afdb79e215b8ff00133575fafacc
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
-  SwiftyJSON:
-    :commit: 2571377e49e6c653a92d993a2bff7a9ca2d71591
-    :git: https://github.com/appsailor/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
@@ -46,6 +40,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
 
-PODFILE CHECKSUM: 55e194089bca29709cd18856692385d8510ffda8
+PODFILE CHECKSUM: b04e029524001075f8256ccf171e02526d9d9082
 
 COCOAPODS: 1.1.0.beta.2

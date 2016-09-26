@@ -1,1 +1,1 @@
-真好
+真好pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
