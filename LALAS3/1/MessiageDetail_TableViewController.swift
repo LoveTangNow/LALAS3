@@ -29,6 +29,12 @@ class MessiageDetail_TableViewController: UITableViewController {
 
     
     // MARK: - Table view data source
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            let a  = self.view.viewWithTag(1) as! UIImageView
+            print(a.frame.height)
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
