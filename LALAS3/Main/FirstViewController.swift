@@ -162,116 +162,133 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         print(indexPath.row)
         switch indexPath.row {
-        case 0://文字 携带文字 转移 并且还要携带图片 
-            let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "MessiageDetail_TableViewController") as!  MessiageDetail_TableViewController
+        //case 0://文字 携带文字 转移 并且还要携带图片
             
-            // detail device newsid newstime photohumber senderid sendername
-            UserDefaults.standard.set(DataWords[indexPath.section]![0], forKey: "detail")
-            UserDefaults.standard.set(DataWords[indexPath.section]![1], forKey: "device")
-            UserDefaults.standard.set(DataWords[indexPath.section]![2], forKey: "newsid")
-            UserDefaults.standard.set(DataWords[indexPath.section]![3], forKey: "newstime")
-            UserDefaults.standard.set(DataWords[indexPath.section]![5], forKey: "senderid")
-            UserDefaults.standard.set(DataWords[indexPath.section]![6], forKey: "sendername")
-            //设置同步
-            UserDefaults.standard.synchronize()
+        case 0,1://图片 携带文字转 view view用scrollview展示
             
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 1://图片 携带文字转 view view用scrollview展示
-            let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "ViewPhotoWithScroll_ViewController") as!  ViewPhotoWithScroll_ViewController
-            print(DataPhotos)
-            
-             //Int(DataWords[indexPath.section]![4])!
-            
+            //Int(DataWords[indexPath.section]![4])!
+            var imagelist = [UIImage?]()
+            var imagenumber_in = Int()
+            var aa = indexPath
+            if indexPath.row == 0 {
+                aa.row += 1
+            }
             switch DataWords[indexPath.section]![4] {
             case "1" :
-                let a = UITableView_Main.cellForRow(at: indexPath)! as! OnePhoto_H_TableViewCell
-                vc.imagelist.append(a.UIImageView_Main.image!)
-                vc.imgaeNumber = 1
+                let a = UITableView_Main.cellForRow(at: aa)! as! OnePhoto_H_TableViewCell
+                imagelist.append(a.UIImageView_Main.image!)
+                imagenumber_in = 1
                 break
             case "2":
-                let a = UITableView_Main.cellForRow(at: indexPath)! as! TwoThreePhoto_TableViewCell
-                vc.imagelist.append(a.UIImageView_1.image)
-                vc.imagelist.append(a.UIImageView_2.image)
+                let a = UITableView_Main.cellForRow(at: aa)! as! TwoThreePhoto_TableViewCell
+                imagelist.append(a.UIImageView_1.image)
+                imagelist.append(a.UIImageView_2.image)
                 
-                vc.imgaeNumber = 2
-                //vc.image1 = a.UIImageView_1.image!
+                imagenumber_in = 2
+            //vc.image1 = a.UIImageView_1.image!
             case "3":
-                let a = UITableView_Main.cellForRow(at: indexPath)! as! TwoThreePhoto_TableViewCell
-                vc.imagelist.append(a.UIImageView_1.image)
-                vc.imagelist.append(a.UIImageView_2.image)
-                vc.imagelist.append(a.UIImageView_3.image)
+                let a = UITableView_Main.cellForRow(at: aa)! as! TwoThreePhoto_TableViewCell
+                imagelist.append(a.UIImageView_1.image)
+                imagelist.append(a.UIImageView_2.image)
+                imagelist.append(a.UIImageView_3.image)
                 
-                vc.imgaeNumber = 3
-                //vc.image1 = a.UIImageView_2.image!
+                imagenumber_in = 3
+            //vc.image1 = a.UIImageView_2.image!
             case "4" :
-                let a = UITableView_Main.cellForRow(at: indexPath)! as! FourFiveSix_TableViewCell
-                vc.imagelist.append(a.UIImageView_1.image)
-                vc.imagelist.append(a.UIImageView_2.image)
-                vc.imagelist.append(a.UIImageView_3.image)
-                vc.imagelist.append(a.UIImageView_4.image)
+                let a = UITableView_Main.cellForRow(at: aa)! as! FourFiveSix_TableViewCell
+                imagelist.append(a.UIImageView_1.image)
+                imagelist.append(a.UIImageView_2.image)
+                imagelist.append(a.UIImageView_3.image)
+                imagelist.append(a.UIImageView_4.image)
                 
-                vc.imgaeNumber = 4
+                imagenumber_in = 4
             case "5" :
-                let a = UITableView_Main.cellForRow(at: indexPath)! as! FourFiveSix_TableViewCell
-                vc.imagelist.append(a.UIImageView_1.image)
-                vc.imagelist.append(a.UIImageView_2.image)
-                vc.imagelist.append(a.UIImageView_3.image)
-                vc.imagelist.append(a.UIImageView_4.image)
-                vc.imagelist.append(a.UIImageView_5.image)
+                let a = UITableView_Main.cellForRow(at: aa)! as! FourFiveSix_TableViewCell
+                imagelist.append(a.UIImageView_1.image)
+                imagelist.append(a.UIImageView_2.image)
+                imagelist.append(a.UIImageView_3.image)
+                imagelist.append(a.UIImageView_4.image)
+                imagelist.append(a.UIImageView_5.image)
                 
-                vc.imgaeNumber = 5
+                imagenumber_in = 5
             case "6" :
-                let a = UITableView_Main.cellForRow(at: indexPath)! as! FourFiveSix_TableViewCell
-                vc.imagelist.append(a.UIImageView_1.image)
-                vc.imagelist.append(a.UIImageView_2.image)
-                vc.imagelist.append(a.UIImageView_3.image)
-                vc.imagelist.append(a.UIImageView_4.image)
-                vc.imagelist.append(a.UIImageView_5.image)
-                vc.imagelist.append(a.UIImageView_6.image)
+                let a = UITableView_Main.cellForRow(at: aa)! as! FourFiveSix_TableViewCell
+                imagelist.append(a.UIImageView_1.image)
+                imagelist.append(a.UIImageView_2.image)
+                imagelist.append(a.UIImageView_3.image)
+                imagelist.append(a.UIImageView_4.image)
+                imagelist.append(a.UIImageView_5.image)
+                imagelist.append(a.UIImageView_6.image)
                 
-                vc.imgaeNumber = 6
+                imagenumber_in = 6
             case "7" :
-                let a = UITableView_Main.cellForRow(at: indexPath)! as! SevenEightNinePhoto_TableViewCell
-                vc.imagelist.append(a.UIImageView_1.image)
-                vc.imagelist.append(a.UIImageView_2.image)
-                vc.imagelist.append(a.UIImageView_3.image)
-                vc.imagelist.append(a.UIImageView_4.image)
-                vc.imagelist.append(a.UIImageView_5.image)
-                vc.imagelist.append(a.UIImageView_6.image)
-                vc.imagelist.append(a.UIImageView_7.image)
+                let a = UITableView_Main.cellForRow(at: aa)! as! SevenEightNinePhoto_TableViewCell
+                imagelist.append(a.UIImageView_1.image)
+                imagelist.append(a.UIImageView_2.image)
+                imagelist.append(a.UIImageView_3.image)
+                imagelist.append(a.UIImageView_4.image)
+                imagelist.append(a.UIImageView_5.image)
+                imagelist.append(a.UIImageView_6.image)
+                imagelist.append(a.UIImageView_7.image)
                 
-                vc.imgaeNumber = 7
+                imagenumber_in = 7
             case "8" :
-                let a = UITableView_Main.cellForRow(at: indexPath)! as! SevenEightNinePhoto_TableViewCell
-                vc.imagelist.append(a.UIImageView_1.image)
-                vc.imagelist.append(a.UIImageView_2.image)
-                vc.imagelist.append(a.UIImageView_3.image)
-                vc.imagelist.append(a.UIImageView_4.image)
-                vc.imagelist.append(a.UIImageView_5.image)
-                vc.imagelist.append(a.UIImageView_6.image)
-                vc.imagelist.append(a.UIImageView_7.image)
-                vc.imagelist.append(a.UIImageView_8.image)
+                let a = UITableView_Main.cellForRow(at: aa)! as! SevenEightNinePhoto_TableViewCell
+                imagelist.append(a.UIImageView_1.image)
+                imagelist.append(a.UIImageView_2.image)
+                imagelist.append(a.UIImageView_3.image)
+                imagelist.append(a.UIImageView_4.image)
+                imagelist.append(a.UIImageView_5.image)
+                imagelist.append(a.UIImageView_6.image)
+                imagelist.append(a.UIImageView_7.image)
+                imagelist.append(a.UIImageView_8.image)
                 
-                vc.imgaeNumber = 8
+                imagenumber_in = 8
             case "9" :
-                let a = UITableView_Main.cellForRow(at: indexPath)! as! SevenEightNinePhoto_TableViewCell
-                vc.imagelist.append(a.UIImageView_1.image)
-                vc.imagelist.append(a.UIImageView_2.image)
-                vc.imagelist.append(a.UIImageView_3.image)
-                vc.imagelist.append(a.UIImageView_4.image)
-                vc.imagelist.append(a.UIImageView_5.image)
-                vc.imagelist.append(a.UIImageView_6.image)
-                vc.imagelist.append(a.UIImageView_7.image)
-                vc.imagelist.append(a.UIImageView_8.image)
-                vc.imagelist.append(a.UIImageView_9.image)
+                let a = UITableView_Main.cellForRow(at: aa)! as! SevenEightNinePhoto_TableViewCell
+                imagelist.append(a.UIImageView_1.image)
+                imagelist.append(a.UIImageView_2.image)
+                imagelist.append(a.UIImageView_3.image)
+                imagelist.append(a.UIImageView_4.image)
+                imagelist.append(a.UIImageView_5.image)
+                imagelist.append(a.UIImageView_6.image)
+                imagelist.append(a.UIImageView_7.image)
+                imagelist.append(a.UIImageView_8.image)
+                imagelist.append(a.UIImageView_9.image)
                 
-                vc.imgaeNumber = 9
+                imagenumber_in = 9
             default:
                 break
             }
             
-            
-            self.navigationController?.pushViewController(vc, animated: true)
+            switch indexPath.row {
+            case 0:
+                let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "MessiageDetail_TableViewController") as!  MessiageDetail_TableViewController
+                
+                // detail device newsid newstime photohumber senderid sendername
+                UserDefaults.standard.set(DataWords[indexPath.section]![0], forKey: "detail")
+                UserDefaults.standard.set(DataWords[indexPath.section]![1], forKey: "device")
+                UserDefaults.standard.set(DataWords[indexPath.section]![2], forKey: "newsid")
+                UserDefaults.standard.set(DataWords[indexPath.section]![3], forKey: "newstime")
+                UserDefaults.standard.set(DataWords[indexPath.section]![5], forKey: "senderid")
+                UserDefaults.standard.set(DataWords[indexPath.section]![6], forKey: "sendername")
+                //设置同步
+                UserDefaults.standard.synchronize()
+                
+                vc.imagelist = imagelist
+                vc.imgaeNumber = imagenumber_in
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            case 1:
+                let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "ViewPhotoWithScroll_ViewController") as!  ViewPhotoWithScroll_ViewController
+                vc.imagelist = imagelist
+                vc.imgaeNumber = imagenumber_in
+                //print(DataPhotos)
+                self.navigationController?.pushViewController(vc, animated: true)
+            default:
+                break
+            }
+     
         case 2:
             break
         default:
@@ -427,7 +444,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                         if aa == 3{
                                             self.DataPhotos[indexPath.section] = aaaaaa
                                             cell.GotPhoto = true
-                                            print(aaaaaa)
+                                            //print(aaaaaa)
                                         }
                                     default:break
                                     }
@@ -481,9 +498,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                             aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                             if aa == 4{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
-                                                print(aaaaaa)
-                                                print(4)
-                                                print(self.DataPhotos[indexPath.section])
+                                                //print(aaaaaa)
+                                                //print(4)
+                                                //print(self.DataPhotos[indexPath.section])
                                                 cell.GotPhoto = true
                                             }
                                         case 4 :
@@ -491,9 +508,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                             aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                             if aa == 5{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
-                                                print(aaaaaa)
-                                                print(5)
-                                                print(self.DataPhotos[indexPath.section])
+                                                //print(aaaaaa)
+                                                //print(5)
+                                                //print(self.DataPhotos[indexPath.section])
                                                 cell.GotPhoto = true
                                             }
                                         case 5 :
@@ -501,12 +518,12 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                             aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                             if aa == 6{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
-                                                print(aaaaaa)
-                                                print(6)
-                                                print(self.DataPhotos[indexPath.section])
+                                                //print(aaaaaa)
+                                                //print(6)
+                                                //print(self.DataPhotos[indexPath.section])
                                                 cell.GotPhoto = true
-                                                print(aaaaaa)
-                                            }
+                                                //print(aaaaaa)
+                                            }//
                                         default:break
                                         }
                                     }
@@ -606,7 +623,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                             if aa == 9{
                                                 self.DataPhotos[indexPath.section] = aaaaaa
                                                 cell.GotPhoto = true
-                                                print(aaaaaa)
+                                                //print(aaaaaa)
                                             }
                                         default:break
                                         }
