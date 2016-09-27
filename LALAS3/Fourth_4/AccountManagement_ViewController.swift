@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 enum Enum_Models {
     case Normal_Model
@@ -314,7 +315,12 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
             case "用户昵称 和 头像"://头像 昵称
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_M_TableViewCell", for: indexPath) as! AccountManagement_M_TableViewCell
                 cell.UILabel_M.text = "啦啦同学"
-                cell.UIImageView_M.image = Imageload_Black
+                Alamofire.request(FFFFFunctions().GotImageIconServer(ai: true) + "1.png")
+                    .responseData { response in
+                        if let data = response.result.value {
+                            cell.UIImageView_M.image = UIImage(data: data)
+                        }
+                }
                 
                 TableviewHeight = 100
                 
