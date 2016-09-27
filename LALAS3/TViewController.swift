@@ -2,7 +2,7 @@
 //  TViewController.swift
 //  LALAS3
 //
-//  Created by Thomas Liu on 2016/9/25.
+//  Created by Thomas Liu on 2016/9/27.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
@@ -10,8 +10,6 @@ import UIKit
 
 class TViewController: UIViewController {
 
-    @IBOutlet weak var UIPickerView_M: UIPickerView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

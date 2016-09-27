@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
     
         //sleep(2)
+        //Quhua().
         
         let a = UserDefaults.standard.value(forKey: "isFirst") as? Bool
         if a == nil {
