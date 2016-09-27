@@ -15,8 +15,10 @@ class FourthViewController: UIViewController {
 
         self.title = "我的"
         
+        //UserDefaults.standard.set("noSetle", forKey: "isSet")
+        
         let a = UserDefaults.standard.value(forKey: "isSet") as? String
-        if a == nil {
+        if a == "noSetle" {
             //没有设置过
             UserDefaults.standard.set("Setle", forKey: "isSet")
             UserDefaults.standard.synchronize()
@@ -34,30 +36,28 @@ class FourthViewController: UIViewController {
             //SetUserDefaults(DATA:"",FORKEY:"NiCheng")
             //SetUserDefaults(DATA:"",FORKEY:"ID")
             
-            SetUserDefaultsM(DATA:"",FORKEY: "Shouji")
-            SetUserDefaultsM(DATA:"",FORKEY: "YouXiang")
-            SetUserDefaultsM(DATA:"",FORKEY: "XingBie")
-            SetUserDefaultsM(DATA:"北京",FORKEY: "SuoZaiDi_Sheng")
-            SetUserDefaultsM(DATA:"北京",FORKEY: "SuoZaiDi_Shi")
-            SetUserDefaultsM(DATA:"北京",FORKEY: "SuoZaiDi_Qu")
-            SetUserDefaultsM(DATA:"",FORKEY: "ShengRi")
-            SetUserDefaultsM(DATA:"",FORKEY: "JianJie")
-            SetUserDefaultsM(DATA:"",FORKEY: "GongZuoXinXi")
-            SetUserDefaultsM(DATA:"",FORKEY: "XiaoXue")
-            SetUserDefaultsM(DATA:"",FORKEY: "ChuZhong")
-            SetUserDefaultsM(DATA:"",FORKEY: "GaoZhong")
-            SetUserDefaultsM(DATA:"",FORKEY: "DaXue")
-            SetUserDefaultsM(DATA:"",FORKEY: "ShuoShi")
-            SetUserDefaultsM(DATA:"",FORKEY: "BoShi")
-            SetUserDefaultsM(DATA:"",FORKEY: "BoshiHou")
+            SetUserDefaultsM(DATA:"",FORKEY: "Phone")
+            SetUserDefaultsM(DATA:"",FORKEY: "Email")
+            SetUserDefaultsM(DATA:"男",FORKEY: "Sex")
+            SetUserDefaultsM(DATA:"北京",FORKEY: "Location")
+            SetUserDefaultsM(DATA:"",FORKEY: "Brithday")
+            SetUserDefaultsM(DATA:"",FORKEY: "Summary")
+            SetUserDefaultsM(DATA:"",FORKEY: "Work")
+            SetUserDefaultsM(DATA:"",FORKEY: "XX")
+            SetUserDefaultsM(DATA:"",FORKEY: "CZ")
+            SetUserDefaultsM(DATA:"",FORKEY: "GZ")
+            SetUserDefaultsM(DATA:"",FORKEY: "DZ")
+            SetUserDefaultsM(DATA:"",FORKEY: "SS")
+            SetUserDefaultsM(DATA:"",FORKEY: "BS")
+            SetUserDefaultsM(DATA:"",FORKEY: "BSH")
             SetUserDefaultsM(DATA:"",FORKEY: "QQ")
-            SetUserDefaultsM(DATA:"",FORKEY: "WeiBo")
-            SetUserDefaultsM(DATA:"",FORKEY: "WeiXin")
-            SetUserDefaultsM(DATA:"",FORKEY: "ZhiFuBao")
-            SetUserDefaultsM(DATA:"",FORKEY: "DengJi")
-            SetUserDefaultsM(DATA:"",FORKEY: "JiFen")
-            SetUserDefaultsM(DATA:"",FORKEY: "ZhuceShijian")
-            SetUserDefaultsM(DATA:"",FORKEY: "ZhengJian")
+            SetUserDefaultsM(DATA:"",FORKEY: "WB")
+            SetUserDefaultsM(DATA:"",FORKEY: "WX")
+            SetUserDefaultsM(DATA:"",FORKEY: "ZFB")
+            SetUserDefaultsM(DATA:"",FORKEY: "DJ")
+            SetUserDefaultsM(DATA:"",FORKEY: "JF")
+            SetUserDefaultsM(DATA:"",FORKEY: "ZCSJ")
+            SetUserDefaultsM(DATA:"",FORKEY: "ZJ")
             
         }
         
