@@ -201,9 +201,9 @@
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dLv-0W-unZ">
                         <subviews>
-                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S6v-ri-Aqd"/>
-                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KfQ-NX-i5e"/>
-                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="92e-67-OaS"/>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S6v-ri-Aqd"/>
+                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KfQ-NX-i5e"/>
+                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="92e-67-OaS"/>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -232,20 +232,20 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Uyx-zG-VZ0">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61F-Xg-HJd"/>
-                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zSV-YP-YBI"/>
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61F-Xg-HJd"/>
+                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zSV-YP-YBI"/>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gVj-fU-WtX">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wlk-c0-gHu"/>
-                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K9p-uN-Gy8"/>
+                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wlk-c0-gHu"/>
+                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K9p-uN-Gy8"/>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zVo-Hw-2D6">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U0q-f6-gbo"/>
-                                    <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kjq-aW-9iW"/>
+                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U0q-f6-gbo"/>
+                                    <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kjq-aW-9iW"/>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -279,23 +279,23 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GCR-xP-c3h">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rh8-dr-hmR"/>
-                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ML-zr-Rux"/>
-                                    <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kiU-za-hvW"/>
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rh8-dr-hmR"/>
+                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ML-zr-Rux"/>
+                                    <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kiU-za-hvW"/>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YZZ-ah-78K">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AFi-lv-wfx"/>
-                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tqg-gZ-rru"/>
-                                    <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BJC-hp-hMz"/>
+                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AFi-lv-wfx"/>
+                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tqg-gZ-rru"/>
+                                    <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BJC-hp-hMz"/>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KGn-46-iH0">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WFJ-0H-6Ov"/>
-                                    <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BKX-6O-ZXD"/>
-                                    <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-YO-wpQ"/>
+                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WFJ-0H-6Ov"/>
+                                    <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BKX-6O-ZXD"/>
+                                    <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kfc-YO-wpQ"/>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -328,7 +328,7 @@
                 <frame key="frameInset" width="375" height="231"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NeF-Of-uZU">
+                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NeF-Of-uZU">
                         <constraints>
                             <constraint firstAttribute="width" secondItem="NeF-Of-uZU" secondAttribute="height" multiplier="50:31" id="0W5-zX-Her"/>
                         </constraints>
@@ -343,7 +343,7 @@
             <connections>
                 <outlet property="UIImageView_M" destination="NeF-Of-uZU" id="9cY-ng-sMu"/>
             </connections>
-            <point key="canvasLocation" x="-491" y="454"/>
+            <point key="canvasLocation" x="-491" y="323"/>
         </tableViewCell>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnePhoto_Z_NTableViewCell" rowHeight="213" id="qv2-Mq-swU" customClass="OnePhoto_Z_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
@@ -352,7 +352,7 @@
                 <frame key="frameInset" width="375" height="212"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="usg-kp-QaG">
+                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="usg-kp-QaG">
                         <constraints>
                             <constraint firstAttribute="width" secondItem="usg-kp-QaG" secondAttribute="height" multiplier="31:50" id="bnY-ZW-Tcv"/>
                         </constraints>
@@ -367,7 +367,7 @@
             <connections>
                 <outlet property="UIImageView_M" destination="usg-kp-QaG" id="oqy-UV-y8o"/>
             </connections>
-            <point key="canvasLocation" x="-490.5" y="736.5"/>
+            <point key="canvasLocation" x="-493" y="737"/>
         </tableViewCell>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="News_Information_TableViewCell" rowHeight="218" id="dn6-Ib-tUz" customClass="News_Information_TableViewCell" customModule="LALAS3" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
@@ -454,7 +454,7 @@
                 <outlet property="UILabelInformation" destination="Lzp-EM-AX8" id="b9l-7d-9K7"/>
                 <outlet property="UILabelUserName" destination="WXK-BQ-2zX" id="hPx-eQ-WM2"/>
             </connections>
-            <point key="canvasLocation" x="-491" y="145"/>
+            <point key="canvasLocation" x="-491" y="34"/>
         </tableViewCell>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentsPraiseDemote_NTableViewCell" rowHeight="50" id="7hN-0R-0ZR" customClass="CommentsPraiseDemote_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -498,7 +498,7 @@
                 <outlet property="UIButton2" destination="gWz-O0-aP7" id="RTY-i1-b2b"/>
                 <outlet property="UIButton3" destination="qV9-gt-EUC" id="3sN-ch-3wY"/>
             </connections>
-            <point key="canvasLocation" x="-492" y="-50"/>
+            <point key="canvasLocation" x="-492" y="-191"/>
         </tableViewCell>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnlyOneLabel_TableViewCell" rowHeight="69" id="2u2-Dc-PTT" customClass="OnlyOneLabel_TableViewCell" customModule="LALAS3" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
