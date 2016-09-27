@@ -48,7 +48,6 @@
 		7FAECEF51D8ABB3F004592EA /* Lable_Center_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEF41D8ABB3F004592EA /* Lable_Center_TableViewCell.swift */; };
 		7FBCFDED1D997E3D00831823 /* TViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDEC1D997E3D00831823 /* TViewController.swift */; };
 		7FBCFDEF1D9A45D800831823 /* Select_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDEE1D9A45D800831823 /* Select_TableViewCell.swift */; };
-		7FBCFDF11D9A975600831823 /* SaoYiSao_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDF01D9A975600831823 /* SaoYiSao_ViewController.swift */; };
 		7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */; };
 		7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */; };
 		7FD101541D89764D009BB6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101521D89764D009BB6A6 /* Main.storyboard */; };
@@ -151,7 +150,6 @@
 		7FAECEF41D8ABB3F004592EA /* Lable_Center_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lable_Center_TableViewCell.swift; path = Fourth_4/cells/Lable_Center_TableViewCell.swift; sourceTree = "<group>"; };
 		7FBCFDEC1D997E3D00831823 /* TViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TViewController.swift; sourceTree = "<group>"; };
 		7FBCFDEE1D9A45D800831823 /* Select_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Select_TableViewCell.swift; path = CELL/Select_TableViewCell.swift; sourceTree = "<group>"; };
-		7FBCFDF01D9A975600831823 /* SaoYiSao_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaoYiSao_ViewController.swift; path = 1/SaoYiSao_ViewController.swift; sourceTree = "<group>"; };
 		7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Web_ViewController.swift; path = Shit/Web_ViewController.swift; sourceTree = "<group>"; };
 		7FD101491D89764D009BB6A6 /* LALAS3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LALAS3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -291,11 +289,10 @@
 			isa = PBXGroup;
 			children = (
 				7FA6E8F81D89A586003F6186 /* First.storyboard */,
-				7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */,
-				7FA6E8FC1D89A5DF003F6186 /* SendNewMessiageViewController.swift */,
-				7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */,
 				7F3F21D91D92B02200ACF590 /* MessiageDetail_TableViewController.swift */,
-				7FBCFDF01D9A975600831823 /* SaoYiSao_ViewController.swift */,
+				7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */,
+				7FA6E8FC1D89A5DF003F6186 /* SendNewMessiageViewController.swift */,
+				7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */,
 			);
 			name = First_1;
 			sourceTree = "<group>";
@@ -437,12 +434,12 @@
 				7FA6E91A1D89A8EE003F6186 /* Third_3 */,
 				7FA6E9161D89A8BC003F6186 /* Fourth_4 */,
 				7FAECEEA1D8A6AC4004592EA /* shit */,
+				7F3F21E71D92D5F400ACF590 /* CELLS */,
 				7FD101551D89764D009BB6A6 /* Assets.xcassets */,
 				7FD101571D89764D009BB6A6 /* LaunchScreen.storyboard */,
 				7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */,
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
 				7FF0C8531D91173F00B85248 /* R.xcdatamodeld */,
-				7F3F21E71D92D5F400ACF590 /* CELLS */,
 			);
 			path = LALAS3;
 			sourceTree = "<group>";
@@ -739,7 +736,6 @@
 				7FFA9E501D960A0F002380C0 /* CommentsPraiseDemote_NTableViewCell.swift in Sources */,
 				7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */,
 				7FBCFDEF1D9A45D800831823 /* Select_TableViewCell.swift in Sources */,
-				7FBCFDF11D9A975600831823 /* SaoYiSao_ViewController.swift in Sources */,
 				7FA6E9201D89A994003F6186 /* Login_ViewController.swift in Sources */,
 				7FBCFDED1D997E3D00831823 /* TViewController.swift in Sources */,
 				7F5322BC1D8BCDEC00294C62 /* ADs_TableViewCell.swift in Sources */,

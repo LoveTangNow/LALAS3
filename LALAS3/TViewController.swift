@@ -23,7 +23,6 @@ class TViewController: UIViewController {
             animations: {
                 self.UIImageView_b.frame =  CGRect(x:0,y:0,width:self.width_d,height:self.width_d * A)
             })
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

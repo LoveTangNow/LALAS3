@@ -19,11 +19,8 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     @IBOutlet weak var UIButton_2: UIButton!
     @IBOutlet weak var UIButton_3: UIButton!
     
-    
-    
+
     var imagelist = [UIImage?]()
-    
-    var image1 = UIImage()
     var imgaeNumber = Int()
     
     override func viewDidLoad() {
