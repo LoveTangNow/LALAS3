@@ -401,7 +401,15 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu00001.jpg")
                             .responseData { response in
                                 if let data = response.result.value {
-                                    cell.UIImageView_Main.image = UIImage(data: data)
+                                    let asd = UIImage(data: data)
+                                    cell.UIImageView_Main.image = asd
+                                    
+                                    /**
+                                    let imageView =  UIImageView(image:asd)
+                                    if imageView.frame.width >= imageView.frame.height{
+                                        //cell.UIImageView_Main.contentMode = UIViewContentMode.as
+                                    }*/
+                                    
                                     let a:Dictionary<String, UIImage> = ["image0":UIImage(data: data)!]
                                     self.DataPhotos[indexPath.section] = [a]
                                     cell.GotPhoto = true
