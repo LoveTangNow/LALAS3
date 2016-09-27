@@ -9,7 +9,22 @@
 import UIKit
 
 class TViewController: UIViewController {
+    @IBOutlet weak var UIImageView_b: UIImageView!
+    let width_d  = UIScreen.main.bounds.width
 
+    @IBAction func button_c(_ sender: AnyObject) {
+        let A = self.UIImageView_b.frame.height / self.UIImageView_b.frame.width
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0.0,
+            usingSpringWithDamping: 0.55,
+            initialSpringVelocity: 5.0,
+            options: UIViewAnimationOptions.curveEaseIn,
+            animations: {
+                self.UIImageView_b.frame =  CGRect(x:0,y:0,width:self.width_d,height:self.width_d * A)
+            })
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
