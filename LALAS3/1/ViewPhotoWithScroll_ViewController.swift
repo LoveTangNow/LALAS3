@@ -40,7 +40,6 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
             let imageView =  UIImageView(image:imagelist[i])
             imageView.frame = CGRect(x: self.view.bounds.width*CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 60, width: self.view.bounds.width, height: imageView.frame.height / imageView.frame.width * self.view.bounds.width)
             UIScrollView_MM.addSubview(imageView)
-            
             UIScrollView_MM.delegate = self
         }
         

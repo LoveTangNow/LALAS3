@@ -52,7 +52,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         
         let image1 = #imageLiteral(resourceName: "Black")
         let image2 = #imageLiteral(resourceName: "White")
-    
+        
         if indexPath.section == 0 {
             if indexPath.row == 0 {//Words
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell

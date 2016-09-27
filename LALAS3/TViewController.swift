@@ -27,6 +27,10 @@ class TViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let bffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let bview = UIVisualEffectView(effect:bffect)
+        bview.frame = CGRect(x:0,y:50,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
+        UIImageView_b.addSubview(bview)
         // Do any additional setup after loading the view.
     }
 
