@@ -34,6 +34,9 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
         
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

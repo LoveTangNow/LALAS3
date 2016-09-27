@@ -18,6 +18,12 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
     
     
     @IBOutlet weak var UITableView_M: UITableView!
+    @IBAction func UIButton_L_Click(_ sender: AnyObject) {
+        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "Web_ViewController") as! Web_ViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func UIButton_R_Click(_ sender: AnyObject) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
