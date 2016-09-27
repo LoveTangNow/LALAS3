@@ -134,7 +134,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     @IBAction func Right_Click(_ sender: AnyObject) {
         //ViewPhotoViewController
-        let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "ViewPhotoWithScroll_ViewController")
+        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
