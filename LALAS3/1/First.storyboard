@@ -86,10 +86,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pN-bZ-t0e">
+                                <frame key="frameInset" minX="10" minY="308" width="355" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="w8P-NT-1vz" firstAttribute="top" secondItem="7h4-Sk-svo" secondAttribute="bottom" constant="5" id="5CX-sd-Jmw"/>
+                            <constraint firstItem="w8P-NT-1vz" firstAttribute="top" secondItem="7h4-Sk-svo" secondAttribute="bottom" constant="100" id="5CX-sd-Jmw"/>
                             <constraint firstItem="7h4-Sk-svo" firstAttribute="leading" secondItem="deV-d0-zwV" secondAttribute="leading" constant="10" id="5ib-1F-sdi"/>
                             <constraint firstItem="dxB-fr-wfo" firstAttribute="top" secondItem="w8P-NT-1vz" secondAttribute="bottom" id="8n4-us-DLZ"/>
                             <constraint firstAttribute="trailing" secondItem="w8P-NT-1vz" secondAttribute="trailing" id="9Ze-aW-Vz0"/>

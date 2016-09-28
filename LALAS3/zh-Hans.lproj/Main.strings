@@ -1,0 +1,123 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0d3-ZM-7fY"; */
+"0d3-ZM-7fY.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1Jd-0S-siI"; */
+"1Jd-0S-siI.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3Qm-Rp-TGp"; */
+"3Qm-Rp-TGp.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5mX-tY-X6m"; */
+"5mX-tY-X6m.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6Na-7s-sc9"; */
+"6Na-7s-sc9.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6yw-Jh-UiS"; */
+"6yw-Jh-UiS.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7z2-Xu-tb6"; */
+"7z2-Xu-tb6.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "返回"; ObjectID = "8J8-uJ-JBG"; */
+"8J8-uJ-JBG.normalTitle" = "返回";
+
+/* Class = "UILabel"; text = "更多"; ObjectID = "BCb-mu-dm8"; */
+"BCb-mu-dm8.text" = "更多";
+
+/* Class = "UITextField"; placeholder = "输入密码"; ObjectID = "BwW-ET-jbd"; */
+"BwW-ET-jbd.placeholder" = "输入密码";
+
+/* Class = "UINavigationItem"; title = "消息"; ObjectID = "CBX-VY-tap"; */
+"CBX-VY-tap.title" = "消息";
+
+/* Class = "UITextField"; placeholder = "手机号 或 邮箱"; ObjectID = "De0-eU-CCq"; */
+"De0-eU-CCq.placeholder" = "手机号 或 邮箱";
+
+/* Class = "UITextField"; placeholder = "密码"; ObjectID = "EWj-bt-Srd"; */
+"EWj-bt-Srd.placeholder" = "密码";
+
+/* Class = "UINavigationItem"; title = "我的"; ObjectID = "Hxw-8L-Tie"; */
+"Hxw-8L-Tie.title" = "我的";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PwF-aG-6cJ"; */
+"PwF-aG-6cJ.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "我的"; ObjectID = "Q8n-Iq-ftW"; */
+"Q8n-Iq-ftW.title" = "我的";
+
+/* Class = "UITabBarItem"; title = "消息"; ObjectID = "RuQ-3F-lRx"; */
+"RuQ-3F-lRx.title" = "消息";
+
+/* Class = "UITextField"; placeholder = "确认摩玛"; ObjectID = "TNh-Yk-4Af"; */
+"TNh-Yk-4Af.placeholder" = "确认摩玛";
+
+/* Class = "UILabel"; text = "啊发发还是地方哈迪斯阿卡哈尔法和发达阿什顿发卡机是打发收到货发爱看啥打法就是的发挥"; ObjectID = "YDO-SI-wOA"; */
+"YDO-SI-wOA.text" = "啊发发还是地方哈迪斯阿卡哈尔法和发达阿什顿发卡机是打发收到货发爱看啥打法就是的发挥";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Yhv-Xy-ZPm"; */
+"Yhv-Xy-ZPm.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "验证码"; ObjectID = "Yx5-qm-hfX"; */
+"Yx5-qm-hfX.placeholder" = "验证码";
+
+/* Class = "UIButton"; normalTitle = "设置"; ObjectID = "ZFC-kt-PsC"; */
+"ZFC-kt-PsC.normalTitle" = "设置";
+
+/* Class = "UITabBarItem"; title = "动态"; ObjectID = "cs5-An-VFf"; */
+"cs5-An-VFf.title" = "动态";
+
+/* Class = "UILabel"; text = "阿西吧~"; ObjectID = "e07-iQ-OzG"; */
+"e07-iQ-OzG.text" = "阿西吧~";
+
+/* Class = "UIBarButtonItem"; title = "设置"; ObjectID = "f1o-0X-APd"; */
+"f1o-0X-APd.title" = "设置";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fer-xG-vJK"; */
+"fer-xG-vJK.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "发现"; ObjectID = "gPr-8l-8QW"; */
+"gPr-8l-8QW.title" = "发现";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hpJ-o0-GrH"; */
+"hpJ-o0-GrH.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hw3-b1-Kpw"; */
+"hw3-b1-Kpw.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "jJy-vd-2Lq"; */
+"jJy-vd-2Lq.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mgF-36-ZwY"; */
+"mgF-36-ZwY.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "阿西吧~"; ObjectID = "miP-W2-uMW"; */
+"miP-W2-uMW.text" = "阿西吧~";
+
+/* Class = "UITextField"; placeholder = "账号"; ObjectID = "o5j-Gk-gMw"; */
+"o5j-Gk-gMw.placeholder" = "账号";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "p7c-8i-1S8"; */
+"p7c-8i-1S8.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "pXE-1p-FTE"; */
+"pXE-1p-FTE.title" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "phu-WS-B21"; */
+"phu-WS-B21.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "验证码"; ObjectID = "rso-RG-UbC"; */
+"rso-RG-UbC.placeholder" = "验证码";
+
+/* Class = "UILabel"; text = "Labell"; ObjectID = "tVA-Qz-50K"; */
+"tVA-Qz-50K.text" = "Labell";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "uI8-Sr-oE5"; */
+"uI8-Sr-oE5.title" = "Title";
+
+/* Class = "UINavigationItem"; title = "动态"; ObjectID = "vuh-Kc-QXh"; */
+"vuh-Kc-QXh.title" = "动态";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xZl-Mp-CfY"; */
+"xZl-Mp-CfY.text" = "Label";
