@@ -87,6 +87,42 @@
             </objects>
             <point key="canvasLocation" x="1079" y="-174"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="CuC-Pl-EQ4">
+            <objects>
+                <viewController storyboardIdentifier="Map_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KD4-bx-ICh" customClass="Map_ViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PSv-vq-8oy"/>
+                        <viewControllerLayoutGuide type="bottom" id="KUV-9n-cPR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jPC-re-JUF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="asH-Vu-NNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868" y="-174"/>
+        </scene>
+        <!--Health View Controller-->
+        <scene sceneID="rDp-jh-p7c">
+            <objects>
+                <viewController storyboardIdentifier="Health_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XXS-Aq-lsY" customClass="Health_ViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Reo-Iu-Hjs"/>
+                        <viewControllerLayoutGuide type="bottom" id="OIV-LM-jhm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Osk-X4-VeB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AfS-Qw-zQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2610" y="-174"/>
+        </scene>
     </scenes>
     <resources>
         <image name="alarm-clock-vector" width="30" height="30"/>

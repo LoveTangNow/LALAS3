@@ -49,6 +49,10 @@
 		7FBCFDED1D997E3D00831823 /* TViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDEC1D997E3D00831823 /* TViewController.swift */; };
 		7FBCFDEF1D9A45D800831823 /* Select_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDEE1D9A45D800831823 /* Select_TableViewCell.swift */; };
 		7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */; };
+		7FBCFE2F1D9C07C000831823 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBCFE2E1D9C07C000831823 /* MapKit.framework */; };
+		7FBCFE311D9C07C900831823 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBCFE301D9C07C900831823 /* HealthKit.framework */; };
+		7FBCFE341D9C08DB00831823 /* Map_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFE331D9C08DB00831823 /* Map_ViewController.swift */; };
+		7FBCFE361D9C091900831823 /* Health_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFE351D9C091900831823 /* Health_ViewController.swift */; };
 		7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */; };
 		7FD101541D89764D009BB6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101521D89764D009BB6A6 /* Main.storyboard */; };
 		7FD101561D89764D009BB6A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101551D89764D009BB6A6 /* Assets.xcassets */; };
@@ -151,6 +155,11 @@
 		7FBCFDEC1D997E3D00831823 /* TViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TViewController.swift; sourceTree = "<group>"; };
 		7FBCFDEE1D9A45D800831823 /* Select_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Select_TableViewCell.swift; path = CELL/Select_TableViewCell.swift; sourceTree = "<group>"; };
 		7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Web_ViewController.swift; path = Shit/Web_ViewController.swift; sourceTree = "<group>"; };
+		7FBCFE2E1D9C07C000831823 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7FBCFE301D9C07C900831823 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7FBCFE321D9C07C900831823 /* LALAS3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LALAS3.entitlements; sourceTree = "<group>"; };
+		7FBCFE331D9C08DB00831823 /* Map_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Map_ViewController.swift; path = Shit/Map_ViewController.swift; sourceTree = "<group>"; };
+		7FBCFE351D9C091900831823 /* Health_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Health_ViewController.swift; path = Shit/Health_ViewController.swift; sourceTree = "<group>"; };
 		7FD101491D89764D009BB6A6 /* LALAS3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LALAS3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FD101531D89764D009BB6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -203,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FF0C8511D91114400B85248 /* libsqlite3.tbd in Frameworks */,
+				7FBCFE311D9C07C900831823 /* HealthKit.framework in Frameworks */,
+				7FBCFE2F1D9C07C000831823 /* MapKit.framework in Frameworks */,
 				8E27E0A936834B29C0CA482A /* Pods_LALAS3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,10 +385,11 @@
 		7FAECEEA1D8A6AC4004592EA /* shit */ = {
 			isa = PBXGroup;
 			children = (
-				7F95C5091D91953F00D7C447 /* MyPlayground.playground */,
 				7F11B5641D997C080084BAE5 /* T.storyboard */,
 				7FBCFDEC1D997E3D00831823 /* TViewController.swift */,
 				7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */,
+				7FBCFE331D9C08DB00831823 /* Map_ViewController.swift */,
+				7FBCFE351D9C091900831823 /* Health_ViewController.swift */,
 			);
 			name = shit;
 			sourceTree = "<group>";
@@ -424,6 +436,7 @@
 		7FD1014B1D89764D009BB6A6 /* LALAS3 */ = {
 			isa = PBXGroup;
 			children = (
+				7FBCFE321D9C07C900831823 /* LALAS3.entitlements */,
 				7F9A5F5B1D89BFE800C2E133 /* Remarks */,
 				7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */,
 				7FA6E9231D89ABCF003F6186 /* Functions.swift */,
@@ -440,6 +453,7 @@
 				7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */,
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
 				7FF0C8531D91173F00B85248 /* R.xcdatamodeld */,
+				7F95C5091D91953F00D7C447 /* MyPlayground.playground */,
 			);
 			path = LALAS3;
 			sourceTree = "<group>";
@@ -465,6 +479,8 @@
 		F807D885972D56BFFF9611D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FBCFE301D9C07C900831823 /* HealthKit.framework */,
+				7FBCFE2E1D9C07C000831823 /* MapKit.framework */,
 				7FF0C8501D91114400B85248 /* libsqlite3.tbd */,
 				BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */,
 			);
@@ -549,7 +565,7 @@
 								enabled = 0;
 							};
 							com.apple.HealthKit = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.HomeKit = {
 								enabled = 0;
@@ -564,7 +580,7 @@
 								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Push = {
 								enabled = 0;
@@ -717,6 +733,7 @@
 				7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */,
 				7FFA9E541D9610B7002380C0 /* Pinglun_NTableViewCell.swift in Sources */,
 				7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */,
+				7FBCFE361D9C091900831823 /* Health_ViewController.swift in Sources */,
 				7FA6E8FD1D89A5DF003F6186 /* SendNewMessiageViewController.swift in Sources */,
 				7FE5BF391D8EBF0600586166 /* AccountSecurityCell_LableSwitch_TableViewCell.swift in Sources */,
 				7FFA9E461D960587002380C0 /* OnePhoto_Z_NTableViewCell.swift in Sources */,
@@ -747,6 +764,7 @@
 				7FE5BF271D8E751000586166 /* TongYong_TableViewController.swift in Sources */,
 				7FE5BF431D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift in Sources */,
 				7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */,
+				7FBCFE341D9C08DB00831823 /* Map_ViewController.swift in Sources */,
 				7FE5BF351D8EBEDA00586166 /* AccountSecurityCell_TwoLabel_TableViewCell.swift in Sources */,
 				7FA6E9221D89A9BC003F6186 /* Register_ViewController.swift in Sources */,
 				7FAECEF31D8ABB25004592EA /* Photo_Lable_TableViewCell.swift in Sources */,
@@ -920,6 +938,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LALAS3/LALAS3.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5898723MBJ;
 				INFOPLIST_FILE = LALAS3/Info.plist;
@@ -938,6 +957,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LALAS3/LALAS3.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5898723MBJ;
 				INFOPLIST_FILE = LALAS3/Info.plist;
