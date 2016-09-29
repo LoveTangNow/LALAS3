@@ -14,10 +14,30 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
+		<key>Intents.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
+		<key>IntentsUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
 		<key>LALAS3.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>NotificationContent.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>NotificationService.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
 		</dict>
 		<key>StickerPackExtension.xcscheme</key>
 		<dict>
@@ -33,6 +53,26 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>7F2BCA761D89D26900BFCA82</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F9F8A851D9D16D700C49C12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F9F8A9B1D9D16F200C49C12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F9F8AAA1D9D17D000C49C12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F9F8AB31D9D17D000C49C12</key>
 		<dict>
 			<key>primary</key>
 			<true/>

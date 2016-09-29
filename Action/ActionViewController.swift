@@ -6,12 +6,18 @@
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
+/**
+ 这个扩展在 photo 里会获取当前照片
+ */
+
 import UIKit
 import MobileCoreServices
 
 class ActionViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var UITextView_m: UITextView!
+    @IBOutlet weak var UIButton_m: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,8 @@ class ActionViewController: UIViewController {
                 break
             }
         }
+    }
+    @IBAction func UIButton_click(_ sender: AnyObject) {
     }
 
     override func didReceiveMemoryWarning() {
