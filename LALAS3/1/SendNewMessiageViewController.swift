@@ -8,33 +8,39 @@
 
 import UIKit
 
-class SendNewMessiageViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
+class SendNewMessiageViewController: UIViewController{
     
-    //MARK: - 绑定 变量
-
+    //MARK: - 绑定
     @IBOutlet weak var UITextView_Main: UITextView!
-    @IBOutlet weak var UITableView_Main: UITableView!
     
-    var TableViewCellHeight:CGFloat = 0
+    @IBOutlet weak var UIButton_1: UIButton!
+    @IBOutlet weak var UIButton_2: UIButton!
+    @IBOutlet weak var UIButton_3: UIButton!
+    @IBOutlet weak var UIButton_4: UIButton!
     
-    //肌肤默认的图片
-    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
-    var Imageload_Wight:UIImage = UIImage(named: "White.png")!
+    @IBOutlet weak var UIButton_5: UIButton!
+    //选择 图片 或者 拍摄
+    @IBAction func UIButton_1_c(_ sender: AnyObject) {
+        UIButton_2.isHidden = false
+    }
+
+    @IBAction func UIButton_2_c(_ sender: AnyObject) {
+        UIButton_3.isHidden = false
+    }
     
-    //MARK: - FUNCS
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func UIButton_3_c(_ sender: AnyObject) {
+        if DeivecWidth == 414 {//6p 才管用
+            UIButton_4.isHidden = false
+        }
+    }
+    
+    @IBAction func UIButton_4_c(_ sender: AnyObject) {
         
-        UITableView_Main.delegate = self
-        UITableView_Main.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func UIButton_location(_ sender: AnyObject) {
     }
+    
     
     @IBAction func Xiala(_ sender: AnyObject) {
         UITextView_Main.resignFirstResponder()
@@ -42,66 +48,94 @@ class SendNewMessiageViewController: UIViewController , UITableViewDelegate , UI
     
     @IBAction func Send_Click(_ sender: AnyObject) {
     }
+
     
-    //MARK: - TABLEVIEW
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+    //MARK: - 变量
+    var lmagelist = UIImage()
+    
+    let DeivecWidth = UIScreen.main.bounds.width
+    let DeivecHeight = UIScreen.main.bounds.height
+    
+    var TableViewCellHeight:CGFloat = 0
+    
+    //肌肤默认的图片
+    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
+    var Imageload_Wight:UIImage = UIImage(named: "White.png")!
+    
+    //MARK: - ViewFuncs
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        UIButton_1.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+        UIButton_2.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+        UIButton_3.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+        UIButton_4.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+        
+        UIButton_1.setTitle("", for: .normal)
+        UIButton_2.setTitle("", for: .normal)
+        UIButton_3.setTitle("", for: .normal)
+        UIButton_4.setTitle("", for: .normal)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 1:
-            switch indexPath.row {
-            case 0://地点
-                let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath) as! OnlyOneLabel_TableViewCell
-                
-                cell.UILabel_M.text = "选择地点"
-                TableViewCellHeight = 45
-                
-                return cell
-            default://分享
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
-                
-                //cell.UIImageView_Main.image = Imageload_Black
-                TableViewCellHeight = 45
-                
-                return cell
-            }
-            
-        default://图片
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
-            
-            return cell
+    override func viewWillAppear(_ animated: Bool) {
+        //左10 右10 上方的 textview 高度是 1/3
+        //***********UI调整位置  在这里***********
+        UITextView_Main.frame = CGRect(x:10,y:5,width:DeivecWidth - 20,height:DeivecHeight / 3)
 
+        switch DeivecWidth {
+        case 320:
+            /**小屏幕：3列
+             300
+             间距是 3 的话，那么剩余297 / 3 = 99
+             */
+            UIButton_4.removeFromSuperview()
+            let w = (DeivecWidth - 20 - 6) / 3
+            
+            UIButton_1.frame = CGRect(x:10,                y:(DeivecHeight / 3) + 10,width:w,height:w)
+            UIButton_2.frame = CGRect(x:10 + w + 3,        y:(DeivecHeight / 3) + 10,width:w,height:w)
+            UIButton_3.frame = CGRect(x:10 + w + 3 + w + 3,y:(DeivecHeight / 3) + 10,width:w,height:w)
+            
+            UIButton_2.isHidden = true
+            UIButton_3.isHidden = true
+            
+            UIButton_5.frame = CGRect(x:10,y: (DeivecHeight / 3) + 15 + w,width:DeivecWidth - 10,height:45)
+            UIButton_5.setTitle("   选择地点", for: .normal)
+            UIButton_5.contentHorizontalAlignment = .left
+            
+        case 414:
+            /**大屏幕：4列
+             405 + 9 414
+             间距是 3 的话，那么剩余405 / 4 = 101
+             101* 4 404
+             */
+            let w = (DeivecWidth - 20 - 9) / 4
+            UIButton_1.frame = CGRect(x:10,              y:(DeivecHeight / 3) + 10,width:w,height:w)
+            UIButton_2.frame = CGRect(x:10 + w + 3,      y:(DeivecHeight / 3) + 10,width:w,height:w)
+            UIButton_3.frame = CGRect(x:10 + (w + 3) * 2,y:(DeivecHeight / 3) + 10,width:w,height:w)
+            UIButton_4.frame = CGRect(x:10 + (w + 3) * 3,y:(DeivecHeight / 3) + 10,width:w,height:w)
+            
+            UIButton_2.isHidden = true
+            UIButton_3.isHidden = true
+            UIButton_4.isHidden = true
+            
+            UIButton_5.frame = CGRect(x:10,y: (DeivecHeight / 3) + 15 + w,width:DeivecWidth - 10,height:45)
+            UIButton_5.setTitle("   选择地点", for: .normal)
+            UIButton_5.contentHorizontalAlignment = .left
+            
+        default:
+            break
         }
         
+        
+        
     }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 15
-        } else {
-            return 0
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return TableViewCellHeight
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        case 1:
-            return 2
-        default:
-            return 0
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 }
