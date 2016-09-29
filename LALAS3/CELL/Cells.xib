@@ -90,6 +90,9 @@
                     <constraint firstAttribute="bottom" secondItem="lWK-Px-QFh" secondAttribute="bottom" id="nyg-gY-ns3"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="UIImageView_M" destination="lWK-Px-QFh" id="ONo-Ld-IhC"/>
+            </connections>
             <point key="canvasLocation" x="512" y="102"/>
         </tableViewCell>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatYou_TableViewCell" rowHeight="121" id="afE-o3-ni6" customClass="ChatYou_TableViewCell" customModule="LALAS3" customModuleProvider="target">
