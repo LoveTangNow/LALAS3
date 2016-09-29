@@ -5,6 +5,7 @@
 //  Created by Thomas Liu on 2016/9/27.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
+//包含一个 UISegmentedControl 和一个 label 的 UITableViewCell 用户 性别的选择
 
 import UIKit
 

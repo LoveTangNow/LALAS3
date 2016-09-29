@@ -6,10 +6,14 @@
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
+
+//单一图片 填充满的TableViewCell 用户广告的展示？
+
 import UIKit
 
 class Advertisement_TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var UIImageView_M: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

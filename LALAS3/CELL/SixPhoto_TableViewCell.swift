@@ -10,6 +10,8 @@ import UIKit
 
 class SixPhoto_TableViewCell: UITableViewCell {
     
+    var GotPhoto = Bool()
+    
     @IBOutlet weak var UIImageView1: UIImageView!
     @IBOutlet weak var UIImageView2: UIImageView!
     @IBOutlet weak var UIImageView3: UIImageView!

@@ -10,6 +10,9 @@ import UIKit
 
 class OnePhoto_H_NTableViewCell: UITableViewCell {
     
+    var GotPhoto = Bool()
+    
+    
     @IBOutlet weak var UIImageView_M: UIImageView!
 
     override func awakeFromNib() {

@@ -5,6 +5,7 @@
 //  Created by Thomas Liu on 2016/9/22.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
+//chat 界面 的TableViewCell 我方 在右侧
 
 import UIKit
 

@@ -6,6 +6,8 @@
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
+//评论一般性的TableViewCell 包含：icon 点赞按钮 name time detail
+
 import UIKit
 
 class Pinglun_NTableViewCell: UITableViewCell {

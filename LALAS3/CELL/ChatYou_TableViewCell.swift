@@ -4,7 +4,10 @@
 //
 //  Created by Thomas Liu on 2016/9/22.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
-//
+
+
+
+//chat 界面的语句 对方TableViewCell 在左侧
 
 import UIKit
 

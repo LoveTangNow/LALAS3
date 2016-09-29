@@ -10,6 +10,8 @@ import UIKit
 
 class ChatPeople_TableViewCell: UITableViewCell {
     
+    var GotPhoto = Bool()
+    
     @IBOutlet weak var UIImageView_Main: UIImageView!
     @IBOutlet weak var UIImageView_Zhiding: UIImageView!
     @IBOutlet weak var UIImageView_Readornot: UIImageView!

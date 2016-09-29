@@ -9,6 +9,8 @@
 import UIKit
 
 class OnePhoto_Z_NTableViewCell: UITableViewCell {
+    
+    var GotPhoto = Bool()
 
     @IBOutlet weak var UIImageView_M: UIImageView!
     

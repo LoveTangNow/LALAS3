@@ -9,6 +9,8 @@
 import UIKit
 
 class ThreePhoto_NTableViewCell: UITableViewCell {
+    
+    var GotPhoto = Bool()
 
     @IBOutlet weak var UIImageView1: UIImageView!
     @IBOutlet weak var UIImageView2: UIImageView!
