@@ -28,6 +28,7 @@
 		7F9F8A941D9D16D700C49C12 /* NotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F9F8A861D9D16D700C49C12 /* NotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F9F8A9F1D9D16F200C49C12 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8A9E1D9D16F200C49C12 /* NotificationService.swift */; };
 		7F9F8AA31D9D16F200C49C12 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F9F8A9C1D9D16F200C49C12 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7F9F8ACB1D9D2B7900C49C12 /* Lable&Photos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8ACA1D9D2B7900C49C12 /* Lable&Photos.xib */; };
 		7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */; };
 		7FA6E8F21D89A50F003F6186 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */; };
 		7FA6E8F41D89A526003F6186 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */; };
@@ -197,6 +198,7 @@
 		7F9F8A9E1D9D16F200C49C12 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7F9F8AA01D9D16F200C49C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F9F8AB51D9D17D000C49C12 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		7F9F8ACA1D9D2B7900C49C12 /* Lable&Photos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Lable&Photos.xib"; sourceTree = "<group>"; };
 		7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Main/FirstViewController.swift; sourceTree = "<group>"; };
 		7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Main/SecondViewController.swift; sourceTree = "<group>"; };
 		7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = Main/ThirdViewController.swift; sourceTree = "<group>"; };
@@ -363,8 +365,9 @@
 				7FFA9E471D96059E002380C0 /* ThreePhoto_NTableViewCell.swift */,
 				7FFA9E491D9605B4002380C0 /* SixPhoto_TableViewCell.swift */,
 				7FFA9E4B1D9605C1002380C0 /* NinePhoto_TableViewCell.swift */,
-				7F3F21ED1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift */,
 				7F3F21F71D93B5DC00ACF590 /* Advertisement_TableViewCell.swift */,
+				7F9F8ACA1D9D2B7900C49C12 /* Lable&Photos.xib */,
+				7F3F21ED1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift */,
 				7F3F22031D93C03D00ACF590 /* ChatYou_TableViewCell.swift */,
 				7F3F22011D93C02F00ACF590 /* ChatMe_TableViewCell.swift */,
 				7FFA9E531D9610B7002380C0 /* Pinglun_NTableViewCell.swift */,
@@ -952,6 +955,7 @@
 				7FA6E9181D89A8E2003F6186 /* Fourth.storyboard in Resources */,
 				7F11B5651D997C080084BAE5 /* T.storyboard in Resources */,
 				7FA6E91E1D89A913003F6186 /* Third.storyboard in Resources */,
+				7F9F8ACB1D9D2B7900C49C12 /* Lable&Photos.xib in Resources */,
 				7F9A5F5C1D89BFE800C2E133 /* Remarks in Resources */,
 				7FD101561D89764D009BB6A6 /* Assets.xcassets in Resources */,
 				7FFA9E561D97F148002380C0 /* Piker.xib in Resources */,
