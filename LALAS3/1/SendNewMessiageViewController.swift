@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SendNewMessiageViewController: UIViewController{
     
@@ -22,20 +23,23 @@ class SendNewMessiageViewController: UIViewController{
     //选择 图片 或者 拍摄
     @IBAction func UIButton_1_c(_ sender: AnyObject) {
         UIButton_2.isHidden = false
+        Voice_Beng?.play()
     }
 
     @IBAction func UIButton_2_c(_ sender: AnyObject) {
         UIButton_3.isHidden = false
+        Voice_Beng?.play()
     }
     
     @IBAction func UIButton_3_c(_ sender: AnyObject) {
         if DeivecWidth == 414 {//6p 才管用
             UIButton_4.isHidden = false
         }
+        Voice_Beng?.play()
     }
     
     @IBAction func UIButton_4_c(_ sender: AnyObject) {
-        
+        Voice_Beng?.play()
     }
     
     @IBAction func UIButton_location(_ sender: AnyObject) {
@@ -62,7 +66,22 @@ class SendNewMessiageViewController: UIViewController{
     var Imageload_Black:UIImage = UIImage(named: "Black.png")!
     var Imageload_Wight:UIImage = UIImage(named: "White.png")!
     
+    var Voice_Beng : AVAudioPlayer?
+    
     //MARK: - ViewFuncs
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer?  {
+        let path = Bundle.main.path(forResource: file as String, ofType: type as String)
+        let url = NSURL.fileURL(withPath: path!)
+        var audioPlayer:AVAudioPlayer?
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url)
+        } catch {
+            print("Player not available")
+        }
+        
+        return audioPlayer
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,6 +94,10 @@ class SendNewMessiageViewController: UIViewController{
         UIButton_2.setTitle("", for: .normal)
         UIButton_3.setTitle("", for: .normal)
         UIButton_4.setTitle("", for: .normal)
+        
+        if let Voice_Beng = self.setupAudioPlayerWithFile(file: "Beng", type:"aiff") {
+            self.Voice_Beng = Voice_Beng
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

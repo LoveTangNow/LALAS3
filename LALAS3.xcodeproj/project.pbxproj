@@ -29,6 +29,11 @@
 		7F9F8A9F1D9D16F200C49C12 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8A9E1D9D16F200C49C12 /* NotificationService.swift */; };
 		7F9F8AA31D9D16F200C49C12 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F9F8A9C1D9D16F200C49C12 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F9F8ACB1D9D2B7900C49C12 /* Lable&Photos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8ACA1D9D2B7900C49C12 /* Lable&Photos.xib */; };
+		7F9F8ACD1D9D484900C49C12 /* LALA.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8ACC1D9D484900C49C12 /* LALA.sqlite */; };
+		7F9F8AE21D9D4E1300C49C12 /* LALAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8AE11D9D4E1300C49C12 /* LALAD.swift */; };
+		7F9F8AED1D9D51B800C49C12 /* Beng.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEA1D9D51B800C49C12 /* Beng.aiff */; };
+		7F9F8AEE1D9D51B800C49C12 /* ButtonTap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEB1D9D51B800C49C12 /* ButtonTap.wav */; };
+		7F9F8AEF1D9D51B800C49C12 /* SecondBeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEC1D9D51B800C49C12 /* SecondBeep.wav */; };
 		7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */; };
 		7FA6E8F21D89A50F003F6186 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */; };
 		7FA6E8F41D89A526003F6186 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */; };
@@ -199,6 +204,11 @@
 		7F9F8AA01D9D16F200C49C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F9F8AB51D9D17D000C49C12 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		7F9F8ACA1D9D2B7900C49C12 /* Lable&Photos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Lable&Photos.xib"; sourceTree = "<group>"; };
+		7F9F8ACC1D9D484900C49C12 /* LALA.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = LALA.sqlite; path = ../../../../../LALA.sqlite; sourceTree = "<group>"; };
+		7F9F8AE11D9D4E1300C49C12 /* LALAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LALAD.swift; path = Shit/LALAD.swift; sourceTree = "<group>"; };
+		7F9F8AEA1D9D51B800C49C12 /* Beng.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = Beng.aiff; path = Voice/Beng.aiff; sourceTree = "<group>"; };
+		7F9F8AEB1D9D51B800C49C12 /* ButtonTap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ButtonTap.wav; path = Voice/ButtonTap.wav; sourceTree = "<group>"; };
+		7F9F8AEC1D9D51B800C49C12 /* SecondBeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SecondBeep.wav; path = Voice/SecondBeep.wav; sourceTree = "<group>"; };
 		7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Main/FirstViewController.swift; sourceTree = "<group>"; };
 		7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Main/SecondViewController.swift; sourceTree = "<group>"; };
 		7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = Main/ThirdViewController.swift; sourceTree = "<group>"; };
@@ -408,6 +418,16 @@
 			path = NotificationService;
 			sourceTree = "<group>";
 		};
+		7F9F8AE31D9D4EF200C49C12 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				7F9F8AEA1D9D51B800C49C12 /* Beng.aiff */,
+				7F9F8AEB1D9D51B800C49C12 /* ButtonTap.wav */,
+				7F9F8AEC1D9D51B800C49C12 /* SecondBeep.wav */,
+			);
+			name = Voice;
+			sourceTree = "<group>";
+		};
 		7FA6E8EE1D899AA4003F6186 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,9 +438,7 @@
 				7FA6E8F51D89A535003F6186 /* FourthViewController.swift */,
 				7FA6E91F1D89A994003F6186 /* Login_ViewController.swift */,
 				7FA6E9211D89A9BC003F6186 /* Register_ViewController.swift */,
-				7FA6E9131D89A831003F6186 /* Second_Cells */,
 				7FA6E9141D89A835003F6186 /* Third-cells */,
-				7FA6E9151D89A838003F6186 /* Fourth_Cells */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -437,13 +455,6 @@
 			name = First_1;
 			sourceTree = "<group>";
 		};
-		7FA6E9131D89A831003F6186 /* Second_Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Second_Cells;
-			sourceTree = "<group>";
-		};
 		7FA6E9141D89A835003F6186 /* Third-cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,13 +462,6 @@
 				7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */,
 			);
 			name = "Third-cells";
-			sourceTree = "<group>";
-		};
-		7FA6E9151D89A838003F6186 /* Fourth_Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Fourth_Cells;
 			sourceTree = "<group>";
 		};
 		7FA6E9161D89A8BC003F6186 /* Fourth_4 */ = {
@@ -498,11 +502,13 @@
 		7FAECEEA1D8A6AC4004592EA /* shit */ = {
 			isa = PBXGroup;
 			children = (
+				7F9F8ACC1D9D484900C49C12 /* LALA.sqlite */,
 				7F11B5641D997C080084BAE5 /* T.storyboard */,
 				7FBCFDEC1D997E3D00831823 /* TViewController.swift */,
 				7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */,
 				7FBCFE331D9C08DB00831823 /* Map_ViewController.swift */,
 				7FBCFE351D9C091900831823 /* Health_ViewController.swift */,
+				7F9F8AE11D9D4E1300C49C12 /* LALAD.swift */,
 			);
 			name = shit;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				7FA6E9161D89A8BC003F6186 /* Fourth_4 */,
 				7FAECEEA1D8A6AC4004592EA /* shit */,
 				7F3F21E71D92D5F400ACF590 /* CELLS */,
+				7F9F8AE31D9D4EF200C49C12 /* Voice */,
 				7FD101551D89764D009BB6A6 /* Assets.xcassets */,
 				7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */,
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
@@ -953,9 +960,13 @@
 				7FA6E91C1D89A906003F6186 /* Second.storyboard in Resources */,
 				7FD101591D89764D009BB6A6 /* LaunchScreen.storyboard in Resources */,
 				7FA6E9181D89A8E2003F6186 /* Fourth.storyboard in Resources */,
+				7F9F8ACD1D9D484900C49C12 /* LALA.sqlite in Resources */,
 				7F11B5651D997C080084BAE5 /* T.storyboard in Resources */,
+				7F9F8AEE1D9D51B800C49C12 /* ButtonTap.wav in Resources */,
+				7F9F8AEF1D9D51B800C49C12 /* SecondBeep.wav in Resources */,
 				7FA6E91E1D89A913003F6186 /* Third.storyboard in Resources */,
 				7F9F8ACB1D9D2B7900C49C12 /* Lable&Photos.xib in Resources */,
+				7F9F8AED1D9D51B800C49C12 /* Beng.aiff in Resources */,
 				7F9A5F5C1D89BFE800C2E133 /* Remarks in Resources */,
 				7FD101561D89764D009BB6A6 /* Assets.xcassets in Resources */,
 				7FFA9E561D97F148002380C0 /* Piker.xib in Resources */,
@@ -1107,6 +1118,7 @@
 				7FFA9E521D960CE7002380C0 /* OnlyOneLabel_TableViewCell.swift in Sources */,
 				7FE5BF271D8E751000586166 /* TongYong_TableViewController.swift in Sources */,
 				7FE5BF431D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift in Sources */,
+				7F9F8AE21D9D4E1300C49C12 /* LALAD.swift in Sources */,
 				7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */,
 				7FBCFE341D9C08DB00831823 /* Map_ViewController.swift in Sources */,
 				7FE5BF351D8EBEDA00586166 /* AccountSecurityCell_TwoLabel_TableViewCell.swift in Sources */,
