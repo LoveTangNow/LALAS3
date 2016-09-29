@@ -1,24 +1,19 @@
 //
-//  AccountManagement_M_TableViewCell.swift
+//  Label_And_RightBigImage_TableViewCell.swift
 //  LALAS3
 //
-//  Created by Thomas Liu on 16/9/18.
+//  Created by Thomas Liu on 2016/9/29.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit
 
-class AccountManagement_M_TableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var UILabel_M: UILabel!
-    
-    @IBOutlet weak var UIImageView_M: UIImageView!
+class Label_And_RightBigImage_TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var UILabel_: UILabel!
+    @IBOutlet weak var UIImageView_: UIImageView!
+    
     override func awakeFromNib() {
-        
-        UIImageView_M.layer.cornerRadius = 10
-        UIImageView_M.clipsToBounds = true
-        
         super.awakeFromNib()
         // Initialization code
     }

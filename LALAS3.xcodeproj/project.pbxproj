@@ -34,6 +34,14 @@
 		7F9F8AED1D9D51B800C49C12 /* Beng.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEA1D9D51B800C49C12 /* Beng.aiff */; };
 		7F9F8AEE1D9D51B800C49C12 /* ButtonTap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEB1D9D51B800C49C12 /* ButtonTap.wav */; };
 		7F9F8AEF1D9D51B800C49C12 /* SecondBeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEC1D9D51B800C49C12 /* SecondBeep.wav */; };
+		7F9F8AF11D9D610C00C49C12 /* Tongyong_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8AF01D9D610C00C49C12 /* Tongyong_ViewController.swift */; };
+		7F9F8AF31D9D611A00C49C12 /* Tongzhi_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8AF21D9D611A00C49C12 /* Tongzhi_ViewController.swift */; };
+		7F9F8AFB1D9D646900C49C12 /* Label_Mid_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8AFA1D9D646900C49C12 /* Label_Mid_TableViewCell.swift */; };
+		7F9F8AFD1D9D64B200C49C12 /* Lable_And_Switch_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8AFC1D9D64B200C49C12 /* Lable_And_Switch_TableViewCell.swift */; };
+		7F9F8AFF1D9D64C700C49C12 /* TwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8AFE1D9D64C700C49C12 /* TwoLabel_TableViewCell.swift */; };
+		7F9F8B011D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8B001D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift */; };
+		7F9F8B031D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8B021D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift */; };
+		7F9F8B051D9D653400C49C12 /* Label_And_RightBigImage_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8B041D9D653400C49C12 /* Label_And_RightBigImage_TableViewCell.swift */; };
 		7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */; };
 		7FA6E8F21D89A50F003F6186 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */; };
 		7FA6E8F41D89A526003F6186 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */; };
@@ -49,8 +57,6 @@
 		7FA6E9241D89ABCF003F6186 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E9231D89ABCF003F6186 /* Functions.swift */; };
 		7FAECEEE1D8A7399004592EA /* Server.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FAECEED1D8A7399004592EA /* Server.plist */; };
 		7FAECEF01D8ABAD9004592EA /* Setting_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEEF1D8ABAD9004592EA /* Setting_TableViewController.swift */; };
-		7FAECEF31D8ABB25004592EA /* Photo_Lable_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEF21D8ABB25004592EA /* Photo_Lable_TableViewCell.swift */; };
-		7FAECEF51D8ABB3F004592EA /* Lable_Center_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAECEF41D8ABB3F004592EA /* Lable_Center_TableViewCell.swift */; };
 		7FBCFDED1D997E3D00831823 /* TViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDEC1D997E3D00831823 /* TViewController.swift */; };
 		7FBCFDEF1D9A45D800831823 /* Select_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDEE1D9A45D800831823 /* Select_TableViewCell.swift */; };
 		7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */; };
@@ -74,8 +80,6 @@
 		7FD101641D89764D009BB6A6 /* LALAS3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD101631D89764D009BB6A6 /* LALAS3Tests.swift */; };
 		7FD1016F1D89764D009BB6A6 /* LALAS3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1016E1D89764D009BB6A6 /* LALAS3UITests.swift */; };
 		7FE5BF231D8E74B400586166 /* AccountSecurity_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF221D8E74B400586166 /* AccountSecurity_TableViewController.swift */; };
-		7FE5BF251D8E74FD00586166 /* Tongzhi_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF241D8E74FD00586166 /* Tongzhi_TableViewController.swift */; };
-		7FE5BF271D8E751000586166 /* TongYong_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF261D8E751000586166 /* TongYong_TableViewController.swift */; };
 		7FE5BF291D8E753D00586166 /* HuanCun_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF281D8E753D00586166 /* HuanCun_ViewController.swift */; };
 		7FE5BF2B1D8E755600586166 /* FanKui_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF2A1D8E755600586166 /* FanKui_ViewController.swift */; };
 		7FE5BF2D1D8E756A00586166 /* AboutUs_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF2C1D8E756A00586166 /* AboutUs_ViewController.swift */; };
@@ -83,10 +87,6 @@
 		7FE5BF351D8EBEDA00586166 /* AccountSecurityCell_TwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF341D8EBEDA00586166 /* AccountSecurityCell_TwoLabel_TableViewCell.swift */; };
 		7FE5BF371D8EBEF200586166 /* AccountSecurityCell_OneLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF361D8EBEF200586166 /* AccountSecurityCell_OneLabel_TableViewCell.swift */; };
 		7FE5BF391D8EBF0600586166 /* AccountSecurityCell_LableSwitch_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF381D8EBF0600586166 /* AccountSecurityCell_LableSwitch_TableViewCell.swift */; };
-		7FE5BF3B1D8ED38700586166 /* AccountManagement_M_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF3A1D8ED38700586166 /* AccountManagement_M_TableViewCell.swift */; };
-		7FE5BF3D1D8ED3AC00586166 /* AccountManagement_TwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF3C1D8ED3AC00586166 /* AccountManagement_TwoLabel_TableViewCell.swift */; };
-		7FE5BF3F1D8ED3C500586166 /* AccountManagement_TwoLabel_Big_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF3E1D8ED3C500586166 /* AccountManagement_TwoLabel_Big_TableViewCell.swift */; };
-		7FE5BF411D8ED3DF00586166 /* AccountManagement_OneLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF401D8ED3DF00586166 /* AccountManagement_OneLabel_TableViewCell.swift */; };
 		7FE5BF431D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF421D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift */; };
 		7FF0C8511D91114400B85248 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF0C8501D91114400B85248 /* libsqlite3.tbd */; };
 		7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0C8531D91173F00B85248 /* R.xcdatamodeld */; };
@@ -209,6 +209,14 @@
 		7F9F8AEA1D9D51B800C49C12 /* Beng.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = Beng.aiff; path = Voice/Beng.aiff; sourceTree = "<group>"; };
 		7F9F8AEB1D9D51B800C49C12 /* ButtonTap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ButtonTap.wav; path = Voice/ButtonTap.wav; sourceTree = "<group>"; };
 		7F9F8AEC1D9D51B800C49C12 /* SecondBeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SecondBeep.wav; path = Voice/SecondBeep.wav; sourceTree = "<group>"; };
+		7F9F8AF01D9D610C00C49C12 /* Tongyong_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tongyong_ViewController.swift; path = Fourth_4/Tongyong_ViewController.swift; sourceTree = "<group>"; };
+		7F9F8AF21D9D611A00C49C12 /* Tongzhi_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tongzhi_ViewController.swift; path = Fourth_4/Tongzhi_ViewController.swift; sourceTree = "<group>"; };
+		7F9F8AFA1D9D646900C49C12 /* Label_Mid_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Label_Mid_TableViewCell.swift; path = CELL/Label_Mid_TableViewCell.swift; sourceTree = "<group>"; };
+		7F9F8AFC1D9D64B200C49C12 /* Lable_And_Switch_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lable_And_Switch_TableViewCell.swift; path = CELL/Lable_And_Switch_TableViewCell.swift; sourceTree = "<group>"; };
+		7F9F8AFE1D9D64C700C49C12 /* TwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwoLabel_TableViewCell.swift; path = CELL/TwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
+		7F9F8B001D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftSamllImageAndLabel_TableViewCell.swift; path = CELL/LeftSamllImageAndLabel_TableViewCell.swift; sourceTree = "<group>"; };
+		7F9F8B021D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Label_And_TextView_TableViewCell.swift; path = CELL/Label_And_TextView_TableViewCell.swift; sourceTree = "<group>"; };
+		7F9F8B041D9D653400C49C12 /* Label_And_RightBigImage_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Label_And_RightBigImage_TableViewCell.swift; path = CELL/Label_And_RightBigImage_TableViewCell.swift; sourceTree = "<group>"; };
 		7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Main/FirstViewController.swift; sourceTree = "<group>"; };
 		7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Main/SecondViewController.swift; sourceTree = "<group>"; };
 		7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = Main/ThirdViewController.swift; sourceTree = "<group>"; };
@@ -224,8 +232,6 @@
 		7FA6E9231D89ABCF003F6186 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		7FAECEED1D8A7399004592EA /* Server.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Server.plist; path = Others/Server.plist; sourceTree = "<group>"; };
 		7FAECEEF1D8ABAD9004592EA /* Setting_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting_TableViewController.swift; path = Fourth_4/Setting_TableViewController.swift; sourceTree = "<group>"; };
-		7FAECEF21D8ABB25004592EA /* Photo_Lable_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo_Lable_TableViewCell.swift; path = Fourth_4/cells/Photo_Lable_TableViewCell.swift; sourceTree = "<group>"; };
-		7FAECEF41D8ABB3F004592EA /* Lable_Center_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lable_Center_TableViewCell.swift; path = Fourth_4/cells/Lable_Center_TableViewCell.swift; sourceTree = "<group>"; };
 		7FBCFDEC1D997E3D00831823 /* TViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TViewController.swift; sourceTree = "<group>"; };
 		7FBCFDEE1D9A45D800831823 /* Select_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Select_TableViewCell.swift; path = CELL/Select_TableViewCell.swift; sourceTree = "<group>"; };
 		7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Web_ViewController.swift; path = Shit/Web_ViewController.swift; sourceTree = "<group>"; };
@@ -263,8 +269,6 @@
 		7FD1016E1D89764D009BB6A6 /* LALAS3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LALAS3UITests.swift; sourceTree = "<group>"; };
 		7FD101701D89764D009BB6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FE5BF221D8E74B400586166 /* AccountSecurity_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSecurity_TableViewController.swift; path = Fourth_4/AccountSecurity_TableViewController.swift; sourceTree = "<group>"; };
-		7FE5BF241D8E74FD00586166 /* Tongzhi_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tongzhi_TableViewController.swift; path = Fourth_4/Tongzhi_TableViewController.swift; sourceTree = "<group>"; };
-		7FE5BF261D8E751000586166 /* TongYong_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TongYong_TableViewController.swift; path = Fourth_4/TongYong_TableViewController.swift; sourceTree = "<group>"; };
 		7FE5BF281D8E753D00586166 /* HuanCun_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HuanCun_ViewController.swift; path = Fourth_4/HuanCun_ViewController.swift; sourceTree = "<group>"; };
 		7FE5BF2A1D8E755600586166 /* FanKui_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FanKui_ViewController.swift; path = Fourth_4/FanKui_ViewController.swift; sourceTree = "<group>"; };
 		7FE5BF2C1D8E756A00586166 /* AboutUs_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUs_ViewController.swift; path = Fourth_4/AboutUs_ViewController.swift; sourceTree = "<group>"; };
@@ -272,10 +276,6 @@
 		7FE5BF341D8EBEDA00586166 /* AccountSecurityCell_TwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSecurityCell_TwoLabel_TableViewCell.swift; path = Fourth_4/cells/AccountSecurityCell_TwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7FE5BF361D8EBEF200586166 /* AccountSecurityCell_OneLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSecurityCell_OneLabel_TableViewCell.swift; path = Fourth_4/cells/AccountSecurityCell_OneLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7FE5BF381D8EBF0600586166 /* AccountSecurityCell_LableSwitch_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSecurityCell_LableSwitch_TableViewCell.swift; path = Fourth_4/cells/AccountSecurityCell_LableSwitch_TableViewCell.swift; sourceTree = "<group>"; };
-		7FE5BF3A1D8ED38700586166 /* AccountManagement_M_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagement_M_TableViewCell.swift; path = Fourth_4/cells/AccountManagement_M_TableViewCell.swift; sourceTree = "<group>"; };
-		7FE5BF3C1D8ED3AC00586166 /* AccountManagement_TwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagement_TwoLabel_TableViewCell.swift; path = Fourth_4/cells/AccountManagement_TwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
-		7FE5BF3E1D8ED3C500586166 /* AccountManagement_TwoLabel_Big_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagement_TwoLabel_Big_TableViewCell.swift; path = Fourth_4/cells/AccountManagement_TwoLabel_Big_TableViewCell.swift; sourceTree = "<group>"; };
-		7FE5BF401D8ED3DF00586166 /* AccountManagement_OneLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagement_OneLabel_TableViewCell.swift; path = Fourth_4/cells/AccountManagement_OneLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7FE5BF421D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoTwoLableTableViewCell.swift; path = Third_3/cells/OnePhotoTwoLableTableViewCell.swift; sourceTree = "<group>"; };
 		7FF0C8501D91114400B85248 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LALAS3-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -367,25 +367,9 @@
 		7F3F21E71D92D5F400ACF590 /* CELLS */ = {
 			isa = PBXGroup;
 			children = (
-				7F3F21F31D93B4C100ACF590 /* Cells.xib */,
-				7FFA9E4D1D960953002380C0 /* News_Information_TableViewCell.swift */,
-				7FFA9E4F1D960A0F002380C0 /* CommentsPraiseDemote_NTableViewCell.swift */,
-				7FFA9E431D960570002380C0 /* OnePhoto_H_NTableViewCell.swift */,
-				7FFA9E451D960587002380C0 /* OnePhoto_Z_NTableViewCell.swift */,
-				7FFA9E471D96059E002380C0 /* ThreePhoto_NTableViewCell.swift */,
-				7FFA9E491D9605B4002380C0 /* SixPhoto_TableViewCell.swift */,
-				7FFA9E4B1D9605C1002380C0 /* NinePhoto_TableViewCell.swift */,
-				7F3F21F71D93B5DC00ACF590 /* Advertisement_TableViewCell.swift */,
-				7F9F8ACA1D9D2B7900C49C12 /* Lable&Photos.xib */,
-				7F3F21ED1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift */,
-				7F3F22031D93C03D00ACF590 /* ChatYou_TableViewCell.swift */,
-				7F3F22011D93C02F00ACF590 /* ChatMe_TableViewCell.swift */,
-				7FFA9E531D9610B7002380C0 /* Pinglun_NTableViewCell.swift */,
-				7FFA9E511D960CE7002380C0 /* OnlyOneLabel_TableViewCell.swift */,
-				7FBCFDEE1D9A45D800831823 /* Select_TableViewCell.swift */,
-				7FFA9E551D97F148002380C0 /* Piker.xib */,
-				7FFA9E571D97F1BB002380C0 /* Picker_TableViewCell.swift */,
-				7FFA9E591D97F1D9002380C0 /* DatePicker_TableViewCell.swift */,
+				7F9F8AF81D9D641A00C49C12 /* Main */,
+				7F9F8AF71D9D630700C49C12 /* Lables&Photos */,
+				7F9F8AF61D9D62F000C49C12 /* Pikers */,
 			);
 			name = CELLS;
 			sourceTree = "<group>";
@@ -426,6 +410,52 @@
 				7F9F8AEC1D9D51B800C49C12 /* SecondBeep.wav */,
 			);
 			name = Voice;
+			sourceTree = "<group>";
+		};
+		7F9F8AF61D9D62F000C49C12 /* Pikers */ = {
+			isa = PBXGroup;
+			children = (
+				7FFA9E551D97F148002380C0 /* Piker.xib */,
+				7FFA9E571D97F1BB002380C0 /* Picker_TableViewCell.swift */,
+				7FFA9E591D97F1D9002380C0 /* DatePicker_TableViewCell.swift */,
+			);
+			name = Pikers;
+			sourceTree = "<group>";
+		};
+		7F9F8AF71D9D630700C49C12 /* Lables&Photos */ = {
+			isa = PBXGroup;
+			children = (
+				7F9F8ACA1D9D2B7900C49C12 /* Lable&Photos.xib */,
+				7F3F21ED1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift */,
+				7F3F22031D93C03D00ACF590 /* ChatYou_TableViewCell.swift */,
+				7F3F22011D93C02F00ACF590 /* ChatMe_TableViewCell.swift */,
+				7FFA9E531D9610B7002380C0 /* Pinglun_NTableViewCell.swift */,
+				7FBCFDEE1D9A45D800831823 /* Select_TableViewCell.swift */,
+				7FFA9E511D960CE7002380C0 /* OnlyOneLabel_TableViewCell.swift */,
+				7F9F8AFA1D9D646900C49C12 /* Label_Mid_TableViewCell.swift */,
+				7F9F8B001D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift */,
+				7F9F8AFE1D9D64C700C49C12 /* TwoLabel_TableViewCell.swift */,
+				7F9F8AFC1D9D64B200C49C12 /* Lable_And_Switch_TableViewCell.swift */,
+				7F9F8B041D9D653400C49C12 /* Label_And_RightBigImage_TableViewCell.swift */,
+				7F9F8B021D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift */,
+			);
+			name = "Lables&Photos";
+			sourceTree = "<group>";
+		};
+		7F9F8AF81D9D641A00C49C12 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7F3F21F31D93B4C100ACF590 /* Cells.xib */,
+				7FFA9E4D1D960953002380C0 /* News_Information_TableViewCell.swift */,
+				7FFA9E4F1D960A0F002380C0 /* CommentsPraiseDemote_NTableViewCell.swift */,
+				7FFA9E431D960570002380C0 /* OnePhoto_H_NTableViewCell.swift */,
+				7FFA9E451D960587002380C0 /* OnePhoto_Z_NTableViewCell.swift */,
+				7FFA9E471D96059E002380C0 /* ThreePhoto_NTableViewCell.swift */,
+				7FFA9E491D9605B4002380C0 /* SixPhoto_TableViewCell.swift */,
+				7FFA9E4B1D9605C1002380C0 /* NinePhoto_TableViewCell.swift */,
+				7F3F21F71D93B5DC00ACF590 /* Advertisement_TableViewCell.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		7FA6E8EE1D899AA4003F6186 /* Main */ = {
@@ -472,8 +502,8 @@
 				7FAECEF11D8ABADE004592EA /* cells */,
 				7F0E0C861D9921C800A54353 /* AccountManagement_ViewController.swift */,
 				7FE5BF221D8E74B400586166 /* AccountSecurity_TableViewController.swift */,
-				7FE5BF261D8E751000586166 /* TongYong_TableViewController.swift */,
-				7FE5BF241D8E74FD00586166 /* Tongzhi_TableViewController.swift */,
+				7F9F8AF01D9D610C00C49C12 /* Tongyong_ViewController.swift */,
+				7F9F8AF21D9D611A00C49C12 /* Tongzhi_ViewController.swift */,
 				7FE5BF281D8E753D00586166 /* HuanCun_ViewController.swift */,
 				7FE5BF2A1D8E755600586166 /* FanKui_ViewController.swift */,
 				7FE5BF2C1D8E756A00586166 /* AboutUs_ViewController.swift */,
@@ -516,12 +546,6 @@
 		7FAECEF11D8ABADE004592EA /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				7FAECEF21D8ABB25004592EA /* Photo_Lable_TableViewCell.swift */,
-				7FAECEF41D8ABB3F004592EA /* Lable_Center_TableViewCell.swift */,
-				7FE5BF3A1D8ED38700586166 /* AccountManagement_M_TableViewCell.swift */,
-				7FE5BF3C1D8ED3AC00586166 /* AccountManagement_TwoLabel_TableViewCell.swift */,
-				7FE5BF3E1D8ED3C500586166 /* AccountManagement_TwoLabel_Big_TableViewCell.swift */,
-				7FE5BF401D8ED3DF00586166 /* AccountManagement_OneLabel_TableViewCell.swift */,
 				7FE5BF361D8EBEF200586166 /* AccountSecurityCell_OneLabel_TableViewCell.swift */,
 				7FE5BF341D8EBEDA00586166 /* AccountSecurityCell_TwoLabel_TableViewCell.swift */,
 				7FE5BF381D8EBF0600586166 /* AccountSecurityCell_LableSwitch_TableViewCell.swift */,
@@ -1081,9 +1105,9 @@
 				7FA6E8F21D89A50F003F6186 /* SecondViewController.swift in Sources */,
 				7FFA9E581D97F1BB002380C0 /* Picker_TableViewCell.swift in Sources */,
 				7F3F21EE1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift in Sources */,
+				7F9F8AFF1D9D64C700C49C12 /* TwoLabel_TableViewCell.swift in Sources */,
+				7F9F8AF11D9D610C00C49C12 /* Tongyong_ViewController.swift in Sources */,
 				7F3F21F81D93B5DC00ACF590 /* Advertisement_TableViewCell.swift in Sources */,
-				7FE5BF411D8ED3DF00586166 /* AccountManagement_OneLabel_TableViewCell.swift in Sources */,
-				7FE5BF3F1D8ED3C500586166 /* AccountManagement_TwoLabel_Big_TableViewCell.swift in Sources */,
 				7F3F22021D93C02F00ACF590 /* ChatMe_TableViewCell.swift in Sources */,
 				7FE5BF2D1D8E756A00586166 /* AboutUs_ViewController.swift in Sources */,
 				7F2475741D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift in Sources */,
@@ -1105,30 +1129,30 @@
 				7FE5BF2B1D8E755600586166 /* FanKui_ViewController.swift in Sources */,
 				7FE5BF371D8EBEF200586166 /* AccountSecurityCell_OneLabel_TableViewCell.swift in Sources */,
 				7F5322B81D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift in Sources */,
-				7FE5BF251D8E74FD00586166 /* Tongzhi_TableViewController.swift in Sources */,
 				7FA6E9241D89ABCF003F6186 /* Functions.swift in Sources */,
 				7FFA9E501D960A0F002380C0 /* CommentsPraiseDemote_NTableViewCell.swift in Sources */,
 				7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */,
 				7FBCFDEF1D9A45D800831823 /* Select_TableViewCell.swift in Sources */,
 				7FA6E9201D89A994003F6186 /* Login_ViewController.swift in Sources */,
 				7FBCFDED1D997E3D00831823 /* TViewController.swift in Sources */,
-				7FE5BF3B1D8ED38700586166 /* AccountManagement_M_TableViewCell.swift in Sources */,
+				7F9F8B051D9D653400C49C12 /* Label_And_RightBigImage_TableViewCell.swift in Sources */,
 				7FFA9E441D960570002380C0 /* OnePhoto_H_NTableViewCell.swift in Sources */,
 				7F0E0C871D9921C800A54353 /* AccountManagement_ViewController.swift in Sources */,
 				7FFA9E521D960CE7002380C0 /* OnlyOneLabel_TableViewCell.swift in Sources */,
-				7FE5BF271D8E751000586166 /* TongYong_TableViewController.swift in Sources */,
 				7FE5BF431D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift in Sources */,
 				7F9F8AE21D9D4E1300C49C12 /* LALAD.swift in Sources */,
 				7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */,
 				7FBCFE341D9C08DB00831823 /* Map_ViewController.swift in Sources */,
+				7F9F8B031D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift in Sources */,
+				7F9F8AF31D9D611A00C49C12 /* Tongzhi_ViewController.swift in Sources */,
 				7FE5BF351D8EBEDA00586166 /* AccountSecurityCell_TwoLabel_TableViewCell.swift in Sources */,
 				7FA6E9221D89A9BC003F6186 /* Register_ViewController.swift in Sources */,
-				7FAECEF31D8ABB25004592EA /* Photo_Lable_TableViewCell.swift in Sources */,
 				7FFA9E4C1D9605C1002380C0 /* NinePhoto_TableViewCell.swift in Sources */,
-				7FE5BF3D1D8ED3AC00586166 /* AccountManagement_TwoLabel_TableViewCell.swift in Sources */,
-				7FAECEF51D8ABB3F004592EA /* Lable_Center_TableViewCell.swift in Sources */,
+				7F9F8AFD1D9D64B200C49C12 /* Lable_And_Switch_TableViewCell.swift in Sources */,
+				7F9F8B011D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift in Sources */,
 				7FAECEF01D8ABAD9004592EA /* Setting_TableViewController.swift in Sources */,
 				7FA6E8FB1D89A5B4003F6186 /* SaoYiSaoViewController.swift in Sources */,
+				7F9F8AFB1D9D646900C49C12 /* Label_Mid_TableViewCell.swift in Sources */,
 				7FA6E8F61D89A535003F6186 /* FourthViewController.swift in Sources */,
 				7F3F21DA1D92B02200ACF590 /* MessiageDetail_TableViewController.swift in Sources */,
 				7F5322BE1D8BCDFE00294C62 /* More_TableViewCell.swift in Sources */,

@@ -21,14 +21,11 @@ class Setting_TableViewController: UITableViewController {
     ["账号管理","账号安全"]
     ["通用设置","通知"]
     ["清理缓存","意见反馈","关于我们"]*/
-    let SettingLists1 = ["账号管理","账号安全"]
-    let SettingLists2 = ["通用设置","通知设置"]
-    let SettingLists3 = ["清理缓存","意见反馈","关于我们"]
+    let SettingLists = [["账号管理","账号安全"],["通用设置","通知设置"],["清理缓存","意见反馈","关于我们"]]
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "设置"
     }
 
@@ -51,10 +48,10 @@ class Setting_TableViewController: UITableViewController {
             }
         case 1://2
             if indexPath.row == 0 {//通用设置
-                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "TongYong_TableViewController")
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "Tongyong_ViewController")
                 self.navigationController?.pushViewController(vc, animated: true)
             } else {               //通知设置
-                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "Tongzhi_TableViewController")
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "Tongzhi_ViewController")
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         case 2://3
@@ -83,31 +80,17 @@ class Setting_TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Photo_Lable_TableViewCell", for: indexPath) as! Photo_Lable_TableViewCell
+        case 0,1,2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
             
-            cell.UIImageView_Main.image = Imageload_Black
-            cell.UILabel_Main.text = SettingLists1[indexPath.row]
-            
-            return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Photo_Lable_TableViewCell", for: indexPath) as! Photo_Lable_TableViewCell
-            
-            cell.UIImageView_Main.image = Imageload_Black
-            cell.UILabel_Main.text = SettingLists2[indexPath.row]
-            
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Photo_Lable_TableViewCell", for: indexPath) as! Photo_Lable_TableViewCell
-            
-            cell.UIImageView_Main.image = Imageload_Black
-            cell.UILabel_Main.text = SettingLists3[indexPath.row]
+            cell.UIImageView_m.image = Imageload_Black
+            cell.UILabel_m.text = SettingLists[indexPath.section][indexPath.row]
             
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Lable_Center_TableViewCell", for: indexPath) as! Lable_Center_TableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Label_Mid_TableViewCell", for: indexPath) as! Label_Mid_TableViewCell
             
-            cell.UILabel_Main.text = "退出此账号"
+            cell.UILabel_m.text = "退出此账号"
             
             return cell
         }
@@ -149,21 +132,19 @@ class Setting_TableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return SettingLists.count + 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         switch section {
-        case 0:
-            return SettingLists1.count
-        case 1:
-            return SettingLists2.count
-        case 2:
-            return SettingLists3.count
+        case 0,1,2:
+            return SettingLists[section].count
         default:
             return 1
         }
+        
+
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

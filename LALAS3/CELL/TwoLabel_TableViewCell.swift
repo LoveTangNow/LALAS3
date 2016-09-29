@@ -1,18 +1,17 @@
 //
-//  AccountManagement_TwoLabel_TableViewCell.swift
+//  TwoLabel_TableViewCell.swift
 //  LALAS3
 //
-//  Created by Thomas Liu on 16/9/18.
+//  Created by Thomas Liu on 2016/9/29.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit
 
-class AccountManagement_TwoLabel_TableViewCell: UITableViewCell {
+class TwoLabel_TableViewCell: UITableViewCell {
     
-    @IBOutlet weak var UILabel_1: UILabel!
-    @IBOutlet weak var UILabel_2: UILabel!
-    
+    @IBOutlet weak var UILabel_l: UILabel!
+    @IBOutlet weak var UILabel_r: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

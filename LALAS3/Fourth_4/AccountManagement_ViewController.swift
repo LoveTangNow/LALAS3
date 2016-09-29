@@ -28,10 +28,10 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
     var TableviewHeight:CGFloat = 0
      var NowModel = Enum_Models.Normal_Model
     
-    var list = [["用户昵称 和 头像","性别","所在地","生日","用户简介"],["工作信息"], ["教育信息","小学","初中","高中","大学","硕士","博士","博士后"], ["邮箱","手机","QQ","微博","微信","支付宝"],["等级","积分","注册时间"]]
+    var list = [["用户昵称 和 头像","性别","所在地","生日","用户简介"],["工作信息"], ["教育信息","小学","初中","高中","大学","硕士","博士","博士后"], ["绑定","邮箱","手机","QQ","微博","微信","支付宝"],["其他","等级","积分","注册时间"]]
 
 
-    var list_ = [["","","","","安老师看到房间爱看书的反馈拉黑谁都快放假哈啥地方哈伦裤水电费哈哈涉及到客服哈啥地方还是"],[""],["","","","","","","",""],["","","","","",""],["","",""] ] //不可更改
+    var list_ = [["","","","","安老师看到房间爱看书的反馈拉黑谁都快放假哈啥地方哈伦裤水电费哈哈涉及到客服哈啥地方还是"],[""],["","","","","","","",""],["","","","","","",""],["","","",""] ] //不可更改
     
     
     //账号管理：昵称0、性别1、所在地（省2、市3、区4）、生日5、简介6、工作信息7、教育信息（小学8、初中9、\\高中0、大学1、硕士2、博士3、博士后4）、(qq5、手机6、邮箱7、微博8、微信9、支付宝0、)、等级1、积分2、注册时间3
@@ -313,12 +313,12 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         case 0:
             switch list[indexPath.section][indexPath.row] {//["用户昵称 和 头像","性别","所在地","生日","用户简介"]
             case "用户昵称 和 头像"://头像 昵称
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_M_TableViewCell", for: indexPath) as! AccountManagement_M_TableViewCell
-                cell.UILabel_M.text = "啦啦同学"
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Label_And_RightBigImage_TableViewCell", for: indexPath) as! Label_And_RightBigImage_TableViewCell
+                cell.UILabel_.text = "啦啦同学"
                 Alamofire.request(FFFFFunctions().GotImageIconServer(ai: true) + "1.png")
                     .responseData { response in
                         if let data = response.result.value {
-                            cell.UIImageView_M.image = UIImage(data: data)
+                            cell.UIImageView_.image = UIImage(data: data)
                         }
                 }
                 
@@ -343,54 +343,41 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 TableviewHeight = 45
                 return cell
             case "用户简介"://简介
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_TwoLabel_Big_TableViewCell", for: indexPath) as! AccountManagement_TwoLabel_Big_TableViewCell
-                cell.UILabel_m.text = "简介"
-                cell.UILabel_MAX.text = list_[indexPath.section][indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+                cell.UILabel_l.text = "简介"
+                cell.UILabel_r.text = list_[indexPath.section][indexPath.row]
                 
                 TableviewHeight = 100
                 
                 return cell
            
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_TwoLabel_TableViewCell", for: indexPath) as! AccountManagement_TwoLabel_TableViewCell
-                cell.UILabel_1.text = list[indexPath.section][indexPath.row]
-                cell.UILabel_2.text = list_[indexPath.section][indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Label_And_TextView_TableViewCell", for: indexPath) as! Label_And_TextView_TableViewCell
+                cell.UILabel_.text = list[indexPath.section][indexPath.row]
+                cell.UILabel_rrr.text = list_[indexPath.section][indexPath.row]
                 TableviewHeight = 45
                 return cell
             }
             
         case 1://工作信息
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_TwoLabel_TableViewCell", for: indexPath) as! AccountManagement_TwoLabel_TableViewCell
-            cell.UILabel_1.text = list[indexPath.section][indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+            cell.UILabel_l.text = list[indexPath.section][indexPath.row]
             TableviewHeight = 45
             return cell
-        case 2://教育
+        default://其他 教育 绑定
             if indexPath.row == 0 {
                 //AccountManagement_OneLabel_TableViewCell
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_OneLabel_TableViewCell", for: indexPath) as! AccountManagement_OneLabel_TableViewCell
-                cell.UILabel_m.text = list[indexPath.section][indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath) as! OnlyOneLabel_TableViewCell
+                cell.UILabel_M.text = list[indexPath.section][indexPath.row]
                 TableviewHeight = 45
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_TwoLabel_TableViewCell", for: indexPath) as! AccountManagement_TwoLabel_TableViewCell
-                cell.UILabel_1.text = list[indexPath.section][indexPath.row]
-                cell.UILabel_2.text = list_[indexPath.section][indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+                cell.UILabel_l.text = list[indexPath.section][indexPath.row]
+                cell.UILabel_r.text = list_[indexPath.section][indexPath.row]
                 TableviewHeight = 45
                 return cell
             }
-            
-        case 3://绑定
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_TwoLabel_TableViewCell", for: indexPath) as! AccountManagement_TwoLabel_TableViewCell
-            cell.UILabel_1.text = list[indexPath.section][indexPath.row]
-            cell.UILabel_2.text = list_[indexPath.section][indexPath.row]
-            TableviewHeight = 45
-            return cell
-        default://其他
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AccountManagement_TwoLabel_TableViewCell", for: indexPath) as! AccountManagement_TwoLabel_TableViewCell
-            cell.UILabel_1.text = list[indexPath.section][indexPath.row]
-            cell.UILabel_2.text = list_[indexPath.section][indexPath.row]
-             TableviewHeight = 45
-            return cell
         }
         
     }

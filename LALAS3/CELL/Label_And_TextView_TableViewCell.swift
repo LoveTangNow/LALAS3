@@ -1,17 +1,18 @@
 //
-//  Lable_Center_TableViewCell.swift
+//  Label_And_TextView_TableViewCell.swift
 //  LALAS3
 //
-//  Created by Thomas Liu on 16/9/15.
+//  Created by Thomas Liu on 2016/9/29.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit
 
-class Lable_Center_TableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var UILabel_Main: UILabel!
+class Label_And_TextView_TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var UILabel_: UILabel!
+    @IBOutlet weak var UILabel_rrr: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
