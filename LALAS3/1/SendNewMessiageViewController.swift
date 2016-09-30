@@ -51,6 +51,7 @@ class SendNewMessiageViewController: UIViewController{
     }
     
     @IBAction func Send_Click(_ sender: AnyObject) {
+        print("send click")
     }
 
     

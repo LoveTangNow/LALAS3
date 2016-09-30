@@ -75,17 +75,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="t3I-nP-S70">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="scu-We-JlL">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kjX-pN-vYE">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="发送">
-                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="Send_Click:" destination="rHZ-QY-PP1" eventType="touchUpInside" id="IYo-NH-h2D"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="Iz5-5U-IYc">
+                            <connections>
+                                <action selector="Send_Click:" destination="rHZ-QY-PP1" id="CBP-rn-wtK"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
