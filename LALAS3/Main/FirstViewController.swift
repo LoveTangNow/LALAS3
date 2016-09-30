@@ -103,9 +103,10 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         //159,42.4
         navigationController?.navigationBar.barTintColor = UIColor.red
         navigationController?.navigationBar.tintColor = UIColor.white
-        
+        /*
         tabBarController?.tabBar.barTintColor = UIColor.black
-        tabBarController?.tabBar.tintColor = UIColor.white
+        tabBarController?.tabBar.tintColor = UIColor.white*/
+        //title 颜色 据说可以用一个 label 初始化 这样就有颜色了！！！！！！！！
     }
 
     override func viewDidAppear(_ animated: Bool) {

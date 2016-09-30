@@ -25,6 +25,17 @@ class MessiageDetail_TableViewController: UITableViewController {
         print(imgaeNumber)
         print(imagelist.count)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = UIColor.red
+        navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
