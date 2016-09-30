@@ -8,6 +8,8 @@
 
 import UIKit
 import LocalAuthentication//这里包含指纹识别 API
+import HealthKit
+import HealthKitUI
 
 class TViewController: UIViewController {
     @IBOutlet weak var UIImageView_b: UIImageView!
@@ -73,6 +75,10 @@ class TViewController: UIViewController {
         bview.frame = CGRect(x:0,y:50,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
         UIImageView_b.addSubview(bview)
         // Do any additional setup after loading the view.
+        
+        if HKHealthStore.isHealthDataAvailable() == true{
+            let healthStore = HKHealthStore()
+        }
     }
 
     override func didReceiveMemoryWarning() {
