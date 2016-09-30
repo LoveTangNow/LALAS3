@@ -296,6 +296,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		227ABBB12421154F16FC0B86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F9F8A831D9D16D700C49C12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -717,6 +724,7 @@
 			buildConfigurationList = 7FBCFE411D9C1E6800831823 /* Build configuration list for PBXNativeTarget "BQB" */;
 			buildPhases = (
 				7FBCFE371D9C1E6700831823 /* Resources */,
+				227ABBB12421154F16FC0B86 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1619,6 +1627,7 @@
 				7F9F8A971D9D16D800C49C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F9F8AA41D9D16F200C49C12 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
 			isa = XCConfigurationList;
@@ -1627,6 +1636,7 @@
 				7F9F8AA61D9D16F200C49C12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FBCFE411D9C1E6800831823 /* Build configuration list for PBXNativeTarget "BQB" */ = {
 			isa = XCConfigurationList;

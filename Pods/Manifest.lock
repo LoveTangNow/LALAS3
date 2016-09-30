@@ -2,30 +2,44 @@ PODS:
   - Alamofire (4.0.0)
   - AlamofireImage (3.0.0):
     - Alamofire (~> 4.0)
+  - Charts (2.3.0):
+    - Charts/Core (= 2.3.0)
+  - Charts/Core (2.3.0)
   - Dollar (6.0.0)
+  - DZNEmptyDataSet (1.8.1)
   - Kingfisher (3.1.0)
   - Realm (1.1.0):
     - Realm/Headers (= 1.1.0)
   - Realm/Headers (1.1.0)
   - RealmSwift (1.1.0):
     - Realm (= 1.1.0)
+  - Spring (1.0.3)
   - SVProgressHUD (2.0.3)
   - SwiftyJSON (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireImage (~> 3.0)
+  - Charts
   - Dollar
+  - DZNEmptyDataSet
   - Kingfisher (~> 3.1.0)
   - RealmSwift
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
   SVProgressHUD:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 CHECKOUT OPTIONS:
+  Spring:
+    :commit: e5c127b7aa6ce31e5f4d01100a8991423a1eb498
+    :git: https://github.com/MengTo/Spring.git
   SVProgressHUD:
     :commit: cc5f7d68fe76afdb79e215b8ff00133575fafacc
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
@@ -33,13 +47,16 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   AlamofireImage: 6594aa1139a67dcd36cde6da79ea4e5b318e60fb
+  Charts: 55d7fd9af175b500208601bea872f0fc72c1d19e
   Dollar: 6e69123e0901307d67a416dac70aeec56243a6e0
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Kingfisher: 7779f22e977393e9533a89a9685beb8f679d3767
   Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
   RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
 
-PODFILE CHECKSUM: b04e029524001075f8256ccf171e02526d9d9082
+PODFILE CHECKSUM: 72170a5a7faef657ee7f401e8a5ff8daeaa4b52b
 
 COCOAPODS: 1.1.0.beta.2
