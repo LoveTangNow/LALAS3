@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Charts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>DZNEmptyDataSet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,16 +67,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>17EDCF9C1968157AC9BA952D6E9FC544</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1B47FA2E4EB1DB4B31D7F0EA24FB85B2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1DE93A359FA21F91DFBE81309E851A4A</key>
 		<dict>
 			<key>primary</key>
@@ -92,20 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>334D7324DA241D471E51151633096913</key>
-<<<<<<< HEAD
-=======
+		<key>3CCBF5DD9A8EFC2AC9EA13314BE98A60</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>555713F7637A770AF4C4489B1C4C932C</key>
->>>>>>> Developer
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>555713F7637A770AF4C4489B1C4C932C</key>
+		<key>5676FC7B0A01DBE1E39A241ED36256BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -115,50 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A0330413A896970A4A2A6FE4D31E6539</key>
+		<key>8ECCA53EFDAF8E58DDA119BC460E5F18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF1951447BCDCB6ECFF09FDD0CC871DA</key>
+		<key>906B90F62CE5A7F6240A437E2AD85065</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-<<<<<<< HEAD
-		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
-=======
-		<key>A0330413A896970A4A2A6FE4D31E6539</key>
+		<key>C12AAF6604219F1646AD207D883FB184</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ACCB6C56A7B0224BFDB9183D49893593</key>
->>>>>>> Developer
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-<<<<<<< HEAD
-		<key>C83065EE33199ECD10D56C221180C176</key>
-=======
-		<key>BF1951447BCDCB6ECFF09FDD0CC871DA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C83065EE33199ECD10D56C221180C176</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EF215467072924836621932B340DB4F1</key>
->>>>>>> Developer
+		<key>D371824FC2049F12FA41AE84AE92CD19</key>
 		<dict>
 			<key>primary</key>
 			<true/>

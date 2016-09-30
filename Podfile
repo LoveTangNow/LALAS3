@@ -10,7 +10,6 @@ target ‘LALAS3’ do
     
     pod 'DZNEmptyDataSet'
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
-    pod 'Charts'
     pod 'Dollar'
     pod 'Kingfisher', '~> 3.1.0'
     pod 'RealmSwift'
