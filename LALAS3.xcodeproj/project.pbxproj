@@ -20,7 +20,6 @@
 		7F5322B81D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */; };
 		7F5322BA1D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */; };
 		7F5322BE1D8BCDFE00294C62 /* More_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */; };
-		7F9A5F5C1D89BFE800C2E133 /* Remarks in Resources */ = {isa = PBXBuildFile; fileRef = 7F9A5F5B1D89BFE800C2E133 /* Remarks */; };
 		7F9F8A881D9D16D700C49C12 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */; };
 		7F9F8A8A1D9D16D700C49C12 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F8A891D9D16D700C49C12 /* UserNotificationsUI.framework */; };
 		7F9F8A8D1D9D16D700C49C12 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8A8C1D9D16D700C49C12 /* NotificationViewController.swift */; };
@@ -192,7 +191,6 @@
 		7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoTwoLabel_TableViewCell.swift; path = Main/cells3/OnePhotoTwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = More_TableViewCell.swift; path = Main/cells3/More_TableViewCell.swift; sourceTree = "<group>"; };
 		7F95C5091D91953F00D7C447 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		7F9A5F5B1D89BFE800C2E133 /* Remarks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Remarks; sourceTree = SOURCE_ROOT; };
 		7F9F8A861D9D16D700C49C12 /* NotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		7F9F8A891D9D16D700C49C12 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
@@ -627,7 +625,6 @@
 			isa = PBXGroup;
 			children = (
 				7FBCFE321D9C07C900831823 /* LALAS3.entitlements */,
-				7F9A5F5B1D89BFE800C2E133 /* Remarks */,
 				7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */,
 				7FA6E9231D89ABCF003F6186 /* Functions.swift */,
 				7FAECEED1D8A7399004592EA /* Server.plist */,
@@ -999,7 +996,6 @@
 				7FA6E91E1D89A913003F6186 /* Third.storyboard in Resources */,
 				7F9F8ACB1D9D2B7900C49C12 /* Lable&Photos.xib in Resources */,
 				7F9F8AED1D9D51B800C49C12 /* Beng.aiff in Resources */,
-				7F9A5F5C1D89BFE800C2E133 /* Remarks in Resources */,
 				7FD101561D89764D009BB6A6 /* Assets.xcassets in Resources */,
 				7FFA9E561D97F148002380C0 /* Piker.xib in Resources */,
 				7FAECEEE1D8A7399004592EA /* Server.plist in Resources */,
