@@ -276,9 +276,11 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
             UIView.animate(withDuration: 0.3, animations: {
                 self.UIDatePicker_M.center.y += 250
                 self.UIImageView_Cover.alpha = 0
+                self.UIDatePicker_M.alpha = 0.5
                 }, completion: {_ in
                     self.NowModel = Enum_Models.Normal_Model
                     self.UITableView_m.isScrollEnabled = true
+                    self.UIDatePicker_M.alpha = 1
             })
         case Enum_Models.Jianjie_Model:
             UITextView_t.resignFirstResponder()
@@ -288,9 +290,11 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
             UIView.animate(withDuration: 0.3, animations: {
                 self.UIView_Text.center.y += 200
                 self.UIImageView_Cover.alpha = 0
+                self.UIView_Text.alpha = 0.5
                 }, completion: {_ in
                     self.NowModel = Enum_Models.Normal_Model
                     self.UITableView_m.isScrollEnabled = true
+                    self.UIView_Text.alpha = 1
             })
         default:
             break

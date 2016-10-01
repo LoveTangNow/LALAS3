@@ -38,32 +38,8 @@
                                     <action selector="UIButton_1_c:" destination="rHZ-QY-PP1" eventType="touchUpInside" id="Jbt-q6-KH9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBQ-k5-AtQ">
-                                <frame key="frameInset" minX="113" minY="307" width="89" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="UIButton_2_c:" destination="rHZ-QY-PP1" eventType="touchUpInside" id="rHD-g0-abp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAU-Qd-f9o">
-                                <frame key="frameInset" minX="210" minY="306" width="89" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="UIButton_3_c:" destination="rHZ-QY-PP1" eventType="touchUpInside" id="mew-ZV-ABK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOU-5Y-K3S">
-                                <frame key="frameInset" minX="307" minY="306" width="89" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="UIButton_4_c:" destination="rHZ-QY-PP1" eventType="touchUpInside" id="fQZ-cO-Kiq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3d-GV-dim">
-                                <frame key="frameInset" minX="16" minY="400" width="359" height="43"/>
+                                <frame key="frameInset" minX="16" minY="557" width="359" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
@@ -83,9 +59,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="UIButton_1" destination="Zo2-Z9-cM1" id="4fB-iN-0A4"/>
-                        <outlet property="UIButton_2" destination="EBQ-k5-AtQ" id="uSt-3K-PeH"/>
-                        <outlet property="UIButton_3" destination="zAU-Qd-f9o" id="SCv-ib-KIj"/>
-                        <outlet property="UIButton_4" destination="KOU-5Y-K3S" id="4cz-dv-oWQ"/>
                         <outlet property="UIButton_5" destination="e3d-GV-dim" id="FM1-i1-saT"/>
                         <outlet property="UITextView_Main" destination="7h4-Sk-svo" id="aMb-03-KEE"/>
                     </connections>
@@ -344,31 +317,8 @@
                                     <outlet property="UIImageView9" destination="mFA-7m-Bds" id="oUV-1S-tbP"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnePhoto_H_NTableViewCell" rowHeight="232" id="Us0-jH-axI" customClass="OnePhoto_H_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="744" width="375" height="232"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Us0-jH-axI" id="XZP-Lz-LUu">
-                                    <frame key="frameInset" width="375" height="231"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4N-yV-wY7">
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="C4N-yV-wY7" secondAttribute="height" multiplier="50:31" id="S3Z-Fq-Dg9"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="C4N-yV-wY7" firstAttribute="centerY" secondItem="XZP-Lz-LUu" secondAttribute="centerY" id="GHw-17-bUc"/>
-                                        <constraint firstItem="C4N-yV-wY7" firstAttribute="top" secondItem="XZP-Lz-LUu" secondAttribute="topMargin" constant="5" id="Pr0-Ro-uwX"/>
-                                        <constraint firstItem="C4N-yV-wY7" firstAttribute="leading" secondItem="XZP-Lz-LUu" secondAttribute="leadingMargin" constant="10" id="p44-hn-QB0"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="UIImageView_M" destination="C4N-yV-wY7" id="lDj-Tw-M5I"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnePhoto_Z_NTableViewCell" rowHeight="213" id="m1h-AU-HZ3" customClass="OnePhoto_Z_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="976" width="375" height="213"/>
+                                <rect key="frame" x="0.0" y="744" width="375" height="213"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m1h-AU-HZ3" id="XaJ-B6-ede">
                                     <frame key="frameInset" width="375" height="212"/>
@@ -388,6 +338,26 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="UIImageView_M" destination="T59-aE-543" id="6ty-aQ-Hs0"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnePhoto_H_NTableViewCell" rowHeight="232" id="CAn-df-Tv5" customClass="OnePhoto_H_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="957" width="375" height="232"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CAn-df-Tv5" id="q08-P6-zl4">
+                                    <frame key="frameInset" width="375" height="231"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ie0-DJ-xKa"/>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ie0-DJ-xKa" secondAttribute="trailing" id="3se-UN-3yy"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ie0-DJ-xKa" secondAttribute="bottom" id="9Ak-Jd-jBK"/>
+                                        <constraint firstItem="ie0-DJ-xKa" firstAttribute="leading" secondItem="q08-P6-zl4" secondAttribute="leadingMargin" id="C0h-yg-IWx"/>
+                                        <constraint firstItem="ie0-DJ-xKa" firstAttribute="top" secondItem="q08-P6-zl4" secondAttribute="topMargin" id="ndL-Z8-yxO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="UIImageView_M" destination="ie0-DJ-xKa" id="dYR-xY-TlW"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="News_Information_TableViewCell" rowHeight="218" id="OTz-cs-BF9" customClass="News_Information_TableViewCell" customModule="LALAS3" customModuleProvider="target">

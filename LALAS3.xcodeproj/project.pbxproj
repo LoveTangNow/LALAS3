@@ -87,6 +87,7 @@
 		7FE5BF371D8EBEF200586166 /* AccountSecurityCell_OneLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF361D8EBEF200586166 /* AccountSecurityCell_OneLabel_TableViewCell.swift */; };
 		7FE5BF391D8EBF0600586166 /* AccountSecurityCell_LableSwitch_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF381D8EBF0600586166 /* AccountSecurityCell_LableSwitch_TableViewCell.swift */; };
 		7FE5BF431D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF421D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift */; };
+		7FEA9A6B1D9F464F00B1351F /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA9A6A1D9F464F00B1351F /* MainModel.swift */; };
 		7FF0C8511D91114400B85248 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF0C8501D91114400B85248 /* libsqlite3.tbd */; };
 		7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0C8531D91173F00B85248 /* R.xcdatamodeld */; };
 		7FFA9E441D960570002380C0 /* OnePhoto_H_NTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA9E431D960570002380C0 /* OnePhoto_H_NTableViewCell.swift */; };
@@ -275,6 +276,7 @@
 		7FE5BF361D8EBEF200586166 /* AccountSecurityCell_OneLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSecurityCell_OneLabel_TableViewCell.swift; path = Fourth_4/cells/AccountSecurityCell_OneLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7FE5BF381D8EBF0600586166 /* AccountSecurityCell_LableSwitch_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSecurityCell_LableSwitch_TableViewCell.swift; path = Fourth_4/cells/AccountSecurityCell_LableSwitch_TableViewCell.swift; sourceTree = "<group>"; };
 		7FE5BF421D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoTwoLableTableViewCell.swift; path = Third_3/cells/OnePhotoTwoLableTableViewCell.swift; sourceTree = "<group>"; };
+		7FEA9A6A1D9F464F00B1351F /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainModel.swift; path = Main/MainModel.swift; sourceTree = "<group>"; };
 		7FF0C8501D91114400B85248 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LALAS3-Bridging-Header.h"; sourceTree = "<group>"; };
 		7FF0C8541D91173F00B85248 /* R.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = R.xcdatamodel; sourceTree = "<group>"; };
@@ -452,12 +454,12 @@
 			children = (
 				7F3F21F31D93B4C100ACF590 /* Cells.xib */,
 				7FFA9E4D1D960953002380C0 /* News_Information_TableViewCell.swift */,
-				7FFA9E4F1D960A0F002380C0 /* CommentsPraiseDemote_NTableViewCell.swift */,
 				7FFA9E431D960570002380C0 /* OnePhoto_H_NTableViewCell.swift */,
 				7FFA9E451D960587002380C0 /* OnePhoto_Z_NTableViewCell.swift */,
 				7FFA9E471D96059E002380C0 /* ThreePhoto_NTableViewCell.swift */,
 				7FFA9E491D9605B4002380C0 /* SixPhoto_TableViewCell.swift */,
 				7FFA9E4B1D9605C1002380C0 /* NinePhoto_TableViewCell.swift */,
+				7FFA9E4F1D960A0F002380C0 /* CommentsPraiseDemote_NTableViewCell.swift */,
 				7F3F21F71D93B5DC00ACF590 /* Advertisement_TableViewCell.swift */,
 			);
 			name = Main;
@@ -473,6 +475,7 @@
 				7FA6E8F51D89A535003F6186 /* FourthViewController.swift */,
 				7FA6E91F1D89A994003F6186 /* Login_ViewController.swift */,
 				7FA6E9211D89A9BC003F6186 /* Register_ViewController.swift */,
+				7FEA9A6A1D9F464F00B1351F /* MainModel.swift */,
 				7FA6E9141D89A835003F6186 /* Third-cells */,
 			);
 			name = Main;
@@ -1118,6 +1121,7 @@
 				7FE5BF291D8E753D00586166 /* HuanCun_ViewController.swift in Sources */,
 				7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */,
 				7FFA9E541D9610B7002380C0 /* Pinglun_NTableViewCell.swift in Sources */,
+				7FEA9A6B1D9F464F00B1351F /* MainModel.swift in Sources */,
 				7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */,
 				7FBCFE361D9C091900831823 /* Health_ViewController.swift in Sources */,
 				7FA6E8FD1D89A5DF003F6186 /* SendNewMessiageViewController.swift in Sources */,

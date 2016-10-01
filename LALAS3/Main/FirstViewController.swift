@@ -59,7 +59,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         */
         
         // Both calls are equivalent
-        print(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php")
+        //print(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php")
         Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
@@ -94,11 +94,11 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 }
         }
         // Do any additional setup after loading the view.
-        print("loa")
+        print("viewDidLoad")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("willa")
+        print("viewWillAppear")
         //这里给 Tableview 写数据
         //159,42.4
         navigationController?.navigationBar.barTintColor = UIColor.red
@@ -645,6 +645,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 }
             default://三按钮区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsPraiseDemote_NTableViewCell", for: indexPath) as! CommentsPraiseDemote_NTableViewCell
+                cell.number = [110,112,119]
+                cell.UpDateUI()
                 TableViewCellHeight = 40
                 return cell
             }
