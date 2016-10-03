@@ -18,8 +18,7 @@
 		7F3F22041D93C03D00ACF590 /* ChatYou_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F22031D93C03D00ACF590 /* ChatYou_TableViewCell.swift */; };
 		7F5322B31D8BC9BC00294C62 /* SearchResults_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */; };
 		7F5322B81D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */; };
-		7F5322BA1D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */; };
-		7F5322BE1D8BCDFE00294C62 /* More_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */; };
+		7F6AA6B31DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6AA6B21DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift */; };
 		7F9F8A881D9D16D700C49C12 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */; };
 		7F9F8A8A1D9D16D700C49C12 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F8A891D9D16D700C49C12 /* UserNotificationsUI.framework */; };
 		7F9F8A8D1D9D16D700C49C12 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8A8C1D9D16D700C49C12 /* NotificationViewController.swift */; };
@@ -189,8 +188,7 @@
 		7F3F22031D93C03D00ACF590 /* ChatYou_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatYou_TableViewCell.swift; path = CELL/ChatYou_TableViewCell.swift; sourceTree = "<group>"; };
 		7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResults_ViewController.swift; path = Third_3/SearchResults_ViewController.swift; sourceTree = "<group>"; };
 		7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoOneLable_CollectionViewCell.swift; path = Third_3/cells/OnePhotoOneLable_CollectionViewCell.swift; sourceTree = "<group>"; };
-		7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoTwoLabel_TableViewCell.swift; path = Main/cells3/OnePhotoTwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
-		7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = More_TableViewCell.swift; path = Main/cells3/More_TableViewCell.swift; sourceTree = "<group>"; };
+		7F6AA6B21DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoWithTwoLabel_TableViewCell.swift; path = CELL/OnePhotoWithTwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7F95C5091D91953F00D7C447 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		7F9F8A861D9D16D700C49C12 /* NotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -445,6 +443,7 @@
 				7F9F8AFC1D9D64B200C49C12 /* Lable_And_Switch_TableViewCell.swift */,
 				7F9F8B041D9D653400C49C12 /* Label_And_RightBigImage_TableViewCell.swift */,
 				7F9F8B021D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift */,
+				7F6AA6B21DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift */,
 			);
 			name = "Lables&Photos";
 			sourceTree = "<group>";
@@ -476,7 +475,6 @@
 				7FA6E91F1D89A994003F6186 /* Login_ViewController.swift */,
 				7FA6E9211D89A9BC003F6186 /* Register_ViewController.swift */,
 				7FEA9A6A1D9F464F00B1351F /* MainModel.swift */,
-				7FA6E9141D89A835003F6186 /* Third-cells */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -491,15 +489,6 @@
 				7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */,
 			);
 			name = First_1;
-			sourceTree = "<group>";
-		};
-		7FA6E9141D89A835003F6186 /* Third-cells */ = {
-			isa = PBXGroup;
-			children = (
-				7F5322B91D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift */,
-				7F5322BD1D8BCDFE00294C62 /* More_TableViewCell.swift */,
-			);
-			name = "Third-cells";
 			sourceTree = "<group>";
 		};
 		7FA6E9161D89A8BC003F6186 /* Fourth_4 */ = {
@@ -562,13 +551,13 @@
 			name = cells;
 			sourceTree = "<group>";
 		};
-		7FBCFE3A1D9C1E6800831823 /* Stickers */ = {
+		7FBCFE3A1D9C1E6800831823 /* Stickers - 表情包扩展 */ = {
 			isa = PBXGroup;
 			children = (
 				7FBCFE3B1D9C1E6800831823 /* Stickers.xcassets */,
 				7FBCFE3D1D9C1E6800831823 /* Info.plist */,
 			);
-			name = Stickers;
+			name = "Stickers - 表情包扩展";
 			path = BQB;
 			sourceTree = "<group>";
 		};
@@ -582,13 +571,14 @@
 			path = Action;
 			sourceTree = "<group>";
 		};
-		7FBCFE5E1D9C1EFA00831823 /* Today */ = {
+		7FBCFE5E1D9C1EFA00831823 /* Today - 下拉通知栏扩展 */ = {
 			isa = PBXGroup;
 			children = (
 				7FBCFE5F1D9C1EFA00831823 /* TodayViewController.swift */,
 				7FBCFE611D9C1EFA00831823 /* MainInterface.storyboard */,
 				7FBCFE641D9C1EFA00831823 /* Info.plist */,
 			);
+			name = "Today - 下拉通知栏扩展";
 			path = Today;
 			sourceTree = "<group>";
 		};
@@ -598,11 +588,11 @@
 				7FD1014B1D89764D009BB6A6 /* LALAS3 */,
 				7FD101621D89764D009BB6A6 /* LALAS3Tests */,
 				7FD1016D1D89764D009BB6A6 /* LALAS3UITests */,
-				7FBCFE5E1D9C1EFA00831823 /* Today */,
+				7FBCFE5E1D9C1EFA00831823 /* Today - 下拉通知栏扩展 */,
 				7FBCFE4A1D9C1ECF00831823 /* Action */,
 				7F9F8A8B1D9D16D700C49C12 /* NotificationContent */,
 				7F9F8A9D1D9D16F200C49C12 /* NotificationService */,
-				7FBCFE3A1D9C1E6800831823 /* Stickers */,
+				7FBCFE3A1D9C1E6800831823 /* Stickers - 表情包扩展 */,
 				05DFF5341690B73CF5FBA455 /* Pods */,
 				7FD1014A1D89764D009BB6A6 /* Products */,
 				F807D885972D56BFFF9611D1 /* Frameworks */,
@@ -1161,11 +1151,10 @@
 				7FAECEF01D8ABAD9004592EA /* Setting_TableViewController.swift in Sources */,
 				7FA6E8FB1D89A5B4003F6186 /* SaoYiSaoViewController.swift in Sources */,
 				7F9F8AFB1D9D646900C49C12 /* Label_Mid_TableViewCell.swift in Sources */,
+				7F6AA6B31DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift in Sources */,
 				7FA6E8F61D89A535003F6186 /* FourthViewController.swift in Sources */,
 				7F3F21DA1D92B02200ACF590 /* MessiageDetail_TableViewController.swift in Sources */,
-				7F5322BE1D8BCDFE00294C62 /* More_TableViewCell.swift in Sources */,
 				7F3F22041D93C03D00ACF590 /* ChatYou_TableViewCell.swift in Sources */,
-				7F5322BA1D8BCDD100294C62 /* OnePhotoTwoLabel_TableViewCell.swift in Sources */,
 				7F5322B31D8BC9BC00294C62 /* SearchResults_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

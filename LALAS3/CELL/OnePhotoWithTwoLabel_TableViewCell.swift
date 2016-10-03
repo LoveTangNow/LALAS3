@@ -1,16 +1,18 @@
 //
-//  More_TableViewCell.swift
+//  OnePhotoWithTwoLabel_TableViewCell.swift
 //  LALAS3
 //
-//  Created by Thomas Liu on 16/9/16.
+//  Created by Thomas Liu on 2016/10/3.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit
 
-class More_TableViewCell: UITableViewCell {
+class OnePhotoWithTwoLabel_TableViewCell: UITableViewCell {
     
-    @IBOutlet weak var UILabel_Main: UILabel!
+    @IBOutlet weak var UIImageView_Left_Main: UIImageView!
+    @IBOutlet weak var UILabel_Title: UILabel!
+    @IBOutlet weak var UILabel_Detail: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
