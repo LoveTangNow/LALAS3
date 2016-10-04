@@ -13,6 +13,8 @@ target ‘LALAS3’ do
     pod 'Dollar'
     pod 'Kingfisher', '~> 3.1.0'
     pod 'RealmSwift'
+    pod 'GoogleMaps'
+    pod 'Google/SignIn'
     
 end
 
