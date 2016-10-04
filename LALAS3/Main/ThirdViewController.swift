@@ -72,9 +72,6 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
-
-    
     //MARK: - Tableview
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
