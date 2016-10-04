@@ -4,6 +4,15 @@ import UIKit
 
 var str = "Hello, playground"
 
+let a  = str.startIndex
+let b  = str.endIndex
+
+str[a]
+let d = str[str.index(before: str.endIndex)]
+let c = str.characters.last
+
+
+
 
 /*
 //1.创建NSBlockOperation对象

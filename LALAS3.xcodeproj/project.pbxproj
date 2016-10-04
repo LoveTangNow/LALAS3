@@ -19,6 +19,7 @@
 		7F5322B31D8BC9BC00294C62 /* SearchResults_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */; };
 		7F5322B81D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */; };
 		7F6AA6B31DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6AA6B21DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift */; };
+		7F6AA6B51DA2754600A7292B /* Chat_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6AA6B41DA2754600A7292B /* Chat_ViewController.swift */; };
 		7F9F8A881D9D16D700C49C12 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */; };
 		7F9F8A8A1D9D16D700C49C12 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F8A891D9D16D700C49C12 /* UserNotificationsUI.framework */; };
 		7F9F8A8D1D9D16D700C49C12 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8A8C1D9D16D700C49C12 /* NotificationViewController.swift */; };
@@ -189,6 +190,7 @@
 		7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResults_ViewController.swift; path = Third_3/SearchResults_ViewController.swift; sourceTree = "<group>"; };
 		7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoOneLable_CollectionViewCell.swift; path = Third_3/cells/OnePhotoOneLable_CollectionViewCell.swift; sourceTree = "<group>"; };
 		7F6AA6B21DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoWithTwoLabel_TableViewCell.swift; path = CELL/OnePhotoWithTwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
+		7F6AA6B41DA2754600A7292B /* Chat_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chat_ViewController.swift; path = Second_2/Chat_ViewController.swift; sourceTree = "<group>"; };
 		7F95C5091D91953F00D7C447 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		7F9F8A861D9D16D700C49C12 /* NotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -512,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				7FA6E91B1D89A906003F6186 /* Second.storyboard */,
+				7F6AA6B41DA2754600A7292B /* Chat_ViewController.swift */,
 			);
 			name = Second_2;
 			sourceTree = "<group>";
@@ -1149,6 +1152,7 @@
 				7F9F8AFD1D9D64B200C49C12 /* Lable_And_Switch_TableViewCell.swift in Sources */,
 				7F9F8B011D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift in Sources */,
 				7FAECEF01D8ABAD9004592EA /* Setting_TableViewController.swift in Sources */,
+				7F6AA6B51DA2754600A7292B /* Chat_ViewController.swift in Sources */,
 				7FA6E8FB1D89A5B4003F6186 /* SaoYiSaoViewController.swift in Sources */,
 				7F9F8AFB1D9D646900C49C12 /* Label_Mid_TableViewCell.swift in Sources */,
 				7F6AA6B31DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift in Sources */,
