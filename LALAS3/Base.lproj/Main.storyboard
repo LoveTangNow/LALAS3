@@ -13,7 +13,7 @@
             <objects>
                 <navigationController id="ZBF-qN-fdv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="动态" image="inbox-vector" id="cs5-An-VFf"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ulE-gm-Giq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ulE-gm-Giq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -120,11 +120,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="NRx-a3-z8i">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" id="nMh-0d-5CP">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" id="nMh-0d-5CP">
                             <rect key="frame" x="36" y="7" width="304" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             <connections>
                                 <action selector="Search_Click:" destination="HcK-us-QXu" eventType="editingDidEndOnExit" id="2q6-Z4-o4q"/>
@@ -140,9 +139,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8J-UI-pcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="354.375" y="879.92957746478874"/>
+            <point key="canvasLocation" x="358" y="1022"/>
         </scene>
-        <!--我的-->
+        <!--Fourth View Controller-->
         <scene sceneID="Ihz-E3-Brd">
             <objects>
                 <viewController storyboardIdentifier="FourthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NXf-Hr-qEN" customClass="FourthViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,7 +165,7 @@
                             <constraint firstItem="AiO-kr-jDk" firstAttribute="height" secondItem="3o7-Wn-sfc" secondAttribute="height" id="PSP-ow-IYU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="我的" id="Hxw-8L-Tie">
+                    <navigationItem key="navigationItem" id="Hxw-8L-Tie">
                         <barButtonItem key="leftBarButtonItem" title="登录/注册" id="yY6-aB-OaH">
                             <connections>
                                 <action selector="Login_Click:" destination="NXf-Hr-qEN" id="hUJ-hF-d5b"/>
@@ -181,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaV-Ni-hu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="879"/>
+            <point key="canvasLocation" x="1046" y="1022"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="dxE-Uo-fI4">
@@ -236,22 +235,15 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HeC-u0-J9C">
-                                <frame key="frameInset" minY="20" height="44"/>
+                                <frame key="frameInset" minX="-0.5" minY="20" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Title" id="pXE-1p-FTE">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="bIK-1P-MWE">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8J8-uJ-JBG">
-                                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="返回">
-                                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="Fanhui:" destination="Cci-Xg-1qE" eventType="touchUpInside" id="VXl-Lf-uht"/>
-                                                </connections>
-                                            </button>
+                                        <barButtonItem key="leftBarButtonItem" title="返回" id="NSf-vu-uif">
+                                            <connections>
+                                                <action selector="Fanhui:" destination="Cci-Xg-1qE" id="dhE-nN-2NR"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -288,9 +280,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHK-CL-W8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740" y="879.92957746478874"/>
+            <point key="canvasLocation" x="1745" y="1022"/>
         </scene>
-        <!--动态-->
+        <!--First View Controller-->
         <scene sceneID="b0E-FE-v7x">
             <objects>
                 <viewController storyboardIdentifier="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7sp-WX-mL6" customClass="FirstViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
@@ -306,10 +298,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="News_Information_TableViewCell" rowHeight="218" id="RQM-mN-QHc" customClass="News_Information_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="1000" height="218"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RQM-mN-QHc" id="fwc-QQ-T5R">
-                                            <frame key="frameInset" width="1000" height="217.5"/>
+                                            <frame key="frameInset" width="375" height="217"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9RS-yF-aQZ">
@@ -392,10 +384,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentsPraiseDemote_NTableViewCell" rowHeight="50" id="NEW-e2-XKW" customClass="CommentsPraiseDemote_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="310" width="1000" height="50"/>
+                                        <rect key="frame" x="0.0" y="310" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NEW-e2-XKW" id="4IZ-30-KFB">
-                                            <frame key="frameInset" width="1000" height="49.5"/>
+                                            <frame key="frameInset" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="V2x-IJ-fKU">
@@ -435,10 +427,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreePhoto_NTableViewCell" rowHeight="122" id="vGU-Vf-Ha9" customClass="ThreePhoto_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="360" width="1000" height="122"/>
+                                        <rect key="frame" x="0.0" y="360" width="375" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vGU-Vf-Ha9" id="TH9-ty-7Rs">
-                                            <frame key="frameInset" width="1000" height="121.5"/>
+                                            <frame key="frameInset" width="375" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C6I-37-Dam">
@@ -463,10 +455,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SixPhoto_TableViewCell" rowHeight="240" id="hdj-iS-ibp" customClass="SixPhoto_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="482" width="1000" height="240"/>
+                                        <rect key="frame" x="0.0" y="482" width="375" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hdj-iS-ibp" id="9CD-xN-SIw">
-                                            <frame key="frameInset" width="1000" height="239.5"/>
+                                            <frame key="frameInset" width="375" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ghB-Ug-26A">
@@ -509,10 +501,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NinePhoto_TableViewCell" rowHeight="354" id="j8g-Jz-mxX" customClass="NinePhoto_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="722" width="1000" height="354"/>
+                                        <rect key="frame" x="0.0" y="722" width="375" height="354"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j8g-Jz-mxX" id="FFp-HI-srJ">
-                                            <frame key="frameInset" width="1000" height="353.5"/>
+                                            <frame key="frameInset" width="375" height="353"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="PbW-wW-Gaa">
@@ -561,10 +553,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnePhoto_Z_NTableViewCell" rowHeight="213" id="0uR-2j-0pA" customClass="OnePhoto_Z_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1076" width="1000" height="213"/>
+                                        <rect key="frame" x="0.0" y="1076" width="375" height="213"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0uR-2j-0pA" id="8Cx-Kn-1b5">
-                                            <frame key="frameInset" width="1000" height="212.5"/>
+                                            <frame key="frameInset" width="375" height="212"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LcN-9B-yhD">
@@ -584,10 +576,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnePhoto_H_NTableViewCell" rowHeight="232" id="4oe-FU-wGT" customClass="OnePhoto_H_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1289" width="1000" height="232"/>
+                                        <rect key="frame" x="0.0" y="1289" width="375" height="232"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4oe-FU-wGT" id="Wr7-uc-eLK">
-                                            <frame key="frameInset" width="1000" height="231.5"/>
+                                            <frame key="frameInset" width="375" height="231"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fc3-BX-rhQ"/>
@@ -604,10 +596,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Advertisement_TableViewCell" id="pz5-Yv-gLD" customClass="Advertisement_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1521" width="1000" height="193"/>
+                                        <rect key="frame" x="0.0" y="1521" width="375" height="193"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pz5-Yv-gLD" id="YaP-v4-eXu">
-                                            <frame key="frameInset" width="1000" height="192.5"/>
+                                            <frame key="frameInset" width="375" height="192"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aft-bd-aTz"/>
@@ -634,7 +626,7 @@
                             <constraint firstItem="oth-Oc-048" firstAttribute="centerX" secondItem="NO0-BT-hR5" secondAttribute="centerX" id="nKs-F3-kxg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="动态" id="vuh-Kc-QXh">
+                    <navigationItem key="navigationItem" id="vuh-Kc-QXh">
                         <barButtonItem key="leftBarButtonItem" title="发动态" id="u1O-5H-CK7">
                             <connections>
                                 <action selector="Send_Click:" destination="7sp-WX-mL6" id="VC8-P3-4Gr"/>
@@ -652,9 +644,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bA-o2-TjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1047" y="879"/>
+            <point key="canvasLocation" x="-1048" y="1022"/>
         </scene>
-        <!--消息-->
+        <!--Second View Controller-->
         <scene sceneID="55i-ca-Z1w">
             <objects>
                 <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xby-bb-FVD" customClass="SecondViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
@@ -670,10 +662,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatPeople_TableViewCell" rowHeight="60" id="aoJ-tc-ky7" customClass="ChatPeople_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="1000" height="60"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aoJ-tc-ky7" id="dJb-Io-M1n">
-                                            <frame key="frameInset" width="1000" height="59.5"/>
+                                            <frame key="frameInset" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4vT-vv-IbG">
@@ -733,10 +725,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatMe_TableViewCell" rowHeight="130" id="IsK-Tg-UEs" customClass="ChatMe_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="152" width="1000" height="130"/>
+                                        <rect key="frame" x="0.0" y="152" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IsK-Tg-UEs" id="XAz-nc-CGf">
-                                            <frame key="frameInset" width="1000" height="129.5"/>
+                                            <frame key="frameInset" width="375" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YGw-IG-Wwg"/>
@@ -782,10 +774,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatYou_TableViewCell" rowHeight="121" id="bk3-zj-PXe" customClass="ChatYou_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="282" width="1000" height="121"/>
+                                        <rect key="frame" x="0.0" y="282" width="375" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bk3-zj-PXe" id="snq-zm-hMc">
-                                            <frame key="frameInset" width="1000" height="120.5"/>
+                                            <frame key="frameInset" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YBY-e0-1m5"/>
@@ -841,7 +833,7 @@
                             <constraint firstItem="3tR-Fj-Kc3" firstAttribute="height" secondItem="f22-qy-lws" secondAttribute="height" id="six-Ob-3B3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="消息" id="CBX-VY-tap">
+                    <navigationItem key="navigationItem" id="CBX-VY-tap">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="ywf-CV-W7e">
                             <connections>
                                 <action selector="UIButton_L_Click:" destination="xby-bb-FVD" id="jTi-av-9sM"/>
@@ -859,14 +851,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfx-iG-bH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-358" y="880"/>
+            <point key="canvasLocation" x="-360" y="1022"/>
         </scene>
         <!--消息-->
         <scene sceneID="dxY-7D-Az1">
             <objects>
                 <navigationController id="13G-SS-50L" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="消息" image="message-vector" id="RuQ-3F-lRx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rbf-e6-5gI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rbf-e6-5gI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -883,7 +875,7 @@
             <objects>
                 <navigationController id="adN-qx-Nyj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现" image="search-vector" id="gPr-8l-8QW"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QVD-rK-BKP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QVD-rK-BKP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -904,7 +896,7 @@
             <objects>
                 <navigationController id="a7b-io-UDu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="user-male-circle-vector" id="Q8n-Iq-ftW"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u07-U5-Ium">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="u07-U5-Ium">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -992,7 +984,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsV-S7-jQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2446.875" y="879.92957746478874"/>
+            <point key="canvasLocation" x="2446" y="1022"/>
         </scene>
     </scenes>
     <resources>
