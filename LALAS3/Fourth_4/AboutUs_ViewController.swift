@@ -59,7 +59,7 @@ class AboutUs_ViewController: UIViewController , UITableViewDelegate , UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Aboutus_M_TableViewCell", for: indexPath as IndexPath) as! Aboutus_M_TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath as IndexPath) as! OnlyOneLabel_TableViewCell
         cell.UILabel_M.text = list[indexPath.row]
         //cell.textLabel?.text = "lala"
         return cell
