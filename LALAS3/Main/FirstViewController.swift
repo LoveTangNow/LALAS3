@@ -38,8 +38,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     var ali = true
     
-    
-    
+    var MODEL = FirstPageModel()
     
     //MARK: - 函数
     override func viewDidLoad() {
@@ -324,7 +323,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             switch indexPath.row {
             case 0://文字区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell
-                cell.UIImageViewUserIcon.image = Imageload_Black
+                cell.UIImageViewUserIcon.image = #imageLiteral(resourceName: "Black")
                 cell.UIImageViewSetting.image = Imageload_Black
                 cell.UIImageViewV_.image = #imageLiteral(resourceName: "v")
                 cell.UIImageViewVip_.image = Imageload_Black

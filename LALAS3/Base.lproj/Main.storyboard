@@ -13,7 +13,7 @@
             <objects>
                 <navigationController id="ZBF-qN-fdv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="动态" image="inbox-vector" id="cs5-An-VFf"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ulE-gm-Giq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ulE-gm-Giq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -66,10 +66,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnePhotoWithTwoLabel_TableViewCell" rowHeight="113" id="AvP-5x-1EU" customClass="OnePhotoWithTwoLabel_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="1000" height="113"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AvP-5x-1EU" id="Jxd-6k-XTH">
-                                            <frame key="frameInset" width="1000" height="112"/>
+                                            <frame key="frameInset" width="375" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qYK-rW-Ccd">
@@ -297,7 +297,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="193" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oth-Oc-048">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="News_Information_TableViewCell" rowHeight="218" id="RQM-mN-QHc" customClass="News_Information_TableViewCell" customModule="LALAS3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="News_Information_TableViewCell" rowHeight="218" id="RQM-mN-QHc" customClass="News_Information_TableViewCell" customModule="LALAS3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RQM-mN-QHc" id="fwc-QQ-T5R">
@@ -383,7 +383,7 @@
                                             <outlet property="UILabelUserName" destination="Jln-ao-g3I" id="jCA-Tz-ye5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentsPraiseDemote_NTableViewCell" rowHeight="50" id="NEW-e2-XKW" customClass="CommentsPraiseDemote_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentsPraiseDemote_NTableViewCell" rowHeight="50" id="NEW-e2-XKW" customClass="CommentsPraiseDemote_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="310" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NEW-e2-XKW" id="4IZ-30-KFB">
@@ -426,7 +426,7 @@
                                             <outlet property="UIButton3" destination="FDA-Le-mU6" id="ynI-V2-AQJ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreePhoto_NTableViewCell" rowHeight="122" id="vGU-Vf-Ha9" customClass="ThreePhoto_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreePhoto_NTableViewCell" rowHeight="122" id="vGU-Vf-Ha9" customClass="ThreePhoto_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="360" width="375" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vGU-Vf-Ha9" id="TH9-ty-7Rs">
@@ -454,7 +454,7 @@
                                             <outlet property="UIImageView3" destination="C54-Mi-HuN" id="3pO-bi-wND"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SixPhoto_TableViewCell" rowHeight="240" id="hdj-iS-ibp" customClass="SixPhoto_TableViewCell" customModule="LALAS3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SixPhoto_TableViewCell" rowHeight="240" id="hdj-iS-ibp" customClass="SixPhoto_TableViewCell" customModule="LALAS3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="482" width="375" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hdj-iS-ibp" id="9CD-xN-SIw">
