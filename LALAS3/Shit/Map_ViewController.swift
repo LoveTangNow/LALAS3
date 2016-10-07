@@ -10,6 +10,9 @@ import UIKit
 import MapKit
 
 class Map_ViewController: UIViewController {
+    //MARK: - 变量
+    let width_d  = UIScreen.main.bounds.width
+    let height_d = UIScreen.main.bounds.height
 
     override func viewDidLoad() {
         super.viewDidLoad()
