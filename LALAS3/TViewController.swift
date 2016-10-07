@@ -69,6 +69,14 @@ class TViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let imageli = [#imageLiteral(resourceName: "Black"),#imageLiteral(resourceName: "White")]
+        
+        //闪动动作
+        UIImageView_b.animationImages = imageli//资源
+        UIImageView_b.animationDuration = 0.25
+        UIImageView_b.animationRepeatCount = 0
+        UIImageView_b.startAnimating()
 
         let bffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         let bview = UIVisualEffectView(effect:bffect)
@@ -79,6 +87,10 @@ class TViewController: UIViewController {
         //if HKHealthStore.isHealthDataAvailable() == true{
             //let healthStore = HKHealthStore()
         //}
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIImageView_b.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {
