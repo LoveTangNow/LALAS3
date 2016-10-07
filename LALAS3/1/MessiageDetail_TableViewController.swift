@@ -168,7 +168,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                     cell.UIImageView7.image = imagelist[6]
                     switch imgaeNumber {
                     case 8:
-                        cell.UIImageView7.image = imagelist[7]
+                        cell.UIImageView8.image = imagelist[7]
                     case 9:
                         cell.UIImageView8.image = imagelist[7]
                         cell.UIImageView9.image = imagelist[8]

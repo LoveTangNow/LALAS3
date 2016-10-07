@@ -28,7 +28,6 @@
 		7F9F8A9F1D9D16F200C49C12 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8A9E1D9D16F200C49C12 /* NotificationService.swift */; };
 		7F9F8AA31D9D16F200C49C12 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F9F8A9C1D9D16F200C49C12 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F9F8ACB1D9D2B7900C49C12 /* Lable&Photos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8ACA1D9D2B7900C49C12 /* Lable&Photos.xib */; };
-		7F9F8ACD1D9D484900C49C12 /* LALA.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8ACC1D9D484900C49C12 /* LALA.sqlite */; };
 		7F9F8AE21D9D4E1300C49C12 /* LALAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8AE11D9D4E1300C49C12 /* LALAD.swift */; };
 		7F9F8AED1D9D51B800C49C12 /* Beng.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEA1D9D51B800C49C12 /* Beng.aiff */; };
 		7F9F8AEE1D9D51B800C49C12 /* ButtonTap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEB1D9D51B800C49C12 /* ButtonTap.wav */; };
@@ -221,7 +220,6 @@
 		7F9F8AA01D9D16F200C49C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F9F8AB51D9D17D000C49C12 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		7F9F8ACA1D9D2B7900C49C12 /* Lable&Photos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Lable&Photos.xib"; sourceTree = "<group>"; };
-		7F9F8ACC1D9D484900C49C12 /* LALA.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = LALA.sqlite; path = ../../../../../LALA.sqlite; sourceTree = "<group>"; };
 		7F9F8AE11D9D4E1300C49C12 /* LALAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LALAD.swift; path = Shit/LALAD.swift; sourceTree = "<group>"; };
 		7F9F8AEA1D9D51B800C49C12 /* Beng.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = Beng.aiff; path = Voice/Beng.aiff; sourceTree = "<group>"; };
 		7F9F8AEB1D9D51B800C49C12 /* ButtonTap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ButtonTap.wav; path = Voice/ButtonTap.wav; sourceTree = "<group>"; };
@@ -570,7 +568,6 @@
 		7FAECEEA1D8A6AC4004592EA /* shit */ = {
 			isa = PBXGroup;
 			children = (
-				7F9F8ACC1D9D484900C49C12 /* LALA.sqlite */,
 				7F11B5641D997C080084BAE5 /* T.storyboard */,
 				7FBCFDEC1D997E3D00831823 /* TViewController.swift */,
 				7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */,
@@ -822,6 +819,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FD101731D89764D009BB6A6 /* Build configuration list for PBXNativeTarget "LALAS3" */;
 			buildPhases = (
+				A34D728924FF9E5D4A273B3A /* [CP] Check Pods Manifest.lock */,
 				D0AED5F34A7D7217445C3AB5 /* [CP] Check Pods Manifest.lock */,
 				7FD101451D89764D009BB6A6 /* Sources */,
 				7FD101461D89764D009BB6A6 /* Frameworks */,
@@ -829,6 +827,8 @@
 				71E7BC174F7A4CC62FF0EF56 /* [CP] Embed Pods Frameworks */,
 				6346C22875C80C4F51413E7A /* [CP] Copy Pods Resources */,
 				7FBCFE441D9C1E6800831823 /* Embed App Extensions */,
+				109FE58C52C2D4D4B4E3158D /* 📦 Embed Pods Frameworks */,
+				1133962D81C964D9C72BBBA7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1089,7 +1089,6 @@
 				7FA6E91C1D89A906003F6186 /* Second.storyboard in Resources */,
 				7FD101591D89764D009BB6A6 /* LaunchScreen.storyboard in Resources */,
 				7FA6E9181D89A8E2003F6186 /* Fourth.storyboard in Resources */,
-				7F9F8ACD1D9D484900C49C12 /* LALA.sqlite in Resources */,
 				7F11B5651D997C080084BAE5 /* T.storyboard in Resources */,
 				7F9F8AEE1D9D51B800C49C12 /* ButtonTap.wav in Resources */,
 				7F9F8AEF1D9D51B800C49C12 /* SecondBeep.wav in Resources */,
@@ -1137,6 +1136,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		109FE58C52C2D4D4B4E3158D /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1133962D81C964D9C72BBBA7 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6346C22875C80C4F51413E7A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1165,6 +1194,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A34D728924FF9E5D4A273B3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D0AED5F34A7D7217445C3AB5 /* [CP] Check Pods Manifest.lock */ = {

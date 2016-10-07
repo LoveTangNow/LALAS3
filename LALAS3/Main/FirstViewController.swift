@@ -243,7 +243,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 imagelist.append(a.UIImageView6.image)
                 imagelist.append(a.UIImageView7.image)
                 imagelist.append(a.UIImageView8.image)
-                
+                //print("8")
                 imagenumber_in = 8
             case "9" :
                 let a = UITableView_Main.cellForRow(at: aa)! as! NinePhoto_TableViewCell
@@ -256,7 +256,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 imagelist.append(a.UIImageView7.image)
                 imagelist.append(a.UIImageView8.image)
                 imagelist.append(a.UIImageView9.image)
-                
+                //print("9")
                 imagenumber_in = 9
             default:
                 break
