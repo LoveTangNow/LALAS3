@@ -1,10 +1,10 @@
-//
+/**
 //  Chat_ViewController.swift
 //  LALAS3
 //
 //  Created by Thomas Liu on 2016/10/3.
 //  Copyright © 2016年 ThomasLiu. All rights reserved.
-//
+*/
 
 import UIKit
 
@@ -14,6 +14,7 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     let deviceWidth  = UIScreen.main.bounds.width
     let deviceHeight  = UIScreen.main.bounds.height
     
+    var Informations = chatmodel()
     
     //MARK: - 绑定
     
@@ -55,7 +56,7 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        UIView_Bottom.frame = CGRect(x:0,y:deviceHeight,width:deviceWidth,height:100)
+        UIView_Bottom.frame = CGRect(x:0,y:deviceHeight,width:deviceWidth,height:40)
         UIView_Bottom2.frame = CGRect(x:0,y:deviceHeight,width:deviceWidth,height:100)
         UIView_Bottom.backgroundColor = UIColor.lightGray
         
@@ -66,7 +67,7 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         UIView.animate(withDuration: 0.3, animations: {
-            self.UIView_Bottom.center.y -= 100
+            self.UIView_Bottom.center.y -= 40
         })
         
         //UITableView_M.isHidden = true
@@ -125,15 +126,27 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
         CGSize size = [m_textView.text sizeWithFont:[m_textView font]];
         int length = size.height;
         int colomNumber = m_textView.contentSize.height/length;*/
+        
         let a = UITextView_Word.text!
-        let c  = a[a.index(before: a.endIndex)]
+        var c = Character(" ")
+        
+        switch a.characters.count {
+        case 0:
+            c = Character(" ")
+        case 1:
+            c = a[a.startIndex]
+        default:
+            c = a[a.index(before: a.endIndex)]
+        }
+        
         let n:Character = "\n"
+        print(c)
         if c == n {
-            print("boom")
+            print("会车来了")
             //最后一个是回车 时候 go
             //UITableView_M.insertRows(at:[aaa], with: UITableViewRowAnimation.bottom)
         } else {
-            print("ya")
+            
         }
     }
     
