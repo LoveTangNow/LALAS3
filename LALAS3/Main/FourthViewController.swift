@@ -8,12 +8,35 @@
 
 import UIKit
 
-class FourthViewController: UIViewController {
-
+class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,ME_Delegate{
+    //MARK: - 绑定
+    @IBOutlet weak var UITableView_M: UITableView!
+    
+    
+    //MARK: - 变量
+    var  list  = ["我的微博","我的图片","我的赞","其他"]
+    var TableViewHeight:CGFloat = 0
+    var myview = UIView()
+    
+    
+    
+    
+    //MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "我的"
+        self.UITableView_M.delegate = self
+        self.UITableView_M.dataSource = self
+        UITableView_M.backgroundColor = UIColor.white
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.red
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        myview.frame =  CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:70)
+        myview.backgroundColor = UIColor.blue
+        self.view.addSubview(myview)
+        //self.UITableView_M.addSubview(myview)
         
         //UserDefaults.standard.set("noSetle", forKey: "isSet")
         
@@ -63,6 +86,48 @@ class FourthViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0, animations: {
+            self.myview.center.y -= 6
+        })
+    }
+    
+    var old:CGFloat = 64
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        /*
+         小于70，展示下拉刷新：松开上滑
+         大于70，展开松开刷新：松开上滑到70，刷新并且更新数据，上滑到0
+         */
+        print("--")
+        print(self.UITableView_M.contentInset.top)
+        print(-self.UITableView_M.contentOffset.y)//现在的位置
+        let a  = -self.UITableView_M.contentOffset.y - old//移动间距
+        print(a)
+        if -self.UITableView_M.contentOffset.y - self.UITableView_M.contentInset.top <= 70{
+            old = -self.UITableView_M.contentOffset.y
+            myview.backgroundColor = UIColor.blue
+            UIView.animate(withDuration: 0, animations: {
+                self.myview.center.y += a
+            })
+        }
+        else{//到70的时候就会触发，这个时候开始
+            //UITableView_M.isScrollEnabled = false
+            old = -self.UITableView_M.contentOffset.y
+            myview.backgroundColor = UIColor.white
+            UIView.animate(withDuration: 0, animations: {
+                self.myview.center.y += a
+            })
+            //UITableView_M.isScrollEnabled = true
+        }
+        
+    }
+        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,6 +144,72 @@ class FourthViewController: UIViewController {
         let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as UIViewController
         self.present(vc, animated: true, completion: nil)
     }
+    //MARK: - TableView
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                //let a = UITableView_M.cellForRow(at: indexPath)! as! ME_TableViewCell
+                //a.UIButton_MC(a.UIButton_Main)
+            }
+        }
+    }
+    
+    func ME_GO() {
+        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+        print("go")
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ME_TableViewCell", for: indexPath) as! ME_TableViewCell
+                
+                cell.UIButton_Main.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+                cell.UIButton_Main.addTarget(self, action: #selector(ME_GO), for: UIControlEvents.touchUpInside)
+                
+                
+                cell.UIButton_Main.setTitle("", for: .normal)
+                cell.UIButton_Small.setTitle("", for: .normal)
+                
+                TableViewHeight = 100
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeWhat_TableViewCell", for: indexPath) as! ThreeWhat_TableViewCell
+                TableViewHeight = 70
+                return cell
+            }
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
+            cell.UIImageView_m.image = #imageLiteral(resourceName: "Black")
+            cell.UILabel_m.text = list[indexPath.row]
+            TableViewHeight = 45
+            return cell
+        }
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 2
+        }
+        else{
+            return list.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return TableViewHeight
+    }
+    
     
     //MARK: - FUNCS
     
