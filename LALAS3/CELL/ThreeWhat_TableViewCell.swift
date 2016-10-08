@@ -17,13 +17,6 @@ class ThreeWhat_TableViewCell: UITableViewCell {
     @IBOutlet weak var UIButton_l: UIButton!
     @IBOutlet weak var UIButton_m: UIButton!
     @IBOutlet weak var UIButton_r: UIButton!
-    
-    @IBAction func SEE_L(_ sender: UIButton) {
-    }
-    @IBAction func SEE_M(_ sender: UIButton) {
-    }
-    @IBAction func SEE_R(_ sender: UIButton) {
-    }
 
 
     override func awakeFromNib() {

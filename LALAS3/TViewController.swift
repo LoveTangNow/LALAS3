@@ -79,6 +79,7 @@ class TViewController: UIViewController {
         UIImageView_b.startAnimating()
 
         let bffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        //let bffect2 = UIVibrancyEffect()
         let bview = UIVisualEffectView(effect:bffect)
         bview.frame = CGRect(x:0,y:50,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
         UIImageView_b.addSubview(bview)
@@ -97,16 +98,5 @@ class TViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

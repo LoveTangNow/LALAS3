@@ -23,7 +23,7 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <connections>
-                            <action selector="ChangeIcon:" destination="8sb-8Z-MdS" eventType="touchUpInside" id="qey-Je-kO1"/>
+                            <action selector="UIButton_MC:" destination="8sb-8Z-MdS" eventType="touchUpInside" id="IYe-E1-jGg"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAi-x3-XJz">
@@ -37,7 +37,7 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <connections>
-                            <action selector="BuyVIPNow:" destination="8sb-8Z-MdS" eventType="touchUpInside" id="kkd-KS-J2u"/>
+                            <action selector="UIButton_SC:" destination="8sb-8Z-MdS" eventType="touchUpInside" id="P58-f8-fnh"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc8-gH-soJ">
@@ -105,27 +105,18 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="SEE_L:" destination="UQy-tC-bIl" eventType="touchUpInside" id="Xnr-dw-yHr"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rA-LN-PI3">
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="SEE_M:" destination="UQy-tC-bIl" eventType="touchUpInside" id="Zbw-ee-yUL"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpk-fv-3YP">
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="SEE_R:" destination="UQy-tC-bIl" eventType="touchUpInside" id="uTB-1M-Hu0"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

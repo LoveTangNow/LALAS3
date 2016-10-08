@@ -16,16 +16,18 @@ class ME_TableViewCell: UITableViewCell {
     @IBOutlet weak var UILabel_UP: UILabel!
     @IBOutlet weak var UILabel_Dwon: UILabel!
     
-    @IBAction func ChangeIcon(_ sender: UIButton) {
+    @IBAction func UIButton_MC(_ sender: UIButton) {
+        
     }
     
-    @IBAction func BuyVIPNow(_ sender: UIButton) {
+    @IBAction func UIButton_SC(_ sender: UIButton) {
+        
     }
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -156,67 +156,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-kr-jDk">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ME_TableViewCell" rowHeight="140" id="Ucw-aj-rcq" customClass="ME_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="140"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ucw-aj-rcq" id="xdf-LZ-PXF">
-                                            <frame key="frameInset" width="375" height="139"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejh-83-azE">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="ejh-83-azE" secondAttribute="height" multiplier="1:1" id="mKU-nf-T99"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="ChangeIcon:" destination="Ucw-aj-rcq" eventType="touchUpInside" id="TA7-7j-Ng9"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D60-jn-zMq">
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ord-zR-hAX">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="ord-zR-hAX" secondAttribute="height" multiplier="50:31" id="2JX-4S-UwE"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="BuyVIPNow:" destination="Ucw-aj-rcq" eventType="touchUpInside" id="Wrw-vd-WRy"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fna-vw-u0x">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ejh-83-azE" firstAttribute="centerY" secondItem="xdf-LZ-PXF" secondAttribute="centerY" id="5gd-ts-oit"/>
-                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="fna-vw-u0x" secondAttribute="bottom" constant="5" id="6Ci-YF-nYH"/>
-                                                <constraint firstItem="D60-jn-zMq" firstAttribute="height" secondItem="ord-zR-hAX" secondAttribute="height" id="8Tw-TO-CBS"/>
-                                                <constraint firstItem="ejh-83-azE" firstAttribute="leading" secondItem="xdf-LZ-PXF" secondAttribute="leadingMargin" constant="10" id="Bq5-Nq-2C3"/>
-                                                <constraint firstItem="D60-jn-zMq" firstAttribute="leading" secondItem="ejh-83-azE" secondAttribute="trailing" constant="5" id="Ckj-tH-gSP"/>
-                                                <constraint firstItem="ord-zR-hAX" firstAttribute="top" secondItem="ejh-83-azE" secondAttribute="top" id="PRm-Lt-NWG"/>
-                                                <constraint firstItem="fna-vw-u0x" firstAttribute="leading" secondItem="ejh-83-azE" secondAttribute="trailing" constant="5" id="RDw-rB-kWh"/>
-                                                <constraint firstItem="ord-zR-hAX" firstAttribute="trailing" secondItem="xdf-LZ-PXF" secondAttribute="trailingMargin" id="Sdf-zl-IsZ"/>
-                                                <constraint firstItem="ejh-83-azE" firstAttribute="top" secondItem="xdf-LZ-PXF" secondAttribute="topMargin" constant="5" id="ecv-lO-gxQ"/>
-                                                <constraint firstItem="fna-vw-u0x" firstAttribute="top" secondItem="D60-jn-zMq" secondAttribute="bottom" constant="5" id="mnD-Es-c0q"/>
-                                                <constraint firstItem="ord-zR-hAX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D60-jn-zMq" secondAttribute="trailing" constant="5" id="nya-CT-OUd"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="fna-vw-u0x" secondAttribute="trailing" id="psw-qh-NWb"/>
-                                                <constraint firstItem="D60-jn-zMq" firstAttribute="top" secondItem="ejh-83-azE" secondAttribute="top" id="yU9-tU-mKq"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="UIButton_Main" destination="ejh-83-azE" id="QvR-dA-IT7"/>
-                                            <outlet property="UIButton_Small" destination="ord-zR-hAX" id="7Ao-a0-0an"/>
-                                            <outlet property="UILabel_Dwon" destination="fna-vw-u0x" id="yqx-7Q-6fP"/>
-                                            <outlet property="UILabel_UP" destination="D60-jn-zMq" id="POR-h6-doK"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreeWhat_TableViewCell" rowHeight="96" id="2QZ-SG-vH0" customClass="ThreeWhat_TableViewCell" customModule="LALAS3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="232" width="375" height="96"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2QZ-SG-vH0" id="uuf-mn-6d1">
                                             <frame key="frameInset" width="375" height="95"/>
@@ -250,27 +191,18 @@
                                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
-                                                                    <connections>
-                                                                        <action selector="SEE_L:" destination="2QZ-SG-vH0" eventType="touchUpInside" id="ePM-3U-Pwj"/>
-                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnw-08-XRc">
                                                                     <state key="normal" title="Button">
                                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
-                                                                    <connections>
-                                                                        <action selector="SEE_M:" destination="2QZ-SG-vH0" eventType="touchUpInside" id="Ova-v9-6zQ"/>
-                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzs-mQ-wit">
                                                                     <state key="normal" title="Button">
                                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </state>
-                                                                    <connections>
-                                                                        <action selector="SEE_R:" destination="2QZ-SG-vH0" eventType="touchUpInside" id="QUy-K5-XlU"/>
-                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -291,6 +223,65 @@
                                             <outlet property="UILabel_l" destination="IqC-Qy-A4a" id="DxX-Hh-nKk"/>
                                             <outlet property="UILabel_m" destination="pTm-wK-Iqx" id="ErM-VU-tsG"/>
                                             <outlet property="UILabel_r" destination="DL3-pa-NVU" id="Ijb-qv-aih"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ME_TableViewCell" rowHeight="140" id="EMd-wp-kL2" customClass="ME_TableViewCell" customModule="LALAS3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="188" width="375" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EMd-wp-kL2" id="xsU-or-Fxd">
+                                            <frame key="frameInset" width="375" height="139"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbZ-B1-8rV">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="nbZ-B1-8rV" secondAttribute="height" multiplier="1:1" id="Jm4-dO-hoT"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="UIButton_MC:" destination="EMd-wp-kL2" eventType="touchUpInside" id="T19-su-Woy"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d67-em-rJY">
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeV-es-RMJ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ZeV-es-RMJ" secondAttribute="height" multiplier="50:31" id="4a0-pY-wgI"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="UIButton_SC:" destination="EMd-wp-kL2" eventType="touchUpInside" id="wJQ-Rg-DcW"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7er-yf-KTx">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZeV-es-RMJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d67-em-rJY" secondAttribute="trailing" constant="5" id="5hY-YT-BYw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7er-yf-KTx" secondAttribute="trailing" id="8VR-vL-N0u"/>
+                                                <constraint firstItem="7er-yf-KTx" firstAttribute="top" secondItem="d67-em-rJY" secondAttribute="bottom" constant="5" id="8lR-Nr-eGb"/>
+                                                <constraint firstItem="d67-em-rJY" firstAttribute="leading" secondItem="nbZ-B1-8rV" secondAttribute="trailing" constant="5" id="D5g-eL-WHG"/>
+                                                <constraint firstItem="d67-em-rJY" firstAttribute="height" secondItem="ZeV-es-RMJ" secondAttribute="height" id="JGS-hI-zBy"/>
+                                                <constraint firstItem="d67-em-rJY" firstAttribute="top" secondItem="nbZ-B1-8rV" secondAttribute="top" id="dZ7-90-VhK"/>
+                                                <constraint firstItem="nbZ-B1-8rV" firstAttribute="centerY" secondItem="xsU-or-Fxd" secondAttribute="centerY" id="hNT-fs-tAA"/>
+                                                <constraint firstItem="nbZ-B1-8rV" firstAttribute="top" secondItem="xsU-or-Fxd" secondAttribute="topMargin" constant="5" id="l4j-Tw-kHT"/>
+                                                <constraint firstItem="ZeV-es-RMJ" firstAttribute="trailing" secondItem="xsU-or-Fxd" secondAttribute="trailingMargin" id="q1L-ae-BlX"/>
+                                                <constraint firstItem="7er-yf-KTx" firstAttribute="leading" secondItem="nbZ-B1-8rV" secondAttribute="trailing" constant="5" id="sgU-Rl-pEL"/>
+                                                <constraint firstItem="nbZ-B1-8rV" firstAttribute="leading" secondItem="xsU-or-Fxd" secondAttribute="leadingMargin" constant="10" id="shq-Rv-PEO"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="7er-yf-KTx" secondAttribute="bottom" constant="5" id="wuH-2r-ji2"/>
+                                                <constraint firstItem="ZeV-es-RMJ" firstAttribute="top" secondItem="nbZ-B1-8rV" secondAttribute="top" id="zlO-He-jh1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="UIButton_Main" destination="nbZ-B1-8rV" id="IId-jM-H9U"/>
+                                            <outlet property="UIButton_Small" destination="ZeV-es-RMJ" id="NGQ-Wn-kFo"/>
+                                            <outlet property="UILabel_Dwon" destination="7er-yf-KTx" id="YYJ-LT-md4"/>
+                                            <outlet property="UILabel_UP" destination="d67-em-rJY" id="mSB-wa-pV9"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LeftSamllImageAndLabel_TableViewCell" rowHeight="45" id="Bt1-5f-0DE" customClass="LeftSamllImageAndLabel_TableViewCell" customModule="LALAS3" customModuleProvider="target">

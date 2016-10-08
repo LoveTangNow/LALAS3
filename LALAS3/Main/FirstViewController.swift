@@ -399,7 +399,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                      */
 
                     if cell.GotPhoto != true {
-                    Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu00001.jpg")
+                    Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu00100.jpg")
                         .responseData { response in
                             if let data = response.result.value {
                                 let asd = UIImage(data: data)
@@ -421,7 +421,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         for i in 0..<aa
                         {
                             var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 20) + ".jpg")
+                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 60) + ".jpg")
                                 .responseData { response in
                                 if let data = response.result.value {
                                     //print("do23")
@@ -477,7 +477,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         for i in 0..<aa
                         {
                             var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 20) + ".jpg")
+                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 50) + ".jpg")
                                 .responseData { response in
                                     if let data = response.result.value {
                                         //print("do456")
@@ -577,7 +577,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         //print("alaout")
                         var aaaaaa = [Dictionary<String, UIImage>]()
                         //print(FFFFFunctions().GotImageMainServer(ai: ali))
-                        Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 30) + ".jpg")
+                        Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 70) + ".jpg")
                                 .responseData { response in
                                    // print("alain")
                                     if let data = response.result.value {
