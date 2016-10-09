@@ -13,10 +13,10 @@ class LeftSamllImageAndLabel_TableViewCell: UITableViewCell {
     var myimage = UIImage()
     var mystring = String()
     
-    
 
     @IBOutlet weak var UIImageView_m: UIImageView!
     @IBOutlet weak var UILabel_m: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

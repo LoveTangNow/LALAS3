@@ -17,7 +17,7 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     var TableViewHeight:CGFloat = 0
     var myview = UIView()
     
-    
+    var TableViewHeights = [[Int]]()
     
     
     //MARK: - View
@@ -175,25 +175,45 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 cell.UIButton_Main.setTitle("", for: .normal)
                 cell.UIButton_Small.setTitle("", for: .normal)
                 
-                TableViewHeight = 100
+                TableViewHeights[indexPath.section][indexPath.row] = 100
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeWhat_TableViewCell", for: indexPath) as! ThreeWhat_TableViewCell
-                TableViewHeight = 70
+                TableViewHeights[indexPath.section][indexPath.row] = 70
                 return cell
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
-            //let cell = LeftSamllImageAndLabel_TableViewCell()
-            
-            //cell.myimage = #imageLiteral(resourceName: "Black")
-            //cell.mystring = list[indexPath.row]
             cell.UIImageView_m.image = #imageLiteral(resourceName: "Black")
             cell.UILabel_m.text = list[indexPath.row]
-            TableViewHeight = 45
+            
+            //let cell = LeftSamllImageAndLabel_TableViewCell()
+            //cell.Set(Image: #imageLiteral(resourceName: "Black"), Label: list[indexPath.row])
+            TableViewHeights[indexPath.section][indexPath.row] = 45
             return cell
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if indexPath.section == 0 {
+            return .none
+        } else {
+            return .delete
+        }
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        UITableView_M.setEditing(editing, animated: animated)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            list.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+            UITableView_M.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -205,21 +225,35 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        let a  = 2
+        for _  in 0..<a {
+            TableViewHeights.append([0])
+        }
+        return a
     }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            let a  = 2
+            for _  in 0..<a {
+                TableViewHeights[0].append(0)
+            }
+            return a
         }
         else{
-            return list.count
+            let a  = list.count
+            for _  in 0..<a {
+                TableViewHeights[1].append(0)
+            }
+            return a
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return TableViewHeight
+        
+        return CGFloat(TableViewHeights[indexPath.section][indexPath.row])
+        
     }
     
     

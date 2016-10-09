@@ -88,6 +88,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 case .failure(let error):
                     //失败
                     print(error)
+                    SVProgressHUD.dismiss()
                 }
         }
         // Do any additional setup after loading the view.

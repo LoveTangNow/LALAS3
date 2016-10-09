@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 
+/**动态ViewModel*/
 class FirstPageModel {
     //MARK: - Data
     /**用户编号*/
@@ -61,6 +62,7 @@ class FirstPageModel {
     //MARK: - API?
 }
 
+/**消息ViewModel*/
 class SecondPageModel {
     //MARK: - Data
     
@@ -68,6 +70,7 @@ class SecondPageModel {
     
 }
 
+/**推荐ViewModel*/
 class ThridPageModel {
     //MARK: - Data
     
@@ -76,6 +79,7 @@ class ThridPageModel {
     
 }
 
+/**我的ViewModel*/
 class FourthPageModel {
     //MARK: - Data
     
