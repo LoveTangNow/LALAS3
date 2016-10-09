@@ -31,7 +31,6 @@
 		7F9F8A941D9D16D700C49C12 /* NotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F9F8A861D9D16D700C49C12 /* NotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F9F8A9F1D9D16F200C49C12 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8A9E1D9D16F200C49C12 /* NotificationService.swift */; };
 		7F9F8AA31D9D16F200C49C12 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F9F8A9C1D9D16F200C49C12 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7F9F8AE21D9D4E1300C49C12 /* LALAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8AE11D9D4E1300C49C12 /* LALAD.swift */; };
 		7F9F8AED1D9D51B800C49C12 /* Beng.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEA1D9D51B800C49C12 /* Beng.aiff */; };
 		7F9F8AEE1D9D51B800C49C12 /* ButtonTap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEB1D9D51B800C49C12 /* ButtonTap.wav */; };
 		7F9F8AEF1D9D51B800C49C12 /* SecondBeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7F9F8AEC1D9D51B800C49C12 /* SecondBeep.wav */; };
@@ -87,6 +86,11 @@
 		7FD5FA941DA50E49002A901C /* intentsEUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7FD5FA891DA50E48002A901C /* intentsEUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7FD5FA971DA50E49002A901C /* intentsE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7FD5FA801DA50E48002A901C /* intentsE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7FD5FAA11DA51778002A901C /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5FAA01DA51778002A901C /* ChatModels.swift */; };
+		7FE53EFD1DA9C6F400D318E0 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EF71DA9C6F400D318E0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FE53EFF1DA9C6F400D318E0 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EF81DA9C6F400D318E0 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FE53F011DA9C6F400D318E0 /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EF91DA9C6F400D318E0 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FE53F031DA9C6F400D318E0 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EFA1DA9C6F400D318E0 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FE53F051DA9C6F400D318E0 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EFB1DA9C6F400D318E0 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FE5BF231D8E74B400586166 /* AccountSecurity_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF221D8E74B400586166 /* AccountSecurity_TableViewController.swift */; };
 		7FE5BF291D8E753D00586166 /* HuanCun_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF281D8E753D00586166 /* HuanCun_ViewController.swift */; };
 		7FE5BF2B1D8E755600586166 /* FanKui_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF2A1D8E755600586166 /* FanKui_ViewController.swift */; };
@@ -107,7 +111,6 @@
 		7FFA9E561D97F148002380C0 /* Piker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E551D97F148002380C0 /* Piker.xib */; };
 		7FFA9E581D97F1BB002380C0 /* Picker_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA9E571D97F1BB002380C0 /* Picker_TableViewCell.swift */; };
 		7FFA9E5A1D97F1D9002380C0 /* DatePicker_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA9E591D97F1D9002380C0 /* DatePicker_TableViewCell.swift */; };
-		8E27E0A936834B29C0CA482A /* Pods_LALAS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,11 +197,24 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7FE53F061DA9C6F500D318E0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7FE53EFD1DA9C6F400D318E0 /* Alamofire.framework in Embed Frameworks */,
+				7FE53EFF1DA9C6F400D318E0 /* AlamofireImage.framework in Embed Frameworks */,
+				7FE53F031DA9C6F400D318E0 /* SVProgressHUD.framework in Embed Frameworks */,
+				7FE53F011DA9C6F400D318E0 /* Dollar.framework in Embed Frameworks */,
+				7FE53F051DA9C6F400D318E0 /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1EE9647F7DE5B2DCE0C3223C /* Pods-LALAS3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LALAS3.release.xcconfig"; path = "Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3.release.xcconfig"; sourceTree = "<group>"; };
-		73C7DC9B3D33878FCF28F421 /* Pods-LALAS3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LALAS3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3.debug.xcconfig"; sourceTree = "<group>"; };
 		7F0030851DA794AD00CCACB4 /* me.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = me.xib; path = CELL/me.xib; sourceTree = "<group>"; };
 		7F0030891DA7951200CCACB4 /* Lable&Photos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Lable&Photos.xib"; path = "CELL/Lable&Photos.xib"; sourceTree = "<group>"; };
 		7F00308B1DA7954100CCACB4 /* ME_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ME_TableViewCell.swift; path = CELL/ME_TableViewCell.swift; sourceTree = "<group>"; };
@@ -226,7 +242,6 @@
 		7F9F8A9E1D9D16F200C49C12 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7F9F8AA01D9D16F200C49C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F9F8AB51D9D17D000C49C12 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
-		7F9F8AE11D9D4E1300C49C12 /* LALAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LALAD.swift; path = Shit/LALAD.swift; sourceTree = "<group>"; };
 		7F9F8AEA1D9D51B800C49C12 /* Beng.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = Beng.aiff; path = Voice/Beng.aiff; sourceTree = "<group>"; };
 		7F9F8AEB1D9D51B800C49C12 /* ButtonTap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ButtonTap.wav; path = Voice/ButtonTap.wav; sourceTree = "<group>"; };
 		7F9F8AEC1D9D51B800C49C12 /* SecondBeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SecondBeep.wav; path = Voice/SecondBeep.wav; sourceTree = "<group>"; };
@@ -297,6 +312,11 @@
 		7FD5FA8F1DA50E49002A901C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7FD5FA911DA50E49002A901C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD5FAA01DA51778002A901C /* ChatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatModels.swift; path = Second_2/ChatModels.swift; sourceTree = "<group>"; };
+		7FE53EF71DA9C6F400D318E0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		7FE53EF81DA9C6F400D318E0 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		7FE53EF91DA9C6F400D318E0 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Build/iOS/Dollar.framework; sourceTree = "<group>"; };
+		7FE53EFA1DA9C6F400D318E0 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		7FE53EFB1DA9C6F400D318E0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7FE5BF221D8E74B400586166 /* AccountSecurity_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountSecurity_TableViewController.swift; path = Fourth_4/AccountSecurity_TableViewController.swift; sourceTree = "<group>"; };
 		7FE5BF281D8E753D00586166 /* HuanCun_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HuanCun_ViewController.swift; path = Fourth_4/HuanCun_ViewController.swift; sourceTree = "<group>"; };
 		7FE5BF2A1D8E755600586166 /* FanKui_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FanKui_ViewController.swift; path = Fourth_4/FanKui_ViewController.swift; sourceTree = "<group>"; };
@@ -318,7 +338,6 @@
 		7FFA9E551D97F148002380C0 /* Piker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Piker.xib; path = CELL/Piker.xib; sourceTree = "<group>"; };
 		7FFA9E571D97F1BB002380C0 /* Picker_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Picker_TableViewCell.swift; path = CELL/Picker_TableViewCell.swift; sourceTree = "<group>"; };
 		7FFA9E591D97F1D9002380C0 /* DatePicker_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePicker_TableViewCell.swift; path = CELL/DatePicker_TableViewCell.swift; sourceTree = "<group>"; };
-		BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LALAS3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,7 +386,6 @@
 				7FF0C8511D91114400B85248 /* libsqlite3.tbd in Frameworks */,
 				7FBCFE311D9C07C900831823 /* HealthKit.framework in Frameworks */,
 				7FBCFE2F1D9C07C000831823 /* MapKit.framework in Frameworks */,
-				8E27E0A936834B29C0CA482A /* Pods_LALAS3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,15 +421,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05DFF5341690B73CF5FBA455 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				73C7DC9B3D33878FCF28F421 /* Pods-LALAS3.debug.xcconfig */,
-				1EE9647F7DE5B2DCE0C3223C /* Pods-LALAS3.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7F0030841DA7948F00CCACB4 /* ME */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,7 +598,6 @@
 				7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */,
 				7FBCFE331D9C08DB00831823 /* Map_ViewController.swift */,
 				7FBCFE351D9C091900831823 /* Health_ViewController.swift */,
-				7F9F8AE11D9D4E1300C49C12 /* LALAD.swift */,
 			);
 			name = shit;
 			sourceTree = "<group>";
@@ -628,17 +636,14 @@
 		7FD101401D89764C009BB6A6 = {
 			isa = PBXGroup;
 			children = (
+				7FE53EF71DA9C6F400D318E0 /* Alamofire.framework */,
+				7FE53EF81DA9C6F400D318E0 /* AlamofireImage.framework */,
+				7FE53EF91DA9C6F400D318E0 /* Dollar.framework */,
+				7FE53EFA1DA9C6F400D318E0 /* SVProgressHUD.framework */,
+				7FE53EFB1DA9C6F400D318E0 /* SwiftyJSON.framework */,
 				7FD1014B1D89764D009BB6A6 /* LALAS3 */,
-				7FD101621D89764D009BB6A6 /* LALAS3Tests */,
-				7FD1016D1D89764D009BB6A6 /* LALAS3UITests */,
-				7FBCFE5E1D9C1EFA00831823 /* Today - 下拉通知栏扩展 */,
-				7FBCFE4A1D9C1ECF00831823 /* Action */,
-				7F9F8A8B1D9D16D700C49C12 /* NotificationContent */,
-				7F9F8A9D1D9D16F200C49C12 /* NotificationService */,
-				7FBCFE3A1D9C1E6800831823 /* Stickers - 表情包扩展 */,
-				7FD5FA811DA50E48002A901C /* intentsE */,
-				7FD5FA8B1DA50E49002A901C /* intentsEUI */,
-				05DFF5341690B73CF5FBA455 /* Pods */,
+				7FE53F081DA9C78200D318E0 /* 测试 */,
+				7FE53F071DA9C75300D318E0 /* 扩展 */,
 				7FD1014A1D89764D009BB6A6 /* Products */,
 				F807D885972D56BFFF9611D1 /* Frameworks */,
 			);
@@ -722,13 +727,35 @@
 			path = intentsEUI;
 			sourceTree = "<group>";
 		};
+		7FE53F071DA9C75300D318E0 /* 扩展 */ = {
+			isa = PBXGroup;
+			children = (
+				7FBCFE5E1D9C1EFA00831823 /* Today - 下拉通知栏扩展 */,
+				7FBCFE4A1D9C1ECF00831823 /* Action */,
+				7F9F8A8B1D9D16D700C49C12 /* NotificationContent */,
+				7F9F8A9D1D9D16F200C49C12 /* NotificationService */,
+				7FBCFE3A1D9C1E6800831823 /* Stickers - 表情包扩展 */,
+				7FD5FA811DA50E48002A901C /* intentsE */,
+				7FD5FA8B1DA50E49002A901C /* intentsEUI */,
+			);
+			name = "扩展";
+			sourceTree = "<group>";
+		};
+		7FE53F081DA9C78200D318E0 /* 测试 */ = {
+			isa = PBXGroup;
+			children = (
+				7FD101621D89764D009BB6A6 /* LALAS3Tests */,
+				7FD1016D1D89764D009BB6A6 /* LALAS3UITests */,
+			);
+			name = "测试";
+			sourceTree = "<group>";
+		};
 		F807D885972D56BFFF9611D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				7FBCFE301D9C07C900831823 /* HealthKit.framework */,
 				7FBCFE2E1D9C07C000831823 /* MapKit.framework */,
 				7FF0C8501D91114400B85248 /* libsqlite3.tbd */,
-				BDF2BD7B0043FD07DE284F40 /* Pods_LALAS3.framework */,
 				7FBCFE5C1D9C1EFA00831823 /* NotificationCenter.framework */,
 				7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */,
 				7F9F8A891D9D16D700C49C12 /* UserNotificationsUI.framework */,
@@ -828,16 +855,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FD101731D89764D009BB6A6 /* Build configuration list for PBXNativeTarget "LALAS3" */;
 			buildPhases = (
-				A34D728924FF9E5D4A273B3A /* [CP] Check Pods Manifest.lock */,
-				D0AED5F34A7D7217445C3AB5 /* [CP] Check Pods Manifest.lock */,
 				7FD101451D89764D009BB6A6 /* Sources */,
 				7FD101461D89764D009BB6A6 /* Frameworks */,
 				7FD101471D89764D009BB6A6 /* Resources */,
-				71E7BC174F7A4CC62FF0EF56 /* [CP] Embed Pods Frameworks */,
-				6346C22875C80C4F51413E7A /* [CP] Copy Pods Resources */,
 				7FBCFE441D9C1E6800831823 /* Embed App Extensions */,
-				109FE58C52C2D4D4B4E3158D /* 📦 Embed Pods Frameworks */,
-				1133962D81C964D9C72BBBA7 /* 📦 Copy Pods Resources */,
+				7FE53F061DA9C6F500D318E0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1145,99 +1167,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		109FE58C52C2D4D4B4E3158D /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1133962D81C964D9C72BBBA7 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6346C22875C80C4F51413E7A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71E7BC174F7A4CC62FF0EF56 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LALAS3/Pods-LALAS3-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A34D728924FF9E5D4A273B3A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D0AED5F34A7D7217445C3AB5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		7F9F8A821D9D16D700C49C12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1314,7 +1243,6 @@
 				7FFA9E521D960CE7002380C0 /* OnlyOneLabel_TableViewCell.swift in Sources */,
 				7FD5FAA11DA51778002A901C /* ChatModels.swift in Sources */,
 				7FE5BF431D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift in Sources */,
-				7F9F8AE21D9D4E1300C49C12 /* LALAD.swift in Sources */,
 				7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */,
 				7FBCFE341D9C08DB00831823 /* Map_ViewController.swift in Sources */,
 				7F9F8B031D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift in Sources */,
@@ -1722,13 +1650,16 @@
 		};
 		7FD101741D89764D009BB6A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73C7DC9B3D33878FCF28F421 /* Pods-LALAS3.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LALAS3/LALAS3.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5898723MBJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LALAS3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1741,13 +1672,16 @@
 		};
 		7FD101751D89764D009BB6A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EE9647F7DE5B2DCE0C3223C /* Pods-LALAS3.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LALAS3/LALAS3.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5898723MBJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LALAS3/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1821,6 +1755,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5898723MBJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = intentsE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasLiu.jiacheng.link.intentsE;
@@ -1835,6 +1773,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5898723MBJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = intentsE/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasLiu.jiacheng.link.intentsE;
