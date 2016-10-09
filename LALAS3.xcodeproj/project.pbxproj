@@ -636,8 +636,8 @@
 		7FA6E9191D89A8EA003F6186 /* Second_2 */ = {
 			isa = PBXGroup;
 			children = (
-				7FD5FAA01DA51778002A901C /* ChatModels.swift */,
 				7FA6E91B1D89A906003F6186 /* Second.storyboard */,
+				7FD5FAA01DA51778002A901C /* ChatModels.swift */,
 				7F6AA6B41DA2754600A7292B /* Chat_ViewController.swift */,
 			);
 			name = Second_2;

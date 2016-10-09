@@ -32,8 +32,9 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         UITableView_M.delegate = self
         UITableView_M.dataSource = self
         
-        //self.UITableView_M.setEditing(true, animated: true)
+        ConnectNib()
         
+        //self.UITableView_M.setEditing(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -148,6 +149,10 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         }
     }
     
+    
+    func ConnectNib ()  {
+        UITableView_M.register(UINib(nibName: "ChatPeople_TableViewCell", bundle: nil), forCellReuseIdentifier: "ChatPeople_TableViewCell")
+    }
 
     /*
      let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!

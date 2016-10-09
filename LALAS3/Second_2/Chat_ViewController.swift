@@ -51,8 +51,9 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
         
         print(deviceWidth)
         print(deviceHeight)
-        
+
         self.title = "chat"
+        ConnectNib()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -191,4 +192,9 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     
     //MARK: - CollectionView
 
+    
+    func ConnectNib ()  {
+        UITableView_M.register(UINib(nibName: "ChatYou_TableViewCell", bundle: nil), forCellReuseIdentifier: "ChatYou_TableViewCell")
+        UITableView_M.register(UINib(nibName: "ChatMe_TableViewCell", bundle: nil), forCellReuseIdentifier: "ChatMe_TableViewCell")
+    }
 }

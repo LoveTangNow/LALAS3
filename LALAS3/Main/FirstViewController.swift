@@ -50,6 +50,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         let parameters: Parameters = ["userid": "1"]
         
+        ConnectNib()
         
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
         SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
@@ -673,6 +674,19 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         } else {
             return 15
         }
+    }
+    
+    
+    func ConnectNib() {
+        UITableView_Main.register(UINib(nibName: "OnePhoto_H_NTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhoto_H_NTableViewCell")
+        UITableView_Main.register(UINib(nibName: "ThreePhoto_NTableViewCell", bundle: nil), forCellReuseIdentifier: "ThreePhoto_NTableViewCell")
+        UITableView_Main.register(UINib(nibName: "SixPhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "SixPhoto_TableViewCell")
+        UITableView_Main.register(UINib(nibName: "NinePhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "NinePhoto_TableViewCell")
+        UITableView_Main.register(UINib(nibName: "OnePhoto_Z_NTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhoto_Z_NTableViewCell")
+        
+        UITableView_Main.register(UINib(nibName: "Advertisement_TableViewCell", bundle: nil), forCellReuseIdentifier: "Advertisement_TableViewCell")
+        UITableView_Main.register(UINib(nibName: "CommentsPraiseDemote_NTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentsPraiseDemote_NTableViewCell")
+        UITableView_Main.register(UINib(nibName: "News_Information_TableViewCell", bundle: nil), forCellReuseIdentifier: "News_Information_TableViewCell")
     }
     
     

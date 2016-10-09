@@ -41,6 +41,7 @@ class AboutUs_ViewController: UIViewController , UITableViewDelegate , UITableVi
         UILabel_2.text = "222222222222222222222"
 
         // Do any additional setup after loading the view.
+        ConnectNib()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +64,10 @@ class AboutUs_ViewController: UIViewController , UITableViewDelegate , UITableVi
         cell.UILabel_M.text = list[indexPath.row]
         //cell.textLabel?.text = "lala"
         return cell
+    }
+    
+    private func ConnectNib ()  {
+        UITableView_M.register(UINib(nibName: "OnlyOneLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnlyOneLabel_TableViewCell")
     }
 
 }

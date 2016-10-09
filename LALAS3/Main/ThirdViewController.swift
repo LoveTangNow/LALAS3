@@ -32,6 +32,8 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
         
         UITextField_S.placeholder = "搜索 用户 动态"
         
+        ConnectNib()
+        
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -105,6 +107,8 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
         return 2
     }
     
-    
+    func ConnectNib ()  {
+        UITableView_M.register(UINib(nibName: "OnePhotoWithTwoLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhotoWithTwoLabel_TableViewCell")
+    }
 
 }

@@ -15,9 +15,12 @@ class AccountSecurity_TableViewController: UITableViewController {
     var list3 = ["绑定手机","绑定邮箱"]
     var list4 = ["证件信息","登录保护"]
     
+    @IBOutlet var UITableView_m: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ConnectNib()
 
     }
 
@@ -92,6 +95,12 @@ class AccountSecurity_TableViewController: UITableViewController {
         default:
             return list4.count
         }
+    }
+    
+    private func ConnectNib () {
+        UITableView_m.register(UINib(nibName: "Lable_And_Switch_TableViewCell", bundle: nil), forCellReuseIdentifier: "Lable_And_Switch_TableViewCell")
+        UITableView_m.register(UINib(nibName: "OnlyOneLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnlyOneLabel_TableViewCell")
+        UITableView_m.register(UINib(nibName: "TwoLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "TwoLabel_TableViewCell")
     }
 
 }

@@ -37,9 +37,7 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.view.addSubview(myview)
         //self.UITableView_M.addSubview(myview)
         
-        UITableView_M.register(UINib(nibName: "ThreeWhat_TableViewCell", bundle: nil), forCellReuseIdentifier: "ThreeWhat_TableViewCell")
-        UITableView_M.register(UINib(nibName: "LeftSamllImageAndLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "LeftSamllImageAndLabel_TableViewCell")
-        UITableView_M.register(UINib(nibName: "ME_TableViewCell", bundle: nil), forCellReuseIdentifier: "ME_TableViewCell")
+        ConnectNib()
         
         //UserDefaults.standard.set("noSetle", forKey: "isSet")
         
@@ -278,6 +276,12 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             UserDefaults.standard.synchronize()
         }
         
+    }
+    
+    func ConnectNib ()  {
+        UITableView_M.register(UINib(nibName: "ThreeWhat_TableViewCell", bundle: nil), forCellReuseIdentifier: "ThreeWhat_TableViewCell")
+        UITableView_M.register(UINib(nibName: "LeftSamllImageAndLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "LeftSamllImageAndLabel_TableViewCell")
+        UITableView_M.register(UINib(nibName: "ME_TableViewCell", bundle: nil), forCellReuseIdentifier: "ME_TableViewCell")
     }
     
 }

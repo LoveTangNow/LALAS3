@@ -150,6 +150,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         // Do any additional setup after loading the view.
         //NotificationCenter.default.add
+        ConnectNib()
     }
     
     func keyBoardWillShow(note:NSNotification)
@@ -448,4 +449,11 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         // Dispose of any resources that can be recreated.
     }
 
+    private func ConnectNib () {
+        UITableView_m.register(UINib(nibName: "Label_And_RightBigImage_TableViewCell", bundle: nil), forCellReuseIdentifier: "Label_And_RightBigImage_TableViewCell")
+        UITableView_m.register(UINib(nibName: "Select_TableViewCell", bundle: nil), forCellReuseIdentifier: "Select_TableViewCell")
+        UITableView_m.register(UINib(nibName: "Label_And_TextView_TableViewCell", bundle: nil), forCellReuseIdentifier: "Label_And_TextView_TableViewCell")
+        UITableView_m.register(UINib(nibName: "OnlyOneLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnlyOneLabel_TableViewCell")
+        UITableView_m.register(UINib(nibName: "TwoLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "TwoLabel_TableViewCell")
+    }
 }
