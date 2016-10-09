@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DatePicker_TableViewCell" rowHeight="260" id="3b9-Pd-zpC" customClass="DatePicker_TableViewCell" customModule="LALAS3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3b9-Pd-zpC" id="qvp-Pi-mgw">
+                <frame key="frameInset" width="375" height="259.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="P9U-AY-SBR">
+                        <date key="date" timeIntervalSinceReferenceDate="496497009.78191">
+                            <!--2016-09-25 11:50:09 +0000-->
+                        </date>
+                    </datePicker>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="P9U-AY-SBR" secondAttribute="trailing" constant="5" id="BYT-Uv-gRx"/>
+                    <constraint firstItem="P9U-AY-SBR" firstAttribute="top" secondItem="qvp-Pi-mgw" secondAttribute="top" constant="5" id="Qfb-hp-XHH"/>
+                    <constraint firstItem="P9U-AY-SBR" firstAttribute="leading" secondItem="qvp-Pi-mgw" secondAttribute="leading" constant="10" id="uj7-cR-Y9V"/>
+                    <constraint firstAttribute="bottom" secondItem="P9U-AY-SBR" secondAttribute="bottom" constant="10" id="wUN-mH-tkm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="UIDatePicker_M" destination="P9U-AY-SBR" id="bct-nd-2VM"/>
+            </connections>
+            <point key="canvasLocation" x="146.5" y="328"/>
+        </tableViewCell>
+    </objects>
+</document>

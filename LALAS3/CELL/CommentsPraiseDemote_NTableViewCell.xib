@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentsPraiseDemote_NTableViewCell" rowHeight="50" id="O0l-wT-XdQ" customClass="CommentsPraiseDemote_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O0l-wT-XdQ" id="DpP-wc-pAc">
+                <frame key="frameInset" width="375" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="CNc-2A-TGa">
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqI-9B-OKS">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="UIButton1c:" destination="O0l-wT-XdQ" eventType="touchUpInside" id="tLi-O9-9FH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdX-zm-tEf">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="UIButton2c:" destination="O0l-wT-XdQ" eventType="touchUpInside" id="STP-5n-YZ6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lU-1X-FBc">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="UIButton3c:" destination="O0l-wT-XdQ" eventType="touchUpInside" id="blB-im-OG9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CNc-2A-TGa" firstAttribute="leading" secondItem="DpP-wc-pAc" secondAttribute="leadingMargin" id="0Z4-DT-9Sz"/>
+                    <constraint firstItem="CNc-2A-TGa" firstAttribute="top" secondItem="DpP-wc-pAc" secondAttribute="topMargin" id="8S1-Vg-gQb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="CNc-2A-TGa" secondAttribute="trailing" id="NU5-XW-yYD"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="CNc-2A-TGa" secondAttribute="bottom" id="udg-rR-HNP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="UIButton1" destination="DqI-9B-OKS" id="3Fw-bu-cfo"/>
+                <outlet property="UIButton2" destination="kdX-zm-tEf" id="cK2-Bw-zaI"/>
+                <outlet property="UIButton3" destination="7lU-1X-FBc" id="7NV-Ii-7hz"/>
+            </connections>
+            <point key="canvasLocation" x="-310" y="-175"/>
+        </tableViewCell>
+    </objects>
+</document>
