@@ -37,8 +37,9 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.view.addSubview(myview)
         //self.UITableView_M.addSubview(myview)
         
-        let cellNib = UINib(nibName: "ThreeWhat_TableViewCell", bundle: nil)
-        UITableView_M.register(cellNib, forCellReuseIdentifier: "ThreeWhat_TableViewCell")
+        UITableView_M.register(UINib(nibName: "ThreeWhat_TableViewCell", bundle: nil), forCellReuseIdentifier: "ThreeWhat_TableViewCell")
+        UITableView_M.register(UINib(nibName: "LeftSamllImageAndLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "LeftSamllImageAndLabel_TableViewCell")
+        UITableView_M.register(UINib(nibName: "ME_TableViewCell", bundle: nil), forCellReuseIdentifier: "ME_TableViewCell")
         
         //UserDefaults.standard.set("noSetle", forKey: "isSet")
         
