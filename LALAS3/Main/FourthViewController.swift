@@ -37,6 +37,9 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.view.addSubview(myview)
         //self.UITableView_M.addSubview(myview)
         
+        let cellNib = UINib(nibName: "ThreeWhat_TableViewCell", bundle: nil)
+        UITableView_M.register(cellNib, forCellReuseIdentifier: "ThreeWhat_TableViewCell")
+        
         //UserDefaults.standard.set("noSetle", forKey: "isSet")
         
         let a = UserDefaults.standard.value(forKey: "isSet") as? String
