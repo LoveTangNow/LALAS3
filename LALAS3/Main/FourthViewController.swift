@@ -8,10 +8,9 @@
 
 import UIKit
 
-class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,ME_Delegate{
+class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     //MARK: - 绑定
     @IBOutlet weak var UITableView_M: UITableView!
-    
     
     //MARK: - 变量
     var  list  = ["我的微博","我的图片","我的赞","其他"]
@@ -144,6 +143,13 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as UIViewController
         self.present(vc, animated: true, completion: nil)
     }
+    
+    func ME_GO() {
+        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+        print("go")
+    }
+    
     //MARK: - TableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -153,12 +159,6 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 //a.UIButton_MC(a.UIButton_Main)
             }
         }
-    }
-    
-    func ME_GO() {
-        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
-        print("go")
     }
 
     
@@ -184,12 +184,24 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
+            //let cell = LeftSamllImageAndLabel_TableViewCell()
+            
+            //cell.myimage = #imageLiteral(resourceName: "Black")
+            //cell.mystring = list[indexPath.row]
             cell.UIImageView_m.image = #imageLiteral(resourceName: "Black")
             cell.UILabel_m.text = list[indexPath.row]
             TableViewHeight = 45
             return cell
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 15
+        } else {
+            return 0
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

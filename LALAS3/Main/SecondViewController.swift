@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-import RealmSwift
 
 class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource{
     

@@ -636,16 +636,16 @@
 		7FD101401D89764C009BB6A6 = {
 			isa = PBXGroup;
 			children = (
-				7FE53EF71DA9C6F400D318E0 /* Alamofire.framework */,
-				7FE53EF81DA9C6F400D318E0 /* AlamofireImage.framework */,
-				7FE53EF91DA9C6F400D318E0 /* Dollar.framework */,
-				7FE53EFA1DA9C6F400D318E0 /* SVProgressHUD.framework */,
-				7FE53EFB1DA9C6F400D318E0 /* SwiftyJSON.framework */,
 				7FD1014B1D89764D009BB6A6 /* LALAS3 */,
 				7FE53F081DA9C78200D318E0 /* 测试 */,
 				7FE53F071DA9C75300D318E0 /* 扩展 */,
 				7FD1014A1D89764D009BB6A6 /* Products */,
 				F807D885972D56BFFF9611D1 /* Frameworks */,
+				7FE53EF71DA9C6F400D318E0 /* Alamofire.framework */,
+				7FE53EF81DA9C6F400D318E0 /* AlamofireImage.framework */,
+				7FE53EF91DA9C6F400D318E0 /* Dollar.framework */,
+				7FE53EFA1DA9C6F400D318E0 /* SVProgressHUD.framework */,
+				7FE53EFB1DA9C6F400D318E0 /* SwiftyJSON.framework */,
 			);
 			sourceTree = "<group>";
 		};

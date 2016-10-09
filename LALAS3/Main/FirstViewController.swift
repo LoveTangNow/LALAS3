@@ -50,16 +50,13 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         let parameters: Parameters = ["userid": "1"]
         
-        /*
+        
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
         SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         SVProgressHUD.show()
-        */
         
-        // Both calls are equivalent
-        //print(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php")
-        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
+        Alamofire.request("http://121.42.36.47/lala/scripts/GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -86,6 +83,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     //print("Validation Successful")
                     
                     self.UITableView_Main.reloadData()
+                    SVProgressHUD.dismiss()
                     
                 case .failure(let error):
                     //失败
