@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatWordsView" customModule="LALAS3" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Rgy-rL-BHr">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-mO-QFc">
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Y2o-mO-QFc" secondAttribute="height" multiplier="1:1" id="7Oe-33-Syt"/>
+                        <constraint firstAttribute="height" constant="40" id="M0T-vh-ki8"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdI-Mx-CgX">
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="rdI-Mx-CgX" secondAttribute="height" multiplier="1:1" id="4Kf-T1-2R4"/>
+                        <constraint firstAttribute="height" constant="40" id="zBm-nc-be9"/>
+                    </constraints>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLd-ea-9oJ">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="466-OJ-FtH"/>
+                        <constraint firstAttribute="width" secondItem="VLd-ea-9oJ" secondAttribute="height" multiplier="1:1" id="cwT-Fe-wJ1"/>
+                    </constraints>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZMC-Yp-gQu">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rdI-Mx-CgX" secondAttribute="trailing" constant="10" id="Dk2-0o-TMd"/>
+                <constraint firstItem="Y2o-mO-QFc" firstAttribute="leading" secondItem="Rgy-rL-BHr" secondAttribute="leading" constant="10" id="H6n-yd-lBm"/>
+                <constraint firstItem="rdI-Mx-CgX" firstAttribute="leading" secondItem="VLd-ea-9oJ" secondAttribute="trailing" constant="5" id="Puo-nM-Ogk"/>
+                <constraint firstItem="ZMC-Yp-gQu" firstAttribute="leading" secondItem="Y2o-mO-QFc" secondAttribute="trailing" constant="5" id="Taj-tK-xkY"/>
+                <constraint firstItem="VLd-ea-9oJ" firstAttribute="bottom" secondItem="rdI-Mx-CgX" secondAttribute="bottom" id="TqR-iA-dTt"/>
+                <constraint firstItem="VLd-ea-9oJ" firstAttribute="width" secondItem="VLd-ea-9oJ" secondAttribute="height" multiplier="1:1" id="bAR-Lb-be6"/>
+                <constraint firstItem="VLd-ea-9oJ" firstAttribute="leading" secondItem="ZMC-Yp-gQu" secondAttribute="trailing" constant="5" id="bc8-p9-Rcv"/>
+                <constraint firstAttribute="bottom" secondItem="Y2o-mO-QFc" secondAttribute="bottom" constant="4" id="bek-Aa-NJX"/>
+                <constraint firstItem="ZMC-Yp-gQu" firstAttribute="top" secondItem="Rgy-rL-BHr" secondAttribute="top" constant="4" id="cJj-aa-R2R"/>
+                <constraint firstAttribute="bottom" secondItem="rdI-Mx-CgX" secondAttribute="bottom" constant="4" id="fmJ-35-haW"/>
+                <constraint firstAttribute="bottom" secondItem="ZMC-Yp-gQu" secondAttribute="bottom" constant="4" id="l4X-bq-vF0"/>
+                <constraint firstItem="rdI-Mx-CgX" firstAttribute="width" secondItem="rdI-Mx-CgX" secondAttribute="height" multiplier="1:1" id="zxI-vP-79c"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="UIButton_Left" destination="Y2o-mO-QFc" id="tYg-cS-q9m"/>
+                <outlet property="UIButton_mid" destination="VLd-ea-9oJ" id="Ujg-8e-ThE"/>
+                <outlet property="UIButton_right" destination="rdI-Mx-CgX" id="3hy-Un-eV0"/>
+                <outlet property="UITextView_Main" destination="ZMC-Yp-gQu" id="yRW-95-iLT"/>
+            </connections>
+            <point key="canvasLocation" x="-303" y="-81"/>
+        </view>
+    </objects>
+</document>

@@ -14,12 +14,9 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     let deviceWidth  = UIScreen.main.bounds.width
     let deviceHeight  = UIScreen.main.bounds.height
     
-    //let ChatView_  = ChatWordsView()
-    
     var Informations = chatmodel()
     
     //MARK: - 绑定
-    
     @IBOutlet weak var UITextView_Word: UITextView!
     @IBOutlet weak var UIButton_Voice: UIButton!
     @IBOutlet weak var UIButton_emoji: UIButton!
@@ -59,7 +56,6 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         /*
         ChatView_.frame = CGRect(x:0,y:50,width:deviceWidth,height:48)
         ChatView_.backgroundColor = UIColor.black
@@ -68,7 +64,6 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
             self.ChatView_.center.y -= 0
         })*/
         
-        
         UIView_Bottom.frame = CGRect(x:0,y:deviceHeight - 48,width:deviceWidth,height:48)
         UIView_Bottom.backgroundColor = UIColor.lightGray
         UITextView_Word.layer.cornerRadius = 3
@@ -76,14 +71,10 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
         self.view.addSubview(UIView_Bottom)
         UITextView_Word.returnKeyType = UIReturnKeyType.go
 
-        
-        
         //UIView_Bottom2.frame = CGRect(x:0,y:deviceHeight,width:deviceWidth,height:100)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        
         //UITableView_M.isHidden = true
     }
     
@@ -119,7 +110,6 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
         print("hide")
     }
 
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -147,10 +137,8 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
             //最后一个是回车 时候 go
             //UITableView_M.insertRows(at:[aaa], with: UITableViewRowAnimation.bottom)
         } else {}
-        
         //print(textView.text + "间隔")
-        print(textView.contentSize.height)
-        
+        //print(textView.contentSize.height)
         UIView.animate(withDuration: 0, animations: {
             self.UIView_Bottom.frame = CGRect(x:0,y:self.deviceHeight - 254 - textView.contentSize.height - 11,width:self.deviceWidth,height:textView.contentSize.height + 11)
         })
