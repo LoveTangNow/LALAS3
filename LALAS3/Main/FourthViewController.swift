@@ -13,7 +13,7 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var UITableView_M: UITableView!
     
     //MARK: - 变量
-    var  list  = ["我的微博","我的图片","我的赞","其他"]
+    var  list  = ["我的微博","我的图片","我的赞","其他","设置"]
     var TableViewHeight:CGFloat = 0
     var myview = UIView()
     
@@ -155,10 +155,14 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     //MARK: - TableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            if indexPath.row == 0 {
-                //let a = UITableView_M.cellForRow(at: indexPath)! as! ME_TableViewCell
-                //a.UIButton_MC(a.UIButton_Main)
+        if indexPath.section == 1 {
+            let a = tableView.cellForRow(at: indexPath)! as! LeftSamllImageAndLabel_TableViewCell
+            switch a.UILabel_m.text! {
+            case list[indexPath.row]:
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "Setting_TableViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            default:
+                break
             }
         }
     }

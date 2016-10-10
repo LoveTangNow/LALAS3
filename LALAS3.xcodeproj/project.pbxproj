@@ -34,6 +34,8 @@
 		7F16A4BA1DAA970100095707 /* Select_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4B91DAA970100095707 /* Select_TableViewCell.xib */; };
 		7F16A4BC1DAA970D00095707 /* ChatMe_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4BB1DAA970D00095707 /* ChatMe_TableViewCell.xib */; };
 		7F16A4BE1DAA971A00095707 /* ChatYou_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4BD1DAA971A00095707 /* ChatYou_TableViewCell.xib */; };
+		7F16A4C11DABD40500095707 /* ChatWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16A4C01DABD40500095707 /* ChatWordsView.swift */; };
+		7F16A4C31DABD41F00095707 /* ChatWordsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4C21DABD41F00095707 /* ChatWordsView.xib */; };
 		7F2475741D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */; };
 		7F3F21DA1D92B02200ACF590 /* MessiageDetail_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F21D91D92B02200ACF590 /* MessiageDetail_TableViewController.swift */; };
 		7F3F21EE1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F21ED1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift */; };
@@ -263,6 +265,8 @@
 		7F16A4B91DAA970100095707 /* Select_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Select_TableViewCell.xib; path = CELL/Select_TableViewCell.xib; sourceTree = "<group>"; };
 		7F16A4BB1DAA970D00095707 /* ChatMe_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChatMe_TableViewCell.xib; path = CELL/ChatMe_TableViewCell.xib; sourceTree = "<group>"; };
 		7F16A4BD1DAA971A00095707 /* ChatYou_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChatYou_TableViewCell.xib; path = CELL/ChatYou_TableViewCell.xib; sourceTree = "<group>"; };
+		7F16A4C01DABD40500095707 /* ChatWordsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatWordsView.swift; path = Views/ChatWordsView.swift; sourceTree = "<group>"; };
+		7F16A4C21DABD41F00095707 /* ChatWordsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChatWordsView.xib; path = Views/ChatWordsView.xib; sourceTree = "<group>"; };
 		7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewPhotoWithScroll_ViewController.swift; path = 1/ViewPhotoWithScroll_ViewController.swift; sourceTree = "<group>"; };
 		7F3F21D91D92B02200ACF590 /* MessiageDetail_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessiageDetail_TableViewController.swift; path = 1/MessiageDetail_TableViewController.swift; sourceTree = "<group>"; };
 		7F3F21ED1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatPeople_TableViewCell.swift; path = CELL/ChatPeople_TableViewCell.swift; sourceTree = "<group>"; };
@@ -472,6 +476,15 @@
 				7F00308D1DA7955A00CCACB4 /* ThreeWhat_TableViewCell.swift */,
 			);
 			name = ME;
+			sourceTree = "<group>";
+		};
+		7F16A4BF1DABD3A400095707 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F16A4C01DABD40500095707 /* ChatWordsView.swift */,
+				7F16A4C21DABD41F00095707 /* ChatWordsView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		7F3F21E71D92D5F400ACF590 /* CELLS */ = {
@@ -743,6 +756,7 @@
 				7FA6E9161D89A8BC003F6186 /* Fourth_4 */,
 				7FAECEEA1D8A6AC4004592EA /* shit */,
 				7F3F21E71D92D5F400ACF590 /* CELLS */,
+				7F16A4BF1DABD3A400095707 /* Views */,
 				7F9F8AE31D9D4EF200C49C12 /* Voice */,
 				7FD101551D89764D009BB6A6 /* Assets.xcassets */,
 				7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */,
@@ -1188,6 +1202,7 @@
 				7F16A4BE1DAA971A00095707 /* ChatYou_TableViewCell.xib in Resources */,
 				7F16A4B21DAA96CD00095707 /* TwoLabel_TableViewCell.xib in Resources */,
 				7FA6E91C1D89A906003F6186 /* Second.storyboard in Resources */,
+				7F16A4C31DABD41F00095707 /* ChatWordsView.xib in Resources */,
 				7FD101591D89764D009BB6A6 /* LaunchScreen.storyboard in Resources */,
 				7F16A4B01DAA96BF00095707 /* Lable_And_Switch_TableViewCell.xib in Resources */,
 				7F16A4A61DAA962200095707 /* Pinglun_NTableViewCell.xib in Resources */,
@@ -1343,6 +1358,7 @@
 				7FA6E8F61D89A535003F6186 /* FourthViewController.swift in Sources */,
 				7F3F21DA1D92B02200ACF590 /* MessiageDetail_TableViewController.swift in Sources */,
 				7F3F22041D93C03D00ACF590 /* ChatYou_TableViewCell.swift in Sources */,
+				7F16A4C11DABD40500095707 /* ChatWordsView.swift in Sources */,
 				7F5322B31D8BC9BC00294C62 /* SearchResults_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

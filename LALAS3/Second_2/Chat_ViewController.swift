@@ -14,6 +14,8 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     let deviceWidth  = UIScreen.main.bounds.width
     let deviceHeight  = UIScreen.main.bounds.height
     
+    //let ChatView_  = ChatWordsView()
+    
     var Informations = chatmodel()
     
     //MARK: - 绑定
@@ -57,19 +59,30 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        UIView_Bottom.frame = CGRect(x:0,y:deviceHeight,width:deviceWidth,height:40)
-        UIView_Bottom2.frame = CGRect(x:0,y:deviceHeight,width:deviceWidth,height:100)
-        UIView_Bottom.backgroundColor = UIColor.lightGray
         
+        /*
+        ChatView_.frame = CGRect(x:0,y:50,width:deviceWidth,height:48)
+        ChatView_.backgroundColor = UIColor.black
+        self.view.addSubview(ChatView_)
+        UIView.animate(withDuration: 0.3, animations: {
+            self.ChatView_.center.y -= 0
+        })*/
+        
+        
+        UIView_Bottom.frame = CGRect(x:0,y:deviceHeight - 48,width:deviceWidth,height:48)
+        UIView_Bottom.backgroundColor = UIColor.lightGray
+        UITextView_Word.layer.cornerRadius = 3
+        UITextView_Word.clipsToBounds = true
         self.view.addSubview(UIView_Bottom)
-        //self.view.addSubview(UIView_Bottom2)
         UITextView_Word.returnKeyType = UIReturnKeyType.go
+
+        
+        
+        //UIView_Bottom2.frame = CGRect(x:0,y:deviceHeight,width:deviceWidth,height:100)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.UIView_Bottom.center.y -= 40
-        })
+        
         
         //UITableView_M.isHidden = true
     }
@@ -85,6 +98,7 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
         //5
         let deltaY = beginY! - endY!
         //print(aTime)//0.25
+        print(deltaY)
         print("show")
         UIView.animate(withDuration: 0, animations: {
             self.UIView_Bottom.center.y -= deltaY
@@ -98,6 +112,7 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
         let keyBoardInfo2: AnyObject? = userInfo.object(forKey: UIKeyboardFrameEndUserInfoKey) as AnyObject?;
         let endY = keyBoardInfo2?.cgRectValue.origin.y;
         let deltaY = beginY! - endY!
+        
         UIView.animate(withDuration: 0, animations: {
             self.UIView_Bottom.center.y -= deltaY
         })
@@ -117,38 +132,28 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     
     func textViewDidChange(_ textView: UITextView) {
         print("DidChang")
-        //文字改变2
-        //let size = UITextView_Word.font?.pointSize
-        //print(size)
-        //let chnumber = UITextView_Word.text.characters.count
-        //print(chnumber)
-        
-        /**
-        CGSize size = [m_textView.text sizeWithFont:[m_textView font]];
-        int length = size.height;
-        int colomNumber = m_textView.contentSize.height/length;*/
-        
         let a = UITextView_Word.text!
         var c = Character(" ")
         
         switch a.characters.count {
-        case 0:
-            c = Character(" ")
-        case 1:
-            c = a[a.startIndex]
-        default:
-            c = a[a.index(before: a.endIndex)]
+        case 0:c = Character(" ")
+        case 1:c = a[a.startIndex]
+        default:c = a[a.index(before: a.endIndex)]
         }
         
         let n:Character = "\n"
-        print(c)
         if c == n {
             print("会车来了")
             //最后一个是回车 时候 go
             //UITableView_M.insertRows(at:[aaa], with: UITableViewRowAnimation.bottom)
-        } else {
-            
-        }
+        } else {}
+        
+        print(textView.text + "间隔")
+        print(textView.contentSize.height)
+        
+        UIView.animate(withDuration: 0, animations: {
+            self.UIView_Bottom.frame = CGRect(x:0,y:self.deviceHeight - 254 - textView.contentSize.height - 9,width:self.deviceWidth,height:textView.contentSize.height + 9)
+        })
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -156,13 +161,14 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
         //编辑结束
     }
     
+    var oo:CGFloat  = 0
+    
     func textViewDidChangeSelection(_ textView: UITextView) {
         //文字改变1  选取改变
         print("didChangeSelection")
+        oo = textView.contentSize.height
     }
-    
     //MARK: - ChatView
-    
     
     //MARK: - TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -44,13 +44,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10n-KM-ts0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="frm-oL-PFc">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="你好" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4mR-qi-B1p">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mR-qi-B1p">
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
                             <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                         </textView>
@@ -87,11 +87,11 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="4mR-qi-B1p" secondAttribute="bottom" constant="10" id="1Cz-mY-Hpv"/>
                         <constraint firstItem="4mR-qi-B1p" firstAttribute="leading" secondItem="305-16-2YF" secondAttribute="trailing" constant="5" id="7ar-ci-lnU"/>
-                        <constraint firstItem="4mR-qi-B1p" firstAttribute="top" secondItem="frm-oL-PFc" secondAttribute="top" constant="5" id="Eo0-Ge-8E8"/>
                         <constraint firstAttribute="bottom" secondItem="SZs-h3-Ped" secondAttribute="bottom" constant="10" id="HXP-z0-zbh"/>
                         <constraint firstItem="305-16-2YF" firstAttribute="leading" secondItem="frm-oL-PFc" secondAttribute="leading" constant="10" id="Lsa-8p-9nv"/>
+                        <constraint firstItem="4mR-qi-B1p" firstAttribute="top" secondItem="frm-oL-PFc" secondAttribute="top" constant="4" id="RfS-fG-ZzO"/>
+                        <constraint firstItem="4mR-qi-B1p" firstAttribute="centerY" secondItem="frm-oL-PFc" secondAttribute="centerY" id="UyW-g4-n0p"/>
                         <constraint firstItem="SZs-h3-Ped" firstAttribute="leading" secondItem="4mR-qi-B1p" secondAttribute="trailing" constant="5" id="X67-EO-u3a"/>
                         <constraint firstAttribute="bottom" secondItem="305-16-2YF" secondAttribute="bottom" constant="10" id="lmm-c4-isT"/>
                         <constraint firstAttribute="bottom" secondItem="XKK-PQ-evg" secondAttribute="bottom" constant="10" id="n3E-PD-Zwb"/>
