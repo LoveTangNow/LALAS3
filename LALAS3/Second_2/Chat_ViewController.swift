@@ -126,12 +126,12 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     }
     //MARK: - TextView
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print("DidBeginEditing")
+        //print("DidBeginEditing")
         //开始编辑
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        print("DidChang")
+        //print("DidChang")
         let a = UITextView_Word.text!
         var c = Character(" ")
         
@@ -148,25 +148,22 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
             //UITableView_M.insertRows(at:[aaa], with: UITableViewRowAnimation.bottom)
         } else {}
         
-        print(textView.text + "间隔")
+        //print(textView.text + "间隔")
         print(textView.contentSize.height)
         
         UIView.animate(withDuration: 0, animations: {
-            self.UIView_Bottom.frame = CGRect(x:0,y:self.deviceHeight - 254 - textView.contentSize.height - 9,width:self.deviceWidth,height:textView.contentSize.height + 9)
+            self.UIView_Bottom.frame = CGRect(x:0,y:self.deviceHeight - 254 - textView.contentSize.height - 11,width:self.deviceWidth,height:textView.contentSize.height + 11)
         })
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        print("idEndEditing")
+        //print("idEndEditing")
         //编辑结束
     }
     
-    var oo:CGFloat  = 0
-    
     func textViewDidChangeSelection(_ textView: UITextView) {
         //文字改变1  选取改变
-        print("didChangeSelection")
-        oo = textView.contentSize.height
+        //print("didChangeSelection")
     }
     //MARK: - ChatView
     
