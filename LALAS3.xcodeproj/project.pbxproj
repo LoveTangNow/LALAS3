@@ -490,10 +490,10 @@
 		7F3F21E71D92D5F400ACF590 /* CELLS */ = {
 			isa = PBXGroup;
 			children = (
-				7F0030841DA7948F00CCACB4 /* ME */,
 				7F9F8AF81D9D641A00C49C12 /* Main */,
 				7F9F8AF71D9D630700C49C12 /* Lables&Photos */,
 				7F9F8AF61D9D62F000C49C12 /* Pikers */,
+				7F0030841DA7948F00CCACB4 /* ME */,
 			);
 			name = CELLS;
 			sourceTree = "<group>";

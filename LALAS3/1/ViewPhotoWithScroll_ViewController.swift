@@ -22,6 +22,8 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
 
     var imagelist = [UIImage?]()
     var imgaeNumber = Int()
+    var aa  = CGRect()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +43,29 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
             imageView.frame = CGRect(x: self.view.bounds.width*CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 60, width: self.view.bounds.width, height: imageView.frame.height / imageView.frame.width * self.view.bounds.width)
             UIScrollView_MM.addSubview(imageView)
             UIScrollView_MM.delegate = self
+            aa  = imageView.frame
         }
         
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+        //Mybar.isHidden = true
+        navigationController?.navigationBar.alpha = 1
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        
+        UIToolbar_M.alpha = 1
+        UIToolbar_M.barTintColor = UIColor.black
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        for _ in 0..<2 {
+            UIScrollView_MM.scrollRectToVisible(aa, animated: true)
+        }
+        
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let width = self.view.frame.width
@@ -58,17 +79,6 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         } else {
             navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
-        //Mybar.isHidden = true
-        navigationController?.navigationBar.alpha = 1
-        navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        
-        UIToolbar_M.alpha = 1
-        UIToolbar_M.barTintColor = UIColor.black
     }
 
     override func didReceiveMemoryWarning() {

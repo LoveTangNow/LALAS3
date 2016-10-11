@@ -38,8 +38,6 @@ class MessiageDetail_TableViewController: UITableViewController {
         
     }
     
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,8 +69,8 @@ class MessiageDetail_TableViewController: UITableViewController {
             if indexPath.row == 0 {//Words
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell
                 
-                cell.UIImageViewUserIcon.image = image1
-                cell.UIImageViewSetting.image = image1
+                cell.userIcon.setBackgroundImage(image1, for: .normal)
+                cell.setting.setBackgroundImage(image1, for: .normal)
                 cell.UIImageViewVip_.image = image1
                 cell.UIImageViewV_.image = image2
                 
@@ -123,21 +121,21 @@ class MessiageDetail_TableViewController: UITableViewController {
                 case 1:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     
-                    cell.UIImageView_M.image = imagelist[0]
+                    cell.imgae_.setImage(imagelist[0], for: .normal)
                     
                     TableViewHeight = CGFloat(Int(DeviceWidth * 0.618 ))
                     
                     return cell
                 case 2,3:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
-                    cell.UIImageView1.image = imagelist[0]
+                    cell.image_1.setImage(imagelist[0], for: .normal)
 
                     switch imgaeNumber {
                     case 2:
-                        cell.UIImageView2.image = imagelist[1]
+                        cell.image_2.setImage(imagelist[1], for: .normal)
                     case 3:
-                        cell.UIImageView2.image = imagelist[1]
-                        cell.UIImageView3.image = imagelist[2]
+                        cell.image_2.setImage(imagelist[1], for: .normal)
+                        cell.image_3.setImage(imagelist[2], for: .normal)
                     default:
                         break
                     }

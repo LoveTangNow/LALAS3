@@ -150,20 +150,14 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    //MARK: - TableView
-    /*
-     tableview 的工作是在viewDidLoad 和 viewWillAppear 之后做的
-     */
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func GoDetail (_ sender:UIButton)  {
+        //获取所在的 indexpath
+        var indexPath = IndexPath()
+        indexPath = self.UITableView_Main.indexPath(for: sender.superview?.superview as! UITableViewCell)!
         
-        //tableView.insertRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-        
-        print(indexPath.row)
+        //根据 path 获取数据准备传值。。
         switch indexPath.row {
-        //case 0://文字 携带文字 转移 并且还要携带图片
-            
+            //case 0://文字 携带文字 转移 并且还要携带图片
         case 0,1://图片 携带文字转 view view用scrollview展示
             
             //Int(DataWords[indexPath.section]![4])!
@@ -176,21 +170,21 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             switch DataWords[indexPath.section]![4] {
             case "1" :
                 let a = UITableView_Main.cellForRow(at: aa)! as! OnePhoto_H_NTableViewCell
-                imagelist.append(a.UIImageView_M.image!)
+                imagelist.append(a.imgae_.currentImage)
                 imagenumber_in = 1
                 break
             case "2":
                 let a = UITableView_Main.cellForRow(at: aa)! as! ThreePhoto_NTableViewCell
-                imagelist.append(a.UIImageView1.image)
-                imagelist.append(a.UIImageView2.image)
+                imagelist.append(a.image_1.currentImage)
+                imagelist.append(a.image_2.currentImage)
                 
                 imagenumber_in = 2
             //vc.image1 = a.UIImageView_1.image!
             case "3":
                 let a = UITableView_Main.cellForRow(at: aa)! as! ThreePhoto_NTableViewCell
-                imagelist.append(a.UIImageView1.image)
-                imagelist.append(a.UIImageView2.image)
-                imagelist.append(a.UIImageView3.image)
+                imagelist.append(a.image_1.currentImage)
+                imagelist.append(a.image_2.currentImage)
+                imagelist.append(a.image_3.currentImage)
                 
                 imagenumber_in = 3
             //vc.image1 = a.UIImageView_2.image!
@@ -288,12 +282,24 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             default:
                 break
             }
-     
+            
         case 2:
             break
         default:
             break
         }
+
+    }
+    
+    //MARK: - TableView
+    /*
+     tableview 的工作是在viewDidLoad 和 viewWillAppear 之后做的
+     */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //tableView.insertRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        
+        print(indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -323,8 +329,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             switch indexPath.row {
             case 0://文字区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell
-                cell.UIImageViewUserIcon.image = #imageLiteral(resourceName: "Black")
-                cell.UIImageViewSetting.image = Imageload_Black
+                cell.userIcon.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+                cell.setting.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
                 cell.UIImageViewV_.image = #imageLiteral(resourceName: "v")
                 cell.UIImageViewVip_.image = Imageload_Black
                 
@@ -393,22 +399,18 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 case "1":
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     
-                    /*
-                        第一次 无数据 ：查询获取后 写入数组 填入视图
-                        之后 有数据： 数组中取得数据 填入视图
-                     */
-
                     if cell.GotPhoto != true {
                     Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu00100.jpg")
                         .responseData { response in
                             if let data = response.result.value {
                                 let asd = UIImage(data: data)
-                                cell.UIImageView_M.image = asd
+                                cell.imgae_.setImage(asd, for: UIControlState.normal)
                             }
                         }
                     } else {
                         print("old-1")
                     }
+                    cell.imgae_.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     
                     self.TableViewCellHeight = CGFloat(Int(self.DeviceWidth * 0.618 ))
                     return cell
@@ -427,17 +429,17 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                     //print("do23")
                                     switch i {
                                     case 0 :
-                                        cell.UIImageView1.image = UIImage(data: data)
+                                        cell.image_1.setImage(UIImage(data: data), for: .normal)
                                         aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                     case 1 :
-                                        cell.UIImageView2.image = UIImage(data: data)
+                                        cell.image_2.setImage(UIImage(data: data), for: .normal)
                                         aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         if aa == 2{
                                             self.DataPhotos[indexPath.section] = aaaaaa
                                             cell.GotPhoto = true
                                         }
                                     case 2 :
-                                        cell.UIImageView3.image = UIImage(data: data)
+                                        cell.image_3.setImage(UIImage(data: data), for: .normal)
                                         aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         if aa == 3{
                                             self.DataPhotos[indexPath.section] = aaaaaa
@@ -466,6 +468,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         }
                         */
                     }
+                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     
                     TableViewCellHeight = CGFloat(Int(DeviceWidth * 0.333 ))
                     return cell

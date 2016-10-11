@@ -17,20 +17,20 @@
                 <frame key="frameInset" width="375" height="212.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oSn-ZL-LN2">
+                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Il-zs-gKC">
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="oSn-ZL-LN2" secondAttribute="height" multiplier="31:50" id="RMe-I1-FFg"/>
+                            <constraint firstAttribute="width" secondItem="2Il-zs-gKC" secondAttribute="height" multiplier="31:50" id="8vk-1a-Rfe"/>
                         </constraints>
-                    </imageView>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="oSn-ZL-LN2" firstAttribute="centerY" secondItem="5LS-Nb-qIY" secondAttribute="centerY" id="NBO-HV-BSq"/>
-                    <constraint firstItem="oSn-ZL-LN2" firstAttribute="top" secondItem="5LS-Nb-qIY" secondAttribute="topMargin" constant="5" id="WCt-bv-Jcv"/>
-                    <constraint firstItem="oSn-ZL-LN2" firstAttribute="leading" secondItem="5LS-Nb-qIY" secondAttribute="leadingMargin" constant="10" id="yJh-qt-VYP"/>
+                    <constraint firstItem="2Il-zs-gKC" firstAttribute="top" secondItem="5LS-Nb-qIY" secondAttribute="topMargin" constant="5" id="ECt-1M-ehk"/>
+                    <constraint firstItem="2Il-zs-gKC" firstAttribute="centerY" secondItem="5LS-Nb-qIY" secondAttribute="centerY" id="cT3-ut-USY"/>
+                    <constraint firstItem="2Il-zs-gKC" firstAttribute="leading" secondItem="5LS-Nb-qIY" secondAttribute="leadingMargin" constant="10" id="hhP-TX-YVz"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="UIImageView_M" destination="oSn-ZL-LN2" id="qDB-bX-ajC"/>
+                <outlet property="image_" destination="2Il-zs-gKC" id="E4g-Ui-xcr"/>
             </connections>
             <point key="canvasLocation" x="-311" y="753"/>
         </tableViewCell>
