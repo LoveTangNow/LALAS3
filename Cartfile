@@ -1,0 +1,9 @@
+github "SVProgressHUD/SVProgressHUD"
+
+github "ankurp/Dollar" ~> 6.0.0
+
+github "SwiftyJSON/SwiftyJSON"
+
+github "Alamofire/Alamofire" ~> 4.0
+
+github "Alamofire/AlamofireImage" ~> 3.1

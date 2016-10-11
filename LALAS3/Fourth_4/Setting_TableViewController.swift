@@ -16,6 +16,7 @@ class Setting_TableViewController: UITableViewController {
     var Imageload_Black:UIImage = UIImage(named: "Black.png")!
     var Imageload_Wight:UIImage = UIImage(named: "White.png")!
     
+    @IBOutlet var UITableView_m: UITableView!
     //MARK: - FUNCTIONS
     /*
     ["账号管理","账号安全"]
@@ -27,6 +28,8 @@ class Setting_TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "设置"
+        
+        ConnectNib()
     }
 
     override func didReceiveMemoryWarning() {
@@ -158,6 +161,11 @@ class Setting_TableViewController: UITableViewController {
         default:
             return 0
         }
+    }
+    
+    private func ConnectNib () {
+        UITableView_m.register(UINib(nibName: "LeftSamllImageAndLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "LeftSamllImageAndLabel_TableViewCell")
+        UITableView_m.register(UINib(nibName: "Label_Mid_TableViewCell", bundle: nil), forCellReuseIdentifier: "Label_Mid_TableViewCell")
     }
 
 

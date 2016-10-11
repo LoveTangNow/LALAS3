@@ -15,9 +15,12 @@ class AccountSecurity_TableViewController: UITableViewController {
     var list3 = ["绑定手机","绑定邮箱"]
     var list4 = ["证件信息","登录保护"]
     
+    @IBOutlet var UITableView_m: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ConnectNib()
 
     }
 
@@ -32,32 +35,32 @@ class AccountSecurity_TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AccountSecurityCell_TwoLabel_TableViewCell", for: indexPath) as! AccountSecurityCell_TwoLabel_TableViewCell
-            cell.UILabel_M.text = list1[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+            cell.UILabel_l.text = list1[indexPath.row]
             if indexPath.row == 0 {
                 //用户名
-                cell.UILabel_Mini.text = "一碗凉白开"
+                cell.UILabel_r.text = "一碗凉白开"
             } else {
-                cell.UILabel_Mini.text = "12*****89"
+                cell.UILabel_r.text = "12*****89"
             }
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AccountSecurityCell_OneLabel_TableViewCell", for: indexPath) as! AccountSecurityCell_OneLabel_TableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath) as! OnlyOneLabel_TableViewCell
             cell.UILabel_M.text = list2[indexPath.row]
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AccountSecurityCell_TwoLabel_TableViewCell", for: indexPath) as! AccountSecurityCell_TwoLabel_TableViewCell
-            cell.UILabel_M.text = list3[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+            cell.UILabel_l.text = list3[indexPath.row]
             return cell
         default:
             switch indexPath.row {
             case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AccountSecurityCell_TwoLabel_TableViewCell", for: indexPath) as! AccountSecurityCell_TwoLabel_TableViewCell
-                cell.UILabel_M.text = list4[indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+                cell.UILabel_l.text = list4[indexPath.row]
                 return cell
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AccountSecurityCell_LableSwitch_TableViewCell", for: indexPath) as! AccountSecurityCell_LableSwitch_TableViewCell
-                cell.UILabel_M.text = list4[indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Lable_And_Switch_TableViewCell", for: indexPath) as! Lable_And_Switch_TableViewCell
+                cell.UILabel_l.text = list4[indexPath.row]
                 return cell
             }
             
@@ -92,6 +95,12 @@ class AccountSecurity_TableViewController: UITableViewController {
         default:
             return list4.count
         }
+    }
+    
+    private func ConnectNib () {
+        UITableView_m.register(UINib(nibName: "Lable_And_Switch_TableViewCell", bundle: nil), forCellReuseIdentifier: "Lable_And_Switch_TableViewCell")
+        UITableView_m.register(UINib(nibName: "OnlyOneLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnlyOneLabel_TableViewCell")
+        UITableView_m.register(UINib(nibName: "TwoLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "TwoLabel_TableViewCell")
     }
 
 }

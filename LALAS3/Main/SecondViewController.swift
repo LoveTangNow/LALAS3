@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-import RealmSwift
 
 class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource{
     
@@ -33,8 +32,9 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         UITableView_M.delegate = self
         UITableView_M.dataSource = self
         
-        //self.UITableView_M.setEditing(true, animated: true)
+        ConnectNib()
         
+        //self.UITableView_M.setEditing(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,23 +44,6 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
     
     //MARK: - tableview
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row == 0 && indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatMe_TableViewCell", for: indexPath) as! ChatMe_TableViewCell
-            cell.UIImageView_MyIcon.backgroundColor = UIColor.red
-            cell.UIImageView_im.backgroundColor = UIColor.green
-            return cell
-
-        }
-        
-        if indexPath.row == 0 && indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatYou_TableViewCell", for: indexPath) as! ChatYou_TableViewCell
-            cell.UIImageView_SenderIcon.backgroundColor = UIColor.red
-            cell.UIImageView_im.backgroundColor = UIColor.green
-            return cell
-            
-        }
-        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatPeople_TableViewCell") as? ChatPeople_TableViewCell
         
@@ -75,9 +58,15 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
     //T_ViewController
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        // T_ViewController
-        let vc = UIStoryboard(name: "Second", bundle: nil).instantiateViewController(withIdentifier: "T_ViewController")
+        
+        //Chat_ViewController
+        let vc = UIStoryboard(name: "Second", bundle: nil).instantiateViewController(withIdentifier: "Chat_ViewController")
         self.navigationController?.pushViewController(vc, animated: true)
         
+        /**
+        let vc = UIStoryboard(name: "Second", bundle: nil).instantiateViewController(withIdentifier: "T_ViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+        */
         
         /**
         let uri = "http://www.baidu.com";
@@ -160,6 +149,10 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         }
     }
     
+    
+    func ConnectNib ()  {
+        UITableView_M.register(UINib(nibName: "ChatPeople_TableViewCell", bundle: nil), forCellReuseIdentifier: "ChatPeople_TableViewCell")
+    }
 
     /*
      let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!

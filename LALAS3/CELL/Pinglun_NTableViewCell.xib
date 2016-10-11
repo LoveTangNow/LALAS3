@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Pinglun_NTableViewCell" rowHeight="167" id="Zfn-Tm-W07" customClass="Pinglun_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zfn-Tm-W07" id="PBP-jS-bpT">
+                <frame key="frameInset" width="375" height="166.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AkQ-SP-6RE">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="3S8-7H-nB6"/>
+                            <constraint firstAttribute="width" secondItem="AkQ-SP-6RE" secondAttribute="height" multiplier="1:1" id="W3Z-LZ-US5"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lg1-on-vxb">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Qmx-tj-QdK"/>
+                            <constraint firstAttribute="width" secondItem="Lg1-on-vxb" secondAttribute="height" multiplier="1:1" id="XxS-rl-4uJ"/>
+                        </constraints>
+                        <state key="normal" image="thumb-up-vector"/>
+                        <connections>
+                            <action selector="ButtonC:" destination="Zfn-Tm-W07" eventType="touchUpInside" id="jPv-hU-j9V"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjy-Xh-Dfh">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="7BZ-OV-eMu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Min-Ve-R6n">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="hET-bj-HfK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhw-Wo-jcb">
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AkQ-SP-6RE" firstAttribute="leading" secondItem="PBP-jS-bpT" secondAttribute="leadingMargin" constant="10" id="0WM-6a-qUi"/>
+                    <constraint firstItem="AkQ-SP-6RE" firstAttribute="centerY" secondItem="Lg1-on-vxb" secondAttribute="centerY" id="5Qa-5v-9Dh"/>
+                    <constraint firstItem="mjy-Xh-Dfh" firstAttribute="top" secondItem="AkQ-SP-6RE" secondAttribute="top" id="SwT-lj-Wqa"/>
+                    <constraint firstItem="mjy-Xh-Dfh" firstAttribute="leading" secondItem="AkQ-SP-6RE" secondAttribute="trailing" constant="5" id="VPS-AC-M42"/>
+                    <constraint firstItem="zhw-Wo-jcb" firstAttribute="top" secondItem="AkQ-SP-6RE" secondAttribute="bottom" constant="5" id="Vkh-hR-P7j"/>
+                    <constraint firstItem="zhw-Wo-jcb" firstAttribute="leading" secondItem="PBP-jS-bpT" secondAttribute="leadingMargin" constant="10" id="YKg-IR-rGS"/>
+                    <constraint firstItem="AkQ-SP-6RE" firstAttribute="top" secondItem="PBP-jS-bpT" secondAttribute="topMargin" constant="5" id="aOG-R8-8D3"/>
+                    <constraint firstItem="Min-Ve-R6n" firstAttribute="leading" secondItem="AkQ-SP-6RE" secondAttribute="trailing" constant="5" id="aWm-eh-Xky"/>
+                    <constraint firstItem="Min-Ve-R6n" firstAttribute="top" secondItem="mjy-Xh-Dfh" secondAttribute="bottom" constant="1" id="b0w-gt-WMz"/>
+                    <constraint firstItem="Lg1-on-vxb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Min-Ve-R6n" secondAttribute="trailing" constant="5" id="cjK-7d-oQM"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zhw-Wo-jcb" secondAttribute="trailing" constant="10" id="gYA-L3-JLE"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Lg1-on-vxb" secondAttribute="trailing" constant="10" id="pel-VN-b49"/>
+                    <constraint firstItem="Lg1-on-vxb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mjy-Xh-Dfh" secondAttribute="trailing" constant="5" id="vQV-fo-hcU"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="zhw-Wo-jcb" secondAttribute="bottom" constant="5" id="xtr-JN-bCo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="UIButton_Zan" destination="Lg1-on-vxb" id="gyL-3u-bbj"/>
+                <outlet property="UIImageView_Icon" destination="AkQ-SP-6RE" id="L9j-ql-dip"/>
+                <outlet property="UILabelTime" destination="Min-Ve-R6n" id="PqE-HK-h8X"/>
+                <outlet property="UILabelWords" destination="zhw-Wo-jcb" id="mwZ-KR-uyz"/>
+                <outlet property="UILabel_Name" destination="mjy-Xh-Dfh" id="tNU-pI-4rx"/>
+            </connections>
+            <point key="canvasLocation" x="311" y="9"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="thumb-up-vector" width="30" height="30"/>
+    </resources>
+</document>

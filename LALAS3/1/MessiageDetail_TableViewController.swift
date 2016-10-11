@@ -15,6 +15,7 @@ class MessiageDetail_TableViewController: UITableViewController {
     var imagelist = [UIImage?]()
     var imgaeNumber = Int()
     
+    @IBOutlet var UITableView_m: UITableView!
     var Imageload_Black:UIImage = UIImage(named: "Black.png")!
 
     override func viewDidLoad() {
@@ -24,6 +25,8 @@ class MessiageDetail_TableViewController: UITableViewController {
         //self.tableView.register(MD_Words_TableViewCell.self, forCellReuseIdentifier: "MD_Words_TableViewCell"
         print(imgaeNumber)
         print(imagelist.count)
+        
+        ConnectNib()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -168,7 +171,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                     cell.UIImageView7.image = imagelist[6]
                     switch imgaeNumber {
                     case 8:
-                        cell.UIImageView7.image = imagelist[7]
+                        cell.UIImageView8.image = imagelist[7]
                     case 9:
                         cell.UIImageView8.image = imagelist[7]
                         cell.UIImageView9.image = imagelist[8]
@@ -217,6 +220,18 @@ class MessiageDetail_TableViewController: UITableViewController {
             return 10
         }
     }
+    
+    func ConnectNib() {
+        UITableView_m.register(UINib(nibName: "OnePhoto_H_NTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhoto_H_NTableViewCell")
+        UITableView_m.register(UINib(nibName: "ThreePhoto_NTableViewCell", bundle: nil), forCellReuseIdentifier: "ThreePhoto_NTableViewCell")
+        UITableView_m.register(UINib(nibName: "SixPhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "SixPhoto_TableViewCell")
+        UITableView_m.register(UINib(nibName: "NinePhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "NinePhoto_TableViewCell")
+        UITableView_m.register(UINib(nibName: "OnePhoto_Z_NTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhoto_Z_NTableViewCell")
+        
+        UITableView_m.register(UINib(nibName: "News_Information_TableViewCell", bundle: nil), forCellReuseIdentifier: "News_Information_TableViewCell")
+        UITableView_m.register(UINib(nibName: "Pinglun_NTableViewCell", bundle: nil), forCellReuseIdentifier: "Pinglun_NTableViewCell")
+    }
+
 
     
 }

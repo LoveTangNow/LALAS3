@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Picker_TableViewCell" rowHeight="260" id="caS-1p-Won" customClass="Picker_TableViewCell" customModule="LALAS3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="caS-1p-Won" id="SuJ-bO-72Q">
+                <frame key="frameInset" width="375" height="259.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttF-jc-Isb"/>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ttF-jc-Isb" secondAttribute="trailing" constant="5" id="Kxe-uy-YV1"/>
+                    <constraint firstItem="ttF-jc-Isb" firstAttribute="leading" secondItem="SuJ-bO-72Q" secondAttribute="leading" constant="10" id="Q0d-NT-JUl"/>
+                    <constraint firstItem="ttF-jc-Isb" firstAttribute="top" secondItem="SuJ-bO-72Q" secondAttribute="top" constant="5" id="Vgx-tJ-0dM"/>
+                    <constraint firstAttribute="bottom" secondItem="ttF-jc-Isb" secondAttribute="bottom" constant="10" id="bJF-iM-RpC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="UIPickerView_M" destination="ttF-jc-Isb" id="HB2-5w-Kkm"/>
+            </connections>
+            <point key="canvasLocation" x="-308.5" y="328"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -40,16 +40,7 @@ class SearchResults_ViewController: UIViewController , UITableViewDelegate , UIT
         
         print(words)
         ///來來來 我們來準備數據了！！
-        //搜索的门类有 用户 动态 ！
-        //********请求用户数据
-        
-        
-        
-        //********请求'动态'数据
-        
-        
-
-        // Do any additional setup after loading the view.
+        ConnectNib()
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,6 +113,11 @@ class SearchResults_ViewController: UIViewController , UITableViewDelegate , UIT
         else{
             return CGSize(width: 50, height: 50)
         }
+    }
+    
+    private func ConnectNib () {
+        UITableView_M.register(UINib(nibName: "OnePhotoTwoLableTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhotoTwoLableTableViewCell")
+        UITableView_M.register(UINib(nibName: "OnePhotoTwoLableTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhotoTwoLableTableViewCell")
     }
    
 

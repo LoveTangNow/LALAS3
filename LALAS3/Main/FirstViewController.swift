@@ -38,8 +38,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     var ali = true
     
-    
-    
+    var MODEL = FirstPageModel()
     
     //MARK: - 函数
     override func viewDidLoad() {
@@ -51,16 +50,14 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         let parameters: Parameters = ["userid": "1"]
         
-        /*
+        ConnectNib()
+        
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
         SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         SVProgressHUD.show()
-        */
         
-        // Both calls are equivalent
-        print(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php")
-        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
+        Alamofire.request("http://121.42.36.47/lala/scripts/GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -87,18 +84,20 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     //print("Validation Successful")
                     
                     self.UITableView_Main.reloadData()
+                    SVProgressHUD.dismiss()
                     
                 case .failure(let error):
                     //失败
                     print(error)
+                    SVProgressHUD.dismiss()
                 }
         }
         // Do any additional setup after loading the view.
-        print("loa")
+        print("viewDidLoad")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("willa")
+        print("viewWillAppear")
         //这里给 Tableview 写数据
         //159,42.4
         navigationController?.navigationBar.barTintColor = UIColor.red
@@ -243,7 +242,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 imagelist.append(a.UIImageView6.image)
                 imagelist.append(a.UIImageView7.image)
                 imagelist.append(a.UIImageView8.image)
-                
+                //print("8")
                 imagenumber_in = 8
             case "9" :
                 let a = UITableView_Main.cellForRow(at: aa)! as! NinePhoto_TableViewCell
@@ -256,7 +255,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 imagelist.append(a.UIImageView7.image)
                 imagelist.append(a.UIImageView8.image)
                 imagelist.append(a.UIImageView9.image)
-                
+                //print("9")
                 imagenumber_in = 9
             default:
                 break
@@ -324,7 +323,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             switch indexPath.row {
             case 0://文字区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell
-                cell.UIImageViewUserIcon.image = Imageload_Black
+                cell.UIImageViewUserIcon.image = #imageLiteral(resourceName: "Black")
                 cell.UIImageViewSetting.image = Imageload_Black
                 cell.UIImageViewV_.image = #imageLiteral(resourceName: "v")
                 cell.UIImageViewVip_.image = Imageload_Black
@@ -400,7 +399,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                      */
 
                     if cell.GotPhoto != true {
-                    Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu00001.jpg")
+                    Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu00100.jpg")
                         .responseData { response in
                             if let data = response.result.value {
                                 let asd = UIImage(data: data)
@@ -422,7 +421,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         for i in 0..<aa
                         {
                             var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 20) + ".jpg")
+                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 60) + ".jpg")
                                 .responseData { response in
                                 if let data = response.result.value {
                                     //print("do23")
@@ -478,7 +477,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         for i in 0..<aa
                         {
                             var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 20) + ".jpg")
+                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 50) + ".jpg")
                                 .responseData { response in
                                     if let data = response.result.value {
                                         //print("do456")
@@ -578,7 +577,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         //print("alaout")
                         var aaaaaa = [Dictionary<String, UIImage>]()
                         //print(FFFFFunctions().GotImageMainServer(ai: ali))
-                        Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 30) + ".jpg")
+                        Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 70) + ".jpg")
                                 .responseData { response in
                                    // print("alain")
                                     if let data = response.result.value {
@@ -645,6 +644,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 }
             default://三按钮区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsPraiseDemote_NTableViewCell", for: indexPath) as! CommentsPraiseDemote_NTableViewCell
+                cell.number = [110,112,119]
+                cell.UpDateUI()
                 TableViewCellHeight = 40
                 return cell
             }
@@ -673,6 +674,19 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         } else {
             return 15
         }
+    }
+    
+    
+    func ConnectNib() {
+        UITableView_Main.register(UINib(nibName: "OnePhoto_H_NTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhoto_H_NTableViewCell")
+        UITableView_Main.register(UINib(nibName: "ThreePhoto_NTableViewCell", bundle: nil), forCellReuseIdentifier: "ThreePhoto_NTableViewCell")
+        UITableView_Main.register(UINib(nibName: "SixPhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "SixPhoto_TableViewCell")
+        UITableView_Main.register(UINib(nibName: "NinePhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "NinePhoto_TableViewCell")
+        UITableView_Main.register(UINib(nibName: "OnePhoto_Z_NTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhoto_Z_NTableViewCell")
+        
+        UITableView_Main.register(UINib(nibName: "Advertisement_TableViewCell", bundle: nil), forCellReuseIdentifier: "Advertisement_TableViewCell")
+        UITableView_Main.register(UINib(nibName: "CommentsPraiseDemote_NTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentsPraiseDemote_NTableViewCell")
+        UITableView_Main.register(UINib(nibName: "News_Information_TableViewCell", bundle: nil), forCellReuseIdentifier: "News_Information_TableViewCell")
     }
     
     

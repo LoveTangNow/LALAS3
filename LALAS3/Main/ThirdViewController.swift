@@ -32,6 +32,8 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
         
         UITextField_S.placeholder = "搜索 用户 动态"
         
+        ConnectNib()
+        
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -72,9 +74,6 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
-
-    
     //MARK: - Tableview
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -84,10 +83,11 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhotoTwoLabel_TableViewCell", for: indexPath) as! OnePhotoTwoLabel_TableViewCell
-        cell.UIImageView_Main.image = Imageload_Black
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhotoWithTwoLabel_TableViewCell", for: indexPath) as! OnePhotoWithTwoLabel_TableViewCell
+        cell.UIImageView_Left_Main.image = Imageload_Black
         cell.UILabel_Title.text = "阿西吧！！！"
         cell.UILabel_Detail.text = "大红色的发挥的双方哈里斯的客服哈里斯的卡号发来看技术的发挥拉克丝活动福利卡就会少打了客服号"
+        TableViewHeight = 100
         return cell
     }
     
@@ -107,6 +107,8 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
         return 2
     }
     
-    
+    func ConnectNib ()  {
+        UITableView_M.register(UINib(nibName: "OnePhotoWithTwoLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhotoWithTwoLabel_TableViewCell")
+    }
 
 }

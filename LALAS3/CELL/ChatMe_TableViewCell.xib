@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatMe_TableViewCell" rowHeight="130" id="AIg-o7-HlI" customClass="ChatMe_TableViewCell" customModule="LALAS3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AIg-o7-HlI" id="CjW-Hg-4Ua">
+                <frame key="frameInset" width="375" height="129.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QMA-HD-5nU"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VxP-P3-b3V">
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="VxP-P3-b3V" secondAttribute="height" multiplier="1:1" id="ior-SG-FjX"/>
+                            <constraint firstAttribute="height" constant="50" id="mWh-HT-hqu"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wo1-iB-3Sr">
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Izk-sA-OVO"/>
+                            <constraint firstAttribute="width" secondItem="wo1-iB-3Sr" secondAttribute="height" multiplier="1:1" id="WVP-Ml-IgE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy1-Kd-sSg">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QMA-HD-5nU" firstAttribute="leading" secondItem="Sy1-Kd-sSg" secondAttribute="leading" id="2ad-Zh-IA8"/>
+                    <constraint firstItem="wo1-iB-3Sr" firstAttribute="leading" secondItem="Sy1-Kd-sSg" secondAttribute="trailing" id="3CU-TZ-nwv"/>
+                    <constraint firstItem="QMA-HD-5nU" firstAttribute="trailing" secondItem="Sy1-Kd-sSg" secondAttribute="trailing" id="4Z9-ry-e7B"/>
+                    <constraint firstItem="VxP-P3-b3V" firstAttribute="top" secondItem="CjW-Hg-4Ua" secondAttribute="topMargin" constant="10" id="9CD-S8-YGs"/>
+                    <constraint firstItem="QMA-HD-5nU" firstAttribute="bottom" secondItem="Sy1-Kd-sSg" secondAttribute="bottom" id="L5F-pU-mUs"/>
+                    <constraint firstItem="wo1-iB-3Sr" firstAttribute="centerY" secondItem="VxP-P3-b3V" secondAttribute="centerY" id="ShM-5g-9MA"/>
+                    <constraint firstItem="QMA-HD-5nU" firstAttribute="top" secondItem="Sy1-Kd-sSg" secondAttribute="top" id="UlD-V6-h7p"/>
+                    <constraint firstItem="Sy1-Kd-sSg" firstAttribute="top" secondItem="VxP-P3-b3V" secondAttribute="top" id="WaJ-6D-p5i"/>
+                    <constraint firstItem="Sy1-Kd-sSg" firstAttribute="leading" secondItem="CjW-Hg-4Ua" secondAttribute="leading" constant="10" id="cMP-Ll-0vu"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="VxP-P3-b3V" secondAttribute="trailing" constant="10" id="gCK-o1-sEB"/>
+                    <constraint firstItem="VxP-P3-b3V" firstAttribute="leading" secondItem="Sy1-Kd-sSg" secondAttribute="trailing" constant="30" id="nqD-W4-4QL"/>
+                    <constraint firstAttribute="bottom" secondItem="Sy1-Kd-sSg" secondAttribute="bottom" constant="10" id="x9O-jW-udt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="UIImageView_MyIcon" destination="VxP-P3-b3V" id="ZJD-4J-bMj"/>
+                <outlet property="UIImageView_Sanjiao" destination="wo1-iB-3Sr" id="Iy5-z8-bPO"/>
+                <outlet property="UIImageView_im" destination="QMA-HD-5nU" id="PGm-xk-NVv"/>
+                <outlet property="UILabel_Words" destination="Sy1-Kd-sSg" id="mSE-FL-hTO"/>
+            </connections>
+            <point key="canvasLocation" x="4" y="186"/>
+        </tableViewCell>
+    </objects>
+</document>

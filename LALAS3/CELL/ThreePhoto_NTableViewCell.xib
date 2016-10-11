@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreePhoto_NTableViewCell" rowHeight="122" id="oL2-4w-o1J" customClass="ThreePhoto_NTableViewCell" customModule="LALAS3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oL2-4w-o1J" id="z10-uU-rBf">
+                <frame key="frameInset" width="375" height="121.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lOF-fI-hQU">
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rXR-Ib-fBh"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-mX-PWt"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LVc-Cb-PyN"/>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="lOF-fI-hQU" secondAttribute="bottom" constant="5" id="06x-V6-H5g"/>
+                    <constraint firstItem="lOF-fI-hQU" firstAttribute="top" secondItem="z10-uU-rBf" secondAttribute="top" constant="5" id="F6L-NR-i3e"/>
+                    <constraint firstItem="lOF-fI-hQU" firstAttribute="leading" secondItem="z10-uU-rBf" secondAttribute="leading" constant="10" id="Fhl-0q-5f5"/>
+                    <constraint firstAttribute="trailing" secondItem="lOF-fI-hQU" secondAttribute="trailing" constant="10" id="q9g-YA-mHh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="UIImageView1" destination="rXR-Ib-fBh" id="tve-6W-WZw"/>
+                <outlet property="UIImageView2" destination="A6F-mX-PWt" id="NyL-By-bmt"/>
+                <outlet property="UIImageView3" destination="LVc-Cb-PyN" id="AWb-t8-KGb"/>
+            </connections>
+            <point key="canvasLocation" x="-933" y="-14"/>
+        </tableViewCell>
+    </objects>
+</document>

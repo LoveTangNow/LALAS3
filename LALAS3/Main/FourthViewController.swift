@@ -8,12 +8,36 @@
 
 import UIKit
 
-class FourthViewController: UIViewController {
-
+class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+    //MARK: - 绑定
+    @IBOutlet weak var UITableView_M: UITableView!
+    
+    //MARK: - 变量
+    var  list  = ["我的微博","我的图片","我的赞","其他","设置"]
+    var TableViewHeight:CGFloat = 0
+    var myview = UIView()
+    
+    var TableViewHeights = [[Int]]()
+    
+    
+    //MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "我的"
+        self.UITableView_M.delegate = self
+        self.UITableView_M.dataSource = self
+        UITableView_M.backgroundColor = UIColor.white
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.red
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        myview.frame =  CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:70)
+        myview.backgroundColor = UIColor.blue
+        self.view.addSubview(myview)
+        //self.UITableView_M.addSubview(myview)
+        
+        ConnectNib()
         
         //UserDefaults.standard.set("noSetle", forKey: "isSet")
         
@@ -63,6 +87,48 @@ class FourthViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0, animations: {
+            self.myview.center.y -= 6
+        })
+    }
+    
+    var old:CGFloat = 64
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        /*
+         小于70，展示下拉刷新：松开上滑
+         大于70，展开松开刷新：松开上滑到70，刷新并且更新数据，上滑到0
+         */
+        print("--")
+        print(self.UITableView_M.contentInset.top)
+        print(-self.UITableView_M.contentOffset.y)//现在的位置
+        let a  = -self.UITableView_M.contentOffset.y - old//移动间距
+        print(a)
+        if -self.UITableView_M.contentOffset.y - self.UITableView_M.contentInset.top <= 70{
+            old = -self.UITableView_M.contentOffset.y
+            myview.backgroundColor = UIColor.blue
+            UIView.animate(withDuration: 0, animations: {
+                self.myview.center.y += a
+            })
+        }
+        else{//到70的时候就会触发，这个时候开始
+            //UITableView_M.isScrollEnabled = false
+            old = -self.UITableView_M.contentOffset.y
+            myview.backgroundColor = UIColor.white
+            UIView.animate(withDuration: 0, animations: {
+                self.myview.center.y += a
+            })
+            //UITableView_M.isScrollEnabled = true
+        }
+        
+    }
+        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,6 +145,123 @@ class FourthViewController: UIViewController {
         let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as UIViewController
         self.present(vc, animated: true, completion: nil)
     }
+    
+    func ME_GO() {
+        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+        print("go")
+    }
+    
+    //MARK: - TableView
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let a = tableView.cellForRow(at: indexPath)! as! LeftSamllImageAndLabel_TableViewCell
+            switch a.UILabel_m.text! {
+            case list[indexPath.row]:
+                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "Setting_TableViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+            default:
+                break
+            }
+        }
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ME_TableViewCell", for: indexPath) as! ME_TableViewCell
+                
+                cell.UIButton_Main.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+                cell.UIButton_Main.addTarget(self, action: #selector(ME_GO), for: UIControlEvents.touchUpInside)
+                
+                
+                cell.UIButton_Main.setTitle("", for: .normal)
+                cell.UIButton_Small.setTitle("", for: .normal)
+                
+                TableViewHeights[indexPath.section][indexPath.row] = 100
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ThreeWhat_TableViewCell", for: indexPath) as! ThreeWhat_TableViewCell
+                TableViewHeights[indexPath.section][indexPath.row] = 70
+                return cell
+            }
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
+            cell.UIImageView_m.image = #imageLiteral(resourceName: "Black")
+            cell.UILabel_m.text = list[indexPath.row]
+            
+            //let cell = LeftSamllImageAndLabel_TableViewCell()
+            //cell.Set(Image: #imageLiteral(resourceName: "Black"), Label: list[indexPath.row])
+            TableViewHeights[indexPath.section][indexPath.row] = 45
+            return cell
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if indexPath.section == 0 {
+            return .none
+        } else {
+            return .delete
+        }
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        UITableView_M.setEditing(editing, animated: animated)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            list.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+            UITableView_M.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 15
+        } else {
+            return 0
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        let a  = 2
+        for _  in 0..<a {
+            TableViewHeights.append([0])
+        }
+        return a
+    }
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            let a  = 2
+            for _  in 0..<a {
+                TableViewHeights[0].append(0)
+            }
+            return a
+        }
+        else{
+            let a  = list.count
+            for _  in 0..<a {
+                TableViewHeights[1].append(0)
+            }
+            return a
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return CGFloat(TableViewHeights[indexPath.section][indexPath.row])
+        
+    }
+    
     
     //MARK: - FUNCS
     
@@ -97,6 +280,12 @@ class FourthViewController: UIViewController {
             UserDefaults.standard.synchronize()
         }
         
+    }
+    
+    func ConnectNib ()  {
+        UITableView_M.register(UINib(nibName: "ThreeWhat_TableViewCell", bundle: nil), forCellReuseIdentifier: "ThreeWhat_TableViewCell")
+        UITableView_M.register(UINib(nibName: "LeftSamllImageAndLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "LeftSamllImageAndLabel_TableViewCell")
+        UITableView_M.register(UINib(nibName: "ME_TableViewCell", bundle: nil), forCellReuseIdentifier: "ME_TableViewCell")
     }
     
 }

@@ -23,7 +23,7 @@ class ChatMe_TableViewCell: UITableViewCell {
         //
         UIImageView_MyIcon.layer.cornerRadius = 25
         UIImageView_MyIcon.clipsToBounds = true
-        
+        UIImageView_MyIcon.backgroundColor = UIColor.gray
         //
         let a = UIBezierPath()
         
@@ -42,6 +42,7 @@ class ChatMe_TableViewCell: UITableViewCell {
         
         UIImageView_im.layer.cornerRadius = 5
         UIImageView_im.clipsToBounds = true
+        UIImageView_im.backgroundColor = UIColor.green
         
         super.awakeFromNib()
         // Initialization code

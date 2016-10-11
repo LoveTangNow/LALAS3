@@ -9,18 +9,23 @@
 import UIKit
 
 class LeftSamllImageAndLabel_TableViewCell: UITableViewCell {
+    
+    var myimage = UIImage()
+    var mystring = String()
+    
 
     @IBOutlet weak var UIImageView_m: UIImageView!
     @IBOutlet weak var UILabel_m: UILabel!
     
+    
     override func awakeFromNib() {
-        
-        UIImageView_m.layer.cornerRadius = 5
-        UIImageView_m.clipsToBounds = true
-        
         super.awakeFromNib()
         // Initialization code
+        UIImageView_m.layer.cornerRadius = 5
+        UIImageView_m.clipsToBounds = true
     }
+    
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

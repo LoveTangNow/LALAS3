@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OnePhotoWithTwoLabel_TableViewCell" rowHeight="113" id="ai8-5S-py4" customClass="OnePhotoWithTwoLabel_TableViewCell" customModule="LALAS3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="113"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ai8-5S-py4" id="jnX-Yf-er0">
+                <frame key="frameInset" width="375" height="112.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Scl-oG-xWe">
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Scl-oG-xWe" secondAttribute="height" multiplier="1:1" id="owG-Fn-NBy"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYy-8u-kUD">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奥斯卡大家还发了啥空间的合法老师对法拉科技爱上对方就哈里独守空房件哈伦裤飞机" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDS-nl-kEG">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Scl-oG-xWe" firstAttribute="leading" secondItem="jnX-Yf-er0" secondAttribute="leading" constant="10" id="2XN-bt-g9B"/>
+                    <constraint firstItem="Scl-oG-xWe" firstAttribute="top" secondItem="jnX-Yf-er0" secondAttribute="top" constant="5" id="9Qu-Rz-Evo"/>
+                    <constraint firstItem="CDS-nl-kEG" firstAttribute="leading" secondItem="Scl-oG-xWe" secondAttribute="trailing" constant="10" id="JAM-jS-qXq"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="zYy-8u-kUD" secondAttribute="trailing" constant="10" id="UyK-j5-mQE"/>
+                    <constraint firstItem="zYy-8u-kUD" firstAttribute="leading" secondItem="Scl-oG-xWe" secondAttribute="trailing" constant="10" id="YkX-ck-pOr"/>
+                    <constraint firstItem="CDS-nl-kEG" firstAttribute="top" secondItem="zYy-8u-kUD" secondAttribute="bottom" constant="5" id="bsj-9H-zPs"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="CDS-nl-kEG" secondAttribute="trailing" constant="10" id="fRb-kp-Bsg"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="CDS-nl-kEG" secondAttribute="bottom" constant="5" id="nCD-vi-gsl"/>
+                    <constraint firstItem="Scl-oG-xWe" firstAttribute="centerY" secondItem="jnX-Yf-er0" secondAttribute="centerY" id="nO1-9n-Bmn"/>
+                    <constraint firstItem="zYy-8u-kUD" firstAttribute="top" secondItem="Scl-oG-xWe" secondAttribute="top" id="pWQ-bQ-Yem"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="UIImageView_Left_Main" destination="Scl-oG-xWe" id="9Rn-SL-h4x"/>
+                <outlet property="UILabel_Detail" destination="CDS-nl-kEG" id="JaE-8U-gZh"/>
+                <outlet property="UILabel_Title" destination="zYy-8u-kUD" id="nW8-Oz-HmG"/>
+            </connections>
+            <point key="canvasLocation" x="3.5" y="556.5"/>
+        </tableViewCell>
+    </objects>
+</document>

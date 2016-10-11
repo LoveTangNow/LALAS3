@@ -41,6 +41,7 @@ class AboutUs_ViewController: UIViewController , UITableViewDelegate , UITableVi
         UILabel_2.text = "222222222222222222222"
 
         // Do any additional setup after loading the view.
+        ConnectNib()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,10 +60,14 @@ class AboutUs_ViewController: UIViewController , UITableViewDelegate , UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Aboutus_M_TableViewCell", for: indexPath as IndexPath) as! Aboutus_M_TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath as IndexPath) as! OnlyOneLabel_TableViewCell
         cell.UILabel_M.text = list[indexPath.row]
         //cell.textLabel?.text = "lala"
         return cell
+    }
+    
+    private func ConnectNib ()  {
+        UITableView_M.register(UINib(nibName: "OnlyOneLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnlyOneLabel_TableViewCell")
     }
 
 }

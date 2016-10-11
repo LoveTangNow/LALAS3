@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LeftSamllImageAndLabel_TableViewCell" rowHeight="45" id="jC1-G3-WDW" customClass="LeftSamllImageAndLabel_TableViewCell" customModule="LALAS3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jC1-G3-WDW" id="YEw-eh-6IF">
+                <frame key="frameInset" width="342" height="44.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nlk-Zr-GJg">
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Nlk-Zr-GJg" secondAttribute="height" multiplier="1:1" id="8Wo-rH-3ZH"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3a-n7-y2d">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="kXG-gc-QKm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Nlk-Zr-GJg" firstAttribute="leading" secondItem="YEw-eh-6IF" secondAttribute="leadingMargin" constant="10" id="1Ld-q7-Xxz"/>
+                    <constraint firstItem="H3a-n7-y2d" firstAttribute="leading" secondItem="Nlk-Zr-GJg" secondAttribute="trailing" constant="5" id="1Pq-ck-DrK"/>
+                    <constraint firstItem="H3a-n7-y2d" firstAttribute="centerY" secondItem="YEw-eh-6IF" secondAttribute="centerY" id="1k4-hC-KNV"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="H3a-n7-y2d" secondAttribute="trailing" constant="5" id="HRG-Rq-7ym"/>
+                    <constraint firstItem="Nlk-Zr-GJg" firstAttribute="centerY" secondItem="YEw-eh-6IF" secondAttribute="centerY" id="HvG-g9-5EM"/>
+                    <constraint firstItem="Nlk-Zr-GJg" firstAttribute="top" secondItem="YEw-eh-6IF" secondAttribute="topMargin" id="cE5-oa-dRC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="UIImageView_m" destination="Nlk-Zr-GJg" id="lcd-gr-ICQ"/>
+                <outlet property="UILabel_m" destination="H3a-n7-y2d" id="uU5-1c-YtS"/>
+            </connections>
+            <point key="canvasLocation" x="495.5" y="331.5"/>
+        </tableViewCell>
+    </objects>
+</document>
