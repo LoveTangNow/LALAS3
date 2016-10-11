@@ -23,6 +23,8 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     var imagelist = [UIImage?]()
     var imgaeNumber = Int()
     var aa  = CGRect()
+    var image_Dijizhang = 1
+    
     
     
     override func viewDidLoad() {
@@ -38,6 +40,9 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         UIPageControl_M.isHidden = true
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
+        navigationController?.navigationBar.alpha = 0
+        UIToolbar_M.alpha = 0
+        
         for i in 0..<imgaeNumber {
             let imageView =  UIImageView(image:imagelist[i])
             imageView.frame = CGRect(x: self.view.bounds.width*CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 60, width: self.view.bounds.width, height: imageView.frame.height / imageView.frame.width * self.view.bounds.width)
@@ -52,19 +57,17 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
         //Mybar.isHidden = true
-        navigationController?.navigationBar.alpha = 1
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
         
-        UIToolbar_M.alpha = 1
         UIToolbar_M.barTintColor = UIColor.black
+        
+        for _ in 0..<(image_Dijizhang - 1) {
+            UIScrollView_MM.scrollRectToVisible(aa, animated: false)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        for _ in 0..<2 {
-            UIScrollView_MM.scrollRectToVisible(aa, animated: true)
-        }
-        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -72,7 +75,7 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         let offsetX = scrollView.contentOffset.x
         let index = (offsetX + width / 2) / width
         UIPageControl_M.currentPage = Int(index)
-        print(UIPageControl_M.currentPage)
+        //print(UIPageControl_M.currentPage)
         if UIPageControl_M.currentPage == 0 {
             //⬅️滑是否管用
             navigationController?.interactivePopGestureRecognizer?.isEnabled = true

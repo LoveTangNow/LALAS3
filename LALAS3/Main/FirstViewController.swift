@@ -155,6 +155,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         var indexPath = IndexPath()
         indexPath = self.UITableView_Main.indexPath(for: sender.superview?.superview as! UITableViewCell)!
         
+  
         //根据 path 获取数据准备传值。。
         switch indexPath.row {
             //case 0://文字 携带文字 转移 并且还要携带图片
@@ -277,6 +278,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "ViewPhotoWithScroll_ViewController") as!  ViewPhotoWithScroll_ViewController
                 vc.imagelist = imagelist
                 vc.imgaeNumber = imagenumber_in
+                vc.image_Dijizhang = sender.tag
                 //print(DataPhotos)
                 self.navigationController?.pushViewController(vc, animated: true)
             default:
@@ -410,6 +412,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     } else {
                         print("old-1")
                     }
+                    cell.imgae_.tag = 1
                     cell.imgae_.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     
                     self.TableViewCellHeight = CGFloat(Int(self.DeviceWidth * 0.618 ))
@@ -471,6 +474,10 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    
+                    cell.image_1.tag = 1
+                    cell.image_2.tag = 2
+                    cell.image_3.tag = 3
                     
                     TableViewCellHeight = CGFloat(Int(DeviceWidth * 0.333 ))
                     return cell
