@@ -92,9 +92,7 @@
                                 </connections>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IPH-5L-l6U"/>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-XJ-BBh">
-                                <frame key="frameInset" minX="-0.5" height="43.5" maxX="-0.5" maxY="0.5"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-XJ-BBh">
                                 <items>
                                     <barButtonItem style="plain" id="boq-uM-EsQ">
                                         <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="4CN-RL-YMF">
@@ -108,7 +106,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="i3D-nx-DiB"/>
                                     <barButtonItem width="30" style="plain" id="bFy-UE-7yK">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EaZ-Yj-mcc">
-                                            <rect key="frame" x="250" y="7" width="30" height="30"/>
+                                            <rect key="frame" x="249" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="1"/>
                                         </button>
@@ -116,7 +114,7 @@
                                     <barButtonItem style="plain" systemItem="fixedSpace" id="pQd-cX-lWj"/>
                                     <barButtonItem width="30" style="plain" id="GWW-c6-xsc">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Afw-0I-Slx">
-                                            <rect key="frame" x="290" y="7" width="30" height="30"/>
+                                            <rect key="frame" x="289" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="2"/>
                                         </button>
@@ -124,7 +122,7 @@
                                     <barButtonItem style="plain" systemItem="fixedSpace" id="bkc-c5-rk5"/>
                                     <barButtonItem width="30" style="plain" id="Y7h-k6-rOF">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MGJ-i8-3ua">
-                                            <rect key="frame" x="330" y="7" width="30" height="30"/>
+                                            <rect key="frame" x="329" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="3"/>
                                         </button>
@@ -134,9 +132,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cbq-XJ-BBh" firstAttribute="leading" secondItem="QM3-N3-JQW" secondAttribute="leading" id="Sd2-NM-r5l"/>
                             <constraint firstItem="IPH-5L-l6U" firstAttribute="centerX" secondItem="QM3-N3-JQW" secondAttribute="centerX" id="Tke-uC-kax"/>
                             <constraint firstItem="kii-MN-fVk" firstAttribute="centerX" secondItem="QM3-N3-JQW" secondAttribute="centerX" id="UNz-eY-JxZ"/>
+                            <constraint firstAttribute="trailing" secondItem="cbq-XJ-BBh" secondAttribute="trailing" id="VNO-dM-UQi"/>
                             <constraint firstItem="kii-MN-fVk" firstAttribute="width" secondItem="QM3-N3-JQW" secondAttribute="width" id="aab-WV-q2t"/>
+                            <constraint firstItem="MzR-0G-IqB" firstAttribute="top" secondItem="cbq-XJ-BBh" secondAttribute="bottom" id="bdR-uP-BVj"/>
                             <constraint firstItem="MzR-0G-IqB" firstAttribute="top" secondItem="IPH-5L-l6U" secondAttribute="bottom" constant="100" id="nwf-Dl-eft"/>
                             <constraint firstItem="kii-MN-fVk" firstAttribute="centerY" secondItem="QM3-N3-JQW" secondAttribute="centerY" id="vMW-Bx-aS0"/>
                         </constraints>

@@ -29,6 +29,7 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //print(image_Dijizhang)
 
         UIScrollView_MM.backgroundColor = UIColor.black
         UIScrollView_MM.contentSize = CGSize(width:self.view.bounds.width * CGFloat( imgaeNumber),height: self.view.bounds.width)   //内容大小
@@ -45,7 +46,7 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         
         for i in 0..<imgaeNumber {
             let imageView =  UIImageView(image:imagelist[i])
-            imageView.frame = CGRect(x: self.view.bounds.width*CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 60, width: self.view.bounds.width, height: imageView.frame.height / imageView.frame.width * self.view.bounds.width)
+            imageView.frame = CGRect(x: self.view.bounds.width * CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 20, width: self.view.bounds.width, height: imageView.frame.height / imageView.frame.width * self.view.bounds.width)
             UIScrollView_MM.addSubview(imageView)
             UIScrollView_MM.delegate = self
             aa  = imageView.frame
@@ -62,12 +63,14 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         
         UIToolbar_M.barTintColor = UIColor.black
         
-        for _ in 0..<(image_Dijizhang - 1) {
-            UIScrollView_MM.scrollRectToVisible(aa, animated: false)
-        }
-    }
+            }
+    
     
     override func viewDidAppear(_ animated: Bool) {
+        for _ in 0..<(image_Dijizhang - 1) {
+            print("do")
+            UIScrollView_MM.scrollRectToVisible(aa, animated: false)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -93,16 +96,10 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
 
         if navigationController?.navigationBar.alpha == 0 {
             navigationController?.navigationBar.alpha = 1
+            UIToolbar_M.alpha = 1
         } else {
              navigationController?.navigationBar.alpha = 0
-        }
-        
-        if UIToolbar_M.alpha == 1 {
             UIToolbar_M.alpha = 0
-        } else {
-            UIToolbar_M.alpha = 1
         }
-        
     }
-
 }
