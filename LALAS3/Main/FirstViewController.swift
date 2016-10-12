@@ -122,11 +122,13 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         if inlema == true {
             UIView.animate(withDuration: 1, animations: {
                 //let i = sender.currentImage
-                self.imageviewzooooom.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
-                self.imageviewzooooom.center = self.view.center
+                //self.imageviewzooooom.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
+                self.imageviewzooooom.frame = self.rext3
+                //self.imageviewzooooom.center = self.view.center
                 }, completion: { (_) in
                     self.inlema = false
                     self.imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
+                    //self.imageviewzooooom.frame = self.rext3
                 }
             )
         }
@@ -151,6 +153,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     var inlema  = false
+    var rext3 = CGRect()
+    
     
     /**跳转到图片详情页*/
     func GoDetail (_ sender:UIButton)  {
@@ -170,26 +174,32 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         print(cell?.center)
         print("-------------")
 
+        let window = UIApplication.shared.keyWindow
+        let button = sender
+        
+        let rext1 = button.convert(button.frame, from: button.superview)
+        let rext2 = button.convert(rext1, to: window)
+        rext3 = rext2.insetBy(dx: -0.5 * 8, dy: -0.5 * 8)
+        
+        print(rext3)
+        
         self.imageviewzooooom.image = sender.currentImage
-        
-        /*
-        UIView.animate(withDuration: 1, animations:{
-            self.imageviewzooooom.center.x = (cell?.center.x)!
-            self.imageviewzooooom.center.y = (cell?.center.y)!})*/
-        
-        /*
-        UIView.animate(withDuration: 1, animations:{
-            self.imageviewzooooom.center.x -= (cell?.center.x)!
-            self.imageviewzooooom.center.y -= (cell?.center.y)!})*/
-        
-        /*
-        UIView.animate(withDuration: 1, animations:{
-            self.imageviewzooooom.center.x += sender.center.x
-            self.imageviewzooooom.center.y += sender.center.y})*/
 
         if inlema == false {
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: 0, animations: {
+                self.imageviewzooooom.frame = self.rext3
                 }, completion: { _ in
+                    UIView.animate(withDuration: 0.5, animations:{
+                        //let i = sender.currentImage
+                        //self.imageviewzooooom.contentMode = .scaleAspectFill
+                        self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
+                        },
+                        completion: { (_) in
+                            self.navigationController?.pushViewController(vc, animated: false)
+                            self.inlema = true
+                        }
+                        )
+                    /*
                     UIView.animate(
                         withDuration: 1,
                         delay: 0.0,
@@ -198,14 +208,14 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         options: UIViewAnimationOptions.curveEaseIn,
                         animations: {
                             //let i = sender.currentImage
-                            self.imageviewzooooom.contentMode = .scaleAspectFill
+                            //self.imageviewzooooom.contentMode = .scaleAspectFill
                             self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
                         },
                         completion: { (_) in
                             self.navigationController?.pushViewController(vc, animated: false)
                             self.inlema = true
                         }
-                    )
+                    )*/
                 }
             )
 

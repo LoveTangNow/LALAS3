@@ -29,7 +29,7 @@ class SomePeople_ViewController: UIViewController ,UITableViewDelegate,UITableVi
         tableViewMain.delegate = self
         tableViewMain.dataSource = self
         
-        navigationController?.navigationBar.barTintColor = UIColor.green
+        navigationController?.navigationBar.barTintColor = UIColor.cyan
         navigationController?.navigationBar.tintColor = UIColor.purple
     
         ConnectNib()
