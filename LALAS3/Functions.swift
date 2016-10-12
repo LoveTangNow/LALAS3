@@ -12,10 +12,6 @@ import UIKit
 
 class FFFFFunctions: AnyObject {
     
-    func prints(A:String) -> Int {
-        return 1
-    }
-    
     //判断设备的方法
     func getDeviceVersion () -> String {
         let name = UnsafeMutablePointer<utsname>.allocate(capacity: 1)

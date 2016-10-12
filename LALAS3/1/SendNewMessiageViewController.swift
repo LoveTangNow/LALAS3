@@ -19,6 +19,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     let DeivecHeight = UIScreen.main.bounds.height
     
     var TableViewCellHeight:CGFloat = 0
+    var controllor:UIImagePickerController?
     
     //肌肤默认的图片
     var Imageload_Black:UIImage = UIImage(named: "Black.png")!
@@ -36,8 +37,10 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     
     //选择 图片 或者 拍摄
     @IBAction func UIButton_1_c(_ sender: AnyObject) {
+        TakePhoto()
+        
         Voice_Beng?.play()
-        print(imageNumbersAlreadyGot)
+        //print(imageNumbersAlreadyGot)
         let w = (DeivecWidth - 20 - 9) / 4//button 和 图片 的宽高度
         switch imageNumbersAlreadyGot {
         case 0,1,2://→
@@ -56,16 +59,24 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     }
     
     @IBAction func UIButton_location(_ sender: AnyObject) {
+        
+        let piker = UIImagePickerController()
+        piker.delegate = self
+        
+        
         let actionSheetController: UIAlertController = UIAlertController(title: "请选择", message:nil, preferredStyle: .actionSheet)
         let cancelAction: UIAlertAction = UIAlertAction(title: "取消", style: .cancel) { action -> Void in}
         let takePictureAction: UIAlertAction = UIAlertAction(title: "拍照", style: .default){ action -> Void in
-            self .initWithImagePickView(type: "拍照")
+            piker.sourceType = .camera
+            self.navigationController?.present(piker, animated: true, completion: nil)
+            //self .initWithImagePickView(type: "拍照")
         }
         let choosePictureAction: UIAlertAction = UIAlertAction(title: "相册", style: .default){ action -> Void in
-            self .initWithImagePickView(type: "相册")
+            //self .initWithImagePickView(type: "相册")
+            self.navigationController?.present(piker, animated: true, completion: nil)
         }
         let moviePictureAction: UIAlertAction = UIAlertAction(title: "摄像", style: .default){ action -> Void in
-            self .initWithImagePickView(type: "摄像")
+            //self .initWithImagePickView(type: "摄像")
         }
         actionSheetController.addAction(cancelAction)
         actionSheetController.addAction(takePictureAction)
@@ -75,6 +86,79 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
+    func TakePhoto()  {
+        let a  = PhotoAvilable()
+        if a.IsCameraAvalible() && a.CanShootPhoto(){
+            controllor = UIImagePickerController()
+            if let thecontrollor = controllor {
+                thecontrollor.sourceType = .camera
+                thecontrollor.mediaTypes = [kUTTypeImage as String]
+                thecontrollor.allowsEditing = true
+                thecontrollor.delegate = self
+                present(thecontrollor, animated: true, completion: nil)
+            }
+            else{
+                print("boooooooom")
+            }
+        }
+    }
+
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let mediaType:AnyObject? = info[UIImagePickerControllerMediaType] as AnyObject?
+        if let type:AnyObject = mediaType {
+            if type is String {
+                let stringType = type as! String
+                if stringType == kUTTypeMovie  as String {
+                    let urlvedio = info[UIImagePickerControllerMediaURL] as? NSURL
+                    if let url = urlvedio {
+                        print("video url = \(url)")
+                    }
+                }
+                else if stringType == kUTTypeImage as String{
+                    let metadata = info[UIImagePickerControllerMediaMetadata] as? NSDictionary
+                    if let themetadata = metadata {
+                        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+                        if let theimage = image {
+                            print("\(themetadata)")
+                            print("image = \(theimage)")
+                            //得到了 IMAGE
+                            UIButton_1.setImage(theimage, for: .normal)
+                        }
+                    }
+                }
+            }
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    /*
+     private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+     let mediaType = info[UIImagePickerControllerMediaType] as! String
+     let compareResult = CFStringCompare(mediaType as NSString!, kUTTypeMovie, CFStringCompareFlags.compareCaseInsensitive)
+     
+     if compareResult == CFComparisonResult.compareEqualTo {
+     let moviePath = info[UIImagePickerControllerMediaURL] as? NSURL
+     //获取路径
+     let moviePathString = moviePath!.relativePath
+     if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePathString!){
+     UISaveVideoAtPathToSavedPhotosAlbum(moviePathString!, nil, nil, nil)
+     }
+     print("视频")
+     }else {
+     print("图片")
+     _ = info[UIImagePickerControllerOriginalImage] as? UIImage
+     //lmagelist.append(image!)
+     //self.tableView.reloadData()
+     //得到了 image //怎么传达 tableview 的控件上？、
+     //self.imageView!.image =  image;
+     }
+     imagePicker.dismiss(animated: true, completion: nil)
+     }*/
+
+    
+    /*
     func initWithImagePickView(type:NSString){
         self.imagePicker = UIImagePickerController()
         self.imagePicker.delegate      = self;
@@ -94,29 +178,11 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
             print("error")
         }
         self.present(self.imagePicker, animated: true, completion: nil)
-    }
+    }*/
     
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let mediaType = info[UIImagePickerControllerMediaType] as! String
-        let compareResult = CFStringCompare(mediaType as NSString!, kUTTypeMovie, CFStringCompareFlags.compareCaseInsensitive)
-        
-        if compareResult == CFComparisonResult.compareEqualTo {
-            let moviePath = info[UIImagePickerControllerMediaURL] as? NSURL
-            //获取路径
-            let moviePathString = moviePath!.relativePath
-            if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePathString!){
-                UISaveVideoAtPathToSavedPhotosAlbum(moviePathString!, nil, nil, nil)
-            }
-            print("视频")
-        }else {
-            print("图片")
-            _ = info[UIImagePickerControllerOriginalImage] as? UIImage
-            //lmagelist.append(image!)
-            //self.tableView.reloadData()
-            //得到了 image //怎么传达 tableview 的控件上？、
-            //self.imageView!.image =  image;
-        }
-        imagePicker.dismiss(animated: true, completion: nil)
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     
@@ -181,7 +247,6 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
 
     }
     override func viewDidAppear(_ animated: Bool) {
-        
     }
 
     override func didReceiveMemoryWarning() {

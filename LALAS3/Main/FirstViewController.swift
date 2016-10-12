@@ -579,7 +579,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         UITableView_Main.register(UINib(nibName: "SixPhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "SixPhoto_TableViewCell")
         UITableView_Main.register(UINib(nibName: "NinePhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "NinePhoto_TableViewCell")
         UITableView_Main.register(UINib(nibName: "OnePhoto_Z_NTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhoto_Z_NTableViewCell")
-        
         UITableView_Main.register(UINib(nibName: "Advertisement_TableViewCell", bundle: nil), forCellReuseIdentifier: "Advertisement_TableViewCell")
         UITableView_Main.register(UINib(nibName: "CommentsPraiseDemote_NTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentsPraiseDemote_NTableViewCell")
         UITableView_Main.register(UINib(nibName: "News_Information_TableViewCell", bundle: nil), forCellReuseIdentifier: "News_Information_TableViewCell")
@@ -600,7 +599,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             imagelist.append(a.image_2.currentImage)
             
             imagenumber_in = 2
-        //vc.image1 = a.UIImageView_1.image!
         case "3":
             let a = UITableView_Main.cellForRow(at: indexpath)! as! ThreePhoto_NTableViewCell
             imagelist.append(a.image_1.currentImage)
@@ -608,7 +606,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             imagelist.append(a.image_3.currentImage)
             
             imagenumber_in = 3
-        //vc.image1 = a.UIImageView_2.image!
         case "4" :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! SixPhoto_TableViewCell
             imagelist.append(a.UIImageView1.image)
