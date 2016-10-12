@@ -40,6 +40,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     var MODEL = FirstPageModel()
     
+    var imageviewzooooom = UIImageView()
+    
+    
     //MARK: - 函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +97,13 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         }
         // Do any additional setup after loading the view.
         print("viewDidLoad")
+        
+        let w  = (UIScreen.main.bounds.width - 20 - 6) / 3
+        imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:w,height:w)
+        imageviewzooooom.layer.cornerRadius = 2
+        imageviewzooooom.backgroundColor = UIColor.black
+        
+        self.view.addSubview(imageviewzooooom)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,28 +119,28 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        //print(DataPhotos)
-        //self.UITableView_Main.center.y = -self.view.bounds.height / 2
-        
-        /*
-         UIView.animate(withDuration: 1, delay: 0.3, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: UIViewAnimationOptions.curveEaseIn, animations: {
-         self.UITableView_Main.center.y += self.view.bounds.height
-         })
-         */
-        
-        //self.UITableView_Main.center.x -= self.view.bounds.width
-        /*
-        UIView.animate(withDuration: 1, usingSpringWithDamping:0.3,animations: {
-            self.UITableView_Main.center.y += self.view.bounds.height
-            self.UITableView_Main.center.y -= 50
-            self.UITableView_Main.center.y += 50
-        })
-        */
-        //UIViewAnimationOptionCurveEaseInOut
-        
-
-        
-        //UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 5, animations: self.UITableView_Main.center.y += self.view.bounds.height, completion: {print("")})
+        if inlema == true {
+            UIView.animate(withDuration: 1, animations: {
+                }, completion: { _ in
+                    UIView.animate(
+                        withDuration: 1,
+                        delay: 0.0,
+                        usingSpringWithDamping: 0.55,
+                        initialSpringVelocity: 5.0,
+                        options: UIViewAnimationOptions.curveEaseIn,
+                        animations: {
+                            //let i = sender.currentImage
+                            self.imageviewzooooom.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
+                            self.imageviewzooooom.center = self.view.center
+                        },
+                        completion: { (_) in
+                            self.inlema = false
+                            self.imageviewzooooom.frame = CGRect(x:0,y:UIScreen.main.bounds.height,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
+                        }
+                    )
+                }
+            )
+        }
     }
     @IBAction func Right_Click(_ sender: AnyObject) {
         //ViewPhotoViewController
@@ -150,6 +160,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    var inlema  = false
+    
+    
     /**跳转到图片详情页*/
     func GoDetail (_ sender:UIButton)  {
         var indexPath = IndexPath()
@@ -160,7 +173,55 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         vc.imgaeNumber = a.1
         vc.image_Dijizhang = sender.tag
         //print(DataPhotos)
-        self.navigationController?.pushViewController(vc, animated: true)
+        let cell = UITableView_Main.cellForRow(at: indexPath)
+        
+        print("-------------")
+        print(sender.center)
+        print(sender.superview?.superview?.center)
+        print(cell?.center)
+        print("-------------")
+
+        self.imageviewzooooom.image = sender.currentImage
+        
+        /*
+        UIView.animate(withDuration: 1, animations:{
+            self.imageviewzooooom.center.x = (cell?.center.x)!
+            self.imageviewzooooom.center.y = (cell?.center.y)!})*/
+        
+        /*
+        UIView.animate(withDuration: 1, animations:{
+            self.imageviewzooooom.center.x -= (cell?.center.x)!
+            self.imageviewzooooom.center.y -= (cell?.center.y)!})*/
+        
+        /*
+        UIView.animate(withDuration: 1, animations:{
+            self.imageviewzooooom.center.x += sender.center.x
+            self.imageviewzooooom.center.y += sender.center.y})*/
+
+        if inlema == false {
+            UIView.animate(withDuration: 1, animations: {
+                }, completion: { _ in
+                    UIView.animate(
+                        withDuration: 1,
+                        delay: 0.0,
+                        usingSpringWithDamping: 0.55,
+                        initialSpringVelocity: 5.0,
+                        options: UIViewAnimationOptions.curveEaseIn,
+                        animations: {
+                            //let i = sender.currentImage
+                            self.imageviewzooooom.contentMode = .scaleAspectFit
+                            self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
+                        },
+                        completion: { (_) in
+                            self.navigationController?.pushViewController(vc, animated: false)
+                            self.inlema = true
+                        }
+                    )
+                }
+            )
+
+        }
+        
     }
     
     //MARK: - TableView

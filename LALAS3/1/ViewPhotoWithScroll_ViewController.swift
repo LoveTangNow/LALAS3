@@ -30,6 +30,7 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(image_Dijizhang)
+        self.view.backgroundColor = UIColor.black
 
         UIScrollView_MM.backgroundColor = UIColor.black
         UIScrollView_MM.contentSize = CGSize(width:self.view.bounds.width * CGFloat( imgaeNumber),height: self.view.bounds.width)   //内容大小
@@ -62,8 +63,8 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         navigationController?.navigationBar.barTintColor = UIColor.black
         
         UIToolbar_M.barTintColor = UIColor.black
-        
-            }
+        UIScrollView_MM.isHidden = true
+    }
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,6 +72,7 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
             print("do")
             UIScrollView_MM.scrollRectToVisible(aa, animated: false)
         }
+        UIScrollView_MM.isHidden = false
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
