@@ -12,15 +12,15 @@ class OnePhoto_H_NTableViewCell: UITableViewCell {
     
     var GotPhoto = Bool()
 
-    @IBOutlet weak var imgae_: UIButton!
+    @IBOutlet weak var image_1: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        imgae_.imageView?.contentMode = .scaleAspectFill
-        imgae_.clipsToBounds = true
-        imgae_.layer.cornerRadius = 2
+        image_1.imageView?.contentMode = .scaleAspectFill
+        image_1.clipsToBounds = true
+        image_1.layer.cornerRadius = 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

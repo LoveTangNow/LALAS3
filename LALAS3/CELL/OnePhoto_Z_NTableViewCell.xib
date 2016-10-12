@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3eW-hq-44N" id="5LS-Nb-qIY">
-                <frame key="frameInset" width="375" height="212.5"/>
+                <frame key="frameInset" width="375" height="212"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Il-zs-gKC">
@@ -30,7 +30,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="image_" destination="2Il-zs-gKC" id="E4g-Ui-xcr"/>
+                <outlet property="image_1" destination="2Il-zs-gKC" id="NjW-Oc-KYV"/>
             </connections>
             <point key="canvasLocation" x="-311" y="753"/>
         </tableViewCell>

@@ -13,22 +13,22 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T5F-eM-mY2" id="jZY-Sc-u6j">
-                <frame key="frameInset" width="375" height="231.5"/>
+                <frame key="frameInset" width="375" height="231"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-Ij-fVZ"/>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="OYD-Ij-fVZ" secondAttribute="trailing" id="DX3-0h-MXn"/>
-                    <constraint firstItem="OYD-Ij-fVZ" firstAttribute="top" secondItem="jZY-Sc-u6j" secondAttribute="topMargin" id="dEQ-T5-VXm"/>
-                    <constraint firstItem="OYD-Ij-fVZ" firstAttribute="leading" secondItem="jZY-Sc-u6j" secondAttribute="leadingMargin" id="llr-b1-syp"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="OYD-Ij-fVZ" secondAttribute="bottom" id="wCV-Jo-KHm"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OYD-Ij-fVZ" secondAttribute="trailing" constant="1" id="DX3-0h-MXn"/>
+                    <constraint firstItem="OYD-Ij-fVZ" firstAttribute="top" secondItem="jZY-Sc-u6j" secondAttribute="topMargin" constant="1" id="dEQ-T5-VXm"/>
+                    <constraint firstItem="OYD-Ij-fVZ" firstAttribute="leading" secondItem="jZY-Sc-u6j" secondAttribute="leadingMargin" constant="1" id="llr-b1-syp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="OYD-Ij-fVZ" secondAttribute="bottom" constant="1" id="wCV-Jo-KHm"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imgae_" destination="OYD-Ij-fVZ" id="mGz-0x-DAE"/>
+                <outlet property="image_1" destination="OYD-Ij-fVZ" id="Y0N-OL-cyH"/>
             </connections>
-            <point key="canvasLocation" x="-309" y="339"/>
+            <point key="canvasLocation" x="-519" y="344"/>
         </tableViewCell>
     </objects>
 </document>

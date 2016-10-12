@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dn6-Ib-tUz" id="hhZ-qa-JAw">
-                <frame key="frameInset" width="375" height="217.5"/>
+                <frame key="frameInset" width="375" height="217"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-BQ-2zX">
@@ -33,9 +33,17 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="啊发发还是地方哈迪斯阿卡哈尔法和发达阿什顿发卡机是打发收到货发爱看啥打法就是的发挥" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auk-Vk-ZxK">
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
-                        <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auk-Vk-ZxK">
+                        <attributedString key="attributedText">
+                            <fragment content="啊发发还是地方哈迪斯阿卡哈尔法和发达阿什顿发卡机是打发收到货发爱看啥打法就是的发挥">
+                                <attributes>
+                                    <color key="NSColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="NSOriginalFont" metaFont="system"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                         <nil key="highlightedColor"/>
                         <size key="shadowOffset" width="0.0" height="0.0"/>
                     </label>
@@ -65,25 +73,21 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Auk-Vk-ZxK" firstAttribute="top" secondItem="Oms-Wo-2vU" secondAttribute="bottom" constant="8" id="0cc-I6-4Da"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Auk-Vk-ZxK" secondAttribute="trailing" constant="10" id="1wo-Ce-Lxq"/>
-                    <constraint firstItem="YfM-XO-Bn1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WXK-BQ-2zX" secondAttribute="trailing" constant="24" id="7P6-1i-0r2"/>
-                    <constraint firstItem="YfM-XO-Bn1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lzp-EM-AX8" secondAttribute="trailing" constant="5" id="KRV-bq-MIv"/>
+                    <constraint firstItem="Oms-Wo-2vU" firstAttribute="leading" secondItem="hhZ-qa-JAw" secondAttribute="leadingMargin" constant="42" id="3u3-uA-qZG"/>
+                    <constraint firstItem="Lzp-EM-AX8" firstAttribute="leading" secondItem="hhZ-qa-JAw" secondAttribute="leadingMargin" constant="62" id="BCy-Dk-Arf"/>
                     <constraint firstItem="YaO-Qx-ByV" firstAttribute="centerY" secondItem="WXK-BQ-2zX" secondAttribute="centerY" id="OOt-MB-Qje"/>
-                    <constraint firstItem="Auk-Vk-ZxK" firstAttribute="top" secondItem="clb-40-Zx7" secondAttribute="bottom" constant="5" id="PFo-Cj-aOJ"/>
+                    <constraint firstItem="YfM-XO-Bn1" firstAttribute="top" secondItem="hhZ-qa-JAw" secondAttribute="topMargin" constant="19" id="PDw-1H-zqN"/>
                     <constraint firstItem="Auk-Vk-ZxK" firstAttribute="leading" secondItem="hhZ-qa-JAw" secondAttribute="leadingMargin" constant="10" id="ShU-tl-poR"/>
                     <constraint firstItem="WXK-BQ-2zX" firstAttribute="top" secondItem="hhZ-qa-JAw" secondAttribute="topMargin" constant="10" id="Ux8-XY-aZY"/>
-                    <constraint firstItem="Oms-Wo-2vU" firstAttribute="width" secondItem="Oms-Wo-2vU" secondAttribute="height" multiplier="1:1" id="VND-8n-8Cq"/>
-                    <constraint firstItem="WXK-BQ-2zX" firstAttribute="leading" secondItem="clb-40-Zx7" secondAttribute="trailing" constant="5" id="Vyq-ay-60H"/>
-                    <constraint firstItem="Lzp-EM-AX8" firstAttribute="leading" secondItem="Oms-Wo-2vU" secondAttribute="trailing" constant="8" id="XOu-iA-EdH"/>
-                    <constraint firstItem="YfM-XO-Bn1" firstAttribute="centerY" secondItem="clb-40-Zx7" secondAttribute="centerY" id="Xus-c8-4vm"/>
                     <constraint firstItem="clb-40-Zx7" firstAttribute="leading" secondItem="hhZ-qa-JAw" secondAttribute="leadingMargin" constant="10" id="YIk-SK-ERk"/>
-                    <constraint firstItem="Lzp-EM-AX8" firstAttribute="leading" secondItem="clb-40-Zx7" secondAttribute="trailing" constant="5" id="bjQ-ZR-JSz"/>
+                    <constraint firstItem="Auk-Vk-ZxK" firstAttribute="top" secondItem="hhZ-qa-JAw" secondAttribute="topMargin" constant="62" id="aTT-EG-SeZ"/>
                     <constraint firstItem="YaO-Qx-ByV" firstAttribute="leading" secondItem="WXK-BQ-2zX" secondAttribute="trailing" constant="3" id="cP3-sO-RIR"/>
-                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Auk-Vk-ZxK" secondAttribute="bottom" id="d9e-uC-qNr"/>
+                    <constraint firstItem="Oms-Wo-2vU" firstAttribute="top" secondItem="hhZ-qa-JAw" secondAttribute="topMargin" constant="42" id="mzB-Ko-s7T"/>
                     <constraint firstItem="clb-40-Zx7" firstAttribute="top" secondItem="hhZ-qa-JAw" secondAttribute="topMargin" constant="10" id="nA9-rR-eBn"/>
                     <constraint firstItem="Lzp-EM-AX8" firstAttribute="top" secondItem="WXK-BQ-2zX" secondAttribute="bottom" constant="1" id="uYq-md-zdc"/>
                     <constraint firstAttribute="trailingMargin" secondItem="YfM-XO-Bn1" secondAttribute="trailing" constant="10" id="vp9-ea-6O1"/>
+                    <constraint firstItem="WXK-BQ-2zX" firstAttribute="leading" secondItem="hhZ-qa-JAw" secondAttribute="leadingMargin" constant="62" id="z6e-uj-aZ2"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -95,7 +99,7 @@
                 <outlet property="setting" destination="YfM-XO-Bn1" id="0cN-K1-iL6"/>
                 <outlet property="userIcon" destination="clb-40-Zx7" id="v73-DC-gzP"/>
             </connections>
-            <point key="canvasLocation" x="-309" y="50"/>
+            <point key="canvasLocation" x="-414.5" y="75"/>
         </tableViewCell>
     </objects>
 </document>

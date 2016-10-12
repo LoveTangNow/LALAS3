@@ -24,9 +24,6 @@ class News_Information_TableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         
-        //print(UIImageViewUserIcon.layer.frame.height)
-        //print(UIImageViewUserIcon.frame.height)
-        
         userIcon.layer.cornerRadius = 23.5
         userIcon.clipsToBounds = true
         

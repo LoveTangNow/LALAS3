@@ -13,24 +13,37 @@ class HuanCun_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let  a = 1
+        let  a = 5
         
         switch a {
-        case 0...9:
+        case 9...9:
+            print(1)
+            fallthrough
+        case 8...9:
+            print(2)
+            fallthrough
+        case 7...9:
+            print(3)
+            fallthrough
+        case 6...9:
+            print(4)
+            fallthrough
+        case 5...9:
+            print(5)
+            fallthrough
+        case 4...9:
+            print(6)
+            fallthrough
+        case 3...9:
+            print(7)
+            fallthrough
+        case 2...9:
+            print(8)
+            fallthrough
+        case 1...9:
             print(9)
             fallthrough
-        case 0...8:
-            print(9)
-            fallthrough
-        case 0...7:
-            print(9)
-            fallthrough
-        case 0...6:
-            print(9)
-            fallthrough
-        case 0...5:
-            print(9)
-            fallthrough
+
         default:
             break
         }

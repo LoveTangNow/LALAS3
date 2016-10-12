@@ -12,20 +12,22 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5bT-P9-2CR" id="OGB-xI-g9G">
-                <frame key="frameInset" width="375" height="43.5"/>
+                <frame key="frameInset" width="375" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uJF-bX-XM1"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydj-Tn-UkJ">
+                        <state key="normal" title="Button"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="uJF-bX-XM1" firstAttribute="leading" secondItem="OGB-xI-g9G" secondAttribute="leading" id="Mck-uX-xcj"/>
-                    <constraint firstItem="uJF-bX-XM1" firstAttribute="top" secondItem="OGB-xI-g9G" secondAttribute="top" id="Rhj-Ef-EIV"/>
-                    <constraint firstAttribute="trailing" secondItem="uJF-bX-XM1" secondAttribute="trailing" id="ZcW-VH-wWB"/>
-                    <constraint firstAttribute="bottom" secondItem="uJF-bX-XM1" secondAttribute="bottom" id="eP7-MA-181"/>
+                    <constraint firstItem="Ydj-Tn-UkJ" firstAttribute="top" secondItem="OGB-xI-g9G" secondAttribute="top" id="7Vh-Ox-4Co"/>
+                    <constraint firstAttribute="trailing" secondItem="Ydj-Tn-UkJ" secondAttribute="trailing" id="L8x-Qq-54r"/>
+                    <constraint firstAttribute="bottom" secondItem="Ydj-Tn-UkJ" secondAttribute="bottom" id="hfH-JG-wgI"/>
+                    <constraint firstItem="Ydj-Tn-UkJ" firstAttribute="leading" secondItem="OGB-xI-g9G" secondAttribute="leading" id="qn4-Kv-GTb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="UIImageView_M" destination="uJF-bX-XM1" id="Dtx-oj-awI"/>
+                <outlet property="imgae_main" destination="Ydj-Tn-UkJ" id="17D-Wq-fNq"/>
             </connections>
             <point key="canvasLocation" x="311" y="185"/>
         </tableViewCell>

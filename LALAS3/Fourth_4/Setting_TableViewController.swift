@@ -78,7 +78,6 @@ class Setting_TableViewController: UITableViewController {
             //self.present(vc, animated: true, completion: nil)
             break
         }
-        print(indexPath.row)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

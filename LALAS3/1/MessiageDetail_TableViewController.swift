@@ -121,7 +121,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                 case 1:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     
-                    cell.imgae_.setImage(imagelist[0], for: .normal)
+                    cell.image_1.setImage(imagelist[0], for: .normal)
                     
                     TableViewHeight = CGFloat(Int(DeviceWidth * 0.618 ))
                     
@@ -143,16 +143,16 @@ class MessiageDetail_TableViewController: UITableViewController {
                     return cell
                 case 4,5,6:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SixPhoto_TableViewCell", for: indexPath) as! SixPhoto_TableViewCell
-                    cell.UIImageView1.image = imagelist[0]
-                    cell.UIImageView2.image = imagelist[1]
-                    cell.UIImageView3.image = imagelist[2]
-                    cell.UIImageView4.image = imagelist[3]
+                    cell.image_1.setImage(imagelist[0], for: .normal)
+                    cell.image_2.setImage(imagelist[1], for: .normal)
+                    cell.image_3.setImage(imagelist[2], for: .normal)
+                    cell.image_4.setImage(imagelist[3], for: .normal)
                     switch imgaeNumber {
                     case 5:
-                        cell.UIImageView5.image = imagelist[4]
+                        cell.image_5.setImage(imagelist[4], for: .normal)
                     case 6:
-                        cell.UIImageView5.image = imagelist[4]
-                        cell.UIImageView6.image = imagelist[5]
+                        cell.image_5.setImage(imagelist[4], for: .normal)
+                        cell.image_6.setImage(imagelist[5], for: .normal)
                     default:
                         break
                     }
@@ -160,19 +160,19 @@ class MessiageDetail_TableViewController: UITableViewController {
                     return cell
                 case 7,8,9:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "NinePhoto_TableViewCell", for: indexPath) as! NinePhoto_TableViewCell
-                    cell.UIImageView1.image = imagelist[0]
-                    cell.UIImageView2.image = imagelist[1]
-                    cell.UIImageView3.image = imagelist[2]
-                    cell.UIImageView4.image = imagelist[3]
-                    cell.UIImageView5.image = imagelist[4]
-                    cell.UIImageView6.image = imagelist[5]
-                    cell.UIImageView7.image = imagelist[6]
+                    cell.image_1.setImage(imagelist[0], for: .normal)
+                    cell.image_2.setImage(imagelist[1], for: .normal)
+                    cell.image_3.setImage(imagelist[2], for: .normal)
+                    cell.image_4.setImage(imagelist[3], for: .normal)
+                    cell.image_5.setImage(imagelist[4], for: .normal)
+                    cell.image_6.setImage(imagelist[5], for: .normal)
+                    cell.image_7.setImage(imagelist[6], for: .normal)
                     switch imgaeNumber {
                     case 8:
-                        cell.UIImageView8.image = imagelist[7]
+                        cell.image_8.setImage(imagelist[7], for: .normal)
                     case 9:
-                        cell.UIImageView8.image = imagelist[7]
-                        cell.UIImageView9.image = imagelist[8]
+                        cell.image_8.setImage(imagelist[7], for: .normal)
+                        cell.image_9.setImage(imagelist[8], for: .normal)
                     default:
                         break
                     }
@@ -186,8 +186,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         }
         else{//Pinglun
             let cell = tableView.dequeueReusableCell(withIdentifier: "Pinglun_NTableViewCell", for: indexPath) as! Pinglun_NTableViewCell
- 
-            cell.UIImageView_Icon.image = image1
+            cell.image_icon.setImage(#imageLiteral(resourceName: "Black"), for: .normal)
             TableViewHeight = CGFloat(Int(DeviceWidth * 0.3 ))
             return cell
         }

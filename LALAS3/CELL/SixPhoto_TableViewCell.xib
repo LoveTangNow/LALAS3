@@ -12,48 +12,50 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0NJ-sg-aQG" id="BQl-ee-bQO">
-                <frame key="frameInset" width="375" height="239.5"/>
+                <frame key="frameInset" width="375" height="239"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="q0T-nI-Rix">
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oVh-np-n2x">
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4J-Sh-SaB"/>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v6j-IO-agy"/>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MVL-Eq-kMF">
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="La5-Na-a0T"/>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L3f-wb-0q0"/>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VYG-wb-Qbz">
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AmO-4t-rfW"/>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iMp-n7-bSg"/>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLx-JU-b5n">
+                        <frame key="frameInset" minX="60" minY="81" width="46" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yq-ap-gPn">
+                        <frame key="frameInset" minX="129" minY="74" width="46" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0D3-ml-heE">
+                        <frame key="frameInset" minX="201" minY="74" width="46" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfF-WO-WVd">
+                        <frame key="frameInset" minX="129" minY="134" width="46" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlK-r7-C0b">
+                        <frame key="frameInset" minX="201" minY="145" width="46" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c6-KF-Frt">
+                        <frame key="frameInset" minX="60" minY="134" width="46" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                    </button>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="q0T-nI-Rix" secondAttribute="bottom" constant="5" id="Lv5-bN-7wA"/>
-                    <constraint firstItem="q0T-nI-Rix" firstAttribute="leading" secondItem="BQl-ee-bQO" secondAttribute="leading" constant="10" id="PkN-5D-oMs"/>
-                    <constraint firstAttribute="trailing" secondItem="q0T-nI-Rix" secondAttribute="trailing" constant="10" id="sm1-Dg-S52"/>
-                    <constraint firstItem="q0T-nI-Rix" firstAttribute="top" secondItem="BQl-ee-bQO" secondAttribute="top" constant="5" id="yVn-8A-Al7"/>
-                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="UIImageView1" destination="P4J-Sh-SaB" id="5Kj-ke-IWd"/>
-                <outlet property="UIImageView2" destination="La5-Na-a0T" id="v95-pQ-Mgv"/>
-                <outlet property="UIImageView3" destination="AmO-4t-rfW" id="VpA-61-TFS"/>
-                <outlet property="UIImageView4" destination="v6j-IO-agy" id="39P-bl-AGX"/>
-                <outlet property="UIImageView5" destination="L3f-wb-0q0" id="TgM-ki-aVL"/>
-                <outlet property="UIImageView6" destination="iMp-n7-bSg" id="yxx-3X-Ls0"/>
+                <outlet property="image_1" destination="hLx-JU-b5n" id="tZm-dw-i87"/>
+                <outlet property="image_2" destination="7yq-ap-gPn" id="Hsg-dS-Rjf"/>
+                <outlet property="image_3" destination="0D3-ml-heE" id="VQ0-SW-dwE"/>
+                <outlet property="image_4" destination="9c6-KF-Frt" id="Uwd-ca-ML4"/>
+                <outlet property="image_5" destination="wfF-WO-WVd" id="ySa-Lg-zbN"/>
+                <outlet property="image_6" destination="BlK-r7-C0b" id="tuu-lZ-wud"/>
             </connections>
-            <point key="canvasLocation" x="-933" y="283"/>
+            <point key="canvasLocation" x="-933.5" y="283"/>
         </tableViewCell>
     </objects>
 </document>
