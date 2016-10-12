@@ -110,6 +110,7 @@
 		7FD5FA971DA50E49002A901C /* intentsE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7FD5FA801DA50E48002A901C /* intentsE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7FD5FAA11DA51778002A901C /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5FAA01DA51778002A901C /* ChatModels.swift */; };
 		7FDDBE271DAE0D23005B2F0D /* PhotoAvilable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDBE261DAE0D23005B2F0D /* PhotoAvilable.swift */; };
+		7FDDBE291DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDBE281DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift */; };
 		7FE53EFD1DA9C6F400D318E0 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EF71DA9C6F400D318E0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FE53EFF1DA9C6F400D318E0 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EF81DA9C6F400D318E0 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FE53F011DA9C6F400D318E0 /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EF91DA9C6F400D318E0 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -119,7 +120,6 @@
 		7FE5BF291D8E753D00586166 /* HuanCun_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF281D8E753D00586166 /* HuanCun_ViewController.swift */; };
 		7FE5BF2B1D8E755600586166 /* FanKui_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF2A1D8E755600586166 /* FanKui_ViewController.swift */; };
 		7FE5BF2D1D8E756A00586166 /* AboutUs_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF2C1D8E756A00586166 /* AboutUs_ViewController.swift */; };
-		7FE5BF431D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF421D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift */; };
 		7FEA9A6B1D9F464F00B1351F /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA9A6A1D9F464F00B1351F /* MainModel.swift */; };
 		7FF0C8511D91114400B85248 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF0C8501D91114400B85248 /* libsqlite3.tbd */; };
 		7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0C8531D91173F00B85248 /* R.xcdatamodeld */; };
@@ -360,6 +360,7 @@
 		7FD5FA911DA50E49002A901C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FD5FAA01DA51778002A901C /* ChatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatModels.swift; path = Second_2/ChatModels.swift; sourceTree = "<group>"; };
 		7FDDBE261DAE0D23005B2F0D /* PhotoAvilable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoAvilable.swift; path = Others/PhotoAvilable.swift; sourceTree = "<group>"; };
+		7FDDBE281DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnePhotoTwoLableTableViewCell.swift; sourceTree = "<group>"; };
 		7FE53EF71DA9C6F400D318E0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7FE53EF81DA9C6F400D318E0 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		7FE53EF91DA9C6F400D318E0 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Build/iOS/Dollar.framework; sourceTree = "<group>"; };
@@ -369,7 +370,6 @@
 		7FE5BF281D8E753D00586166 /* HuanCun_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HuanCun_ViewController.swift; path = Fourth_4/HuanCun_ViewController.swift; sourceTree = "<group>"; };
 		7FE5BF2A1D8E755600586166 /* FanKui_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FanKui_ViewController.swift; path = Fourth_4/FanKui_ViewController.swift; sourceTree = "<group>"; };
 		7FE5BF2C1D8E756A00586166 /* AboutUs_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutUs_ViewController.swift; path = Fourth_4/AboutUs_ViewController.swift; sourceTree = "<group>"; };
-		7FE5BF421D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoTwoLableTableViewCell.swift; path = Third_3/cells/OnePhotoTwoLableTableViewCell.swift; sourceTree = "<group>"; };
 		7FEA9A6A1D9F464F00B1351F /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainModel.swift; path = Main/MainModel.swift; sourceTree = "<group>"; };
 		7FF0C8501D91114400B85248 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LALAS3-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -503,8 +503,8 @@
 		7F5322B41D8BC9C200294C62 /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				7FDDBE281DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift */,
 				7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */,
-				7FE5BF421D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift */,
 			);
 			name = cells;
 			sourceTree = "<group>";
@@ -1345,7 +1345,6 @@
 				7F0E0C871D9921C800A54353 /* AccountManagement_ViewController.swift in Sources */,
 				7FFA9E521D960CE7002380C0 /* OnlyOneLabel_TableViewCell.swift in Sources */,
 				7FD5FAA11DA51778002A901C /* ChatModels.swift in Sources */,
-				7FE5BF431D8EDFCD00586166 /* OnePhotoTwoLableTableViewCell.swift in Sources */,
 				7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */,
 				7FBCFE341D9C08DB00831823 /* Map_ViewController.swift in Sources */,
 				7F9F8B031D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift in Sources */,
@@ -1356,6 +1355,7 @@
 				7F9F8B011D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift in Sources */,
 				7FAECEF01D8ABAD9004592EA /* Setting_TableViewController.swift in Sources */,
 				7F6AA6B51DA2754600A7292B /* Chat_ViewController.swift in Sources */,
+				7FDDBE291DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift in Sources */,
 				7FA6E8FB1D89A5B4003F6186 /* SaoYiSaoViewController.swift in Sources */,
 				7F9F8AFB1D9D646900C49C12 /* Label_Mid_TableViewCell.swift in Sources */,
 				7F6AA6B31DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift in Sources */,

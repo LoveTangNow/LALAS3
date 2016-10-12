@@ -579,6 +579,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         UITableView_Main.register(UINib(nibName: "SixPhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "SixPhoto_TableViewCell")
         UITableView_Main.register(UINib(nibName: "NinePhoto_TableViewCell", bundle: nil), forCellReuseIdentifier: "NinePhoto_TableViewCell")
         UITableView_Main.register(UINib(nibName: "OnePhoto_Z_NTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhoto_Z_NTableViewCell")
+        
         UITableView_Main.register(UINib(nibName: "Advertisement_TableViewCell", bundle: nil), forCellReuseIdentifier: "Advertisement_TableViewCell")
         UITableView_Main.register(UINib(nibName: "CommentsPraiseDemote_NTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentsPraiseDemote_NTableViewCell")
         UITableView_Main.register(UINib(nibName: "News_Information_TableViewCell", bundle: nil), forCellReuseIdentifier: "News_Information_TableViewCell")
@@ -587,26 +588,28 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     func GotPhoto(A:String,indexpath:IndexPath) -> ([UIImage?],Int) {
         var imagelist = [UIImage?]()
         var imagenumber_in = Int()
-        switch A {
-        case "1" :
+        let a_  = Int(A)!
+        
+        switch a_ {
+        case 1 :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! OnePhoto_H_NTableViewCell
             imagelist.append(a.imgae_.currentImage)
             imagenumber_in = 1
             break
-        case "2":
+        case 2:
             let a = UITableView_Main.cellForRow(at: indexpath)! as! ThreePhoto_NTableViewCell
             imagelist.append(a.image_1.currentImage)
             imagelist.append(a.image_2.currentImage)
             
             imagenumber_in = 2
-        case "3":
+        case 3:
             let a = UITableView_Main.cellForRow(at: indexpath)! as! ThreePhoto_NTableViewCell
             imagelist.append(a.image_1.currentImage)
             imagelist.append(a.image_2.currentImage)
             imagelist.append(a.image_3.currentImage)
             
             imagenumber_in = 3
-        case "4" :
+        case 4 :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! SixPhoto_TableViewCell
             imagelist.append(a.UIImageView1.image)
             imagelist.append(a.UIImageView2.image)
@@ -614,7 +617,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             imagelist.append(a.UIImageView4.image)
             
             imagenumber_in = 4
-        case "5" :
+        case 5 :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! SixPhoto_TableViewCell
             imagelist.append(a.UIImageView1.image)
             imagelist.append(a.UIImageView2.image)
@@ -623,7 +626,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             imagelist.append(a.UIImageView5.image)
             
             imagenumber_in = 5
-        case "6" :
+        case 6 :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! SixPhoto_TableViewCell
             imagelist.append(a.UIImageView1.image)
             imagelist.append(a.UIImageView2.image)
@@ -633,7 +636,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             imagelist.append(a.UIImageView6.image)
             
             imagenumber_in = 6
-        case "7" :
+        case 7 :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! NinePhoto_TableViewCell
             imagelist.append(a.UIImageView1.image)
             imagelist.append(a.UIImageView2.image)
@@ -644,7 +647,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             imagelist.append(a.UIImageView7.image)
             
             imagenumber_in = 7
-        case "8" :
+        case 8 :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! NinePhoto_TableViewCell
             imagelist.append(a.UIImageView1.image)
             imagelist.append(a.UIImageView2.image)
@@ -656,7 +659,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             imagelist.append(a.UIImageView8.image)
             //print("8")
             imagenumber_in = 8
-        case "9" :
+        case 9 :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! NinePhoto_TableViewCell
             imagelist.append(a.UIImageView1.image)
             imagelist.append(a.UIImageView2.image)

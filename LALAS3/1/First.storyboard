@@ -50,16 +50,25 @@
                                 <frame key="frameInset" minX="113" minY="308" width="77" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="UIButton_2_c:" destination="rHZ-QY-PP1" eventType="touchUpInside" id="4yW-ZO-AMk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgE-Gf-TZo">
                                 <frame key="frameInset" minX="198" minY="308" width="77" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="UIButton_3_c:" destination="rHZ-QY-PP1" eventType="touchUpInside" id="Stf-dz-qv7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUC-AD-xW3">
                                 <frame key="frameInset" minX="288" minY="308" width="77" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="UIButton_4_c:" destination="rHZ-QY-PP1" eventType="touchUpInside" id="4Ni-Qc-9b3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,6 +82,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="UIButton_1" destination="Zo2-Z9-cM1" id="4fB-iN-0A4"/>
+                        <outlet property="UIButton_2" destination="xg4-wz-yll" id="UMn-q2-vwn"/>
+                        <outlet property="UIButton_3" destination="hgE-Gf-TZo" id="fAu-yR-VMp"/>
+                        <outlet property="UIButton_4" destination="UUC-AD-xW3" id="ObH-f3-bLs"/>
                         <outlet property="UIButton_5" destination="e3d-GV-dim" id="FM1-i1-saT"/>
                         <outlet property="UITextView_Main" destination="7h4-Sk-svo" id="aMb-03-KEE"/>
                     </connections>
