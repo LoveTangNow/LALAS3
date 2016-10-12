@@ -121,27 +121,17 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     override func viewDidAppear(_ animated: Bool) {
         if inlema == true {
             UIView.animate(withDuration: 1, animations: {
-                }, completion: { _ in
-                    UIView.animate(
-                        withDuration: 1,
-                        delay: 0.0,
-                        usingSpringWithDamping: 0.55,
-                        initialSpringVelocity: 5.0,
-                        options: UIViewAnimationOptions.curveEaseIn,
-                        animations: {
-                            //let i = sender.currentImage
-                            self.imageviewzooooom.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
-                            self.imageviewzooooom.center = self.view.center
-                        },
-                        completion: { (_) in
-                            self.inlema = false
-                            self.imageviewzooooom.frame = CGRect(x:0,y:UIScreen.main.bounds.height,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
-                        }
-                    )
+                //let i = sender.currentImage
+                self.imageviewzooooom.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
+                self.imageviewzooooom.center = self.view.center
+                }, completion: { (_) in
+                    self.inlema = false
+                    self.imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
                 }
             )
         }
     }
+    
     @IBAction func Right_Click(_ sender: AnyObject) {
         //ViewPhotoViewController
         let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
@@ -161,7 +151,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     var inlema  = false
-    
     
     /**跳转到图片详情页*/
     func GoDetail (_ sender:UIButton)  {
@@ -209,7 +198,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         options: UIViewAnimationOptions.curveEaseIn,
                         animations: {
                             //let i = sender.currentImage
-                            self.imageviewzooooom.contentMode = .scaleAspectFit
+                            self.imageviewzooooom.contentMode = .scaleAspectFill
                             self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
                         },
                         completion: { (_) in
