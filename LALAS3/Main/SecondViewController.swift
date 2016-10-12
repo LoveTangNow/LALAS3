@@ -22,6 +22,8 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func UIButton_R_Click(_ sender: AnyObject) {
+        let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "SomePeople_ViewController") as! SomePeople_ViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     override func viewDidLoad() {

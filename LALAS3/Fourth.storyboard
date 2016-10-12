@@ -29,6 +29,67 @@
             </objects>
             <point key="canvasLocation" x="-2789" y="-84"/>
         </scene>
+        <!--Some People View Controller-->
+        <scene sceneID="gD0-cg-ZzB">
+            <objects>
+                <viewController storyboardIdentifier="SomePeople_ViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YsQ-qy-hmQ" customClass="SomePeople_ViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8TV-gX-RKd"/>
+                        <viewControllerLayoutGuide type="bottom" id="e9h-1F-izd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jzw-T8-ybC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U28-0t-7xC">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkm-ck-9Qc">
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3cG-vT-Fh2"/>
+                                    <barButtonItem title="Item" id="Kpu-9a-REL">
+                                        <connections>
+                                            <action selector="ACTION1:" destination="YsQ-qy-hmQ" id="pmB-S8-uAe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wqn-kg-Zs1"/>
+                                    <barButtonItem title="Item" id="HdZ-H7-6I2">
+                                        <connections>
+                                            <action selector="ACTION2:" destination="YsQ-qy-hmQ" id="eWK-4g-Ped"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="r9O-ZC-zHZ"/>
+                                    <barButtonItem title="Item" id="miq-pf-q0u">
+                                        <connections>
+                                            <action selector="ACTION3:" destination="YsQ-qy-hmQ" id="oOQ-D4-2e9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ytb-DH-HNx"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U28-0t-7xC" firstAttribute="centerY" secondItem="Jzw-T8-ybC" secondAttribute="centerY" id="5Nk-Kl-axj"/>
+                            <constraint firstItem="fkm-ck-9Qc" firstAttribute="width" secondItem="Jzw-T8-ybC" secondAttribute="width" id="C8D-Jp-bhK"/>
+                            <constraint firstItem="e9h-1F-izd" firstAttribute="top" secondItem="fkm-ck-9Qc" secondAttribute="bottom" id="Gmm-bP-tPF"/>
+                            <constraint firstItem="U28-0t-7xC" firstAttribute="centerX" secondItem="Jzw-T8-ybC" secondAttribute="centerX" id="Pxv-lN-Gn4"/>
+                            <constraint firstItem="fkm-ck-9Qc" firstAttribute="centerX" secondItem="Jzw-T8-ybC" secondAttribute="centerX" id="RbO-UN-zUZ"/>
+                            <constraint firstItem="U28-0t-7xC" firstAttribute="width" secondItem="Jzw-T8-ybC" secondAttribute="width" id="s3M-IK-wKW"/>
+                            <constraint firstItem="U28-0t-7xC" firstAttribute="height" secondItem="Jzw-T8-ybC" secondAttribute="height" id="yRQ-gE-HjU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Item1" destination="Kpu-9a-REL" id="JBK-EX-53P"/>
+                        <outlet property="Item2" destination="HdZ-H7-6I2" id="slr-5q-ebq"/>
+                        <outlet property="Item3" destination="miq-pf-q0u" id="jcC-w7-uJG"/>
+                        <outlet property="tableViewMain" destination="U28-0t-7xC" id="lkd-ih-QXB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jjj-fC-KYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2042" y="-84"/>
+        </scene>
         <!--Account Management View Controller-->
         <scene sceneID="TaX-fs-zg5">
             <objects>

@@ -111,6 +111,7 @@
 		7FD5FAA11DA51778002A901C /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD5FAA01DA51778002A901C /* ChatModels.swift */; };
 		7FDDBE271DAE0D23005B2F0D /* PhotoAvilable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDBE261DAE0D23005B2F0D /* PhotoAvilable.swift */; };
 		7FDDBE291DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDBE281DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift */; };
+		7FDDBE2B1DAE85A6005B2F0D /* SomePeople_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDDBE2A1DAE85A6005B2F0D /* SomePeople_ViewController.swift */; };
 		7FE53EFD1DA9C6F400D318E0 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EF71DA9C6F400D318E0 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FE53EFF1DA9C6F400D318E0 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EF81DA9C6F400D318E0 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FE53F011DA9C6F400D318E0 /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE53EF91DA9C6F400D318E0 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -361,6 +362,7 @@
 		7FD5FAA01DA51778002A901C /* ChatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatModels.swift; path = Second_2/ChatModels.swift; sourceTree = "<group>"; };
 		7FDDBE261DAE0D23005B2F0D /* PhotoAvilable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoAvilable.swift; path = Others/PhotoAvilable.swift; sourceTree = "<group>"; };
 		7FDDBE281DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnePhotoTwoLableTableViewCell.swift; sourceTree = "<group>"; };
+		7FDDBE2A1DAE85A6005B2F0D /* SomePeople_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SomePeople_ViewController.swift; path = Fourth_4/SomePeople_ViewController.swift; sourceTree = "<group>"; };
 		7FE53EF71DA9C6F400D318E0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7FE53EF81DA9C6F400D318E0 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		7FE53EF91DA9C6F400D318E0 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Build/iOS/Dollar.framework; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 			isa = PBXGroup;
 			children = (
 				7FA6E9171D89A8E2003F6186 /* Fourth.storyboard */,
+				7FDDBE2A1DAE85A6005B2F0D /* SomePeople_ViewController.swift */,
 				7FAECEEF1D8ABAD9004592EA /* Setting_TableViewController.swift */,
 				7F0E0C861D9921C800A54353 /* AccountManagement_ViewController.swift */,
 				7FE5BF221D8E74B400586166 /* AccountSecurity_TableViewController.swift */,
@@ -1346,6 +1349,7 @@
 				7FFA9E521D960CE7002380C0 /* OnlyOneLabel_TableViewCell.swift in Sources */,
 				7FD5FAA11DA51778002A901C /* ChatModels.swift in Sources */,
 				7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */,
+				7FDDBE2B1DAE85A6005B2F0D /* SomePeople_ViewController.swift in Sources */,
 				7FBCFE341D9C08DB00831823 /* Map_ViewController.swift in Sources */,
 				7F9F8B031D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift in Sources */,
 				7F9F8AF31D9D611A00C49C12 /* Tongzhi_ViewController.swift in Sources */,
