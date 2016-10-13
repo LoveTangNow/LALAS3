@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
+import MapKit//用于显示位置
 
 class MessiageDetail_TableViewController: UITableViewController {
     
@@ -14,9 +18,12 @@ class MessiageDetail_TableViewController: UITableViewController {
     let DeviceWidth =  UIScreen.main.bounds.width
     var imagelist = [UIImage?]()
     var imgaeNumber = Int()
+    //评论数据包括：评论序号，评论者 id，评论时间，评论内容
+    var pinglunData = [[String]]()
+    
+    
     
     @IBOutlet var UITableView_m: UITableView!
-    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +32,38 @@ class MessiageDetail_TableViewController: UITableViewController {
         //self.tableView.register(MD_Words_TableViewCell.self, forCellReuseIdentifier: "MD_Words_TableViewCell"
         print(imgaeNumber)
         print(imagelist.count)
-        
         ConnectNib()
+        
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
+        SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.clear)
+        SVProgressHUD.show()
+        //请求评论们:参数是一个 news id
+        let newsid: Parameters = ["userid": "1"]
+        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_PINGLUN.php", method: .post, parameters: newsid)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    //成功
+                    //print(response.result.value)
+                    let json = JSON(response.result.value)
+                    //数据包括：评论序号，评论者 id，评论时间，评论内容
+                    print(json)
+                    
+                    //print(self.DataWords)
+                    //print(self.DataPhotoNames)
+                    //print("Validation Successful")
+                    
+                    self.UITableView_m.reloadData()
+                    SVProgressHUD.dismiss()
+                    
+                case .failure(let error):
+                    //失败
+                    print(error)
+                    SVProgressHUD.dismiss()
+                }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

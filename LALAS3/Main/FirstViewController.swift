@@ -44,6 +44,12 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     
     //MARK: - 函数
+    override func viewDidDisappear(_ animated: Bool) {
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "动态"
@@ -60,7 +66,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         SVProgressHUD.show()
         
-        Alamofire.request("http://121.42.36.47/lala/scripts/GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
+        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
                 switch response.result {
