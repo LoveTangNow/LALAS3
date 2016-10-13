@@ -64,6 +64,10 @@ class SomePeople_ViewController: UIViewController ,UITableViewDelegate,UITableVi
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
     
     //MARK: - Founctions
     func ConnectNib() {
