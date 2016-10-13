@@ -76,13 +76,10 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         let actionSheetController: UIAlertController = UIAlertController(title: "请选择", message:nil, preferredStyle: .actionSheet)
         let cancelAction: UIAlertAction = UIAlertAction(title: "取消", style: .cancel) { action -> Void in}
         let takePictureAction: UIAlertAction = UIAlertAction(title: "拍照", style: .default){ action -> Void in
-            piker.sourceType = .camera
-            self.navigationController?.present(piker, animated: true, completion: nil)
             //self .initWithImagePickView(type: "拍照")
         }
         let choosePictureAction: UIAlertAction = UIAlertAction(title: "相册", style: .default){ action -> Void in
             //self .initWithImagePickView(type: "相册")
-            self.navigationController?.present(piker, animated: true, completion: nil)
         }
         let moviePictureAction: UIAlertAction = UIAlertAction(title: "摄像", style: .default){ action -> Void in
             //self .initWithImagePickView(type: "摄像")
@@ -266,8 +263,10 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         UIButton_3.frame = CGRect(x:10 + 2 * w + 6,y:(DeivecHeight / 3) + 10,width:w,height:w)
         UIButton_4.frame = CGRect(x:10 + 3 * w + 9,y:(DeivecHeight / 3) + 10,width:w,height:w)
         
-        UIButton_5.frame = CGRect(x:10,y: (DeivecHeight / 3) + 15 + w,width:DeivecWidth - 10,height:45)
+        UIButton_5.frame = CGRect(x:10,y: (DeivecHeight / 3) + 15 + w,width:DeivecWidth - 20,height:45)
         UIButton_5.setTitle("   选择地点", for: .normal)
+        UIButton_5.layer.cornerRadius = 3
+        UIButton_5.clipsToBounds = true
         UIButton_5.contentHorizontalAlignment = .left
     }
     
