@@ -39,7 +39,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.clear)
         SVProgressHUD.show()
         //请求评论们:参数是一个 news id
-        let newsid: Parameters = ["userid": "1"]
+        let newsid: Parameters = ["newsid": "1"]
         Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_PINGLUN.php", method: .post, parameters: newsid)
             .validate()
             .responseJSON { response in
@@ -49,7 +49,14 @@ class MessiageDetail_TableViewController: UITableViewController {
                     //print(response.result.value)
                     let json = JSON(response.result.value)
                     //数据包括：评论序号，评论者 id，评论时间，评论内容
-                    print(json)
+                    //print(json)
+                    
+                    for i  in 0..<json.count {
+                        //"userid":"2","sendtime":"201610132148","detail":"??1","zannumber":"0"
+                        self.pinglunData.append([json[i]["userid"].string!,json[i]["sendtime"].string!,json[i]["detail"].string!,json[i]["zannumber"].string!])
+                    }
+                    
+                    print(self.pinglunData)
                     
                     //print(self.DataWords)
                     //print(self.DataPhotoNames)
@@ -64,6 +71,8 @@ class MessiageDetail_TableViewController: UITableViewController {
                     SVProgressHUD.dismiss()
                 }
         }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +110,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         
         let image1 = #imageLiteral(resourceName: "Black")
         let image2 = #imageLiteral(resourceName: "White")
+        
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {//Words
@@ -223,7 +233,18 @@ class MessiageDetail_TableViewController: UITableViewController {
         }
         else{//Pinglun
             let cell = tableView.dequeueReusableCell(withIdentifier: "Pinglun_NTableViewCell", for: indexPath) as! Pinglun_NTableViewCell
-            cell.image_icon.setImage(#imageLiteral(resourceName: "Black"), for: .normal)
+            Alamofire.request(FFFFFunctions().GotImageIconServer(ai: true) + String(pinglunData[indexPath.row][0]) + ".png")
+                .responseData { response in
+                    if let data = response.result.value {
+                        let asd = UIImage(data: data)
+                        cell.image_icon.setImage(asd, for: UIControlState.normal)
+                    }
+            }
+            
+            //userid —— username—— 时间 内容 赞数目
+            cell.UILabelWords.text = pinglunData[indexPath.row][2]
+            cell.UILabelTime.text = pinglunData[indexPath.row][1]
+            
             TableViewHeight = CGFloat(Int(DeviceWidth * 0.3 ))
             return cell
         }
@@ -251,7 +272,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         if section == 0 {
             return 2
         } else {
-            return 10
+            return pinglunData.count
         }
     }
     

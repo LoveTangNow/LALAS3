@@ -77,6 +77,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     
                     for i in 0..<json.count
                     {
+                        //    0     1      2       3          4          5        6
                         // detail device newsid newstime photohumber senderid sendername
                         self.DataWords[i] = [json[i]["detail"].string!,json[i]["device"].string!,json[i]["newsid"].string!,json[i]["newstime"].string!,json[i]["photonumer"].string!,json[i]["senderid"].string!,json[i]["sendername"].string!]
                         let NumberOfPhotos = Int(json[i]["photonumer"].string!)!
@@ -281,7 +282,13 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             switch indexPath.row {
             case 0://文字区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell
-                cell.userIcon.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+                Alamofire.request(FFFFFunctions().GotImageIconServer(ai: ali) + String(DataWords[indexPath.section]![5] ) + ".png")
+                    .responseData { response in
+                        if let data = response.result.value {
+                            let asd = UIImage(data: data)
+                            cell.userIcon.setImage(asd, for: UIControlState.normal)
+                        }
+                }
                 cell.setting.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
                 cell.UIImageViewV_.image = #imageLiteral(resourceName: "v")
                 cell.UIImageViewVip_.image = Imageload_Black
