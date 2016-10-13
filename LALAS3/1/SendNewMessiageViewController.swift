@@ -26,7 +26,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     var imagePicker     : UIImagePickerController!
     
     var dodododdolist = [false,false,false,false]
-    var imagelist = [UIImage]()
+    //var imagelist = [UIImage]()
     
     //MARK: - 绑定
     @IBOutlet weak var UITextView_Main: UITextView!
@@ -43,25 +43,23 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     //选择 图片 或者 拍摄
     @IBAction func UIButton_1_c(_ sender: UIButton) {
         buttonClickNumber = 1
-        UIButton_2.isEnabled = true
-        UIButton_2.isHidden = false
         Voice_Beng?.play()
         TakePhoto()
     }
     
     @IBAction func UIButton_2_c(_ sender: UIButton) {
         buttonClickNumber = 2
-        UIButton_3.isEnabled = true
-        UIButton_3.isHidden = false
         Voice_Beng?.play()
         TakePhoto()
+        UIButton_3.isEnabled = true
+        UIButton_3.isHidden = false
     }
     @IBAction func UIButton_3_c(_ sender: UIButton) {
         buttonClickNumber = 3
-        UIButton_4.isEnabled = true
-        UIButton_4.isHidden = false
         Voice_Beng?.play()
         TakePhoto()
+        UIButton_4.isEnabled = true
+        UIButton_4.isHidden = false
     }
     @IBAction func UIButton_4_c(_ sender: UIButton) {
         buttonClickNumber = 4
@@ -103,6 +101,14 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     
     @IBAction func Send_Click(_ sender: AnyObject) {
         print("send click")
+        let imagelist = gotPhotos(photonumber: imageNumbersAlreadyGot)//图片组
+        let loaction:String =  (UIButton_5.titleLabel?.text)!//地点
+        
+        //时间由服务器来决定
+        let detail = UITextView_Main.text//文字
+        let device = FFFFFunctions().getDeviceVersion()//🐍备
+        
+        SaveImagesToLibrary()
     }
     
    
@@ -124,6 +130,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     {
         print("cc")
     }
+    
      //MARK: - imagePicker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let mediaType:AnyObject? = info[UIImagePickerControllerMediaType] as AnyObject?
@@ -142,21 +149,30 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
                         if let theimage = image {
                             print("\(themetadata)")
-                            print("image = \(theimage)")
                             //得到了 IMAGE
                             switch buttonClickNumber {
                             case 1:
                                 UIButton_1.setImage(theimage, for: .normal)
                                 dodododdolist[0] = true
+                                UIButton_2.isEnabled = true
+                                UIButton_2.isHidden = false
+                                imageNumbersAlreadyGot = 1
                             case 2:
                                 UIButton_2.setImage(theimage, for: .normal)
                                 dodododdolist[1] = true
+                                UIButton_3.isEnabled = true
+                                UIButton_3.isHidden = false
+                                imageNumbersAlreadyGot = 2
                             case 3:
                                 UIButton_3.setImage(theimage, for: .normal)
                                 dodododdolist[2] = true
+                                UIButton_4.isEnabled = true
+                                UIButton_4.isHidden = false
+                                imageNumbersAlreadyGot = 3
                             case 4:
                                 UIButton_4.setImage(theimage, for: .normal)
-                                dodododdolist[4] = true
+                                dodododdolist[3] = true
+                                imageNumbersAlreadyGot = 4
                             default:
                                 break
                             }
@@ -171,21 +187,6 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         print("cancel")
         picker.dismiss(animated: true, completion: nil)
-        switch buttonClickNumber {
-        case 1:
-            break
-        case 2:
-            UIButton_2.isHidden = true
-            UIButton_2.isEnabled = false
-        case 3:
-            UIButton_3.isHidden = true
-            UIButton_3.isEnabled = false
-        case 4:
-            UIButton_4.isHidden = true
-            UIButton_4.isEnabled = false
-        default:
-            break
-        }
     }
     
     func TakePhoto()  {
@@ -232,6 +233,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     //动画
     override func viewDidAppear(_ animated: Bool) {
         print("did")
+        print(imageNumbersAlreadyGot)
     }
 
     override func didReceiveMemoryWarning() {
@@ -269,24 +271,33 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         UIButton_5.contentHorizontalAlignment = .left
     }
     
-    func loadimage(){
-        switch imagelist.count {
-        case 0:
-            break
-        case 0...1:
-            UIButton_1.setImage(imagelist[0], for: .normal)
+    func SaveImagesToLibrary() {
+        let a = gotPhotos(photonumber: imageNumbersAlreadyGot)
+        print(imageNumbersAlreadyGot)
+        print(a.count)
+        for i in a {
+            UIImageWriteToSavedPhotosAlbum(i, self, nil, nil)
+        }
+    }
+    
+    func gotPhotos(photonumber:Int) -> [UIImage] {
+        var a = [UIImage]()
+        switch photonumber {
+        case 4...4://4
+            a = [UIButton_4.currentImage!] + a
             fallthrough
-        case 0...2:
-            UIButton_2.setImage(imagelist[0], for: .normal)
+        case 3...4://3
+            a = [UIButton_3.currentImage!] + a
             fallthrough
-        case 0...3:
-            UIButton_3.setImage(imagelist[0], for: .normal)
+        case 2...4://2
+            a = [UIButton_2.currentImage!] + a
             fallthrough
-        case 0...4:
-            UIButton_4.setImage(imagelist[0], for: .normal)
+        case 1...4://1
+            a = [UIButton_1.currentImage!] + a
         default:
             break
         }
+        return a
     }
     
     /*
