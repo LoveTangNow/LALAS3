@@ -30,8 +30,8 @@ class MessiageDetail_TableViewController: UITableViewController {
         
         self.title = "动态详情"
         //self.tableView.register(MD_Words_TableViewCell.self, forCellReuseIdentifier: "MD_Words_TableViewCell"
-        print(imgaeNumber)
-        print(imagelist.count)
+        //print(imgaeNumber)
+        //print(imagelist.count)
         ConnectNib()
         
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
@@ -50,17 +50,12 @@ class MessiageDetail_TableViewController: UITableViewController {
                     let json = JSON(response.result.value)
                     //数据包括：评论序号，评论者 id，评论时间，评论内容
                     //print(json)
-                    
                     for i  in 0..<json.count {
                         //"userid":"2","sendtime":"201610132148","detail":"??1","zannumber":"0"
                         self.pinglunData.append([json[i]["userid"].string!,json[i]["sendtime"].string!,json[i]["detail"].string!,json[i]["zannumber"].string!])
                     }
                     
-                    print(self.pinglunData)
-                    
-                    //print(self.DataWords)
-                    //print(self.DataPhotoNames)
-                    //print("Validation Successful")
+                    //print(self.pinglunData)
                     
                     self.UITableView_m.reloadData()
                     SVProgressHUD.dismiss()
@@ -71,8 +66,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                     SVProgressHUD.dismiss()
                 }
         }
-        
-        
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -169,12 +163,11 @@ class MessiageDetail_TableViewController: UITableViewController {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     
                     cell.image_1.setImage(imagelist[0], for: .normal)
-                    
                     cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     
                     TableViewHeight = CGFloat(Int(DeviceWidth * 0.618 ))
-                    
                     return cell
+                    
                 case 2,3:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
                     cell.image_1.setImage(imagelist[0], for: .normal)
@@ -195,6 +188,7 @@ class MessiageDetail_TableViewController: UITableViewController {
 
                     TableViewHeight = CGFloat(Int(DeviceWidth * 0.333 ))
                     return cell
+                    
                 case 4,5,6:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SixPhoto_TableViewCell", for: indexPath) as! SixPhoto_TableViewCell
                     cell.image_1.setImage(imagelist[0], for: .normal)
@@ -222,6 +216,7 @@ class MessiageDetail_TableViewController: UITableViewController {
      
                     TableViewHeight = CGFloat(Int(DeviceWidth * 0.666 ))
                     return cell
+                    
                 case 7,8,9:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "NinePhoto_TableViewCell", for: indexPath) as! NinePhoto_TableViewCell
                     cell.image_1.setImage(imagelist[0], for: .normal)
@@ -255,6 +250,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                     
                     TableViewHeight = CGFloat(Int(DeviceWidth ))
                     return cell
+                    
                 default:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     return cell
@@ -358,6 +354,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                 imagelist.append(a.image_5.currentImage)
                 imagelist.append(a.image_6.currentImage)
             }
+            
         case 7,8,9:
             let a = tableView.cellForRow(at: indexpath)! as! NinePhoto_TableViewCell
             imagelist.append(a.image_1.currentImage)
@@ -374,6 +371,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                 imagelist.append(a.image_8.currentImage)
                 imagelist.append(a.image_9.currentImage)
             }
+            
         default:
             break
         }

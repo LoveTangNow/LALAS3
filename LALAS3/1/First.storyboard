@@ -73,6 +73,16 @@
                                     <action selector="UIButton_4_c:" destination="rHZ-QY-PP1" eventType="touchUpInside" id="4Ni-Qc-9b3"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zr1-x6-saL">
+                                <frame key="frameInset" minX="16" minY="456" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="低画质"/>
+                                    <segment title="中等画质"/>
+                                    <segment title="高画质"/>
+                                    <segment title="原画"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -89,6 +99,7 @@
                         <outlet property="UIButton_3" destination="hgE-Gf-TZo" id="fAu-yR-VMp"/>
                         <outlet property="UIButton_4" destination="UUC-AD-xW3" id="ObH-f3-bLs"/>
                         <outlet property="UIButton_5" destination="e3d-GV-dim" id="FM1-i1-saT"/>
+                        <outlet property="UISegment" destination="Zr1-x6-saL" id="yx1-Re-2Br"/>
                         <outlet property="UITextView_Main" destination="7h4-Sk-svo" id="aMb-03-KEE"/>
                     </connections>
                 </viewController>

@@ -239,23 +239,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /**
-        if indexPath.section > row {
-            //print("xia")
-            if indexPath.section > 3 {
-                self.navigationController?.setNavigationBarHidden(true, animated: true)
-            }
-            row = indexPath.section
-        }
-        if indexPath.section < row
-        {
-            //print("shang")
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-            row = indexPath.section
-        }   
-        */
-
-        
         
         if DataWords.isEmpty {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement_TableViewCell", for: indexPath) as! Advertisement_TableViewCell
