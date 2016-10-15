@@ -182,9 +182,6 @@
                             <constraint firstItem="MzR-0G-IqB" firstAttribute="top" secondItem="IPH-5L-l6U" secondAttribute="bottom" constant="100" id="nwf-Dl-eft"/>
                             <constraint firstItem="kii-MN-fVk" firstAttribute="centerY" secondItem="QM3-N3-JQW" secondAttribute="centerY" id="vMW-Bx-aS0"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="k8x-H3-vU0" appends="YES" id="V3B-EN-gpn"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="UIButton_1" destination="EaZ-Yj-mcc" id="MOs-ps-vhv"/>

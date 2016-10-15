@@ -228,9 +228,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     )
                 }
             )
-
         }
-        
     }
     
     func GoDetaillllll()  {
@@ -266,7 +264,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         if DataWords.isEmpty {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement_TableViewCell", for: indexPath) as! Advertisement_TableViewCell
-            cell.imgae_main.setImage(#imageLiteral(resourceName: "FirstBackGround"), for: .normal)
+            cell.imgae_main.setBackgroundImage(#imageLiteral(resourceName: "BackGround"), for: .normal)
             cell.imgae_main.addTarget(self, action: #selector(GoDetaillllll), for: UIControlEvents.touchUpInside)
             TableViewCellHeight = UIScreen.main.bounds.width * 0.625
             return cell
