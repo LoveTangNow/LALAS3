@@ -220,6 +220,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width * imagekuangaobi / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width * imagekuangaobi)
                         },
                         completion: { (_) in
+                            //self.navigationController?.present(vc, animated: false, completion: nil)
                             self.navigationController?.pushViewController(vc, animated: false)
                             self.inlema = true
                             imageviewzooooom_.removeFromSuperview()
