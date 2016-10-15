@@ -102,8 +102,8 @@ class MessiageDetail_TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let image1 = #imageLiteral(resourceName: "Black")
-        let image2 = #imageLiteral(resourceName: "White")
+        let image1 = #imageLiteral(resourceName: "weibo")
+        let image2 = #imageLiteral(resourceName: "weibo")
         
         
         if indexPath.section == 0 {

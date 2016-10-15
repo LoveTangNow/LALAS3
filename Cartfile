@@ -7,3 +7,9 @@ github "SwiftyJSON/SwiftyJSON"
 github "Alamofire/Alamofire" ~> 4.0
 
 github "Alamofire/AlamofireImage" ~> 3.1
+
+github "stephencelis/SQLite.swift" ~> 0.10.1
+
+github "danielgindi/Charts" ~> 2.2.5
+
+github "onevcat/Kingfisher" ~> 3.0

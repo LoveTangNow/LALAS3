@@ -81,12 +81,15 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         let cancelAction: UIAlertAction = UIAlertAction(title: "取消", style: .cancel) { action -> Void in}
         let takePictureAction: UIAlertAction = UIAlertAction(title: "拍照", style: .default){ action -> Void in
             //self .initWithImagePickView(type: "拍照")
+            self.TakePhoto()
         }
         let choosePictureAction: UIAlertAction = UIAlertAction(title: "相册", style: .default){ action -> Void in
             //self .initWithImagePickView(type: "相册")
+            self.PikePhoto_1()
         }
         let moviePictureAction: UIAlertAction = UIAlertAction(title: "摄像", style: .default){ action -> Void in
             //self .initWithImagePickView(type: "摄像")
+            self.PikePhoto_2()
         }
         actionSheetController.addAction(cancelAction)
         actionSheetController.addAction(takePictureAction)
@@ -142,7 +145,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         print("send click")
         let imagelist = gotPhotos(photonumber: imageNumbersAlreadyGot)//图片组
         if imagelist.count > 0 {
-            var aaaaa = 0
+            //var aaaaa = 0
             print(imagelist.count)
             for i in 0..<imagelist.count {
                 var yasuolv = CGFloat()
@@ -271,6 +274,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         picker.dismiss(animated: true, completion: nil)
     }
     
+    /**拍摄*/
     func TakePhoto()  {
         let a  = PhotoAvilable()
         if a.IsCameraAvalible() && a.CanShootPhoto(){
@@ -286,6 +290,54 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                 print("boooooooom")
             }
         }
+        else{// 不能拍摄照片啊大兄弟！！怎么办啊？？？
+            SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
+            SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
+            SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)//遮罩种类
+            SVProgressHUD.setMinimumDismissTimeInterval(1)//持续时间
+            //SVProgressHUD.
+            SVProgressHUD.showError(withStatus: "大哥！摄像头有问题吧！")
+        }
+    }
+    
+    /**从时刻选择图片*/
+    func PikePhoto_1()  {
+        let a  = PhotoAvilable()
+        if a.IsCameraAvalible() && a.CanShootPhoto(){
+            controllor = UIImagePickerController()
+            if let thecontrollor = controllor {
+                thecontrollor.sourceType = .savedPhotosAlbum
+                thecontrollor.mediaTypes = [kUTTypeImage as String]
+                thecontrollor.allowsEditing = true
+                thecontrollor.delegate = self
+                present(thecontrollor, animated: true, completion: nil)
+            }
+            else{
+                print("boooooooom")
+            }
+        }
+        else{
+        }
+    }
+    
+    /**从照片选择图片*/
+    func PikePhoto_2()  {
+        let a  = PhotoAvilable()
+        if a.IsCameraAvalible() && a.CanShootPhoto(){
+            controllor = UIImagePickerController()
+            if let thecontrollor = controllor {
+                thecontrollor.sourceType = .photoLibrary
+                thecontrollor.mediaTypes = [kUTTypeImage as String]
+                thecontrollor.allowsEditing = true
+                thecontrollor.delegate = self
+                present(thecontrollor, animated: true, completion: nil)
+            }
+            else{
+                print("boooooooom")
+            }
+        }
+        else{
+        }
     }
     
     //MARK: - ViewFuncs
@@ -300,7 +352,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         chushihuakongjian()
 
         let btn:UIButton = UIButton(frame: CGRect(x: 50, y: 65, width: 50, height: 50))
-        btn.setImage(#imageLiteral(resourceName: "Black"), for: UIControlState.normal)
+        btn.setImage(#imageLiteral(resourceName: "White"), for: UIControlState.normal)
         self.view.addSubview(btn)
         //给按钮添加点击事件
         btn.addTarget(self, action: #selector(click), for: UIControlEvents.touchUpInside)
@@ -324,17 +376,17 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     }
     
     func chushihuakongjian()  {
-        UIButton_1.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+        UIButton_1.setBackgroundImage(#imageLiteral(resourceName: "photo-vector"), for: .normal)
         UIButton_1.setTitle("", for: .normal)
-        UIButton_2.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+        UIButton_2.setBackgroundImage(#imageLiteral(resourceName: "photo-vector"), for: .normal)
         UIButton_2.setTitle("", for: .normal)
         UIButton_2.isEnabled = false
         UIButton_2.isHidden = true
-        UIButton_3.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+        UIButton_3.setBackgroundImage(#imageLiteral(resourceName: "photo-vector"), for: .normal)
         UIButton_3.setTitle("", for: .normal)
         UIButton_3.isEnabled = false
         UIButton_3.isHidden = true
-        UIButton_4.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+        UIButton_4.setBackgroundImage(#imageLiteral(resourceName: "photo-vector"), for: .normal)
         UIButton_4.setTitle("", for: .normal)
         UIButton_4.isEnabled = false
         UIButton_4.isHidden = true
