@@ -48,9 +48,9 @@ class SomePeople_ViewController: UIViewController ,UITableViewDelegate,UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
         
-        cell.image_1.setImage(#imageLiteral(resourceName: "Black"), for: .normal)
-        cell.image_2.setImage(#imageLiteral(resourceName: "Black"), for: .normal)
-        cell.image_3.setImage(#imageLiteral(resourceName: "Black"), for: .normal)
+        cell.image_1.setImage(#imageLiteral(resourceName: "alipay"), for: .normal)
+        cell.image_2.setImage(#imageLiteral(resourceName: "alipay"), for: .normal)
+        cell.image_3.setImage(#imageLiteral(resourceName: "alipay"), for: .normal)
         //图片是显示有问题 但是不影响 以后有了正常的大图就可以啦！~~~~
         
         return cell

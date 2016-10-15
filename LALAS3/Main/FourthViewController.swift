@@ -155,7 +155,7 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     //MARK: - TableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        if indexPath.section == 1 && indexPath.row == 4{
             let a = tableView.cellForRow(at: indexPath)! as! LeftSamllImageAndLabel_TableViewCell
             switch a.UILabel_m.text! {
             case list[indexPath.row]:
@@ -173,8 +173,8 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ME_TableViewCell", for: indexPath) as! ME_TableViewCell
                 
-                cell.UIButton_Main.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
-                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+                cell.UIButton_Main.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
+                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
                 cell.UIButton_Main.addTarget(self, action: #selector(ME_GO), for: UIControlEvents.touchUpInside)
                 
                 
@@ -189,14 +189,21 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 return cell
             }
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
-            cell.UIImageView_m.image = #imageLiteral(resourceName: "Black")
-            cell.UILabel_m.text = list[indexPath.row]
-            
-            //let cell = LeftSamllImageAndLabel_TableViewCell()
-            //cell.Set(Image: #imageLiteral(resourceName: "Black"), Label: list[indexPath.row])
-            TableViewHeights[indexPath.section][indexPath.row] = 45
-            return cell
+            switch indexPath.row {
+            case 4:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "settings-vector")
+                cell.UILabel_m.text = list[indexPath.row]
+                TableViewHeights[indexPath.section][indexPath.row] = 45
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "White")
+                cell.UILabel_m.text = list[indexPath.row]
+                TableViewHeights[indexPath.section][indexPath.row] = 45
+                return cell
+
+            }
         }
         
     }

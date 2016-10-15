@@ -19,7 +19,6 @@ enum Enum_Models {
 class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDataSource,UITableViewDelegate{
     
     //MARK: - 变量
-    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
 
     var piker_b = [0,0]
     
@@ -117,7 +116,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         list_[4][2] = UserDefaults.standard.value(forKey: "ZCSJ") as! String
 
         UIImageView_Cover.alpha = 0
-        UIImageView_Cover.image = #imageLiteral(resourceName: "Black")
+        UIImageView_Cover.image = #imageLiteral(resourceName: "alipay")
         
         UITableView_m.dataSource = self
         UITableView_m.delegate = self
@@ -455,5 +454,6 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         UITableView_m.register(UINib(nibName: "Label_And_TextView_TableViewCell", bundle: nil), forCellReuseIdentifier: "Label_And_TextView_TableViewCell")
         UITableView_m.register(UINib(nibName: "OnlyOneLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnlyOneLabel_TableViewCell")
         UITableView_m.register(UINib(nibName: "TwoLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "TwoLabel_TableViewCell")
+         UITableView_m.register(UINib(nibName: "LeftSamllImageAndLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "LeftSamllImageAndLabel_TableViewCell")
     }
 }

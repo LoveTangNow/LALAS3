@@ -13,7 +13,7 @@ import CoreData
 class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource{
     
     
-    let image_l = #imageLiteral(resourceName: "Black")
+    let image_l = #imageLiteral(resourceName: "White")
     
     
     @IBOutlet weak var UITableView_M: UITableView!

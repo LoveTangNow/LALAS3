@@ -14,8 +14,6 @@ import UIKit
 class ThirdViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
     
     //MARK: - 变量和 绑定
-    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
-    var Imageload_Wight:UIImage = UIImage(named: "White.png")!
     
     @IBOutlet weak var UITextField_S: UITextField!
     @IBOutlet weak var UITableView_M: UITableView!
@@ -84,7 +82,7 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhotoWithTwoLabel_TableViewCell", for: indexPath) as! OnePhotoWithTwoLabel_TableViewCell
-        cell.UIImageView_Left_Main.image = Imageload_Black
+        cell.UIImageView_Left_Main.image = #imageLiteral(resourceName: "alipay")
         cell.UILabel_Title.text = "阿西吧！！！"
         cell.UILabel_Detail.text = "大红色的发挥的双方哈里斯的客服哈里斯的卡号发来看技术的发挥拉克丝活动福利卡就会少打了客服号"
         TableViewHeight = 100

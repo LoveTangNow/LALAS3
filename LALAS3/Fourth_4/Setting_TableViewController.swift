@@ -13,8 +13,6 @@ class Setting_TableViewController: UITableViewController {
     //MARK: - 变量 绑定
     
     //肌肤默认的图片
-    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
-    var Imageload_Wight:UIImage = UIImage(named: "White.png")!
     
     @IBOutlet var UITableView_m: UITableView!
     //MARK: - FUNCTIONS
@@ -85,7 +83,7 @@ class Setting_TableViewController: UITableViewController {
         case 0,1,2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
             
-            cell.UIImageView_m.image = Imageload_Black
+            cell.UIImageView_m.image = #imageLiteral(resourceName: "alipay")
             cell.UILabel_m.text = SettingLists[indexPath.section][indexPath.row]
             
             return cell
