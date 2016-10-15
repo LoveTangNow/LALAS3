@@ -15,9 +15,7 @@
                 <frame key="frameInset" width="375" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydj-Tn-UkJ">
-                        <state key="normal" title="Button"/>
-                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydj-Tn-UkJ"/>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ydj-Tn-UkJ" firstAttribute="top" secondItem="OGB-xI-g9G" secondAttribute="top" id="7Vh-Ox-4Co"/>

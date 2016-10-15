@@ -18,6 +18,9 @@ class Advertisement_TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imgae_main.imageView?.contentMode = .topLeft
+        imgae_main.backgroundColor = UIColor.purple
+        //imgae_main.setTitle("", for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
