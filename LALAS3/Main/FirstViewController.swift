@@ -24,11 +24,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     var TableViewCellHeight:CGFloat = 200
     var DeviceWidth =  UIScreen.main.bounds.width
     
-    //肌肤默认的图片
-    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
-    var Imageload_Wight:UIImage = UIImage(named: "White.png")!
-    var ImageloadBackGroud:UIImage = UIImage(named: "FirstBackGround.png")!
-    var ImageloadBackGroudn:UIImage = UIImage(named: "BackGround.png")!
     //数据存储
     var DataWords = Dictionary<Int,[String]>()//每一个 ID 对应着一个字符串数组 包括各种信息：NewsID,SenderID,SenderName,SendTime,SendDevice,Detail
     var DataPhotoNames = Dictionary<Int,[String]>()//每一个 ID 对应着一个字符串数组 图片名称们
@@ -238,11 +233,17 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         }
     }
     
+    func GoDetaillllll()  {
+        print("click")
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if DataWords.isEmpty {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement_TableViewCell", for: indexPath) as! Advertisement_TableViewCell
-            cell.imgae_main.setImage(#imageLiteral(resourceName: "Black"), for: .normal)
+            cell.imgae_main.setImage(#imageLiteral(resourceName: "FirstBackGround"), for: .normal)
+            cell.imgae_main.addTarget(self, action: #selector(GoDetaillllll), for: UIControlEvents.touchUpInside)
+            TableViewCellHeight = UIScreen.main.bounds.width * 0.625
             return cell
         } else {
             switch indexPath.row {
@@ -255,9 +256,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                             cell.userIcon.setImage(asd, for: UIControlState.normal)
                         }
                 }
-                cell.setting.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+                cell.setting.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
                 cell.UIImageViewV_.image = #imageLiteral(resourceName: "v")
-                cell.UIImageViewVip_.image = Imageload_Black
+                cell.UIImageViewVip_.image = #imageLiteral(resourceName: "alipay")
                 
                 //  0       1      2       3        4           5         6
                 // detail device newsid newstime photohumber senderid sendername
@@ -579,12 +580,15 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
 
     func numberOfSections(in tableView: UITableView) -> Int {
+        if DataWords.isEmpty {
+            return 1
+        }
         return DataWords.count 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == DataWords.count {
-            return 1
+        if DataWords.isEmpty {
+            return 3
         }
         return 3
     }
