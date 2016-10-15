@@ -129,7 +129,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
         if inlema == true {
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 //let i = sender.currentImage
                 //self.imageviewzooooom.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
                 
@@ -168,8 +168,13 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         let imagekuangaobi = imageviewzooooom_.frame.height / imageviewzooooom_.frame.width //获取宽高比
         //let w  = (UIScreen.main.bounds.width - 20 - 6) / 3
         //imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:w,height:w)
+        
+        imageviewzooooom_.image = #imageLiteral(resourceName: "Black")
+        imageviewzooooom_.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
+        imageviewzooooom_.alpha = 0
+        self.view.addSubview(imageviewzooooom_)
+        
         imageviewzooooom.layer.cornerRadius = 2
-        imageviewzooooom.backgroundColor = UIColor.black
         self.view.addSubview(imageviewzooooom)
         imageviewzooooom.image = sender.currentImage
 
@@ -206,16 +211,18 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 self.imageviewzooooom.isHidden = false
                 self.imageviewzooooom.frame = self.rext3
                 }, completion: { _ in
-                    UIView.animate(withDuration: 0.5, animations:{
+                    UIView.animate(withDuration: 0.3, animations:{
                         //let i = sender.currentImage
                         //self.imageviewzooooom.contentMode = .scaleAspectFill
                         
                         //x: self.view.bounds.width * CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 20,
+                        imageviewzooooom_.alpha = 1
                         self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width * imagekuangaobi / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width * imagekuangaobi)
                         },
                         completion: { (_) in
                             self.navigationController?.pushViewController(vc, animated: false)
                             self.inlema = true
+                            imageviewzooooom_.removeFromSuperview()
                         }
                         )
                 }
