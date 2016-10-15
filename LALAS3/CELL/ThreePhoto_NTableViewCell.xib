@@ -15,27 +15,26 @@
                 <frame key="frameInset" width="375" height="121.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lOF-fI-hQU">
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rXR-Ib-fBh"/>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-mX-PWt"/>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LVc-Cb-PyN"/>
-                        </subviews>
-                    </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sz5-p1-tyc">
+                        <frame key="frameInset" minX="8" minY="4" width="115" height="112"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="433-sZ-RdE">
+                        <frame key="frameInset" minX="115" minY="4" width="140" height="112"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P61-7P-Gvh">
+                        <frame key="frameInset" minX="263" minY="4" width="104" height="112"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </button>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="lOF-fI-hQU" secondAttribute="bottom" constant="5" id="06x-V6-H5g"/>
-                    <constraint firstItem="lOF-fI-hQU" firstAttribute="top" secondItem="z10-uU-rBf" secondAttribute="top" constant="5" id="F6L-NR-i3e"/>
-                    <constraint firstItem="lOF-fI-hQU" firstAttribute="leading" secondItem="z10-uU-rBf" secondAttribute="leading" constant="10" id="Fhl-0q-5f5"/>
-                    <constraint firstAttribute="trailing" secondItem="lOF-fI-hQU" secondAttribute="trailing" constant="10" id="q9g-YA-mHh"/>
-                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="UIImageView1" destination="rXR-Ib-fBh" id="tve-6W-WZw"/>
-                <outlet property="UIImageView2" destination="A6F-mX-PWt" id="NyL-By-bmt"/>
-                <outlet property="UIImageView3" destination="LVc-Cb-PyN" id="AWb-t8-KGb"/>
+                <outlet property="image_1" destination="sz5-p1-tyc" id="dcc-Pg-uWJ"/>
+                <outlet property="image_2" destination="433-sZ-RdE" id="zs9-xh-2hw"/>
+                <outlet property="image_3" destination="P61-7P-Gvh" id="gvm-ry-kkc"/>
             </connections>
-            <point key="canvasLocation" x="-933" y="-14"/>
+            <point key="canvasLocation" x="-933.5" y="-14"/>
         </tableViewCell>
     </objects>
 </document>

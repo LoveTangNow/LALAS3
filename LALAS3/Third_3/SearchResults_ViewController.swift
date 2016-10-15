@@ -13,8 +13,6 @@ private let reuseIdentifier = "Cell"
 class SearchResults_ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , UICollectionViewDelegate , UICollectionViewDataSource{
     
     //MARK: - bangding
-    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
-    var Imageload_Wight:UIImage = UIImage(named: "White.png")!
     
     var words = String()
     
@@ -51,16 +49,16 @@ class SearchResults_ViewController: UIViewController , UITableViewDelegate , UIT
     //MARK: - TableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhotoTwoLableTableViewCell", for: indexPath) as! OnePhotoTwoLableTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhotoWithTwoLabel_TableViewCell", for: indexPath) as! OnePhotoWithTwoLabel_TableViewCell
         
         if indexPath.row % 2 == 0 {
-            cell.UIImageView_M.image = Imageload_Black
+            cell.imageView?.image = #imageLiteral(resourceName: "alipay")
         } else {
-            cell.UIImageView_M.image = Imageload_Wight
+            cell.imageView?.image = #imageLiteral(resourceName: "alipay")
         }
         
-        cell.UILabel_m.text = "那你知道个鸡儿"
-        cell.UILabel_MAX.text = "是大家爱看啥房间爱死了大家看法克里斯多夫哈市的合法"
+        cell.UILabel_Title.text = "那你知道个鸡儿"
+        cell.UILabel_Detail.text = "是大家爱看啥房间爱死了大家看法克里斯多夫哈市的合法"
 
         return cell
     }
@@ -90,9 +88,9 @@ class SearchResults_ViewController: UIViewController , UITableViewDelegate , UIT
         cell.UIImageView_M.clipsToBounds = true
         
         if indexPath.row % 2 == 0 {
-            cell.UIImageView_M.image = Imageload_Wight
+            cell.UIImageView_M.image = #imageLiteral(resourceName: "weibo")
         } else {
-            cell.UIImageView_M.image = Imageload_Black
+            cell.UIImageView_M.image = #imageLiteral(resourceName: "weibo")
         }
         
         return cell
@@ -116,8 +114,7 @@ class SearchResults_ViewController: UIViewController , UITableViewDelegate , UIT
     }
     
     private func ConnectNib () {
-        UITableView_M.register(UINib(nibName: "OnePhotoTwoLableTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhotoTwoLableTableViewCell")
-        UITableView_M.register(UINib(nibName: "OnePhotoTwoLableTableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhotoTwoLableTableViewCell")
+        UITableView_M.register(UINib(nibName: "OnePhotoWithTwoLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnePhotoWithTwoLabel_TableViewCell")
     }
    
 

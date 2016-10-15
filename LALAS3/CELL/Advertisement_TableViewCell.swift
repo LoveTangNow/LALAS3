@@ -13,10 +13,14 @@ import UIKit
 
 class Advertisement_TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var UIImageView_M: UIImageView!
+    @IBOutlet weak var imgae_main: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        imgae_main.imageView?.contentMode = .topLeft
+        imgae_main.backgroundColor = UIColor.purple
+        //imgae_main.setTitle("", for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

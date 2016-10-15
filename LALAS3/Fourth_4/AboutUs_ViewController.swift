@@ -11,7 +11,6 @@ import UIKit
 class AboutUs_ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
     
     //MARK: - 绑定 和 变量
-     var Imageload_Black:UIImage = UIImage(named: "Black.png")!
     
     @IBOutlet weak var UIImageView_M: UIImageView!
     @IBOutlet weak var UITableView_M: UITableView!
@@ -35,7 +34,7 @@ class AboutUs_ViewController: UIViewController , UITableViewDelegate , UITableVi
         UIImageView_M.layer.cornerRadius = 10
         UIImageView_M.clipsToBounds = true
 
-        UIImageView_M.image = Imageload_Black
+        UIImageView_M.image = #imageLiteral(resourceName: "alipay")
         
         UILabel_1.text = "11111111111111"
         UILabel_2.text = "222222222222222222222"

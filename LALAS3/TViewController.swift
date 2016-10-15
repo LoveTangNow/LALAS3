@@ -70,7 +70,7 @@ class TViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageli = [#imageLiteral(resourceName: "Black"),#imageLiteral(resourceName: "White")]
+        let imageli = [#imageLiteral(resourceName: "alipay"),#imageLiteral(resourceName: "alipay")]
         
         //闪动动作
         UIImageView_b.animationImages = imageli//资源

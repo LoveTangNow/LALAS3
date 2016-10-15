@@ -10,8 +10,10 @@ import UIKit
 
 class News_Information_TableViewCell: UITableViewCell {
     
-    @IBOutlet weak var UIImageViewUserIcon: UIImageView!
-    @IBOutlet weak var UIImageViewSetting: UIImageView!
+
+    @IBOutlet weak var userIcon: UIButton!
+    @IBOutlet weak var setting: UIButton!
+    
     @IBOutlet weak var UIImageViewVip_: UIImageView!
     @IBOutlet weak var UIImageViewV_: UIImageView!
     
@@ -22,14 +24,11 @@ class News_Information_TableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         
-        //print(UIImageViewUserIcon.layer.frame.height)
-        //print(UIImageViewUserIcon.frame.height)
+        userIcon.layer.cornerRadius = 23.5
+        userIcon.clipsToBounds = true
         
-        UIImageViewUserIcon.layer.cornerRadius = 23.5
-        UIImageViewUserIcon.clipsToBounds = true
-        
-        UIImageViewSetting.layer.cornerRadius = 15
-        UIImageViewSetting.clipsToBounds = true
+        setting.layer.cornerRadius = 15
+        setting.clipsToBounds = true
         
         UIImageViewVip_.layer.cornerRadius = 8
         UIImageViewVip_.clipsToBounds = true

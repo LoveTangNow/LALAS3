@@ -22,9 +22,15 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
 
     var imagelist = [UIImage?]()
     var imgaeNumber = Int()
+    var aa  = CGRect()
+    var image_Dijizhang = 1
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //print(image_Dijizhang)
+        self.view.backgroundColor = UIColor.black
 
         UIScrollView_MM.backgroundColor = UIColor.black
         UIScrollView_MM.contentSize = CGSize(width:self.view.bounds.width * CGFloat( imgaeNumber),height: self.view.bounds.width)   //内容大小
@@ -36,39 +42,58 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         UIPageControl_M.isHidden = true
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
+        navigationController?.navigationBar.isHidden = true
+        UIToolbar_M.isHidden = true
+        
+        UIToolbar_M.alpha = 0
+        
         for i in 0..<imgaeNumber {
             let imageView =  UIImageView(image:imagelist[i])
-            imageView.frame = CGRect(x: self.view.bounds.width*CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 60, width: self.view.bounds.width, height: imageView.frame.height / imageView.frame.width * self.view.bounds.width)
+            imageView.frame = CGRect(x: self.view.bounds.width * CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 20, width: self.view.bounds.width, height: imageView.frame.height / imageView.frame.width * self.view.bounds.width)
             UIScrollView_MM.addSubview(imageView)
             UIScrollView_MM.delegate = self
+            aa  = imageView.frame
         }
+        
+        print("photoload")
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+        //Mybar.isHidden = true
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        
+        UIToolbar_M.barTintColor = UIColor.black
+        UIScrollView_MM.isHidden = true
+        
+        print("photowillapear")
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        for _ in 0..<(image_Dijizhang - 1) {
+            print("do")
+            UIScrollView_MM.scrollRectToVisible(aa, animated: false)
+        }
+        UIScrollView_MM.isHidden = false
+
+        print("photodidappear")
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let width = self.view.frame.width
         let offsetX = scrollView.contentOffset.x
         let index = (offsetX + width / 2) / width
         UIPageControl_M.currentPage = Int(index)
-        print(UIPageControl_M.currentPage)
+        //print(UIPageControl_M.currentPage)
         if UIPageControl_M.currentPage == 0 {
             //⬅️滑是否管用
             navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         } else {
             navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
-        //Mybar.isHidden = true
-        navigationController?.navigationBar.alpha = 1
-        navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        
-        UIToolbar_M.alpha = 1
-        UIToolbar_M.barTintColor = UIColor.black
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,18 +103,12 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     
     @IBAction func Tabeeee(_ sender: AnyObject) {
 
-        if navigationController?.navigationBar.alpha == 0 {
-            navigationController?.navigationBar.alpha = 1
+        if navigationController?.navigationBar.isHidden == true {
+            navigationController?.navigationBar.isHidden = false
+            UIToolbar_M.isHidden = false
         } else {
-             navigationController?.navigationBar.alpha = 0
+            navigationController?.navigationBar.isHidden = true
+            UIToolbar_M.isHidden = true
         }
-        
-        if UIToolbar_M.alpha == 1 {
-            UIToolbar_M.alpha = 0
-        } else {
-            UIToolbar_M.alpha = 1
-        }
-        
     }
-
 }

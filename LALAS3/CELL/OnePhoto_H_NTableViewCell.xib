@@ -13,22 +13,22 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T5F-eM-mY2" id="jZY-Sc-u6j">
-                <frame key="frameInset" width="375" height="231.5"/>
+                <frame key="frameInset" width="375" height="231"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xHo-63-nEg"/>
+                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-Ij-fVZ"/>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="xHo-63-nEg" secondAttribute="trailing" id="5U4-z9-V9C"/>
-                    <constraint firstItem="xHo-63-nEg" firstAttribute="top" secondItem="jZY-Sc-u6j" secondAttribute="topMargin" id="V76-xq-VPz"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="xHo-63-nEg" secondAttribute="bottom" id="a42-nQ-daD"/>
-                    <constraint firstItem="xHo-63-nEg" firstAttribute="leading" secondItem="jZY-Sc-u6j" secondAttribute="leadingMargin" id="ab2-uq-BNa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OYD-Ij-fVZ" secondAttribute="trailing" constant="1" id="DX3-0h-MXn"/>
+                    <constraint firstItem="OYD-Ij-fVZ" firstAttribute="top" secondItem="jZY-Sc-u6j" secondAttribute="topMargin" constant="1" id="dEQ-T5-VXm"/>
+                    <constraint firstItem="OYD-Ij-fVZ" firstAttribute="leading" secondItem="jZY-Sc-u6j" secondAttribute="leadingMargin" constant="1" id="llr-b1-syp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="OYD-Ij-fVZ" secondAttribute="bottom" constant="1" id="wCV-Jo-KHm"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="UIImageView_M" destination="xHo-63-nEg" id="ZNo-vO-3KD"/>
+                <outlet property="image_1" destination="OYD-Ij-fVZ" id="Y0N-OL-cyH"/>
             </connections>
-            <point key="canvasLocation" x="-309" y="339"/>
+            <point key="canvasLocation" x="-519" y="344"/>
         </tableViewCell>
     </objects>
 </document>

@@ -12,24 +12,20 @@ import UIKit
 
 class Pinglun_NTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var UIImageView_Icon: UIImageView!
     
+    @IBOutlet weak var image_icon: UIButton!
     @IBOutlet weak var UIButton_Zan: UIButton!
-
+    
     @IBOutlet weak var UILabel_Name: UILabel!
     @IBOutlet weak var UILabelTime: UILabel!
     @IBOutlet weak var UILabelWords: UILabel!
     
-    @IBAction func ButtonC(_ sender: AnyObject) {
-    }
     
     override func awakeFromNib() {
-        
-        UIImageView_Icon.layer.cornerRadius = 20
-        UIImageView_Icon.clipsToBounds = true
-        
         super.awakeFromNib()
         // Initialization code
+        image_icon.layer.cornerRadius = 20
+        image_icon.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

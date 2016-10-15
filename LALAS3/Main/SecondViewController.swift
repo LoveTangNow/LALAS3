@@ -13,7 +13,7 @@ import CoreData
 class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource{
     
     
-    let image_l = #imageLiteral(resourceName: "Black")
+    let image_l = #imageLiteral(resourceName: "White")
     
     
     @IBOutlet weak var UITableView_M: UITableView!
@@ -22,6 +22,8 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func UIButton_R_Click(_ sender: AnyObject) {
+        let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "SomePeople_ViewController") as! SomePeople_ViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     override func viewDidLoad() {

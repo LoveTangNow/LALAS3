@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
+import MapKit//用于显示位置
 
 class MessiageDetail_TableViewController: UITableViewController {
     
@@ -14,19 +18,55 @@ class MessiageDetail_TableViewController: UITableViewController {
     let DeviceWidth =  UIScreen.main.bounds.width
     var imagelist = [UIImage?]()
     var imgaeNumber = Int()
+    //评论数据包括：评论序号，评论者 id，评论时间，评论内容
+    var pinglunData = [[String]]()
+    
+    
     
     @IBOutlet var UITableView_m: UITableView!
-    var Imageload_Black:UIImage = UIImage(named: "Black.png")!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "动态详情"
         //self.tableView.register(MD_Words_TableViewCell.self, forCellReuseIdentifier: "MD_Words_TableViewCell"
-        print(imgaeNumber)
-        print(imagelist.count)
-        
+        //print(imgaeNumber)
+        //print(imagelist.count)
         ConnectNib()
+        
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
+        SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.clear)
+        SVProgressHUD.show()
+        //请求评论们:参数是一个 news id
+        let newsid: Parameters = ["newsid": "1"]
+        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_PINGLUN.php", method: .post, parameters: newsid)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    //成功
+                    //print(response.result.value)
+                    let json = JSON(response.result.value)
+                    //数据包括：评论序号，评论者 id，评论时间，评论内容
+                    //print(json)
+                    for i  in 0..<json.count {
+                        //"userid":"2","sendtime":"201610132148","detail":"??1","zannumber":"0"
+                        self.pinglunData.append([json[i]["userid"].string!,json[i]["sendtime"].string!,json[i]["detail"].string!,json[i]["zannumber"].string!])
+                    }
+                    
+                    //print(self.pinglunData)
+                    
+                    self.UITableView_m.reloadData()
+                    SVProgressHUD.dismiss()
+                    
+                case .failure(let error):
+                    //失败
+                    print(error)
+                    SVProgressHUD.dismiss()
+                }
+        }
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,8 +78,6 @@ class MessiageDetail_TableViewController: UITableViewController {
         
     }
     
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,15 +102,16 @@ class MessiageDetail_TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let image1 = #imageLiteral(resourceName: "Black")
-        let image2 = #imageLiteral(resourceName: "White")
+        let image1 = #imageLiteral(resourceName: "weibo")
+        let image2 = #imageLiteral(resourceName: "weibo")
+        
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {//Words
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell
                 
-                cell.UIImageViewUserIcon.image = image1
-                cell.UIImageViewSetting.image = image1
+                cell.userIcon.setBackgroundImage(image1, for: .normal)
+                cell.setting.setBackgroundImage(image1, for: .normal)
                 cell.UIImageViewVip_.image = image1
                 cell.UIImageViewV_.image = image2
                 
@@ -123,63 +162,95 @@ class MessiageDetail_TableViewController: UITableViewController {
                 case 1:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     
-                    cell.UIImageView_M.image = imagelist[0]
+                    cell.image_1.setImage(imagelist[0], for: .normal)
+                    cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     
                     TableViewHeight = CGFloat(Int(DeviceWidth * 0.618 ))
-                    
                     return cell
+                    
                 case 2,3:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
-                    cell.UIImageView1.image = imagelist[0]
+                    cell.image_1.setImage(imagelist[0], for: .normal)
+                    cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
 
                     switch imgaeNumber {
                     case 2:
-                        cell.UIImageView2.image = imagelist[1]
+                        cell.image_2.setImage(imagelist[1], for: .normal)
+                        cell.image_2.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     case 3:
-                        cell.UIImageView2.image = imagelist[1]
-                        cell.UIImageView3.image = imagelist[2]
+                        cell.image_2.setImage(imagelist[1], for: .normal)
+                        cell.image_3.setImage(imagelist[2], for: .normal)
+                        cell.image_2.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                        cell.image_3.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     default:
                         break
                     }
+
                     TableViewHeight = CGFloat(Int(DeviceWidth * 0.333 ))
                     return cell
+                    
                 case 4,5,6:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SixPhoto_TableViewCell", for: indexPath) as! SixPhoto_TableViewCell
-                    cell.UIImageView1.image = imagelist[0]
-                    cell.UIImageView2.image = imagelist[1]
-                    cell.UIImageView3.image = imagelist[2]
-                    cell.UIImageView4.image = imagelist[3]
+                    cell.image_1.setImage(imagelist[0], for: .normal)
+                    cell.image_2.setImage(imagelist[1], for: .normal)
+                    cell.image_3.setImage(imagelist[2], for: .normal)
+                    cell.image_4.setImage(imagelist[3], for: .normal)
+                    
+                    cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_2.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_3.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_4.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    
                     switch imgaeNumber {
                     case 5:
-                        cell.UIImageView5.image = imagelist[4]
+                        cell.image_5.setImage(imagelist[4], for: .normal)
+                        cell.image_5.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     case 6:
-                        cell.UIImageView5.image = imagelist[4]
-                        cell.UIImageView6.image = imagelist[5]
+                        cell.image_5.setImage(imagelist[4], for: .normal)
+                        cell.image_6.setImage(imagelist[5], for: .normal)
+                        cell.image_5.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                        cell.image_6.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     default:
                         break
                     }
+     
                     TableViewHeight = CGFloat(Int(DeviceWidth * 0.666 ))
                     return cell
+                    
                 case 7,8,9:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "NinePhoto_TableViewCell", for: indexPath) as! NinePhoto_TableViewCell
-                    cell.UIImageView1.image = imagelist[0]
-                    cell.UIImageView2.image = imagelist[1]
-                    cell.UIImageView3.image = imagelist[2]
-                    cell.UIImageView4.image = imagelist[3]
-                    cell.UIImageView5.image = imagelist[4]
-                    cell.UIImageView6.image = imagelist[5]
-                    cell.UIImageView7.image = imagelist[6]
+                    cell.image_1.setImage(imagelist[0], for: .normal)
+                    cell.image_2.setImage(imagelist[1], for: .normal)
+                    cell.image_3.setImage(imagelist[2], for: .normal)
+                    cell.image_4.setImage(imagelist[3], for: .normal)
+                    cell.image_5.setImage(imagelist[4], for: .normal)
+                    cell.image_6.setImage(imagelist[5], for: .normal)
+                    cell.image_7.setImage(imagelist[6], for: .normal)
+                    
+                    cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_2.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_3.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_4.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_5.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_6.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_7.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    
                     switch imgaeNumber {
                     case 8:
-                        cell.UIImageView8.image = imagelist[7]
+                        cell.image_8.setImage(imagelist[7], for: .normal)
+                        cell.image_8.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     case 9:
-                        cell.UIImageView8.image = imagelist[7]
-                        cell.UIImageView9.image = imagelist[8]
+                        cell.image_8.setImage(imagelist[7], for: .normal)
+                        cell.image_9.setImage(imagelist[8], for: .normal)
+                        cell.image_8.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                        cell.image_9.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     default:
                         break
                     }
+                    
                     TableViewHeight = CGFloat(Int(DeviceWidth ))
                     return cell
+                    
                 default:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     return cell
@@ -188,8 +259,18 @@ class MessiageDetail_TableViewController: UITableViewController {
         }
         else{//Pinglun
             let cell = tableView.dequeueReusableCell(withIdentifier: "Pinglun_NTableViewCell", for: indexPath) as! Pinglun_NTableViewCell
- 
-            cell.UIImageView_Icon.image = image1
+            Alamofire.request(FFFFFunctions().GotImageIconServer(ai: true) + String(pinglunData[indexPath.row][0]) + ".png")
+                .responseData { response in
+                    if let data = response.result.value {
+                        let asd = UIImage(data: data)
+                        cell.image_icon.setImage(asd, for: UIControlState.normal)
+                    }
+            }
+            
+            //userid —— username—— 时间 内容 赞数目
+            cell.UILabelWords.text = pinglunData[indexPath.row][2]
+            cell.UILabelTime.text = pinglunData[indexPath.row][1]
+            
             TableViewHeight = CGFloat(Int(DeviceWidth * 0.3 ))
             return cell
         }
@@ -217,8 +298,19 @@ class MessiageDetail_TableViewController: UITableViewController {
         if section == 0 {
             return 2
         } else {
-            return 10
+            return pinglunData.count
         }
+    }
+    
+    func GoImageDetail(_ sender:UIButton)
+    {
+        let indexpath = self.tableView.indexPath(for: sender.superview?.superview as! UITableViewCell)!
+        let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "ViewPhotoWithScroll_ViewController") as!  ViewPhotoWithScroll_ViewController
+        
+        vc.imagelist = GotPhoto(indexpath: indexpath)
+        vc .imgaeNumber = imgaeNumber
+        
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func ConnectNib() {
@@ -233,5 +325,57 @@ class MessiageDetail_TableViewController: UITableViewController {
     }
 
 
+    func GotPhoto(indexpath:IndexPath) -> ([UIImage?]) {
+        var imagelist = [UIImage?]()
+        
+        switch imgaeNumber {
+        case 1 :
+            let a = tableView.cellForRow(at: indexpath)! as! OnePhoto_H_NTableViewCell
+            imagelist.append(a.image_1.currentImage)
+            break
+        case 2,3:
+            let a = tableView.cellForRow(at: indexpath)! as! ThreePhoto_NTableViewCell
+            imagelist.append(a.image_1.currentImage)
+            imagelist.append(a.image_2.currentImage)
+            if imgaeNumber == 3 {
+                imagelist.append(a.image_3.currentImage)
+            }
+            
+        case 4,5,6 :
+            let a = tableView.cellForRow(at: indexpath)! as! SixPhoto_TableViewCell
+            imagelist.append(a.image_1.currentImage)
+            imagelist.append(a.image_2.currentImage)
+            imagelist.append(a.image_3.currentImage)
+            imagelist.append(a.image_4.currentImage)
+            if imgaeNumber == 5 {
+                imagelist.append(a.image_5.currentImage)
+            }
+            if imgaeNumber == 6 {
+                imagelist.append(a.image_5.currentImage)
+                imagelist.append(a.image_6.currentImage)
+            }
+            
+        case 7,8,9:
+            let a = tableView.cellForRow(at: indexpath)! as! NinePhoto_TableViewCell
+            imagelist.append(a.image_1.currentImage)
+            imagelist.append(a.image_2.currentImage)
+            imagelist.append(a.image_3.currentImage)
+            imagelist.append(a.image_4.currentImage)
+            imagelist.append(a.image_5.currentImage)
+            imagelist.append(a.image_6.currentImage)
+            imagelist.append(a.image_7.currentImage)
+            if imgaeNumber == 8 {
+                imagelist.append(a.image_8.currentImage)
+            }
+            if imgaeNumber == 9 {
+                imagelist.append(a.image_8.currentImage)
+                imagelist.append(a.image_9.currentImage)
+            }
+            
+        default:
+            break
+        }
+        return (imagelist)
+    }
     
 }
