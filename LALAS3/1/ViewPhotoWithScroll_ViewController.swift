@@ -42,7 +42,9 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         UIPageControl_M.isHidden = true
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
-        navigationController?.navigationBar.alpha = 0
+        navigationController?.navigationBar.isHidden = true
+        UIToolbar_M.isHidden = true
+        
         UIToolbar_M.alpha = 0
         
         for i in 0..<imgaeNumber {
@@ -96,12 +98,12 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     
     @IBAction func Tabeeee(_ sender: AnyObject) {
 
-        if navigationController?.navigationBar.alpha == 0 {
-            navigationController?.navigationBar.alpha = 1
-            UIToolbar_M.alpha = 1
+        if navigationController?.navigationBar.isHidden == true {
+            navigationController?.navigationBar.isHidden = false
+            UIToolbar_M.isHidden = false
         } else {
-             navigationController?.navigationBar.alpha = 0
-            UIToolbar_M.alpha = 0
+             navigationController?.navigationBar.isHidden = true
+            UIToolbar_M.isHidden = true
         }
     }
 }

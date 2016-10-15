@@ -35,7 +35,20 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     var MODEL = FirstPageModel()
     
-    var imageviewzooooom = UIImageView()
+    
+    
+    @IBAction func Right_Click(_ sender: AnyObject) {
+        //ViewPhotoViewController
+        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func Send_Click(_ sender: AnyObject) {
+        //SendNewMessiageViewController
+        let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     
     //MARK: - 函数
@@ -99,13 +112,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         }
         // Do any additional setup after loading the view.
         print("viewDidLoad")
-        
-        let w  = (UIScreen.main.bounds.width - 20 - 6) / 3
-        imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:w,height:w)
-        imageviewzooooom.layer.cornerRadius = 2
-        imageviewzooooom.backgroundColor = UIColor.black
-        
-        self.view.addSubview(imageviewzooooom)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,32 +127,25 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
         if inlema == true {
             UIView.animate(withDuration: 1, animations: {
                 //let i = sender.currentImage
                 //self.imageviewzooooom.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
+                
                 self.imageviewzooooom.frame = self.rext3
+                
                 //self.imageviewzooooom.center = self.view.center
                 }, completion: { (_) in
                     self.inlema = false
-                    self.imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
-                    //self.imageviewzooooom.frame = self.rext3
+                    //self.imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
+                    self.imageviewzooooom.frame = self.rext3
+                    self.imageviewzooooom.isHidden = true
+                    
+                    //self.removeFromParentViewController()
                 }
             )
         }
-    }
-    
-    @IBAction func Right_Click(_ sender: AnyObject) {
-        //ViewPhotoViewController
-        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
-    @IBAction func Send_Click(_ sender: AnyObject) {
-        //SendNewMessiageViewController
-        let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -154,12 +153,27 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    var imageviewzooooom = UIImageView()
     var inlema  = false
     var rext3 = CGRect()
     
-    
     /**跳转到图片详情页*/
     func GoDetail (_ sender:UIButton)  {
+        
+        self.navigationController?.navigationBar.isHidden = true
+        self.imageviewzooooom.contentMode = .scaleAspectFill
+        self.imageviewzooooom.clipsToBounds = true
+        
+        let imageviewzooooom_ = UIImageView(image:sender.currentImage)
+        let imagekuangaobi = imageviewzooooom_.frame.height / imageviewzooooom_.frame.width //获取宽高比
+        //let w  = (UIScreen.main.bounds.width - 20 - 6) / 3
+        //imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:w,height:w)
+        imageviewzooooom.layer.cornerRadius = 2
+        imageviewzooooom.backgroundColor = UIColor.black
+        self.view.addSubview(imageviewzooooom)
+        imageviewzooooom.image = sender.currentImage
+
+        
         var indexPath = IndexPath()
         indexPath = self.UITableView_Main.indexPath(for: sender.superview?.superview as! UITableViewCell)!
         let a = GotPhoto(A: DataWords[indexPath.section]![4], indexpath: indexPath)//获取图片组 和图片数目
@@ -168,33 +182,36 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         vc.imgaeNumber = a.1
         vc.image_Dijizhang = sender.tag
         //print(DataPhotos)
-        let cell = UITableView_Main.cellForRow(at: indexPath)
+        //let cell = UITableView_Main.cellForRow(at: indexPath)
+        
         
         print("-------------")
-        print(sender.center)
-        print(sender.superview?.superview?.center)
-        print(cell?.center)
+        print(imagekuangaobi)
+        //print(sender.center)
+        //print(sender.superview?.superview?.center)
+        //print(cell?.center)
+        //print(sender.imageView?.frame.height)
+        //print(sender.imageView?.frame.width)
         print("-------------")
 
         let window = UIApplication.shared.keyWindow
-        let button = sender
-        
-        let rext1 = button.convert(button.frame, from: button.superview)
-        let rext2 = button.convert(rext1, to: window)
-        rext3 = rext2.insetBy(dx: -0.5 * 8, dy: -0.5 * 8)
-        
+        let rext1 = sender.convert(sender.frame, from: sender.superview)
+        let rext2 = sender.convert(rext1, to: window)
+        rext3 = rext2.insetBy(dx: -0.5 * 8, dy: -0.5 * 8)//点击的 button 的frame位置
+
         print(rext3)
         
-        self.imageviewzooooom.image = sender.currentImage
-
         if inlema == false {
             UIView.animate(withDuration: 0, animations: {
+                self.imageviewzooooom.isHidden = false
                 self.imageviewzooooom.frame = self.rext3
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.5, animations:{
                         //let i = sender.currentImage
                         //self.imageviewzooooom.contentMode = .scaleAspectFill
-                        self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width)
+                        
+                        //x: self.view.bounds.width * CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 20,
+                        self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width * imagekuangaobi / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width * imagekuangaobi)
                         },
                         completion: { (_) in
                             self.navigationController?.pushViewController(vc, animated: false)
@@ -206,6 +223,10 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
 
         }
         
+    }
+    
+    func GoDetaillllll()  {
+        print("click")
     }
     
     //MARK: - TableView
@@ -231,10 +252,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             vc.imgaeNumber = a.1
             self.navigationController?.pushViewController(vc, animated: true)
         }
-    }
-    
-    func GoDetaillllll()  {
-        print("click")
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
