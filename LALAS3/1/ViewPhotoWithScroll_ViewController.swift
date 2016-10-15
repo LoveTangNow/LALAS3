@@ -55,8 +55,9 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
             aa  = imageView.frame
         }
         
+        print("photoload")
+        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
@@ -66,6 +67,8 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         
         UIToolbar_M.barTintColor = UIColor.black
         UIScrollView_MM.isHidden = true
+        
+        print("photowillapear")
     }
     
     
@@ -75,6 +78,8 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
             UIScrollView_MM.scrollRectToVisible(aa, animated: false)
         }
         UIScrollView_MM.isHidden = false
+
+        print("photodidappear")
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -102,7 +107,7 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
             navigationController?.navigationBar.isHidden = false
             UIToolbar_M.isHidden = false
         } else {
-             navigationController?.navigationBar.isHidden = true
+            navigationController?.navigationBar.isHidden = true
             UIToolbar_M.isHidden = true
         }
     }

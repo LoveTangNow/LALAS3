@@ -224,7 +224,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                             self.inlema = true
                             imageviewzooooom_.removeFromSuperview()
                         }
-                        )
+                    )
                 }
             )
 
@@ -368,7 +368,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 case "2","3":
                     let aa = Int(DataWords[indexPath.section]![4])!
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
-                    
+
                     if cell.GotPhoto != true {
                         //print("nnn")
                         for i in 0..<aa
@@ -381,16 +381,24 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                     switch i {
                                     case 0 :
                                         cell.image_1.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_1.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                        cell.image_1.tag = 1
+
                                         aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                     case 1 :
                                         cell.image_2.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_2.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                        cell.image_2.tag = 2
                                         aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         if aa == 2{
+                                            cell.image_3.removeFromSuperview()
                                             self.DataPhotos[indexPath.section] = aaaaaa
                                             cell.GotPhoto = true
                                         }
                                     case 2 :
                                         cell.image_3.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_3.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                        cell.image_3.tag = 3
                                         aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                         if aa == 3{
                                             self.DataPhotos[indexPath.section] = aaaaaa
@@ -406,13 +414,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     } else {
                         print("old - 3")
                     }
-                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    
-                    cell.image_1.tag = 1
-                    cell.image_2.tag = 2
-                    cell.image_3.tag = 3
+
                     
                     TableViewCellHeight = CGFloat(Int(DeviceWidth * 0.333 ))
                     return cell
@@ -420,6 +422,21 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 case "4","5","6":
                     let aa = Int(DataWords[indexPath.section]![4])!
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SixPhoto_TableViewCell", for: indexPath) as! SixPhoto_TableViewCell
+                    
+                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_4.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_5.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_6.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    
+                    cell.image_1.tag = 1
+                    cell.image_2.tag = 2
+                    cell.image_3.tag = 3
+                    cell.image_4.tag = 1
+                    cell.image_5.tag = 2
+                    cell.image_6.tag = 3
+                    
                     if cell.GotPhoto != true {
                         for i in 0..<aa
                         {
@@ -482,12 +499,23 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     } else {
                         print("old-6")
                     }
+
+                    
+                    TableViewCellHeight = CGFloat(Int(DeviceWidth * 0.666 ))
+                    return cell
+                case "7","8","9":
+                    let aa = Int(DataWords[indexPath.section]![4])!
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "NinePhoto_TableViewCell", for: indexPath) as! NinePhoto_TableViewCell
+                    
                     cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     cell.image_4.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     cell.image_5.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     cell.image_6.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_7.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_8.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    cell.image_9.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     
                     cell.image_1.tag = 1
                     cell.image_2.tag = 2
@@ -495,12 +523,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     cell.image_4.tag = 1
                     cell.image_5.tag = 2
                     cell.image_6.tag = 3
-                    
-                    TableViewCellHeight = CGFloat(Int(DeviceWidth * 0.666 ))
-                    return cell
-                case "7","8","9":
-                    let aa = Int(DataWords[indexPath.section]![4])!
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "NinePhoto_TableViewCell", for: indexPath) as! NinePhoto_TableViewCell
+                    cell.image_7.tag = 1
+                    cell.image_8.tag = 2
+                    cell.image_9.tag = 3
                     
                     if cell.GotPhoto != true {
                     for i in 0..<aa
@@ -566,25 +591,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     else{
                         print("old-9")
                     }
-                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_4.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_5.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_6.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_7.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_8.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_9.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    
-                    cell.image_1.tag = 1
-                    cell.image_2.tag = 2
-                    cell.image_3.tag = 3
-                    cell.image_4.tag = 1
-                    cell.image_5.tag = 2
-                    cell.image_6.tag = 3
-                    cell.image_7.tag = 1
-                    cell.image_8.tag = 2
-                    cell.image_9.tag = 3
+
                     
                     TableViewCellHeight = DeviceWidth
                     return cell
