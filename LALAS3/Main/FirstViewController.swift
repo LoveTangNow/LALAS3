@@ -70,7 +70,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         let parameters: Parameters = ["userid": "1"]
         
         ConnectNib()
-        //UIBarButtonItem_right.setBackgroundImage(#imageLiteral(resourceName: "扫一扫"), for: .normal, style: .plain, barMetrics: .compactPrompt)
+        UIBarButtonItem_right.setBackgroundImage(#imageLiteral(resourceName: "扫一扫"), for: .normal, style: .plain, barMetrics: .compactPrompt)
         
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
         SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花

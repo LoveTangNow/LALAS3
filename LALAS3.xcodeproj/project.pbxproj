@@ -44,9 +44,9 @@
 		7F3F22021D93C02F00ACF590 /* ChatMe_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F22011D93C02F00ACF590 /* ChatMe_TableViewCell.swift */; };
 		7F3F22041D93C03D00ACF590 /* ChatYou_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F22031D93C03D00ACF590 /* ChatYou_TableViewCell.swift */; };
 		7F4B10231DB1BF2A000E5C3C /* GotPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4B10221DB1BF2A000E5C3C /* GotPhoto.swift */; };
+		7F4B10281DB4401D000E5C3C /* photo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F4B10271DB4401D000E5C3C /* photo.xcassets */; };
 		7F5322B31D8BC9BC00294C62 /* SearchResults_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */; };
 		7F5322B81D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */; };
-		7F602C291DB13DC3001F48D6 /* photo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F602C281DB13DC3001F48D6 /* photo.xcassets */; };
 		7F6AA6B31DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6AA6B21DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift */; };
 		7F6AA6B51DA2754600A7292B /* Chat_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6AA6B41DA2754600A7292B /* Chat_ViewController.swift */; };
 		7F9F8A881D9D16D700C49C12 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */; };
@@ -278,9 +278,9 @@
 		7F3F22011D93C02F00ACF590 /* ChatMe_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatMe_TableViewCell.swift; path = CELL/ChatMe_TableViewCell.swift; sourceTree = "<group>"; };
 		7F3F22031D93C03D00ACF590 /* ChatYou_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatYou_TableViewCell.swift; path = CELL/ChatYou_TableViewCell.swift; sourceTree = "<group>"; };
 		7F4B10221DB1BF2A000E5C3C /* GotPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GotPhoto.swift; path = Others/GotPhoto.swift; sourceTree = "<group>"; };
+		7F4B10271DB4401D000E5C3C /* photo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = photo.xcassets; sourceTree = "<group>"; };
 		7F5322B21D8BC9BC00294C62 /* SearchResults_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResults_ViewController.swift; path = Third_3/SearchResults_ViewController.swift; sourceTree = "<group>"; };
 		7F5322B71D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoOneLable_CollectionViewCell.swift; path = Third_3/cells/OnePhotoOneLable_CollectionViewCell.swift; sourceTree = "<group>"; };
-		7F602C281DB13DC3001F48D6 /* photo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = photo.xcassets; sourceTree = "<group>"; };
 		7F6AA6B21DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoWithTwoLabel_TableViewCell.swift; path = CELL/OnePhotoWithTwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7F6AA6B41DA2754600A7292B /* Chat_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chat_ViewController.swift; path = Second_2/Chat_ViewController.swift; sourceTree = "<group>"; };
 		7F9F8A861D9D16D700C49C12 /* NotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -752,6 +752,7 @@
 		7FD1014B1D89764D009BB6A6 /* LALAS3 */ = {
 			isa = PBXGroup;
 			children = (
+				7F4B10271DB4401D000E5C3C /* photo.xcassets */,
 				7FBCFE321D9C07C900831823 /* LALAS3.entitlements */,
 				7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */,
 				7FAECEED1D8A7399004592EA /* Server.plist */,
@@ -770,7 +771,6 @@
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
 				7FF0C8531D91173F00B85248 /* R.xcdatamodeld */,
 				7FD101571D89764D009BB6A6 /* LaunchScreen.storyboard */,
-				7F602C281DB13DC3001F48D6 /* photo.xcassets */,
 				7F4B10221DB1BF2A000E5C3C /* GotPhoto.swift */,
 			);
 			path = LALAS3;
@@ -1205,7 +1205,7 @@
 			files = (
 				7F16A4A21DAA958800095707 /* OnePhoto_Z_NTableViewCell.xib in Resources */,
 				7F16A4B61DAA96E600095707 /* Label_Mid_TableViewCell.xib in Resources */,
-				7F602C291DB13DC3001F48D6 /* photo.xcassets in Resources */,
+				7F4B10281DB4401D000E5C3C /* photo.xcassets in Resources */,
 				7F16A4A41DAA959600095707 /* OnePhoto_H_NTableViewCell.xib in Resources */,
 				7F16A49E1DAA954500095707 /* SixPhoto_TableViewCell.xib in Resources */,
 				7F16A4A81DAA965A00095707 /* DatePicker_TableViewCell.xib in Resources */,

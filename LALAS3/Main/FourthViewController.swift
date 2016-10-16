@@ -196,7 +196,7 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             case 1://我的图片
                 cell.UIImageView_m.image = #imageLiteral(resourceName: "picture")
             case 2://我的赞
-                cell.UIImageView_m.image = #imageLiteral(resourceName: "appreciate_fill")
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "appreciate_fill_black")
             case 3://其他
                 cell.UIImageView_m.image = #imageLiteral(resourceName: "list")
             case 4://设置

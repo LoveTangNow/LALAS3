@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "check-circle.png",
+      "filename" : "check-circle.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "check-circle@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "check-circle@3x.jpg",
       "scale" : "3x"
     }
   ],
