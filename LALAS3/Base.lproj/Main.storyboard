@@ -76,7 +76,7 @@
                     <navigationItem key="navigationItem" id="NRx-a3-z8i">
                         <nil key="title"/>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" id="nMh-0d-5CP">
-                            <rect key="frame" x="35.5" y="7" width="304" height="30"/>
+                            <rect key="frame" x="36" y="7" width="304" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -282,6 +282,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="UIBarButtonItem_left" destination="u1O-5H-CK7" id="412-Hf-lBb"/>
+                        <outlet property="UIBarButtonItem_right" destination="0tq-1J-pLz" id="0eH-e3-rJz"/>
                         <outlet property="UITableView_Main" destination="oth-Oc-048" id="orX-JF-ttf"/>
                     </connections>
                 </viewController>

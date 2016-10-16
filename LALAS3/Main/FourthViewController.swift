@@ -189,21 +189,25 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 return cell
             }
         } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
             switch indexPath.row {
-            case 4:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
+            case 0://我的微博
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "weibo")
+            case 1://我的图片
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "picture")
+            case 2://我的赞
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "appreciate_fill")
+            case 3://其他
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "list")
+            case 4://设置
                 cell.UIImageView_m.image = #imageLiteral(resourceName: "setting")
-                cell.UILabel_m.text = list[indexPath.row]
-                TableViewHeights[indexPath.section][indexPath.row] = 45
-                return cell
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
-                cell.UIImageView_m.image = #imageLiteral(resourceName: "White")
-                cell.UILabel_m.text = list[indexPath.row]
-                TableViewHeights[indexPath.section][indexPath.row] = 45
-                return cell
-
+                cell.UIImageView_m.image =  #imageLiteral(resourceName: "White")
             }
+            
+            cell.UILabel_m.text = list[indexPath.row]
+            TableViewHeights[indexPath.section][indexPath.row] = 45
+            return cell
         }
         
     }
