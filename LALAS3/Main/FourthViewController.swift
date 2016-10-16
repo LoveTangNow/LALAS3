@@ -192,7 +192,7 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             switch indexPath.row {
             case 4:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
-                cell.UIImageView_m.image = #imageLiteral(resourceName: "settings-vector")
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "setting")
                 cell.UILabel_m.text = list[indexPath.row]
                 TableViewHeights[indexPath.section][indexPath.row] = 45
                 return cell

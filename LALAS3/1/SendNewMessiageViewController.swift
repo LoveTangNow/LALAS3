@@ -45,58 +45,36 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     
     
     //选择 图片 或者 拍摄
+    /**第一button*/
     @IBAction func UIButton_1_c(_ sender: UIButton) {
         buttonClickNumber = 1
         Voice_Beng?.play()
-        TakePhoto()
+        Piker(Whitchbutton: 1,isgotimage: ThisButtonIsGotImage(buttonNumber: 1))
     }
     
+    /**第二button*/
     @IBAction func UIButton_2_c(_ sender: UIButton) {
         buttonClickNumber = 2
         Voice_Beng?.play()
-        TakePhoto()
-        UIButton_3.isEnabled = true
-        UIButton_3.isHidden = false
+        Piker(Whitchbutton: 2,isgotimage: ThisButtonIsGotImage(buttonNumber: 2))
     }
+    
+    /**第三button*/
     @IBAction func UIButton_3_c(_ sender: UIButton) {
         buttonClickNumber = 3
         Voice_Beng?.play()
-        TakePhoto()
-        UIButton_4.isEnabled = true
-        UIButton_4.isHidden = false
+        Piker(Whitchbutton: 3,isgotimage: ThisButtonIsGotImage(buttonNumber: 3))
     }
+    
+    /**第四button*/
     @IBAction func UIButton_4_c(_ sender: UIButton) {
         buttonClickNumber = 4
         Voice_Beng?.play()
-        TakePhoto()
+        Piker(Whitchbutton: 4,isgotimage: ThisButtonIsGotImage(buttonNumber: 4))
     }
     
+    /**选择地点点击*/
     @IBAction func UIButton_location(_ sender: AnyObject) {
-        
-        let piker = UIImagePickerController()
-        piker.delegate = self
-        
-        
-        let actionSheetController: UIAlertController = UIAlertController(title: "请选择", message:nil, preferredStyle: .actionSheet)
-        let cancelAction: UIAlertAction = UIAlertAction(title: "取消", style: .cancel) { action -> Void in}
-        let takePictureAction: UIAlertAction = UIAlertAction(title: "拍照", style: .default){ action -> Void in
-            //self .initWithImagePickView(type: "拍照")
-            self.TakePhoto()
-        }
-        let choosePictureAction: UIAlertAction = UIAlertAction(title: "相册", style: .default){ action -> Void in
-            //self .initWithImagePickView(type: "相册")
-            self.PikePhoto_1()
-        }
-        let moviePictureAction: UIAlertAction = UIAlertAction(title: "摄像", style: .default){ action -> Void in
-            //self .initWithImagePickView(type: "摄像")
-            self.PikePhoto_2()
-        }
-        actionSheetController.addAction(cancelAction)
-        actionSheetController.addAction(takePictureAction)
-        actionSheetController.addAction(choosePictureAction)
-        actionSheetController.addAction(moviePictureAction)
-        
-        self.present(actionSheetController, animated: true, completion: nil)
     }
     
     @IBAction func Xiala(_ sender: AnyObject) {
@@ -139,7 +117,6 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
             }*/
         }
     }
-
     
     @IBAction func Send_Click(_ sender: AnyObject) {
         print("send click")
@@ -274,8 +251,85 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         picker.dismiss(animated: true, completion: nil)
     }
     
+    func Piker( Whitchbutton:Int,isgotimage:Bool)  {
+        print(Whitchbutton)
+        print(isgotimage)
+        let actionSheetController: UIAlertController = UIAlertController(title: "请选择", message:nil, preferredStyle: .actionSheet)
+        let cancelAction: UIAlertAction = UIAlertAction(title: "取消", style: .cancel){ action -> Void in
+        }
+        let PikePhoto: UIAlertAction = UIAlertAction(title: "从相册选择图片", style: .destructive){ action -> Void in
+            self.PikePhoto_2(Whitchbutton:Whitchbutton)
+        }
+        let TakePhoto: UIAlertAction = UIAlertAction(title: "拍摄图片", style: .default){ action -> Void in
+            self.TakePhoto(Whitchbutton:Whitchbutton)
+        }
+        
+        actionSheetController.addAction(cancelAction)
+        actionSheetController.addAction(PikePhoto)
+        actionSheetController.addAction(TakePhoto)
+        
+        if isgotimage == true {
+            let DeleteImage: UIAlertAction = UIAlertAction(title: "删除图片", style: .default){ action -> Void in
+                self.DeletePhoto(Whitchbutton:Whitchbutton)
+            }
+            actionSheetController.addAction(DeleteImage)
+        }
+        
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+
+    func DeletePhoto(Whitchbutton:Int)  {
+        var imagelist = gotPhotos(photonumber: imageNumbersAlreadyGot)
+        if imageNumbersAlreadyGot == 1 {
+            
+        }
+        else{//2.3.4
+            for i in Whitchbutton..<imageNumbersAlreadyGot {
+                print(i)
+                imagelist[i - 1] = imagelist[i]
+            }
+        }
+        
+        imagelist.removeLast()//获取到一个缩短版本的 imagelist 后 ；赋值给 uibuttons
+        
+        switch imagelist.count {
+        case 3...3:
+            UIButton_3.setImage(imagelist[2], for: .normal)
+            fallthrough
+        case 2...3:
+            UIButton_2.setImage(imagelist[1], for: .normal)
+            fallthrough
+        case 1...3:
+            UIButton_1.setImage(imagelist[0], for: .normal)
+        default:
+            break
+        }
+        
+        switch imageNumbersAlreadyGot {
+        case 1:
+            UIButton_2.isHidden = true
+            UIButton_2.isEnabled = false
+            UIButton_1.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        case 2:
+            UIButton_3.isHidden = true
+            UIButton_3.isEnabled = false
+            UIButton_2.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        case 3:
+            UIButton_4.isHidden = true
+            UIButton_4.isEnabled = false
+            UIButton_3.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        case 4:
+            UIButton_4.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        default:
+            break
+        }
+        
+        imageNumbersAlreadyGot -= 1
+        
+    }
+    
     /**拍摄*/
-    func TakePhoto()  {
+    private func TakePhoto(Whitchbutton:Int)  {
         let a  = PhotoAvilable()
         if a.IsCameraAvalible() && a.CanShootPhoto(){
             controllor = UIImagePickerController()
@@ -295,48 +349,41 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
             SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
             SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)//遮罩种类
             SVProgressHUD.setMinimumDismissTimeInterval(1)//持续时间
+            SVProgressHUD.setErrorImage(#imageLiteral(resourceName: "alipay"))
             //SVProgressHUD.
             SVProgressHUD.showError(withStatus: "大哥！摄像头有问题吧！")
         }
     }
     
     /**从时刻选择图片*/
-    func PikePhoto_1()  {
-        let a  = PhotoAvilable()
-        if a.IsCameraAvalible() && a.CanShootPhoto(){
-            controllor = UIImagePickerController()
-            if let thecontrollor = controllor {
-                thecontrollor.sourceType = .savedPhotosAlbum
-                thecontrollor.mediaTypes = [kUTTypeImage as String]
-                thecontrollor.allowsEditing = true
-                thecontrollor.delegate = self
-                present(thecontrollor, animated: true, completion: nil)
-            }
-            else{
-                print("boooooooom")
-            }
+    private func PikePhoto_1(Whitchbutton:Int)  {
+
+        controllor = UIImagePickerController()
+        if let thecontrollor = controllor {
+            thecontrollor.sourceType = .savedPhotosAlbum
+            thecontrollor.mediaTypes = [kUTTypeImage as String]
+            thecontrollor.allowsEditing = true
+            thecontrollor.delegate = self
+            present(thecontrollor, animated: true, completion: nil)
         }
         else{
+            print("boooooooom")
         }
+
     }
     
     /**从照片选择图片*/
-    func PikePhoto_2()  {
-        let a  = PhotoAvilable()
-        if a.IsCameraAvalible() && a.CanShootPhoto(){
-            controllor = UIImagePickerController()
-            if let thecontrollor = controllor {
-                thecontrollor.sourceType = .photoLibrary
-                thecontrollor.mediaTypes = [kUTTypeImage as String]
-                thecontrollor.allowsEditing = true
-                thecontrollor.delegate = self
-                present(thecontrollor, animated: true, completion: nil)
-            }
-            else{
-                print("boooooooom")
-            }
+    private func PikePhoto_2(Whitchbutton:Int)  {
+        controllor = UIImagePickerController()
+        if let thecontrollor = controllor {
+            thecontrollor.sourceType = .photoLibrary
+            thecontrollor.mediaTypes = [kUTTypeImage as String]
+            thecontrollor.allowsEditing = true
+            thecontrollor.delegate = self
+            present(thecontrollor, animated: true, completion: nil)
         }
         else{
+            print("boooooooom")
         }
     }
     
@@ -375,18 +422,30 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         // Dispose of any resources that can be recreated.
     }
     
-    func chushihuakongjian()  {
-        UIButton_1.setBackgroundImage(#imageLiteral(resourceName: "photo-vector"), for: .normal)
+    //MARK: - Functions
+    
+    /**这个 button 有没有获取的 image*/
+    func ThisButtonIsGotImage(buttonNumber:Int) -> Bool {
+        if imageNumbersAlreadyGot >= buttonNumber {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    /**初始化控件*/
+    private func chushihuakongjian()  {
+        UIButton_1.setBackgroundImage(#imageLiteral(resourceName: "plus"), for: .normal)
         UIButton_1.setTitle("", for: .normal)
-        UIButton_2.setBackgroundImage(#imageLiteral(resourceName: "photo-vector"), for: .normal)
+        UIButton_2.setBackgroundImage(#imageLiteral(resourceName: "plus"), for: .normal)
         UIButton_2.setTitle("", for: .normal)
         UIButton_2.isEnabled = false
         UIButton_2.isHidden = true
-        UIButton_3.setBackgroundImage(#imageLiteral(resourceName: "photo-vector"), for: .normal)
+        UIButton_3.setBackgroundImage(#imageLiteral(resourceName: "plus"), for: .normal)
         UIButton_3.setTitle("", for: .normal)
         UIButton_3.isEnabled = false
         UIButton_3.isHidden = true
-        UIButton_4.setBackgroundImage(#imageLiteral(resourceName: "photo-vector"), for: .normal)
+        UIButton_4.setBackgroundImage(#imageLiteral(resourceName: "plus"), for: .normal)
         UIButton_4.setTitle("", for: .normal)
         UIButton_4.isEnabled = false
         UIButton_4.isHidden = true
@@ -408,10 +467,10 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         UIButton_5.clipsToBounds = true
         UIButton_5.contentHorizontalAlignment = .left
         
-        
     }
     
-    func SaveImagesToLibrary() {
+    /**保存图片组 imagelist到相册*/
+    private func SaveImagesToLibrary() {
         let a = gotPhotos(photonumber: imageNumbersAlreadyGot)
         print(imageNumbersAlreadyGot)
         print(a.count)
@@ -420,7 +479,8 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         }
     }
     
-    func gotPhotos(photonumber:Int) -> [UIImage] {
+    /**从 UIbutton 组获取图片组*/
+    private func gotPhotos(photonumber:Int) -> [UIImage] {
         var a = [UIImage]()
         switch photonumber {
         case 4...4://4
@@ -471,7 +531,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
      self.imagePicker.delegate      = self;
      self.imagePicker.allowsEditing = true;
      
-     switch type{
+    /***/ switch type{
      case "拍照":
      self.imagePicker.sourceType = .camera
      case "相册":
