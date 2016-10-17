@@ -377,7 +377,9 @@
         <scene sceneID="Gs9-by-qTP">
             <objects>
                 <navigationController id="a7b-io-UDu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" image="user-male-circle-vector" id="Q8n-Iq-ftW"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="user-male-circle-vector" selectedImage="user-female-circle-vector" id="Q8n-Iq-ftW">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="u07-U5-Ium">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -473,6 +475,7 @@
         <image name="inbox-vector" width="30" height="30"/>
         <image name="message-vector" width="30" height="30"/>
         <image name="search-vector" width="30" height="30"/>
+        <image name="user-female-circle-vector" width="30" height="30"/>
         <image name="user-male-circle-vector" width="30" height="30"/>
     </resources>
 </document>

@@ -628,9 +628,9 @@
 			isa = PBXGroup;
 			children = (
 				7FA6E8F81D89A586003F6186 /* First.storyboard */,
+				7FA6E8FC1D89A5DF003F6186 /* SendNewMessiageViewController.swift */,
 				7F3F21D91D92B02200ACF590 /* MessiageDetail_TableViewController.swift */,
 				7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */,
-				7FA6E8FC1D89A5DF003F6186 /* SendNewMessiageViewController.swift */,
 				7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */,
 			);
 			name = First_1;

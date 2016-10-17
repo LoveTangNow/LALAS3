@@ -12,10 +12,6 @@ import CoreData
 
 class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource{
     
-    
-    let image_l = #imageLiteral(resourceName: "White")
-    
-    
     @IBOutlet weak var UITableView_M: UITableView!
     @IBAction func UIButton_L_Click(_ sender: AnyObject) {
         let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "Web_ViewController") as! Web_ViewController
@@ -49,9 +45,9 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatPeople_TableViewCell") as? ChatPeople_TableViewCell
         
-        cell?.UIImageView_Main.image = image_l
-        cell?.UIImageView_Zhiding.image = image_l
-        cell?.UIImageView_Readornot.image = image_l
+        cell?.UIImageView_Main.image = #imageLiteral(resourceName: "Black")
+        cell?.UIImageView_Zhiding.image = #imageLiteral(resourceName: "Black")
+        cell?.UIImageView_Readornot.image = #imageLiteral(resourceName: "Black")
         
         return cell!
         

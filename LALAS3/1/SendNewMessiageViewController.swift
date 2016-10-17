@@ -13,7 +13,7 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
-class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate
+class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate
 {
     //MARK: - 变量
     var lmagelist = UIImage()
@@ -162,6 +162,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                         SVProgressHUD.dismiss()
                     }
             }
+        } else {//没有图片
         }
         
         //SaveImagesToLibrary()
@@ -398,11 +399,12 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         }
         chushihuakongjian()
 
+        /*
         let btn:UIButton = UIButton(frame: CGRect(x: 50, y: 65, width: 50, height: 50))
         btn.setImage(#imageLiteral(resourceName: "White"), for: UIControlState.normal)
         self.view.addSubview(btn)
         //给按钮添加点击事件
-        btn.addTarget(self, action: #selector(click), for: UIControlEvents.touchUpInside)
+        btn.addTarget(self, action: #selector(click), for: UIControlEvents.touchUpInside)*/
 
     }
     
@@ -422,7 +424,17 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: -  textView
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        UITextView_Main.text = ""
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
+    }
+    
     //MARK: - Functions
+
     
     /**这个 button 有没有获取的 image*/
     func ThisButtonIsGotImage(buttonNumber:Int) -> Bool {
@@ -435,22 +447,23 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     
     /**初始化控件*/
     private func chushihuakongjian()  {
-        UIButton_1.setBackgroundImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        UIButton_1.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
         UIButton_1.setTitle("", for: .normal)
-        UIButton_2.setBackgroundImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        UIButton_2.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
         UIButton_2.setTitle("", for: .normal)
         UIButton_2.isEnabled = false
         UIButton_2.isHidden = true
-        UIButton_3.setBackgroundImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        UIButton_3.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
         UIButton_3.setTitle("", for: .normal)
         UIButton_3.isEnabled = false
         UIButton_3.isHidden = true
-        UIButton_4.setBackgroundImage(#imageLiteral(resourceName: "plus"), for: .normal)
+        UIButton_4.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
         UIButton_4.setTitle("", for: .normal)
         UIButton_4.isEnabled = false
         UIButton_4.isHidden = true
         
         UITextView_Main.frame = CGRect(x:10,y:5,width:DeivecWidth - 20,height:DeivecHeight / 3)//UITextView_Main占据屏幕的三分之一（上下高度）
+        UITextView_Main.delegate = self
         
         let w = (DeivecWidth - 20 - 9) / 4
         

@@ -69,6 +69,12 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         let parameters: Parameters = ["userid": "1"]
         
+        self.view.addSubview(imagewhite)
+        self.imagewhite.image = #imageLiteral(resourceName: "White")
+        self.imagewhite.layer.cornerRadius = 2
+        self.imagewhite.clipsToBounds = true
+        self.imagewhite.isHidden = true
+        
         ConnectNib()
         UIBarButtonItem_right.setBackgroundImage(#imageLiteral(resourceName: "扫一扫"), for: .normal, style: .plain, barMetrics: .compactPrompt)
         
@@ -123,6 +129,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         //159,42.4
         navigationController?.navigationBar.barTintColor = UIColor.red
         navigationController?.navigationBar.tintColor = UIColor.white
+        
+        tabBarController?.tabBar.isHidden = false
         /*
         tabBarController?.tabBar.barTintColor = UIColor.black
         tabBarController?.tabBar.tintColor = UIColor.white*/
@@ -132,10 +140,18 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
         if inlema == true {
+            /*
+            var zzzzzz = UIImageView()
+            zzzzzz.image = #imageLiteral(resourceName: "Black")
+            zzzzzz.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
+            self.view.addSubview(zzzzzz)*/
+            
             UIView.animate(withDuration: 0.2, animations: {
                 //let i = sender.currentImage
                 //self.imageviewzooooom.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
-                
+
+                //zzzzzz.alpha = 0
+
                 self.imageviewzooooom.frame = self.rext3
                 
                 //self.imageviewzooooom.center = self.view.center
@@ -144,8 +160,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     //self.imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
                     self.imageviewzooooom.frame = self.rext3
                     self.imageviewzooooom.isHidden = true
+                    self.imagewhite.isHidden = true
                     
-                    //self.removeFromParentViewController()
+                    //zzzzzz.removeFromSuperview()
                 }
             )
         }
@@ -159,11 +176,14 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     var imageviewzooooom = UIImageView()
     var inlema  = false
     var rext3 = CGRect()
+    var imagewhite = UIImageView()
+    
     
     /**跳转到图片详情页*/
     func GoDetail (_ sender:UIButton)  {
         
         self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         self.imageviewzooooom.contentMode = .scaleAspectFill
         self.imageviewzooooom.clipsToBounds = true
         
@@ -195,6 +215,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         print("-------------")
         print(imagekuangaobi)
+        print(a.1)
+        print(sender.tag)
+        print(vc.image_Dijizhang)
         //print(sender.center)
         //print(sender.superview?.superview?.center)
         //print(cell?.center)
@@ -213,6 +236,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             UIView.animate(withDuration: 0, animations: {
                 self.imageviewzooooom.isHidden = false
                 self.imageviewzooooom.frame = self.rext3
+                self.imagewhite.frame = self.rext3
+                self.imagewhite.isHidden = false
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.3, animations:{
                         //let i = sender.currentImage
@@ -285,6 +310,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 cell.setting.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
                 cell.UIImageViewV_.image = #imageLiteral(resourceName: "v")
                 cell.UIImageViewVip_.image = #imageLiteral(resourceName: "alipay")
+                cell.setting.setImage(#imageLiteral(resourceName: "setting"), for: .normal)
                 
                 //  0       1      2       3        4           5         6
                 // detail device newsid newstime photohumber senderid sendername
@@ -435,9 +461,9 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     cell.image_1.tag = 1
                     cell.image_2.tag = 2
                     cell.image_3.tag = 3
-                    cell.image_4.tag = 1
-                    cell.image_5.tag = 2
-                    cell.image_6.tag = 3
+                    cell.image_4.tag = 4
+                    cell.image_5.tag = 5
+                    cell.image_6.tag = 6
                     
                     if cell.GotPhoto != true {
                         for i in 0..<aa
@@ -522,12 +548,12 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     cell.image_1.tag = 1
                     cell.image_2.tag = 2
                     cell.image_3.tag = 3
-                    cell.image_4.tag = 1
-                    cell.image_5.tag = 2
-                    cell.image_6.tag = 3
-                    cell.image_7.tag = 1
-                    cell.image_8.tag = 2
-                    cell.image_9.tag = 3
+                    cell.image_4.tag = 4
+                    cell.image_5.tag = 5
+                    cell.image_6.tag = 6
+                    cell.image_7.tag = 7
+                    cell.image_8.tag = 8
+                    cell.image_9.tag = 9
                     
                     if cell.GotPhoto != true {
                     for i in 0..<aa
