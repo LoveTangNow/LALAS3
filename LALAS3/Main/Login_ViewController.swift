@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+import SVProgressHUD
 
 class Login_ViewController: UIViewController {
     
@@ -20,17 +24,98 @@ class Login_ViewController: UIViewController {
     @IBOutlet weak var UIButton_Main: UIButton!
     @IBOutlet weak var UIButton_ZhuCe: UIButton!
     
+    @IBAction func ZhanghaoEnd(_ sender: UITextField) {
+        print("ZhanghaoEnd")
+        UITextField_Mima.becomeFirstResponder()
+    }
+    @IBAction func PassEnd(_ sender: UITextField) {
+        print("PassEnd")
+        UITextField_Yanzhengma.becomeFirstResponder()
+    }
+    @IBAction func YanzhengmaEnd(_ sender: UITextField) {
+        print("YanzhengmaEnd")
+        UITextField_Yanzhengma.resignFirstResponder()
+        Main_Click(UIButton_Main)
+    }
+    /**返回按钮*/
     @IBAction func Fanhui(_ sender: AnyObject) {
         self.dismiss(animated: true, completion:nil)
     }
     
+    /**更换验证码*/
     @IBAction func ChangeYanZhengMa_Click(_ sender: AnyObject) {
         
     }
     
-    @IBAction func Main_Click(_ sender: AnyObject) {
+    @IBAction func DissmissKyBoard(_ sender: UIControl) {
+        UITextField_Zhanghao.resignFirstResponder()
+        UITextField_Mima.resignFirstResponder()
+        UITextField_Yanzhengma.resignFirstResponder()
     }
     
+    private func ReturnAString (UITextField:UITextField) -> String {
+        if let a = UITextField.text {
+            if a != "" {
+                return a
+            }else{
+                return "0"
+            }
+        }
+        else{
+            if let b = UITextField.placeholder {
+                return b
+            }
+            else{
+                return "0"
+            }
+        }
+    }
+    
+    /**登录*/
+    @IBAction func Main_Click(_ sender: AnyObject) {
+        let userName = ReturnAString(UITextField: UITextField_Zhanghao)
+        let password = ReturnAString(UITextField: UITextField_Mima)
+        
+        let parameters:Parameters = ["1":userName,"2":password,"3":password]
+        
+        FFFFFunctions().Start_A_SVHUD()
+        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "LOGIN.php", method: .post, parameters: parameters)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    //成功
+                    //print(response.result.value)
+                    print("成功请求到")
+                    let json = JSON(response.result.value)
+                    print(json)
+                    
+                    let password_got = json[0]["user_password"].string
+                    if password_got != nil {
+                        if password == password_got{
+                            //成功后呢进行页面跳转该干啥个干啥去
+                            FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "OK")
+                        }
+                        else{
+                            FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "密码错误")
+                        }
+                    } else {
+                        FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "根本就没有这个人啊")
+                    }
+                    
+                case .failure(let error):
+                    //失败
+                    print("失败，没有请求到啊")
+                    print(error)
+                    //显示请求失败 HUD
+                    FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "登录请求失败,请检查网络")
+                }
+                
+        }
+        
+    }
+    
+    /**去注册页面*/
     @IBAction func Jump_Click(_ sender: AnyObject) {
         
         let sb = UIStoryboard(name: "Main", bundle:nil)
