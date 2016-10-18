@@ -346,13 +346,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
             }
         }
         else{// 不能拍摄照片啊大兄弟！！怎么办啊？？？
-            SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
-            SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
-            SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)//遮罩种类
-            SVProgressHUD.setMinimumDismissTimeInterval(1)//持续时间
-            SVProgressHUD.setErrorImage(#imageLiteral(resourceName: "alipay"))
-            //SVProgressHUD.
-            SVProgressHUD.showError(withStatus: "大哥！摄像头有问题吧！")
+            FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 1, image: #imageLiteral(resourceName: "alipay"), words:  "大哥！摄像头有问题吧！")
         }
     }
     
