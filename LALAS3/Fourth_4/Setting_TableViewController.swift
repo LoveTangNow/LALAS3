@@ -26,7 +26,7 @@ class Setting_TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "设置"
-        
+        tableView.tableFooterView = UIView(frame:CGRect.zero)
         ConnectNib()
     }
 

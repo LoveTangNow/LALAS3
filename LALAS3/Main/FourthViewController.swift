@@ -28,6 +28,8 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.UITableView_M.delegate = self
         self.UITableView_M.dataSource = self
         UITableView_M.backgroundColor = UIColor.white
+        UITableView_M.tableFooterView = UIView(frame:CGRect.zero)
+        
         
         self.navigationController?.navigationBar.barTintColor = UIColor.red
         self.navigationController?.navigationBar.tintColor = UIColor.white
