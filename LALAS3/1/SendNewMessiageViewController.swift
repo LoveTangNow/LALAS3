@@ -75,6 +75,20 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     
     /**选择地点点击*/
     @IBAction func UIButton_location(_ sender: AnyObject) {
+        let PikePhoto2: UIAlertAction = UIAlertAction(title: "从相册选择图片", style: .destructive){ action -> Void in
+            print("a")
+        }
+        let PikePhoto3: UIAlertAction = UIAlertAction(title: "从相册选择图片", style: .destructive){ action -> Void in
+            print("v")
+        }
+        let PikePhoto4: UIAlertAction = UIAlertAction(title: "从相册选择图片", style: .destructive){ action -> Void in
+            print("c")
+        }
+        
+        let a  = [PikePhoto2,PikePhoto3,PikePhoto4]
+        MyUIAlertController().MyUIAlertController_(viewcontrollor: self, UIAlertActions: a)
+        
+        //_ = MyUIAlertController().MyUIAlertController_(viewcontrollor: self)
     }
     
     @IBAction func Xiala(_ sender: AnyObject) {
