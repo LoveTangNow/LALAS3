@@ -84,11 +84,9 @@ class Login_ViewController: UIViewController {
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    //成功
-                    //print(response.result.value)
                     print("成功请求到")
                     let json = JSON(response.result.value)
-                    print(json)
+                    //print(json)
                     
                     let password_got = json[0]["user_password"].string
                     if password_got != nil {
@@ -104,13 +102,11 @@ class Login_ViewController: UIViewController {
                     }
                     
                 case .failure(let error):
-                    //失败
                     print("失败，没有请求到啊")
                     print(error)
                     //显示请求失败 HUD
                     FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "登录请求失败,请检查网络")
                 }
-                
         }
         
     }
