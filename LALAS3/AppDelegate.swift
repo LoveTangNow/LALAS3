@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let a = Defalts_ReadWrite().ReadDefalts_Bool(KEY: "setOrNot")
         if a == nil {
             Defalts_ReadWrite().Settssssss(DATA: true, FORKEY: "setOrNot")
-            Defalts_ReadWrite().SetDefalts()
+            Defalts_ReadWrite().SetDefaltsAccount()
+            Defalts_ReadWrite().SetDefalts_TongZhi()
+            Defalts_ReadWrite().SetDefalts_TongYong()
         }
         return true
     }

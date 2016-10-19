@@ -16,6 +16,7 @@
 		7F1367911DB7161700802F7B /* MyAnimates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367901DB7161700802F7B /* MyAnimates.swift */; };
 		7F1367931DB716CE00802F7B /* Defalts_ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */; };
 		7F1367951DB7173800802F7B /* GotServers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367941DB7173800802F7B /* GotServers.swift */; };
+		7F1367991DB7CDE800802F7B /* MyUIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367981DB7CDE800802F7B /* MyUIAlertController.swift */; };
 		7F16A4941DAA945B00095707 /* ThreeWhat_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4931DAA945B00095707 /* ThreeWhat_TableViewCell.xib */; };
 		7F16A4961DAA94F400095707 /* Advertisement_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4951DAA94F400095707 /* Advertisement_TableViewCell.xib */; };
 		7F16A49A1DAA952200095707 /* CommentsPraiseDemote_NTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4991DAA952200095707 /* CommentsPraiseDemote_NTableViewCell.xib */; };
@@ -253,6 +254,7 @@
 		7F1367901DB7161700802F7B /* MyAnimates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAnimates.swift; path = Others/MyAnimates.swift; sourceTree = "<group>"; };
 		7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defalts_ReadWrite.swift; path = Others/Defalts_ReadWrite.swift; sourceTree = "<group>"; };
 		7F1367941DB7173800802F7B /* GotServers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GotServers.swift; path = Others/GotServers.swift; sourceTree = "<group>"; };
+		7F1367981DB7CDE800802F7B /* MyUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyUIAlertController.swift; path = Others/MyUIAlertController.swift; sourceTree = "<group>"; };
 		7F16A4931DAA945B00095707 /* ThreeWhat_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThreeWhat_TableViewCell.xib; path = CELL/ThreeWhat_TableViewCell.xib; sourceTree = "<group>"; };
 		7F16A4951DAA94F400095707 /* Advertisement_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Advertisement_TableViewCell.xib; path = CELL/Advertisement_TableViewCell.xib; sourceTree = "<group>"; };
 		7F16A4991DAA952200095707 /* CommentsPraiseDemote_NTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentsPraiseDemote_NTableViewCell.xib; path = CELL/CommentsPraiseDemote_NTableViewCell.xib; sourceTree = "<group>"; };
@@ -489,6 +491,32 @@
 				7F00308D1DA7955A00CCACB4 /* ThreeWhat_TableViewCell.swift */,
 			);
 			name = ME;
+			sourceTree = "<group>";
+		};
+		7F1367961DB7C37E00802F7B /* AllViews */ = {
+			isa = PBXGroup;
+			children = (
+				7FA6E8EE1D899AA4003F6186 /* Main */,
+				7FA6E8F71D89A544003F6186 /* First_1 */,
+				7FA6E9191D89A8EA003F6186 /* Second_2 */,
+				7FA6E91A1D89A8EE003F6186 /* Third_3 */,
+				7FA6E9161D89A8BC003F6186 /* Fourth_4 */,
+				7FAECEEA1D8A6AC4004592EA /* shit */,
+			);
+			name = AllViews;
+			sourceTree = "<group>";
+		};
+		7F1367971DB7C3F000802F7B /* FountionsClasses */ = {
+			isa = PBXGroup;
+			children = (
+				7FA6E9231D89ABCF003F6186 /* Functions.swift */,
+				7F1367941DB7173800802F7B /* GotServers.swift */,
+				7FDDBE261DAE0D23005B2F0D /* PhotoAvilable.swift */,
+				7F1367901DB7161700802F7B /* MyAnimates.swift */,
+				7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */,
+				7F1367981DB7CDE800802F7B /* MyUIAlertController.swift */,
+			);
+			name = FountionsClasses;
 			sourceTree = "<group>";
 		};
 		7F16A4BF1DABD3A400095707 /* Views */ = {
@@ -759,23 +787,14 @@
 		7FD1014B1D89764D009BB6A6 /* LALAS3 */ = {
 			isa = PBXGroup;
 			children = (
-				7F4B10271DB4401D000E5C3C /* photo.xcassets */,
 				7FBCFE321D9C07C900831823 /* LALAS3.entitlements */,
 				7FAECEED1D8A7399004592EA /* Server.plist */,
 				7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */,
-				7FA6E9231D89ABCF003F6186 /* Functions.swift */,
-				7FDDBE261DAE0D23005B2F0D /* PhotoAvilable.swift */,
-				7F1367901DB7161700802F7B /* MyAnimates.swift */,
-				7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */,
-				7F1367941DB7173800802F7B /* GotServers.swift */,
-				7FA6E8EE1D899AA4003F6186 /* Main */,
-				7FA6E8F71D89A544003F6186 /* First_1 */,
-				7FA6E9191D89A8EA003F6186 /* Second_2 */,
-				7FA6E91A1D89A8EE003F6186 /* Third_3 */,
-				7FA6E9161D89A8BC003F6186 /* Fourth_4 */,
-				7FAECEEA1D8A6AC4004592EA /* shit */,
+				7F1367971DB7C3F000802F7B /* FountionsClasses */,
+				7F1367961DB7C37E00802F7B /* AllViews */,
 				7F3F21E71D92D5F400ACF590 /* CELLS */,
 				7F16A4BF1DABD3A400095707 /* Views */,
+				7F4B10271DB4401D000E5C3C /* photo.xcassets */,
 				7F9F8AE31D9D4EF200C49C12 /* Voice */,
 				7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */,
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
@@ -1375,6 +1394,7 @@
 				7FFA9E4C1D9605C1002380C0 /* NinePhoto_TableViewCell.swift in Sources */,
 				7F9F8AFD1D9D64B200C49C12 /* Lable_And_Switch_TableViewCell.swift in Sources */,
 				7F9F8B011D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift in Sources */,
+				7F1367991DB7CDE800802F7B /* MyUIAlertController.swift in Sources */,
 				7FAECEF01D8ABAD9004592EA /* Setting_TableViewController.swift in Sources */,
 				7F6AA6B51DA2754600A7292B /* Chat_ViewController.swift in Sources */,
 				7FDDBE291DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift in Sources */,
