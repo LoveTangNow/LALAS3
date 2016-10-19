@@ -92,7 +92,7 @@ class Login_ViewController: UIViewController {
                     if password_got != nil {
                         if password == password_got{
                             //成功后呢进行页面跳转该干啥个干啥去
-                            MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "OK")
+                            MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "登录成功")
                         }
                         else{
                             MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "密码错误")
@@ -108,6 +108,28 @@ class Login_ViewController: UIViewController {
                     MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "登录请求失败,请检查网络")
                 }
         }
+        
+    }
+    
+    private func OtherData () -> () {
+        //同步其他用户的其他资料过来
+        let userid = ""
+        let parameters:Parameters = ["userid":userid]
+        Alamofire.request(GotServers().GotServerAliScripts() + "LOGIN.php", method: .post, parameters: parameters)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("成功请求到")
+                    let json = JSON(response.result.value)
+                    //print(json)
+                    
+                case .failure(let error):
+                    print("失败，没有请求到啊")
+                    print(error)
+                }
+        }
+
         
     }
     
