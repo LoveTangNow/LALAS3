@@ -136,12 +136,7 @@ class FFFFFunctions: AnyObject {
         let a = data.object(forKey: "ImageAD") as! String
         return GotServer(ai: ai) + a
     }
-     //MARK: - SetUserDefaults
-    
-    func SetUserDefaults(DATA:String,FORKEY:String) {
-        UserDefaults.standard.set(DATA,forKey:FORKEY)
-        UserDefaults.standard.synchronize()
-    }
+
      //MARK: - 开始菊花转动 HUD
     func Start_A_SVHUD() {
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
@@ -166,9 +161,67 @@ class FFFFFunctions: AnyObject {
         }
         SVProgressHUD.showError(withStatus: words)
     }
-     //MARK: -
-     //MARK: -
-     //MARK: - 
+    
+    //MARK: - 设置默认
+    //账号管理：昵称、性别、所在地（省、市、区）、生日、简介、工作信息、教育信息（小学、初中、高中、大学、硕士、博士、博士后）、(qq、手机、邮箱、微博、微信、支付宝、)、等级、积分、注册时间
+    //账号安全：昵称、id、手机、邮箱、证件信息、
+    //通用设置：
+    //通知设置：
+    /**设置默认项*/
+    func SetDefalts()  {
+        /** 是否登录 - 用于程序启动时是否需要调起登录注册页面*/
+        Settssssss(DATA:false, FORKEY: "islogin")
+        /** 一下是手机默认设置部分*/
+        /** */
+        
+    }
+    
+    //MARK: - 更改设置
+    /** 写数据到 UserDefaults */
+    func Settssssss(DATA:String,FORKEY:String) {
+        UserDefaults.standard.set(DATA,forKey:FORKEY)
+        UserDefaults.standard.synchronize()
+    }
+    func Settssssss(DATA:Bool,FORKEY:String) {
+        UserDefaults.standard.set(DATA,forKey:FORKEY)
+        UserDefaults.standard.synchronize()
+    }
+    func Settssssss(DATA:Int,FORKEY:String) {
+        UserDefaults.standard.set(DATA,forKey:FORKEY)
+        UserDefaults.standard.synchronize()
+    }
+    func Settssssss(DATA:Double,FORKEY:String) {
+        UserDefaults.standard.set(DATA,forKey:FORKEY)
+        UserDefaults.standard.synchronize()
+    }
+    func Settssssss(DATA:Float,FORKEY:String) {
+        UserDefaults.standard.set(DATA,forKey:FORKEY)
+        UserDefaults.standard.synchronize()
+    }
+    
+    //MARK: - ReadDetalts
+    /**读取 Defalts*/
+    func ReadDefalts(KEY:String) -> Bool? {
+         return UserDefaults.standard.value(forKey: KEY) as? Bool
+    }
+    func ReadDefalts(KEY:String) -> String? {
+        return UserDefaults.standard.value(forKey: KEY) as? String
+    }
+    func ReadDefalts(KEY:String) -> Int? {
+        return UserDefaults.standard.value(forKey: KEY) as? Int
+    }
+    func ReadDefalts(KEY:String) -> Bool? {
+        return UserDefaults.standard.value(forKey: KEY) as? Bool
+    }
+    func ReadDefalts(KEY:String) -> Double? {
+        return UserDefaults.standard.value(forKey: KEY) as? Double
+    }
+    func ReadDefalts(KEY:String) -> Float? {
+        return UserDefaults.standard.value(forKey: KEY) as? Float
+    }
+
+
+
      //MARK: - 
      //MARK: -
     
