@@ -78,8 +78,8 @@ class Login_ViewController: UIViewController {
         
         let parameters:Parameters = ["1":userName,"2":password,"3":password]
         
-        FFFFFunctions().Start_A_SVHUD()
-        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "LOGIN.php", method: .post, parameters: parameters)
+        MyAnimates().Start_A_SVHUD()
+        Alamofire.request(GotServers().GotServerAliScripts() + "LOGIN.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -92,20 +92,20 @@ class Login_ViewController: UIViewController {
                     if password_got != nil {
                         if password == password_got{
                             //成功后呢进行页面跳转该干啥个干啥去
-                            FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "OK")
+                            MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "OK")
                         }
                         else{
-                            FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "密码错误")
+                            MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "密码错误")
                         }
                     } else {
-                        FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "根本就没有这个人啊")
+                        MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "根本就没有这个人啊")
                     }
                     
                 case .failure(let error):
                     print("失败，没有请求到啊")
                     print(error)
                     //显示请求失败 HUD
-                    FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "登录请求失败,请检查网络")
+                    MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "登录请求失败,请检查网络")
                 }
         }
         

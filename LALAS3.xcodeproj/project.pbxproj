@@ -13,6 +13,9 @@
 		7F00308E1DA7955A00CCACB4 /* ThreeWhat_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F00308D1DA7955A00CCACB4 /* ThreeWhat_TableViewCell.swift */; };
 		7F0E0C871D9921C800A54353 /* AccountManagement_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E0C861D9921C800A54353 /* AccountManagement_ViewController.swift */; };
 		7F11B5651D997C080084BAE5 /* T.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F11B5641D997C080084BAE5 /* T.storyboard */; };
+		7F1367911DB7161700802F7B /* MyAnimates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367901DB7161700802F7B /* MyAnimates.swift */; };
+		7F1367931DB716CE00802F7B /* Defalts_ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */; };
+		7F1367951DB7173800802F7B /* GotServers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367941DB7173800802F7B /* GotServers.swift */; };
 		7F16A4941DAA945B00095707 /* ThreeWhat_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4931DAA945B00095707 /* ThreeWhat_TableViewCell.xib */; };
 		7F16A4961DAA94F400095707 /* Advertisement_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4951DAA94F400095707 /* Advertisement_TableViewCell.xib */; };
 		7F16A49A1DAA952200095707 /* CommentsPraiseDemote_NTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4991DAA952200095707 /* CommentsPraiseDemote_NTableViewCell.xib */; };
@@ -247,6 +250,9 @@
 		7F00308D1DA7955A00CCACB4 /* ThreeWhat_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreeWhat_TableViewCell.swift; path = CELL/ThreeWhat_TableViewCell.swift; sourceTree = "<group>"; };
 		7F0E0C861D9921C800A54353 /* AccountManagement_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagement_ViewController.swift; path = Fourth_4/AccountManagement_ViewController.swift; sourceTree = "<group>"; };
 		7F11B5641D997C080084BAE5 /* T.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = T.storyboard; sourceTree = "<group>"; };
+		7F1367901DB7161700802F7B /* MyAnimates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAnimates.swift; path = Others/MyAnimates.swift; sourceTree = "<group>"; };
+		7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defalts_ReadWrite.swift; path = Others/Defalts_ReadWrite.swift; sourceTree = "<group>"; };
+		7F1367941DB7173800802F7B /* GotServers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GotServers.swift; path = Others/GotServers.swift; sourceTree = "<group>"; };
 		7F16A4931DAA945B00095707 /* ThreeWhat_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThreeWhat_TableViewCell.xib; path = CELL/ThreeWhat_TableViewCell.xib; sourceTree = "<group>"; };
 		7F16A4951DAA94F400095707 /* Advertisement_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Advertisement_TableViewCell.xib; path = CELL/Advertisement_TableViewCell.xib; sourceTree = "<group>"; };
 		7F16A4991DAA952200095707 /* CommentsPraiseDemote_NTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentsPraiseDemote_NTableViewCell.xib; path = CELL/CommentsPraiseDemote_NTableViewCell.xib; sourceTree = "<group>"; };
@@ -755,10 +761,13 @@
 			children = (
 				7F4B10271DB4401D000E5C3C /* photo.xcassets */,
 				7FBCFE321D9C07C900831823 /* LALAS3.entitlements */,
-				7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */,
 				7FAECEED1D8A7399004592EA /* Server.plist */,
+				7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */,
 				7FA6E9231D89ABCF003F6186 /* Functions.swift */,
 				7FDDBE261DAE0D23005B2F0D /* PhotoAvilable.swift */,
+				7F1367901DB7161700802F7B /* MyAnimates.swift */,
+				7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */,
+				7F1367941DB7173800802F7B /* GotServers.swift */,
 				7FA6E8EE1D899AA4003F6186 /* Main */,
 				7FA6E8F71D89A544003F6186 /* First_1 */,
 				7FA6E9191D89A8EA003F6186 /* Second_2 */,
@@ -1319,6 +1328,7 @@
 				7F3F21EE1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift in Sources */,
 				7F9F8AFF1D9D64C700C49C12 /* TwoLabel_TableViewCell.swift in Sources */,
 				7F9F8AF11D9D610C00C49C12 /* Tongyong_ViewController.swift in Sources */,
+				7F1367931DB716CE00802F7B /* Defalts_ReadWrite.swift in Sources */,
 				7F00308C1DA7954100CCACB4 /* ME_TableViewCell.swift in Sources */,
 				7F3F21F81D93B5DC00ACF590 /* Advertisement_TableViewCell.swift in Sources */,
 				7F3F22021D93C02F00ACF590 /* ChatMe_TableViewCell.swift in Sources */,
@@ -1329,6 +1339,7 @@
 				7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */,
 				7FFA9E541D9610B7002380C0 /* Pinglun_NTableViewCell.swift in Sources */,
 				7FEA9A6B1D9F464F00B1351F /* MainModel.swift in Sources */,
+				7F1367951DB7173800802F7B /* GotServers.swift in Sources */,
 				7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */,
 				7FBCFE361D9C091900831823 /* Health_ViewController.swift in Sources */,
 				7FA6E8FD1D89A5DF003F6186 /* SendNewMessiageViewController.swift in Sources */,
@@ -1341,6 +1352,7 @@
 				7FFA9E481D96059E002380C0 /* ThreePhoto_NTableViewCell.swift in Sources */,
 				7FE5BF2B1D8E755600586166 /* FanKui_ViewController.swift in Sources */,
 				7F5322B81D8BCA1700294C62 /* OnePhotoOneLable_CollectionViewCell.swift in Sources */,
+				7F1367911DB7161700802F7B /* MyAnimates.swift in Sources */,
 				7FA6E9241D89ABCF003F6186 /* Functions.swift in Sources */,
 				7FDDBE271DAE0D23005B2F0D /* PhotoAvilable.swift in Sources */,
 				7FFA9E501D960A0F002380C0 /* CommentsPraiseDemote_NTableViewCell.swift in Sources */,

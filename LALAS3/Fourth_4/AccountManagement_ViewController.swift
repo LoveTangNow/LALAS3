@@ -319,7 +319,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
             case "用户昵称 和 头像"://头像 昵称
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Label_And_RightBigImage_TableViewCell", for: indexPath) as! Label_And_RightBigImage_TableViewCell
                 cell.UILabel_.text = "啦啦同学"
-                Alamofire.request(FFFFFunctions().GotImageIconServer(ai: true) + "1.png")
+                Alamofire.request(GotServers().GotImageIconServer(ai: true) + "1.png")
                     .responseData { response in
                         if let data = response.result.value {
                             cell.UIImageView_.image = UIImage(data: data)

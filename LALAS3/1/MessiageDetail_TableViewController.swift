@@ -40,7 +40,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         SVProgressHUD.show()
         //请求评论们:参数是一个 news id
         let newsid: Parameters = ["newsid": "1"]
-        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_PINGLUN.php", method: .post, parameters: newsid)
+        Alamofire.request(GotServers().GotServerAliScripts() + "GIVE_BACK_PINGLUN.php", method: .post, parameters: newsid)
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -259,7 +259,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         }
         else{//Pinglun
             let cell = tableView.dequeueReusableCell(withIdentifier: "Pinglun_NTableViewCell", for: indexPath) as! Pinglun_NTableViewCell
-            Alamofire.request(FFFFFunctions().GotImageIconServer(ai: true) + String(pinglunData[indexPath.row][0]) + ".png")
+            Alamofire.request(GotServers().GotImageIconServer(ai: true) + String(pinglunData[indexPath.row][0]) + ".png")
                 .responseData { response in
                     if let data = response.result.value {
                         let asd = UIImage(data: data)

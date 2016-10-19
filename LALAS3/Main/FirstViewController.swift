@@ -83,7 +83,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         SVProgressHUD.show()
         
-        Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
+        Alamofire.request(GotServers().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -300,7 +300,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             switch indexPath.row {
             case 0://文字区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell
-                Alamofire.request(FFFFFunctions().GotImageIconServer(ai: ali) + String(DataWords[indexPath.section]![5] ) + ".png")
+                Alamofire.request(GotServers().GotImageIconServer(ai: ali) + String(DataWords[indexPath.section]![5] ) + ".png")
                     .responseData { response in
                         if let data = response.result.value {
                             let asd = UIImage(data: data)
@@ -378,7 +378,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     
                     if cell.GotPhoto != true {
-                    Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu00100.jpg")
+                    Alamofire.request(GotServers().GotImageMainServer(ai: ali) + "Zhu00100.jpg")
                         .responseData { response in
                             if let data = response.result.value {
                                 let asd = UIImage(data: data)
@@ -402,7 +402,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         for i in 0..<aa
                         {
                             var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 60) + ".jpg")
+                            Alamofire.request(GotServers().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 60) + ".jpg")
                                 .responseData { response in
                                 if let data = response.result.value {
                                     //print("do23")
@@ -469,7 +469,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         for i in 0..<aa
                         {
                             var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 50) + ".jpg")
+                            Alamofire.request(GotServers().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 50) + ".jpg")
                                 .responseData { response in
                                     if let data = response.result.value {
                                         //print("do456")
@@ -561,7 +561,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         //print("alaout")
                         var aaaaaa = [Dictionary<String, UIImage>]()
                         //print(FFFFFunctions().GotImageMainServer(ai: ali))
-                        Alamofire.request(FFFFFunctions().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 70) + ".jpg")
+                        Alamofire.request(GotServers().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 70) + ".jpg")
                                 .responseData { response in
                                    // print("alain")
                                     if let data = response.result.value {

@@ -154,7 +154,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                 SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
                 SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.clear)
                 SVProgressHUD.show()
-                Alamofire.request(FFFFFunctions().GotServerAliScripts() + "GOT_PHOTO_2BYTES_PNG_1.php", method: .post, parameters: parametersss)
+                Alamofire.request(GotServers().GotServerAliScripts() + "GOT_PHOTO_2BYTES_PNG_1.php", method: .post, parameters: parametersss)
                     .responseString
                     { response in
                         print("Success: \(response.result.isSuccess)")
@@ -346,7 +346,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
             }
         }
         else{// 不能拍摄照片啊大兄弟！！怎么办啊？？？
-            FFFFFunctions().Start_A_HUD_With_Time_Words_Image(time: 1, image: #imageLiteral(resourceName: "alipay"), words:  "大哥！摄像头有问题吧！")
+            MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 1, image: #imageLiteral(resourceName: "alipay"), words:  "大哥！摄像头有问题吧！")
         }
     }
     

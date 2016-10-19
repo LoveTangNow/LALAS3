@@ -25,10 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             写若果
                 什么也不干
          */
-        let a = FFFFFunctions().ReadDefalts("setOrNot")
+        let a = Defalts_ReadWrite().ReadDefalts_Bool(KEY: "setOrNot")
         if a == nil {
-            FFFFFunctions().Settssssss(DATA: true, FORKEY: "setOrNot")
-            FFFFFunctions().SetDefalts()
+            Defalts_ReadWrite().Settssssss(DATA: true, FORKEY: "setOrNot")
+            Defalts_ReadWrite().SetDefalts()
         }
         return true
     }
