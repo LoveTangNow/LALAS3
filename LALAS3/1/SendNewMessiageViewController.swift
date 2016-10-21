@@ -96,57 +96,20 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     }
     
     var imageNamelist = [String]()
-    var succeeeeeeed = [false,false]{//文字上传 ，和 图片上传的 状态。。
-        willSet{
-            //print("willSet")
-        }
-        didSet{
-            
-            print("didSet")
-            
-            //let loaction:String =  (UIButton_5.titleLabel?.text)!//地点
-            
-            //时间由服务器来决定
-            let detail = UITextView_Main.text//文字
-            let device = FFFFFunctions().getDeviceVersion()//🐍备
-            
-            //一个图片上传处理，一个文字上传处理
-            let parameters:Parameters = [
-                    //newsid
-                    "senderid":"",
-                    "sendtime":"",
-                    "detail":detail,
-                    //pinglun_number
-                    //zan_number
-                    "photonumber":imageNumbersAlreadyGot,
-                    "device":device,
-                    //"loaction":loaction,
-                    ]
-            //文字处理
-            Alamofire.request(GotServers().GotServerAliScripts() + "SEND_NEWS_WORD.php", method: .post, parameters: parameters)
-                .responseString
-                { response in
-                    switch response.result {
-                    case .success:
-                        self.succeeeeeeed[0] = true
-                        self.uploadsuccedd()
-                    case .failure(let error):
-                        //失败
-                        print(error)
-                    }
-
-            }
-
-        }
-    }
     
     @IBAction func Send_Click(_ sender: AnyObject) {
         print("send click")
         let imagelist = gotPhotos(photonumber: imageNumbersAlreadyGot)//图片组
+        if imagelist.count == 0 {
+            print("imgaenumber 0")
+            updateWords()
+        }
         if imagelist.count > 0 {
             var aaaaa = 0
             print(imagelist.count)
+
             for i in 0..<imagelist.count {
+                print("imgaenumber not 0")
                 var yasuolv = CGFloat()
                 switch UISegment.selectedSegmentIndex {
                 case 0:yasuolv = 0.2
@@ -155,8 +118,8 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                 case 3:yasuolv = 1.0
                 default:yasuolv = 0.1
                 }
-                print(yasuolv)
-                print(i)
+                //print(yasuolv)
+                //print(i)
                 
                 let imageData = UIImageJPEGRepresentation(imagelist[i], yasuolv)// 将图片转换成png格式的NSData，压缩到1
                 let aaa  = imageData?.base64EncodedString(options:.init(rawValue: 0))// 将图片转换为base64字符串
@@ -182,20 +145,37 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                         SVProgressHUD.dismiss()
                         aaaaa += 1
                         if aaaaa == imagelist.count{
-                            self.succeeeeeeed[1] = true
+                            self.updateWords()
                         }
                     }
-            }
+                }
+            
         } else {//没有图片
-           self.succeeeeeeed[1] = true
         }
-        
         //SaveImagesToLibrary()
     }
     
-    func uploadsuccedd() {
-        if self.succeeeeeeed[0] == true && self.succeeeeeeed[1] == true {
-            print("succeed")
+    func updateWords ()  {
+        let parameters:Parameters = [
+            //newsid
+            "senderid":1,
+            "detail":self.UITextView_Main.text,
+            //"pinglun_number":0,
+            //"zan_number":0,
+            "photonumber":self.imageNumbersAlreadyGot,
+            "device":"se",
+            ]
+        //文字处理
+        Alamofire.request(GotServers().GotServerAliScripts() + "SEND_NEWS_WORD.php", method: .post, parameters: parameters)
+            .responseString
+            { response in
+                switch response.result {
+                case .success:
+                    print(response.result.value)
+                    print("word succ")
+                case .failure(let error):
+                    print(error)
+                }
         }
     }
     
