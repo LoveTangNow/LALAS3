@@ -95,31 +95,37 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         UITextView_Main.resignFirstResponder()
     }
     
-    var succeeeeeeed = [false,false]{
+    var imageNamelist = [String]()
+    var succeeeeeeed = [false,false]{//文字上传 ，和 图片上传的 状态。。
         willSet{
             //print("willSet")
         }
         didSet{
-            /*
+            
             print("didSet")
-            let loaction:String =  (UIButton_5.titleLabel?.text)!//地点
+            
+            //let loaction:String =  (UIButton_5.titleLabel?.text)!//地点
             
             //时间由服务器来决定
             let detail = UITextView_Main.text//文字
             let device = FFFFFunctions().getDeviceVersion()//🐍备
             
             //一个图片上传处理，一个文字上传处理
-            let parameters:Parameters = ["senderid":"",
-                                         "detail":detail,
-                                         "device":device,
-                                         "loaction":loaction,
-                                         "sendtime":"",
-                                         "photonumber":imageNumbersAlreadyGot]
+            let parameters:Parameters = [
+                    //newsid
+                    "senderid":"",
+                    "sendtime":"",
+                    "detail":detail,
+                    //pinglun_number
+                    //zan_number
+                    "photonumber":imageNumbersAlreadyGot,
+                    "device":device,
+                    //"loaction":loaction,
+                    ]
             //文字处理
-            
-            Alamofire.request(FFFFFunctions().GotServerAliScripts() + "SEND_NEWS_WORD.php", method: .post, parameters: parameters)
-                .validate()
-                .responseJSON { response in
+            Alamofire.request(GotServers().GotServerAliScripts() + "SEND_NEWS_WORD.php", method: .post, parameters: parameters)
+                .responseString
+                { response in
                     switch response.result {
                     case .success:
                         self.succeeeeeeed[0] = true
@@ -128,7 +134,9 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                         //失败
                         print(error)
                     }
-            }*/
+
+            }
+
         }
     }
     
@@ -136,7 +144,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         print("send click")
         let imagelist = gotPhotos(photonumber: imageNumbersAlreadyGot)//图片组
         if imagelist.count > 0 {
-            //var aaaaa = 0
+            var aaaaa = 0
             print(imagelist.count)
             for i in 0..<imagelist.count {
                 var yasuolv = CGFloat()
@@ -154,15 +162,12 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                 let aaa  = imageData?.base64EncodedString(options:.init(rawValue: 0))// 将图片转换为base64字符串
                 let bbb  = aaa!
                 
-                
                 //用 data保存图片
                 let decodedData = NSData(base64Encoded:aaa!, options:NSData.Base64DecodingOptions())
                 let decodedimage = UIImage(data: decodedData as! Data)! as UIImage
                 UIImageWriteToSavedPhotosAlbum(decodedimage, self, nil, nil)
 
-                
                 let parametersss:Parameters = ["file":bbb]
-                
                 
                 SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
                 SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
@@ -173,10 +178,16 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                     { response in
                         print("Success: \(response.result.isSuccess)")
                         print("Response String: \(response.result.value)")
+                        //这里最好能返回图片的名字
                         SVProgressHUD.dismiss()
+                        aaaaa += 1
+                        if aaaaa == imagelist.count{
+                            self.succeeeeeeed[1] = true
+                        }
                     }
             }
         } else {//没有图片
+           self.succeeeeeeed[1] = true
         }
         
         //SaveImagesToLibrary()

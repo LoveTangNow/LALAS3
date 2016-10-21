@@ -16,10 +16,12 @@ class Select_TableViewCell: UITableViewCell {
     
     @IBAction func UISegmentedControl_Valuechanged(_ sender: AnyObject) {
         let a  = UISegmentedControl_M.titleForSegment(at: UISegmentedControl_M.selectedSegmentIndex)! as String
-        
         print(a)
-        UserDefaults.standard.set(a,forKey:"Sex")
-        UserDefaults.standard.synchronize()
+        if a == "男" {
+            Defalts_ReadWrite().Settssssss(DATA: true, FORKEY: "sex")
+        } else {
+            Defalts_ReadWrite().Settssssss(DATA: false, FORKEY: "sex")
+        }
     }
     
     var NumberOfSegments = 0

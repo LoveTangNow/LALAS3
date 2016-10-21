@@ -17,6 +17,7 @@
 		7F1367931DB716CE00802F7B /* Defalts_ReadWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */; };
 		7F1367951DB7173800802F7B /* GotServers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367941DB7173800802F7B /* GotServers.swift */; };
 		7F1367991DB7CDE800802F7B /* MyUIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1367981DB7CDE800802F7B /* MyUIAlertController.swift */; };
+		7F13679D1DBA59D000802F7B /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13679C1DBA59D000802F7B /* SettingModel.swift */; };
 		7F16A4941DAA945B00095707 /* ThreeWhat_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4931DAA945B00095707 /* ThreeWhat_TableViewCell.xib */; };
 		7F16A4961DAA94F400095707 /* Advertisement_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4951DAA94F400095707 /* Advertisement_TableViewCell.xib */; };
 		7F16A49A1DAA952200095707 /* CommentsPraiseDemote_NTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4991DAA952200095707 /* CommentsPraiseDemote_NTableViewCell.xib */; };
@@ -255,6 +256,7 @@
 		7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defalts_ReadWrite.swift; path = Others/Defalts_ReadWrite.swift; sourceTree = "<group>"; };
 		7F1367941DB7173800802F7B /* GotServers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GotServers.swift; path = Others/GotServers.swift; sourceTree = "<group>"; };
 		7F1367981DB7CDE800802F7B /* MyUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyUIAlertController.swift; path = Others/MyUIAlertController.swift; sourceTree = "<group>"; };
+		7F13679C1DBA59D000802F7B /* SettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingModel.swift; path = Others/SettingModel.swift; sourceTree = "<group>"; };
 		7F16A4931DAA945B00095707 /* ThreeWhat_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThreeWhat_TableViewCell.xib; path = CELL/ThreeWhat_TableViewCell.xib; sourceTree = "<group>"; };
 		7F16A4951DAA94F400095707 /* Advertisement_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Advertisement_TableViewCell.xib; path = CELL/Advertisement_TableViewCell.xib; sourceTree = "<group>"; };
 		7F16A4991DAA952200095707 /* CommentsPraiseDemote_NTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentsPraiseDemote_NTableViewCell.xib; path = CELL/CommentsPraiseDemote_NTableViewCell.xib; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 		7FA6E9161D89A8BC003F6186 /* Fourth_4 */ = {
 			isa = PBXGroup;
 			children = (
+				7F13679C1DBA59D000802F7B /* SettingModel.swift */,
 				7FA6E9171D89A8E2003F6186 /* Fourth.storyboard */,
 				7FDDBE2A1DAE85A6005B2F0D /* SomePeople_ViewController.swift */,
 				7FAECEEF1D8ABAD9004592EA /* Setting_TableViewController.swift */,
@@ -1362,6 +1365,7 @@
 				7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */,
 				7FBCFE361D9C091900831823 /* Health_ViewController.swift in Sources */,
 				7FA6E8FD1D89A5DF003F6186 /* SendNewMessiageViewController.swift in Sources */,
+				7F13679D1DBA59D000802F7B /* SettingModel.swift in Sources */,
 				7FFA9E461D960587002380C0 /* OnePhoto_Z_NTableViewCell.swift in Sources */,
 				7FFA9E4A1D9605B4002380C0 /* SixPhoto_TableViewCell.swift in Sources */,
 				7FA6E8F41D89A526003F6186 /* ThirdViewController.swift in Sources */,

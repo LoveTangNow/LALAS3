@@ -77,8 +77,8 @@ class Defalts_ReadWrite: AnyObject {
     }
     //通知设置：
     func SetDefalts_TongZhi() -> () {
-        /**是否开启通知*/
-        
+        /**是否开启通知 bool*/
+        Settssssss(DATA: true, FORKEY: "tongzhiok")
         /**多久获取一次新消息 Int：分钟*/
         Settssssss(DATA: 2, FORKEY: "time")
     }
