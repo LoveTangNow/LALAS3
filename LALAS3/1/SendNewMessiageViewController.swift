@@ -95,8 +95,6 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         UITextView_Main.resignFirstResponder()
     }
     
-    var imageNamelist = [String]()
-    
     @IBAction func Send_Click(_ sender: AnyObject) {
         print("send click")
         let imagelist = gotPhotos(photonumber: imageNumbersAlreadyGot)//图片组
@@ -137,25 +135,38 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                 SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.clear)
                 SVProgressHUD.show()
                 Alamofire.request(GotServers().GotServerAliScripts() + "GOT_PHOTO_2BYTES_PNG_1.php", method: .post, parameters: parametersss)
-                    .responseString
-                    { response in
-                        print("Success: \(response.result.isSuccess)")
-                        print("Response String: \(response.result.value)")
-                        //这里最好能返回图片的名字
-                        SVProgressHUD.dismiss()
-                        aaaaa += 1
-                        if aaaaa == imagelist.count{
-                            self.updateWords()
+                    .validate()
+                    .responseJSON { response in
+                        switch response.result {
+                            case .success:
+                                print("Success: \(response.result.isSuccess)")
+                                //这里最好能返回图片的名字
+                                let json = JSON(response.result.value)
+                                for i in 0..<json.count
+                                {
+                                    if let a = json[i]["name"].int{
+                                        self.UpdateImageNames(imageNumber: a)
+                                    }
+                                }
+                                //图片上传数目计数
+                                aaaaa += 1
+                                if aaaaa == imagelist.count{
+                                    self.updateWords()
+                                    SVProgressHUD.dismiss()
+                                }
+                            case .failure(let error)://失败
+                                SVProgressHUD.dismiss()
+                                print(error)
                         }
                     }
                 }
-            
         } else {//没有图片
         }
         //SaveImagesToLibrary()
     }
     
     func updateWords ()  {
+        
         let parameters:Parameters = [
             //newsid
             "senderid":1,
@@ -171,11 +182,26 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
             { response in
                 switch response.result {
                 case .success:
-                    print(response.result.value)
-                    print("word succ")
+                    print("word succcccccccccccccccccccccc")
                 case .failure(let error):
                     print(error)
                 }
+        }
+    }
+    
+    func UpdateImageNames(imageNumber:Int) -> () {
+        //根据图片数目不同来做处理。。
+        let parameters:Parameters = ["imageNumber":imageNumber]
+        
+        Alamofire.request(GotServers().GotServerAliScripts() + "SEND_NEWS_WORD_IMAGE.php", method: .post, parameters: parameters)
+            .responseString
+            { response in
+                switch response.result {
+                case .success:
+                    print("imageNumber succcccccccccccccccccccc")
+                case .failure(let error):
+                    print(error)
+            }
         }
     }
     

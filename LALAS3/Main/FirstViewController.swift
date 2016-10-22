@@ -91,6 +91,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     //成功
                     //print(response.result.value)
                     let json = JSON(response.result.value)
+                    print(json)
                     
                     for i in 0..<json.count
                     {
@@ -101,7 +102,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         var ArryOfNameOfPhotos = [String]()
                         for j in 0..<NumberOfPhotos
                         {
-                            ArryOfNameOfPhotos.append(json[i]["photo"][j].string!)
+                            let a = json[i]["photo"][j].string!
+                            ArryOfNameOfPhotos.append(a)
                         }
                         self.DataPhotoNames[i] = ArryOfNameOfPhotos
                     }
@@ -378,7 +380,10 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     
                     if cell.GotPhoto != true {
-                    Alamofire.request(GotServers().GotImageMainServer(ai: ali) + "Zhu00100.jpg")
+                    let a = DataPhotoNames[indexPath.section]![0]
+                        print(a)
+                        
+                    Alamofire.request(GotServers().GotImageTServer(ai: ali) + a + ".jpeg")
                         .responseData { response in
                             if let data = response.result.value {
                                 let asd = UIImage(data: data)
