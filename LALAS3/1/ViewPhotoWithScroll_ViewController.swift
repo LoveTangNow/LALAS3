@@ -44,10 +44,8 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         UIScrollView_MM.bounces = true
         
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        
-        navigationController?.navigationBar.isHidden = true
+
         UIToolbar_M.isHidden = true
-        
         UIToolbar_M.alpha = 0
         
         for i in 0..<imgaeNumber {
@@ -76,15 +74,16 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
         
         UIToolbar_M.barTintColor = UIColor.black
         UIScrollView_MM.isHidden = true
-        
-        print("photowillapear")
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         UIScrollView_MM.scrollRectToVisible(aa[image_Dijizhang - 1], animated: false)
         UIScrollView_MM.isHidden = false
-        print("photodidappear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -107,13 +106,16 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     }
     
     @IBAction func Tabeeee(_ sender: AnyObject) {
+        
+        _ = self.navigationController?.popViewController(animated: false)
 
+        /*
         if navigationController?.navigationBar.isHidden == true {
             navigationController?.navigationBar.isHidden = false
             UIToolbar_M.isHidden = false
         } else {
             navigationController?.navigationBar.isHidden = true
             UIToolbar_M.isHidden = true
-        }
+        }*/
     }
 }
