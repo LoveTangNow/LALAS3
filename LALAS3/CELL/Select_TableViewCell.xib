@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6QN-xe-Gub" id="FkG-V3-XxM">
-                <frame key="frameInset" width="375" height="80.5"/>
+                <frame key="frameInset" width="375" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRE-NQ-Opx">
@@ -38,7 +38,7 @@
                     <constraint firstItem="55h-uV-ioM" firstAttribute="centerY" secondItem="FkG-V3-XxM" secondAttribute="centerY" id="VXM-3G-I4f"/>
                     <constraint firstItem="55h-uV-ioM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HRE-NQ-Opx" secondAttribute="trailing" constant="5" id="Yzk-9i-TZI"/>
                     <constraint firstItem="HRE-NQ-Opx" firstAttribute="centerY" secondItem="FkG-V3-XxM" secondAttribute="centerY" id="a2C-dL-LKE"/>
-                    <constraint firstItem="HRE-NQ-Opx" firstAttribute="leading" secondItem="FkG-V3-XxM" secondAttribute="leadingMargin" constant="10" id="t9e-Sa-soX"/>
+                    <constraint firstItem="HRE-NQ-Opx" firstAttribute="leading" secondItem="FkG-V3-XxM" secondAttribute="leadingMargin" constant="20" id="t9e-Sa-soX"/>
                     <constraint firstAttribute="trailingMargin" secondItem="55h-uV-ioM" secondAttribute="trailing" constant="10" id="zRe-OT-Ed9"/>
                 </constraints>
             </tableViewCellContentView>

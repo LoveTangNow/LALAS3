@@ -28,6 +28,12 @@ class ME_TableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        UIButton_Main.layer.cornerRadius = 5
+        UIButton_Main.clipsToBounds = true
+        
+        UIButton_Small.layer.cornerRadius = 3
+        UIButton_Small.clipsToBounds = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

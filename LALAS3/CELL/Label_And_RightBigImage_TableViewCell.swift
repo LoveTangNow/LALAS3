@@ -16,6 +16,8 @@ class Label_And_RightBigImage_TableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        UIImageView_.layer.cornerRadius = 5
+        UIImageView_.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
