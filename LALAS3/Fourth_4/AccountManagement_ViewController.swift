@@ -134,7 +134,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         list_["注册时间"] = aaaaaaaaaaaaa2
 
         UIImageView_Cover.alpha = 0
-        UIImageView_Cover.image = #imageLiteral(resourceName: "alipay")
+        UIImageView_Cover.image = #imageLiteral(resourceName: "Black")
         
         UITableView_m.dataSource = self
         UITableView_m.delegate = self
@@ -353,7 +353,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 
                 let a  = Defalts_ReadWrite().ReadDefalts_Bool(KEY: "sex")
                 
-                if  a! {//turl 是男
+                if  a! {//ture 是男
                     cell.UISegmentedControl_M.selectedSegmentIndex = 1
                 } else {
                     cell.UISegmentedControl_M.selectedSegmentIndex = 0
@@ -371,9 +371,9 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 return cell
            
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Label_And_TextView_TableViewCell", for: indexPath) as! Label_And_TextView_TableViewCell
-                cell.UILabel_.text = list[indexPath.section][indexPath.row]
-                cell.UILabel_rrr.text = ""
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+                cell.UILabel_l.text = list[indexPath.section][indexPath.row]
+                cell.UILabel_r.text = ""
                 TableviewHeight = 45
                 return cell
             }

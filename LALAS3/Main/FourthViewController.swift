@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     //MARK: - 绑定
@@ -129,9 +131,15 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ME_TableViewCell", for: indexPath) as! ME_TableViewCell
                 
-                cell.UIButton_Main.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
-                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
+                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
                 cell.UIButton_Main.addTarget(self, action: #selector(ME_GO), for: UIControlEvents.touchUpInside)
+                
+                Alamofire.request(GotServers().GotImageIconServer(ai: true) + "1.png")
+                    .responseData { response in
+                        if let data = response.result.value {
+                            cell.UIButton_Main.setBackgroundImage(UIImage(data: data), for: .normal)
+                        }
+                }
                 
                 
                 cell.UIButton_Main.setTitle("", for: .normal)
