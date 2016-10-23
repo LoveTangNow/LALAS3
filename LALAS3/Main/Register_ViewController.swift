@@ -73,9 +73,10 @@ class Register_ViewController: UIViewController {
     
     /**返回第四主页面*/
     func GoBackDeeply() {
+        /*
         let RegisterBool :Bool = true
         UserDefaults.standard.set(RegisterBool, forKey: "RegisterBool")
-        UserDefaults.standard.synchronize()
+        UserDefaults.standard.synchronize()*/
         self.dismiss(animated: true, completion:nil)
     }
     

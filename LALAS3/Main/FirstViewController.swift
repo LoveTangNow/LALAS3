@@ -22,30 +22,31 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     @IBOutlet weak var UITableView_Main: UITableView!
     @IBOutlet weak var UIBarButtonItem_right: UIBarButtonItem!
     @IBOutlet weak var UIBarButtonItem_left: UIBarButtonItem!
-    
+    /** TableViewcell 高度*/
     var TableViewCellHeight:CGFloat = 200
+    /**设备宽度*/
     var DeviceWidth =  UIScreen.main.bounds.width
     
-    //数据存储
+    /**动态数据*/
     var DataWords = Dictionary<Int,[String]>()//每一个 ID 对应着一个字符串数组 包括各种信息：NewsID,SenderID,SenderName,SendTime,SendDevice,Detail
+    /**动态图片数据*/
     var DataPhotoNames = Dictionary<Int,[String]>()//每一个 ID 对应着一个字符串数组 图片名称们
-    var DataPhotos = Dictionary<Int,[Dictionary<String,UIImage>]>()//每一个 ID 对应着一个UIImage数组 图片们
     
     var row = 0
-    
+    /**是否请求阿里云服务器*/
     var ali = true
     
     var MODEL = FirstPageModel()
     
     
-    
+    /**顶部 Bar右侧按钮点击*/
     @IBAction func Right_Click(_ sender: AnyObject) {
         //ViewPhotoViewController
         let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
+    /**顶部 左侧侧按钮点击*/
     @IBAction func Send_Click(_ sender: AnyObject) {
         //SendNewMessiageViewController
         let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
@@ -63,11 +64,10 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "动态"
+        self.UITableView_Main.tableFooterView = UIView(frame:CGRect.zero)
         
         UITableView_Main.dataSource = self
         UITableView_Main.delegate = self
-        
-        let parameters: Parameters = ["userid": "1"]
         
         self.view.addSubview(imagewhite)
         self.imagewhite.image = #imageLiteral(resourceName: "White")
@@ -75,9 +75,36 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         self.imagewhite.clipsToBounds = true
         self.imagewhite.isHidden = true
         
-        ConnectNib()
-        UIBarButtonItem_right.setBackgroundImage(#imageLiteral(resourceName: "扫一扫"), for: .normal, style: .plain, barMetrics: .compactPrompt)
+        myview.frame =  CGRect(x:0,y:64,width:UIScreen.main.bounds.width,height:0)
+        myview.backgroundColor = UIColor.blue
+        self.view.addSubview(myview)
         
+        myWord.text = "松手刷新"
+        myWord.center = myview.center
+        self.view.addSubview(myWord)
+
+        
+        ConnectNib()
+        // Do any additional setup after loading the view.
+        print("viewDidLoad")
+        
+        if let userid = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"){
+            parameters = ["userid": userid]
+        } else {
+            //表明来自首页
+            let RegisterBool :Bool = true
+            UserDefaults.standard.set(RegisterBool, forKey: "data1")
+            UserDefaults.standard.synchronize()
+            
+            let sb = UIStoryboard(name: "Main", bundle:nil)
+            let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as! Login_ViewController
+            self.present(vc, animated: false, completion: nil)
+        }
+        
+    }
+    var parameters = Parameters()
+    
+    private func GetDataWithHUD(parameters:Parameters) -> () {
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
         SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
@@ -88,83 +115,96 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    //成功
-                    //print(response.result.value)
                     let json = JSON(response.result.value)
                     print(json)
                     
                     for i in 0..<json.count
                     {
+                        let new_i = json.count - 1 - i
                         //    0     1      2       3          4          5        6
                         // detail device newsid newstime photohumber senderid sendername
-                        self.DataWords[i] = [json[i]["detail"].string!,json[i]["device"].string!,json[i]["newsid"].string!,json[i]["newstime"].string!,json[i]["photonumer"].string!,json[i]["senderid"].string!,json[i]["sendername"].string!]
-                        let NumberOfPhotos = Int(json[i]["photonumer"].string!)!
+                        let aaaaaaaaaaa = [json[new_i]["detail"].string!,json[new_i]["device"].string!,json[new_i]["newsid"].string!,json[new_i]["newstime"].string!,json[new_i]["photonumer"].string!,json[new_i]["senderid"].string!,json[new_i]["sendername"].string!]
+                        self.DataWords[self.DataWords.count] = aaaaaaaaaaa
+                        
+                        let NumberOfPhotos = Int(json[new_i]["photonumer"].string!)!
                         var ArryOfNameOfPhotos = [String]()
                         for j in 0..<NumberOfPhotos
                         {
-                            let a = json[i]["photo"][j].string!
+                            let a = json[new_i ]["photo"][j].string!
                             ArryOfNameOfPhotos.append(a)
                         }
-                        self.DataPhotoNames[i] = ArryOfNameOfPhotos
+                        self.DataPhotoNames[self.DataPhotoNames.count] = ArryOfNameOfPhotos
                     }
                     
                     //print(self.DataWords)
                     //print(self.DataPhotoNames)
-                    //print("Validation Successful")
                     
                     self.UITableView_Main.reloadData()
                     SVProgressHUD.dismiss()
-                    
                 case .failure(let error):
-                    //失败
                     print(error)
                     SVProgressHUD.dismiss()
                 }
-        }
-        // Do any additional setup after loading the view.
-        print("viewDidLoad")
+            }
+    }
+    
+    
+    private func LOGIN () -> () {
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear")
-        //这里给 Tableview 写数据
-        //159,42.4
         navigationController?.navigationBar.barTintColor = UIColor.red
         navigationController?.navigationBar.tintColor = UIColor.white
-        
         tabBarController?.tabBar.isHidden = false
-        /*
-        tabBarController?.tabBar.barTintColor = UIColor.black
-        tabBarController?.tabBar.tintColor = UIColor.white*/
-        //title 颜色 据说可以用一个 label 初始化 这样就有颜色了！！！！！！！！
+        self.UITableView_Main.isHidden = false
+        
+        if let a = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id") {
+            if a == "" {
+                GotoLogin()
+            } else {
+                parameters = ["userid": a]
+                print(parameters)
+                GetDataWithHUD(parameters: parameters)
+            }
+        }
+        else{
+            GotoLogin()
+        }
+    }
+    
+    func GotoLogin() -> () {
+        let alertController = UIAlertController(title: "系统提示",
+                                                message: "您需要登录",
+                                                preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: {
+            action in
+            self.UITableView_Main.isHidden = true
+        })
+        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+            action in
+            let sb = UIStoryboard(name: "Main", bundle:nil)
+            let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as! Login_ViewController
+            self.present(vc, animated: false, completion: nil)
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        
+        
         self.navigationController?.navigationBar.isHidden = false
         if inlema == true {
-            /*
-            var zzzzzz = UIImageView()
-            zzzzzz.image = #imageLiteral(resourceName: "Black")
-            zzzzzz.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
-            self.view.addSubview(zzzzzz)*/
-            
             UIView.animate(withDuration: 0.2, animations: {
-                //let i = sender.currentImage
-                //self.imageviewzooooom.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
-
-                //zzzzzz.alpha = 0
-
                 self.imageviewzooooom.frame = self.rext3
-                
-                //self.imageviewzooooom.center = self.view.center
                 }, completion: { (_) in
                     self.inlema = false
-                    //self.imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:UIScreen.main.bounds.width / 3,height:UIScreen.main.bounds.width / 3)
+                    
                     self.imageviewzooooom.frame = self.rext3
                     self.imageviewzooooom.isHidden = true
                     self.imagewhite.isHidden = true
-                    
-                    //zzzzzz.removeFromSuperview()
                 }
             )
         }
@@ -175,10 +215,14 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    /**放大缩小的 ImageView*/
     var imageviewzooooom = UIImageView()
-    var inlema  = false
-    var rext3 = CGRect()
+    /**占位 ImageView:白色*/
     var imagewhite = UIImageView()
+    /** 动画是否启动了*/
+    var inlema  = false
+    /**存放缩小的 frame*/
+    var rext3 = CGRect()
     
     
     /**跳转到图片详情页*/
@@ -202,7 +246,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         imageviewzooooom.layer.cornerRadius = 2
         self.view.addSubview(imageviewzooooom)
         imageviewzooooom.image = sender.currentImage
-
         
         var indexPath = IndexPath()
         indexPath = self.UITableView_Main.indexPath(for: sender.superview?.superview as! UITableViewCell)!
@@ -211,28 +254,19 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         vc.imagelist = a.0
         vc.imgaeNumber = a.1
         vc.image_Dijizhang = sender.tag
-        //print(DataPhotos)
-        //let cell = UITableView_Main.cellForRow(at: indexPath)
         
-        
+        /*
         print("-------------")
         print(imagekuangaobi)
         print(a.1)
         print(sender.tag)
         print(vc.image_Dijizhang)
-        //print(sender.center)
-        //print(sender.superview?.superview?.center)
-        //print(cell?.center)
-        //print(sender.imageView?.frame.height)
-        //print(sender.imageView?.frame.width)
-        print("-------------")
+        print("-------------")*/
 
         let window = UIApplication.shared.keyWindow
         let rext1 = sender.convert(sender.frame, from: sender.superview)
         let rext2 = sender.convert(rext1, to: window)
         rext3 = rext2.insetBy(dx: -0.5 * 8, dy: -0.5 * 8)//点击的 button 的frame位置
-
-        print(rext3)
         
         if inlema == false {
             UIView.animate(withDuration: 0, animations: {
@@ -242,18 +276,17 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 self.imagewhite.isHidden = false
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.3, animations:{
-                        //let i = sender.currentImage
-                        //self.imageviewzooooom.contentMode = .scaleAspectFill
-                        
-                        //x: self.view.bounds.width * CGFloat(i), y:(self.view.bounds.height / 2) - (imageView.frame.height / imageView.frame.width * self.view.bounds.width / 2) - 20,
                         imageviewzooooom_.alpha = 1
+                        //self.imageviewzooooom.center = self.view.center
                         self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width * imagekuangaobi / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width * imagekuangaobi)
+                        self.navigationController?.navigationBar.alpha = 0
                         },
                         completion: { (_) in
-                            //self.navigationController?.present(vc, animated: false, completion: nil)
                             self.navigationController?.pushViewController(vc, animated: false)
                             self.inlema = true
                             imageviewzooooom_.removeFromSuperview()
+                            self.navigationController?.navigationBar.alpha = 1
+                            self.navigationController?.navigationBar.isHidden = true
                         }
                     )
                 }
@@ -294,9 +327,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         if DataWords.isEmpty {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement_TableViewCell", for: indexPath) as! Advertisement_TableViewCell
-            cell.imgae_main.setBackgroundImage(#imageLiteral(resourceName: "BackGround"), for: .normal)
-            cell.imgae_main.addTarget(self, action: #selector(GoDetaillllll), for: UIControlEvents.touchUpInside)
-            TableViewCellHeight = UIScreen.main.bounds.width * 0.625
+            cell.imgae_main.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
+            TableViewCellHeight = UIScreen.main.bounds.height
             return cell
         } else {
             switch indexPath.row {
@@ -318,9 +350,19 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 // detail device newsid newstime photohumber senderid sendername
                 cell.UILabelDetail.text = DataWords[indexPath.section]![0] + DataWords[indexPath.section]![4]
                 cell.UILabelUserName.text = DataWords[indexPath.section]![6]
-                cell.UILabelInformation.text  = DataWords[indexPath.section]![3] + DataWords[indexPath.section]![1]
                 
-                let TextCount = cell.UILabelInformation.text!.characters.count
+                let time = DataWords[indexPath.section]![3]
+                let device = DataWords[indexPath.section]![1]//长度12 1234 12 34 12 34
+                
+                let year = time.substring(to: time.index(time.startIndex, offsetBy: 4))
+                let month = FFFFFunctions().getsubtring(string: time, space_start: 4, space_end: 6)
+                let day = FFFFFunctions().getsubtring(string: time, space_start: 6, space_end: 8)
+                let hour = FFFFFunctions().getsubtring(string: time, space_start: 8, space_end: 10)
+                let minute = time.substring(from: time.index(time.startIndex, offsetBy: 10))
+                
+                cell.UILabelInformation.text  =  year + "年" + month + "日" + day + "日 " + hour + ":" + minute + " 来自" + device
+                
+                let TextCount = cell.UILabelDetail.text!.characters.count
                 var TextLineNumber = 0
                 var TotalHeightOfWords = 0
                 
@@ -331,58 +373,42 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     } else {
                         TextLineNumber = ( TextCount - TextCount % 20 ) / 20 + 1
                     }
-                    TotalHeightOfWords = TextLineNumber * 15
-                    TableViewCellHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
-                    
                 case 375://6  啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿 发卡机是
                     if TextCount % 24 == 0 {
                         TextLineNumber = TextCount / 24
                     } else {
                         TextLineNumber = ( TextCount - TextCount % 24 ) / 24 + 1
                     }
-                    TotalHeightOfWords = TextLineNumber * 15
-                    TableViewCellHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
                 case 414://6p 啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿 发卡机是打发收
                     if TextCount % 27 == 0 {
                         TextLineNumber = TextCount / 27
                     } else {
                         TextLineNumber = ( TextCount - TextCount % 27 ) / 27 + 1
                     }
-                    TotalHeightOfWords = TextLineNumber * 15
-                    TableViewCellHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
                 default: //se 啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿
                     if TextCount % 20 == 0 {
                         TextLineNumber = TextCount / 20
                     } else {
                         TextLineNumber = ( TextCount - TextCount % 20 ) / 20 + 1
                     }
-                    TotalHeightOfWords = TextLineNumber * 15
-                    TableViewCellHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
+                    
                 }
+                print(TextCount)
+                print(TextLineNumber)
+                TotalHeightOfWords = TextLineNumber * 15
+                TableViewCellHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
                 
                 return cell
             case 1://图片区
-                /*
-                 iphone 5 = 320.0
-                 iphone 5s = 320.0
-                 
-                 iphone 6 = 375.0
-                 iphone 6p = 414.0
-                 
-                 iphone 6s = 375.0
-                 iphone 6sp = 414.0
-                 
-                 iphone 7 = 375.0
-                 iphone 7p = 414.0
-                 */
                 switch DataWords[indexPath.section]![4] {
+                case "0":
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement_TableViewCell", for: indexPath) as! Advertisement_TableViewCell
+                    self.TableViewCellHeight = 0
+                    return cell
                 case "1":
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
-                    
                     if cell.GotPhoto != true {
                     let a = DataPhotoNames[indexPath.section]![0]
-                        print(a)
-                        
                     Alamofire.request(GotServers().GotImageTServer(ai: ali) + a + ".jpeg")
                         .responseData { response in
                             if let data = response.result.value {
@@ -399,133 +425,85 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     self.TableViewCellHeight = CGFloat(Int(self.DeviceWidth * 0.618 ))
                     return cell
                 case "2","3":
-                    let aa = Int(DataWords[indexPath.section]![4])!
+                    let imageNumberForThisCell = Int(DataWords[indexPath.section]![4])!
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
-
+                    
                     if cell.GotPhoto != true {
-                        //print("nnn")
-                        for i in 0..<aa
+                        for i in 0..<imageNumberForThisCell
                         {
-                            var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(GotServers().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 60) + ".jpg")
+                            let a = DataPhotoNames[indexPath.section]![i]
+                            Alamofire.request(GotServers().GotImageTServer(ai: ali) + a + ".jpeg")
                                 .responseData { response in
                                 if let data = response.result.value {
-                                    //print("do23")
                                     switch i {
                                     case 0 :
                                         cell.image_1.setImage(UIImage(data: data), for: .normal)
                                         cell.image_1.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
                                         cell.image_1.tag = 1
-
-                                        aaaaaa.append(["image" + String(i):UIImage(data: data)!])
                                     case 1 :
                                         cell.image_2.setImage(UIImage(data: data), for: .normal)
                                         cell.image_2.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
                                         cell.image_2.tag = 2
-                                        aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        if aa == 2{
-                                            cell.image_3.removeFromSuperview()
-                                            self.DataPhotos[indexPath.section] = aaaaaa
-                                            cell.GotPhoto = true
-                                        }
                                     case 2 :
                                         cell.image_3.setImage(UIImage(data: data), for: .normal)
                                         cell.image_3.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
                                         cell.image_3.tag = 3
-                                        aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        if aa == 3{
-                                            self.DataPhotos[indexPath.section] = aaaaaa
-                                            cell.GotPhoto = true
-                                            //print(aaaaaa)
-                                        }
                                     default:break
                                     }
+                                    if i == imageNumberForThisCell{
+                                        cell.GotPhoto = true
+                                    }
                                 }
-                                
                             }
                         }
                     } else {
                         print("old - 3")
                     }
-
                     
                     TableViewCellHeight = CGFloat(Int(DeviceWidth * 0.333 ))
                     return cell
 
                 case "4","5","6":
-                    let aa = Int(DataWords[indexPath.section]![4])!
+                    let imageNumberForThisCell = Int(DataWords[indexPath.section]![4])!
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SixPhoto_TableViewCell", for: indexPath) as! SixPhoto_TableViewCell
-                    
-                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_4.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_5.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_6.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    
-                    cell.image_1.tag = 1
-                    cell.image_2.tag = 2
-                    cell.image_3.tag = 3
-                    cell.image_4.tag = 4
-                    cell.image_5.tag = 5
-                    cell.image_6.tag = 6
-                    
                     if cell.GotPhoto != true {
-                        for i in 0..<aa
+                        for i in 0..<imageNumberForThisCell
                         {
-                            var aaaaaa = [Dictionary<String, UIImage>]()
-                            Alamofire.request(GotServers().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 50) + ".jpg")
+                            let a_imageName = DataPhotoNames[indexPath.section]![i]
+                            Alamofire.request(GotServers().GotImageTServer(ai: ali) + a_imageName + ".jpeg")
                                 .responseData { response in
-                                    if let data = response.result.value {
-                                        //print("do456")
-                                        switch i {
-                                        case 0 :
-                                            cell.image_1.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        case 1 :
-                                            cell.image_2.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        case 2 :
-                                            cell.image_3.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        case 3 :
-                                            cell.image_4.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                            if aa == 4{
-                                                self.DataPhotos[indexPath.section] = aaaaaa
-                                                //print(aaaaaa)
-                                                //print(4)
-                                                //print(self.DataPhotos[indexPath.section])
-                                                cell.GotPhoto = true
-                                            }
-                                        case 4 :
-                                            cell.image_5.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                            if aa == 5{
-                                                self.DataPhotos[indexPath.section] = aaaaaa
-                                                //print(aaaaaa)
-                                                //print(5)
-                                                //print(self.DataPhotos[indexPath.section])
-                                                cell.GotPhoto = true
-                                            }
-                                        case 5 :
-                                            cell.image_6.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                            if aa == 6{
-                                                self.DataPhotos[indexPath.section] = aaaaaa
-                                                //print(aaaaaa)
-                                                //print(6)
-                                                //print(self.DataPhotos[indexPath.section])
-                                                cell.GotPhoto = true
-                                                //print(aaaaaa)
-                                            }//
-                                        default:break
-                                        }
+                                if let data = response.result.value {
+                                    switch i {
+                                    case 0 :
+                                        cell.image_1.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_1.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                        cell.image_1.tag = 1
+                                    case 1 :
+                                        cell.image_2.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_2.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                        cell.image_2.tag = 2
+                                    case 2 :
+                                        cell.image_3.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_3.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                        cell.image_3.tag = 3
+                                    case 3 :
+                                        cell.image_4.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_4.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                        cell.image_4.tag = 4
+                                    case 4 :
+                                        cell.image_5.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_5.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                        cell.image_5.tag = 5
+                                    case 5 :
+                                        cell.image_6.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_6.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                        cell.image_6.tag = 6
+                                    default:break
                                     }
-                                    else
-                                    {
-                                        print("fall")
+                                    if i == imageNumberForThisCell{
+                                        cell.GotPhoto = true
                                     }
+                                }
                             }
                         }
 
@@ -537,18 +515,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     TableViewCellHeight = CGFloat(Int(DeviceWidth * 0.666 ))
                     return cell
                 case "7","8","9":
-                    let aa = Int(DataWords[indexPath.section]![4])!
+                    let imageNumberForThisCell = Int(DataWords[indexPath.section]![4])!
                     let cell = tableView.dequeueReusableCell(withIdentifier: "NinePhoto_TableViewCell", for: indexPath) as! NinePhoto_TableViewCell
-                    
-                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_4.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_5.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_6.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_7.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_8.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
-                    cell.image_9.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     
                     cell.image_1.tag = 1
                     cell.image_2.tag = 2
@@ -561,71 +529,48 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     cell.image_9.tag = 9
                     
                     if cell.GotPhoto != true {
-                    for i in 0..<aa
+                    for i in 0..<imageNumberForThisCell
                     {
-                        //print("alaout")
-                        var aaaaaa = [Dictionary<String, UIImage>]()
-                        //print(FFFFFunctions().GotImageMainServer(ai: ali))
                         Alamofire.request(GotServers().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 70) + ".jpg")
                                 .responseData { response in
-                                   // print("alain")
-                                    if let data = response.result.value {
-                                        //print("do789")
-                                        switch i {
-                                        case 0 :
-                                            cell.image_1.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        case 1 :
-                                            cell.image_2.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        case 2 :
-                                            cell.image_3.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        case 3 :
-                                            cell.image_4.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        case 4 :
-                                            cell.image_5.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        case 5 :
-                                            cell.image_6.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                        case 6 :
-                                            cell.image_7.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                            if aa == 7{
-                                                self.DataPhotos[indexPath.section] = aaaaaa
-                                                cell.GotPhoto = true
-                                            }
-                                        case 7 :
-                                            cell.image_8.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                            if aa == 8{
-                                                self.DataPhotos[indexPath.section] = aaaaaa
-                                                cell.GotPhoto = true
-                                            }
-                                        case 8 :
-                                            cell.image_9.setImage(UIImage(data: data), for: .normal)
-                                            aaaaaa.append(["image" + String(i):UIImage(data: data)!])
-                                            if aa == 9{
-                                                self.DataPhotos[indexPath.section] = aaaaaa
-                                                cell.GotPhoto = true
-                                                //print(aaaaaa)
-                                            }
-                                        default:break
-                                        }
+                                if let data = response.result.value {
+                                    switch i {
+                                    case 0 :
+                                        cell.image_1.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_1 .addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                    case 1 :
+                                        cell.image_2.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_2.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                    case 2 :
+                                        cell.image_3.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_3.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                    case 3 :
+                                        cell.image_4.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_4.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                    case 4 :
+                                        cell.image_5.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_5.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                    case 5 :
+                                        cell.image_6.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_6.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                    case 6 :
+                                        cell.image_7.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_7.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                    case 7 :
+                                        cell.image_8.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_8.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                    case 8 :
+                                        cell.image_9.setImage(UIImage(data: data), for: .normal)
+                                        cell.image_9.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
+                                    default:break
                                     }
-                                    else
-                                    {
-                                        print("fall")
-                                    }
+                                }
                             }
-                        }}
+                        }
+                    }
                     else{
                         print("old-9")
                     }
-
-                    
                     TableViewCellHeight = DeviceWidth
                     return cell
                 default:
@@ -652,7 +597,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if DataWords.isEmpty {
-            return 3
+            return 1
         }
         return 3
     }
@@ -667,6 +612,69 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         } else {
             return 15
         }
+    }
+    //////////
+    var myview = UIView()
+    var myWord = UILabel()
+    var old:CGFloat = 0
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        /*
+         小于70，展示下拉刷新：松开上滑
+         大于70，展开松开刷新：松开上滑到70，刷新并且更新数据，上滑到0
+         */
+        //print("--")
+        //print(self.UITableView_Main.contentInset.top)
+        //print(-self.UITableView_Main.contentOffset.y)//现在的位置
+        let heightToNavagateBarBottom = -self.UITableView_Main.contentOffset.y - 64
+        let space = heightToNavagateBarBottom - old
+        //print(space)
+        let myViewAlpha = (heightToNavagateBarBottom)/70
+        //print(myViewAlpha)
+        myview.alpha = myViewAlpha
+        if -self.UITableView_Main.contentOffset.y - self.UITableView_Main.contentInset.top <= 90{
+            myview.backgroundColor = UIColor.blue
+            UIView.animate(withDuration: 0, animations: {
+                self.myview.frame =  CGRect(x:0,y:64,width:UIScreen.main.bounds.width,height:heightToNavagateBarBottom)
+            })
+        }
+        else{//到70的时候就会触发，这个时候开始
+            myview.backgroundColor = UIColor.red
+            UIView.animate(withDuration: 0, animations: {
+                self.myview.frame =  CGRect(x:0,y:64,width:UIScreen.main.bounds.width,height:heightToNavagateBarBottom)
+            })
+            if space > 0  {
+                willReloadData = true
+            }
+            //UITableView_M.isScrollEnabled = true
+        }
+        old = heightToNavagateBarBottom
+        myWord.center = myview.center
+    }
+    
+    var willReloadData = false
+    
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        if willReloadData == true {
+            DataPhotoNames.removeAll()
+            DataWords.removeAll()
+            if let userid = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"){
+                let parameters: Parameters = ["userid": userid]
+                GetDataWithHUD(parameters: parameters)
+            } else {
+                let sb = UIStoryboard(name: "Main", bundle:nil)
+                let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as UIViewController
+                self.present(vc, animated: true, completion: nil)
+            }
+            willReloadData = false
+        }
+        print("scrollViewDidEndDecelerating")
+        
+
     }
     
     
