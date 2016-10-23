@@ -47,5 +47,20 @@ class MyUIAlertController: AnyObject {
         
         viewcontrollor.present(actionSheetController, animated: true, completion: nil)
     }
+    
+    
+    func alertController_simple(viewcontrollor:UIViewController,tips:String,UIAlertActions:String) -> () {
+        let alertController = UIAlertController(title: "系统提示",
+                                                message: tips,
+                                                preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+            action in
+            
+        })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        viewcontrollor.present(alertController, animated: true, completion: nil)
+    }
 
 }

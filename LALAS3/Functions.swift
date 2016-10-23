@@ -50,9 +50,17 @@ class FFFFFunctions: AnyObject {
     //计算需要高度的方法
     func Height_Work(Words:String,Width:CGFloat) -> Int {
         /*
-         320
-         375.5
-         414
+         iphone 5 = 320.0
+         iphone 5s = 320.0
+         
+         iphone 6 = 375.0
+         iphone 6p = 414.0
+         
+         iphone 6s = 375.0
+         iphone 6sp = 414.0
+         
+         iphone 7 = 375.0
+         iphone 7p = 414.0
          */
         switch Width {
         case 320:
@@ -85,6 +93,14 @@ class FFFFFunctions: AnyObject {
     
     
     //MARK: -
+    /**截取字符串 - 字符串 - 第一个空位 - 第二个空位*/
+    func getsubtring(string:String,space_start:Int,space_end:Int) -> String{
+        let index_1 = string.index(string.startIndex, offsetBy: space_end)
+        let string1 = string.substring(to: index_1)
+        let index_2 = string1.index(string1.startIndex, offsetBy: space_start)
+        let string2 = string1.substring(from: index_2)
+        return string2
+    }
     //MARK: -
     
 }

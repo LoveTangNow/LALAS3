@@ -16,9 +16,9 @@ class Defalts_ReadWrite: AnyObject {
     /**设置账户信息默认项*/
     func SetDefaltsAccount() ->() {
         /** 是否登录 - 用于程序启动时是否需要调起登录注册页面*/
-        Settssssss(DATA:false, FORKEY: "islogin")
-        /**昵称 ------------ 登录完成时设置*/
-        /**id ------------- 登录完成时设置*/
+        //Settssssss(DATA:false, FORKEY: "islogin")
+        /**昵称 ------------ user_name 登录完成时设置*/
+        /**id ------------- user_id登录完成时设置*/
         /**性别 Bool :true表示男;false表示女*/
         Settssssss(DATA: true, FORKEY: "sex")
         /**生日 Int*/
@@ -93,24 +93,55 @@ class Defalts_ReadWrite: AnyObject {
     //MARK: - 更改设置
     /** 写数据到 UserDefaults */
     func Settssssss(DATA:String,FORKEY:String) {
-        UserDefaults.standard.set(DATA,forKey:FORKEY)
-        UserDefaults.standard.synchronize()
+        if let a  = UserDefaults.standard.value(forKey: FORKEY) as? String {
+            UserDefaults.standard.set(a,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
+        }
     }
     func Settssssss(DATA:Bool,FORKEY:String) {
-        UserDefaults.standard.set(DATA,forKey:FORKEY)
-        UserDefaults.standard.synchronize()
+        if let a  = UserDefaults.standard.value(forKey: FORKEY) as? Bool {
+            UserDefaults.standard.set(a,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
+        }
     }
     func Settssssss(DATA:Int,FORKEY:String) {
-        UserDefaults.standard.set(DATA,forKey:FORKEY)
-        UserDefaults.standard.synchronize()
+        if let a  = UserDefaults.standard.value(forKey: FORKEY) as? Bool {
+            UserDefaults.standard.set(a,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
+        }
     }
     func Settssssss(DATA:Double,FORKEY:String) {
-        UserDefaults.standard.set(DATA,forKey:FORKEY)
-        UserDefaults.standard.synchronize()
+        if let a  = UserDefaults.standard.value(forKey: FORKEY) as? Bool {
+            UserDefaults.standard.set(a,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
+        }
     }
     func Settssssss(DATA:Float,FORKEY:String) {
-        UserDefaults.standard.set(DATA,forKey:FORKEY)
-        UserDefaults.standard.synchronize()
+        if let a  = UserDefaults.standard.value(forKey: FORKEY) as? Bool {
+            UserDefaults.standard.set(a,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    func Settssssss_h(DATA:String,FORKEY:String) {
+            UserDefaults.standard.set(DATA,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
+    }
+    func Settssssss_h(DATA:Bool,FORKEY:String) {
+            UserDefaults.standard.set(DATA,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
+    }
+    func Settssssss_h(DATA:Int,FORKEY:String) {
+            UserDefaults.standard.set(DATA,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
+    }
+    func Settssssss_h(DATA:Double,FORKEY:String) {
+            UserDefaults.standard.set(DATA,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
+    }
+    func Settssssss_h(DATA:Float,FORKEY:String) {
+            UserDefaults.standard.set(DATA,forKey:FORKEY)
+            UserDefaults.standard.synchronize()
     }
     
     //MARK: - ReadDetalts
