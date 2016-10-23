@@ -24,6 +24,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OvW-yl-1ta">
+                                <frame key="frameInset" minX="40" minY="41" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="fts-Rx-OAu" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="909-cN-rAQ"/>

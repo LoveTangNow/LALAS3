@@ -53,7 +53,9 @@ class ActionViewController: UIViewController {
             }
         }
     }
-    @IBAction func UIButton_click(_ sender: AnyObject) {
+    @IBAction func RightClick(_ sender: UIBarButtonItem) {
+        let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "ViewPhotoWithScroll_ViewController")
+        self.present(vc , animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
