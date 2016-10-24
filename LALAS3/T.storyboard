@@ -123,6 +123,67 @@
             </objects>
             <point key="canvasLocation" x="2610" y="-174"/>
         </scene>
+        <!--Some One View Controller-->
+        <scene sceneID="90w-0d-cDb">
+            <objects>
+                <viewController storyboardIdentifier="SomeOne_ViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nam-cy-65R" customClass="SomeOne_ViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tf2-ON-54d"/>
+                        <viewControllerLayoutGuide type="bottom" id="nLB-8e-23E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9zm-fV-S4U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oab-Wf-mwq">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MR1-mX-W6C">
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Hrd-bA-Cem"/>
+                                    <barButtonItem title="Item" id="se6-pt-TdI">
+                                        <connections>
+                                            <action selector="leftItem_c:" destination="Nam-cy-65R" id="dxy-Lj-dnR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="M8t-EZ-get"/>
+                                    <barButtonItem title="Item" id="dEP-II-Ptk">
+                                        <connections>
+                                            <action selector="midItem_c:" destination="Nam-cy-65R" id="EI7-xg-D4b"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ydt-Eb-gwX"/>
+                                    <barButtonItem title="Item" id="WSm-XY-1Kt">
+                                        <connections>
+                                            <action selector="rightItem_c:" destination="Nam-cy-65R" id="lMU-yX-e5m"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Qtk-qd-adh"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oab-Wf-mwq" firstAttribute="width" secondItem="9zm-fV-S4U" secondAttribute="width" id="89e-Jc-OXh"/>
+                            <constraint firstItem="nLB-8e-23E" firstAttribute="top" secondItem="MR1-mX-W6C" secondAttribute="bottom" id="DSS-Wc-5zg"/>
+                            <constraint firstItem="oab-Wf-mwq" firstAttribute="centerY" secondItem="9zm-fV-S4U" secondAttribute="centerY" constant="-22" id="SED-KE-Q1W"/>
+                            <constraint firstAttribute="trailing" secondItem="MR1-mX-W6C" secondAttribute="trailing" id="Tfj-4U-1c6"/>
+                            <constraint firstItem="oab-Wf-mwq" firstAttribute="height" secondItem="9zm-fV-S4U" secondAttribute="height" constant="-44" id="Tor-gb-ZJN"/>
+                            <constraint firstItem="MR1-mX-W6C" firstAttribute="leading" secondItem="9zm-fV-S4U" secondAttribute="leading" id="UZx-Fs-l3Y"/>
+                            <constraint firstItem="oab-Wf-mwq" firstAttribute="centerX" secondItem="9zm-fV-S4U" secondAttribute="centerX" id="ygv-FY-aR7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="leftItem" destination="se6-pt-TdI" id="f14-BY-LRt"/>
+                        <outlet property="midItem" destination="dEP-II-Ptk" id="165-gq-a5c"/>
+                        <outlet property="rightItem" destination="WSm-XY-1Kt" id="dwq-sj-nJm"/>
+                        <outlet property="tableView_my" destination="oab-Wf-mwq" id="YtB-Ge-gYr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ImU-0p-8C9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373.60000000000002" y="505.99700149925042"/>
+        </scene>
     </scenes>
     <resources>
         <image name="alarm-clock-vector" width="30" height="30"/>

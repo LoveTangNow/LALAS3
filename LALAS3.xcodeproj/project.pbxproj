@@ -42,6 +42,7 @@
 		7F16A4C11DABD40500095707 /* ChatWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16A4C01DABD40500095707 /* ChatWordsView.swift */; };
 		7F16A4C31DABD41F00095707 /* ChatWordsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F16A4C21DABD41F00095707 /* ChatWordsView.xib */; };
 		7F2475741D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */; };
+		7F3DA5F71DBD6F0800EE7E0B /* SomeOne_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3DA5F61DBD6F0800EE7E0B /* SomeOne_ViewController.swift */; };
 		7F3F21DA1D92B02200ACF590 /* MessiageDetail_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F21D91D92B02200ACF590 /* MessiageDetail_TableViewController.swift */; };
 		7F3F21EE1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F21ED1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift */; };
 		7F3F21F41D93B4C100ACF590 /* News_Information_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3F21F31D93B4C100ACF590 /* News_Information_TableViewCell.xib */; };
@@ -142,6 +143,7 @@
 		7FFA9E561D97F148002380C0 /* Picker_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FFA9E551D97F148002380C0 /* Picker_TableViewCell.xib */; };
 		7FFA9E581D97F1BB002380C0 /* Picker_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA9E571D97F1BB002380C0 /* Picker_TableViewCell.swift */; };
 		7FFA9E5A1D97F1D9002380C0 /* DatePicker_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA9E591D97F1D9002380C0 /* DatePicker_TableViewCell.swift */; };
+		7FFE73161DBD81EA00E9A1B9 /* WorksHieghts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFE73151DBD81EA00E9A1B9 /* WorksHieghts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -281,6 +283,7 @@
 		7F16A4C01DABD40500095707 /* ChatWordsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatWordsView.swift; path = Views/ChatWordsView.swift; sourceTree = "<group>"; };
 		7F16A4C21DABD41F00095707 /* ChatWordsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChatWordsView.xib; path = Views/ChatWordsView.xib; sourceTree = "<group>"; };
 		7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewPhotoWithScroll_ViewController.swift; path = 1/ViewPhotoWithScroll_ViewController.swift; sourceTree = "<group>"; };
+		7F3DA5F61DBD6F0800EE7E0B /* SomeOne_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SomeOne_ViewController.swift; path = Shit/SomeOne_ViewController.swift; sourceTree = "<group>"; };
 		7F3F21D91D92B02200ACF590 /* MessiageDetail_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessiageDetail_TableViewController.swift; path = 1/MessiageDetail_TableViewController.swift; sourceTree = "<group>"; };
 		7F3F21ED1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatPeople_TableViewCell.swift; path = CELL/ChatPeople_TableViewCell.swift; sourceTree = "<group>"; };
 		7F3F21F31D93B4C100ACF590 /* News_Information_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = News_Information_TableViewCell.xib; path = CELL/News_Information_TableViewCell.xib; sourceTree = "<group>"; };
@@ -401,6 +404,7 @@
 		7FFA9E551D97F148002380C0 /* Picker_TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Picker_TableViewCell.xib; path = CELL/Picker_TableViewCell.xib; sourceTree = "<group>"; };
 		7FFA9E571D97F1BB002380C0 /* Picker_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Picker_TableViewCell.swift; path = CELL/Picker_TableViewCell.swift; sourceTree = "<group>"; };
 		7FFA9E591D97F1D9002380C0 /* DatePicker_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePicker_TableViewCell.swift; path = CELL/DatePicker_TableViewCell.swift; sourceTree = "<group>"; };
+		7FFE73151DBD81EA00E9A1B9 /* WorksHieghts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorksHieghts.swift; path = Others/WorksHieghts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -517,6 +521,7 @@
 				7F1367901DB7161700802F7B /* MyAnimates.swift */,
 				7F1367921DB716CE00802F7B /* Defalts_ReadWrite.swift */,
 				7F1367981DB7CDE800802F7B /* MyUIAlertController.swift */,
+				7FFE73151DBD81EA00E9A1B9 /* WorksHieghts.swift */,
 			);
 			name = FountionsClasses;
 			sourceTree = "<group>";
@@ -719,6 +724,7 @@
 				7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */,
 				7FBCFE331D9C08DB00831823 /* Map_ViewController.swift */,
 				7FBCFE351D9C091900831823 /* Health_ViewController.swift */,
+				7F3DA5F61DBD6F0800EE7E0B /* SomeOne_ViewController.swift */,
 			);
 			name = shit;
 			sourceTree = "<group>";
@@ -1350,6 +1356,7 @@
 				7F3F21EE1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift in Sources */,
 				7F9F8AFF1D9D64C700C49C12 /* TwoLabel_TableViewCell.swift in Sources */,
 				7F9F8AF11D9D610C00C49C12 /* Tongyong_ViewController.swift in Sources */,
+				7FFE73161DBD81EA00E9A1B9 /* WorksHieghts.swift in Sources */,
 				7F1367931DB716CE00802F7B /* Defalts_ReadWrite.swift in Sources */,
 				7F00308C1DA7954100CCACB4 /* ME_TableViewCell.swift in Sources */,
 				7F3F21F81D93B5DC00ACF590 /* Advertisement_TableViewCell.swift in Sources */,
@@ -1404,6 +1411,7 @@
 				7FDDBE291DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift in Sources */,
 				7FA6E8FB1D89A5B4003F6186 /* SaoYiSaoViewController.swift in Sources */,
 				7F9F8AFB1D9D646900C49C12 /* Label_Mid_TableViewCell.swift in Sources */,
+				7F3DA5F71DBD6F0800EE7E0B /* SomeOne_ViewController.swift in Sources */,
 				7F6AA6B31DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift in Sources */,
 				7FA6E8F61D89A535003F6186 /* FourthViewController.swift in Sources */,
 				7F3F21DA1D92B02200ACF590 /* MessiageDetail_TableViewController.swift in Sources */,
