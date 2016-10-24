@@ -42,13 +42,15 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     /**顶部 Bar右侧按钮点击*/
     @IBAction func Right_Click(_ sender: AnyObject) {
         //ViewPhotoViewController
-        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
+        self.tabBarController?.tabBar.isHidden = true
+        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "SomeOne_ViewController")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /**顶部 左侧侧按钮点击*/
     @IBAction func Send_Click(_ sender: AnyObject) {
         //SendNewMessiageViewController
+        
         let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -87,7 +89,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         ConnectNib()
         // Do any additional setup after loading the view.
         print("viewDidLoad")
-        
+        /*
         if let userid = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"){
             parameters = ["userid": userid]
         } else {
@@ -99,7 +101,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             let sb = UIStoryboard(name: "Main", bundle:nil)
             let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as! Login_ViewController
             self.present(vc, animated: false, completion: nil)
-        }
+        }*/
         
     }
     var parameters = Parameters()
@@ -109,7 +111,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         SVProgressHUD.show()
-        
+        DataPhotoNames.removeAll()
+        DataWords.removeAll()
         Alamofire.request(GotServers().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
@@ -146,11 +149,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     SVProgressHUD.dismiss()
                 }
             }
-    }
-    
-    
-    private func LOGIN () -> () {
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -308,17 +306,16 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             aa.row += 1
             let a = GotPhoto(A: DataWords[indexPath.section]![4], indexpath: aa)
             let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "MessiageDetail_TableViewController") as!  MessiageDetail_TableViewController
-            // detail device newsid newstime photohumber senderid sendername
-            UserDefaults.standard.set(DataWords[indexPath.section]![0], forKey: "detail")
-            UserDefaults.standard.set(DataWords[indexPath.section]![1], forKey: "device")
-            UserDefaults.standard.set(DataWords[indexPath.section]![2], forKey: "newsid")
-            UserDefaults.standard.set(DataWords[indexPath.section]![3], forKey: "newstime")
-            UserDefaults.standard.set(DataWords[indexPath.section]![5], forKey: "senderid")
-            UserDefaults.standard.set(DataWords[indexPath.section]![6], forKey: "sendername")
-            //设置同步
             UserDefaults.standard.synchronize()
             vc.imagelist = a.0
             vc.imgaeNumber = a.1
+            
+            let aaaaaaaaaaa = UITableView_Main.cellForRow(at: indexPath)! as! News_Information_TableViewCell
+            vc.imageicon = (aaaaaaaaaaa.userIcon.imageView?.image)!
+            vc.label1 = aaaaaaaaaaa.UILabelUserName.text!
+            vc.label2 = aaaaaaaaaaa.UILabelInformation.text!
+            vc.label3 = aaaaaaaaaaa.UILabelDetail.text!
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -361,42 +358,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 let minute = time.substring(from: time.index(time.startIndex, offsetBy: 10))
                 
                 cell.UILabelInformation.text  =  year + "年" + month + "日" + day + "日 " + hour + ":" + minute + " 来自" + device
-                
-                let TextCount = cell.UILabelDetail.text!.characters.count
-                var TextLineNumber = 0
-                var TotalHeightOfWords = 0
-                
-                switch DeviceWidth {
-                case 320://se 啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿
-                    if TextCount % 20 == 0 {
-                        TextLineNumber = TextCount / 20
-                    } else {
-                        TextLineNumber = ( TextCount - TextCount % 20 ) / 20 + 1
-                    }
-                case 375://6  啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿 发卡机是
-                    if TextCount % 24 == 0 {
-                        TextLineNumber = TextCount / 24
-                    } else {
-                        TextLineNumber = ( TextCount - TextCount % 24 ) / 24 + 1
-                    }
-                case 414://6p 啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿 发卡机是打发收
-                    if TextCount % 27 == 0 {
-                        TextLineNumber = TextCount / 27
-                    } else {
-                        TextLineNumber = ( TextCount - TextCount % 27 ) / 27 + 1
-                    }
-                default: //se 啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿
-                    if TextCount % 20 == 0 {
-                        TextLineNumber = TextCount / 20
-                    } else {
-                        TextLineNumber = ( TextCount - TextCount % 20 ) / 20 + 1
-                    }
-                    
-                }
-                print(TextCount)
-                print(TextLineNumber)
-                TotalHeightOfWords = TextLineNumber * 15
-                TableViewCellHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
+
+                TableViewCellHeight = WorksHieghts().WorkWordsHeightForInformation(Words: cell.UILabelDetail.text!)
                 
                 return cell
             case 1://图片区
@@ -422,7 +385,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     cell.image_1.tag = 1
                     cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     
-                    self.TableViewCellHeight = CGFloat(Int(self.DeviceWidth * 0.618 ))
+                    self.TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 1)
                     return cell
                 case "2","3":
                     let imageNumberForThisCell = Int(DataWords[indexPath.section]![4])!
@@ -460,7 +423,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         print("old - 3")
                     }
                     
-                    TableViewCellHeight = CGFloat(Int(DeviceWidth * 0.333 ))
+                    TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 3)
                     return cell
 
                 case "4","5","6":
@@ -510,9 +473,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     } else {
                         print("old-6")
                     }
-
                     
-                    TableViewCellHeight = CGFloat(Int(DeviceWidth * 0.666 ))
+                    TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 4)
                     return cell
                 case "7","8","9":
                     let imageNumberForThisCell = Int(DataWords[indexPath.section]![4])!
@@ -618,7 +580,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     var myWord = UILabel()
     var old:CGFloat = 0
     
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         /*
@@ -640,7 +601,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 self.myview.frame =  CGRect(x:0,y:64,width:UIScreen.main.bounds.width,height:heightToNavagateBarBottom)
             })
         }
-        else{//到70的时候就会触发，这个时候开始
+        else{//到90的时候就会触发，这个时候开始
             myview.backgroundColor = UIColor.red
             UIView.animate(withDuration: 0, animations: {
                 self.myview.frame =  CGRect(x:0,y:64,width:UIScreen.main.bounds.width,height:heightToNavagateBarBottom)

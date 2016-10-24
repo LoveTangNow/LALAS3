@@ -21,7 +21,12 @@ class MessiageDetail_TableViewController: UITableViewController {
     //评论数据包括：评论序号，评论者 id，评论时间，评论内容
     var pinglunData = [[String]]()
     
+    var user_id = String()
+    var label1 = String()
+    var label2 = String()
+    var label3 = String()
     
+    var imageicon = UIImage()
     
     @IBOutlet var UITableView_m: UITableView!
 
@@ -102,60 +107,20 @@ class MessiageDetail_TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let image1 = #imageLiteral(resourceName: "weibo")
-        let image2 = #imageLiteral(resourceName: "weibo")
-        
-        
         if indexPath.section == 0 {
             if indexPath.row == 0 {//Words
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell
                 
-                cell.userIcon.setBackgroundImage(image1, for: .normal)
-                cell.setting.setBackgroundImage(image1, for: .normal)
-                cell.UIImageViewVip_.image = image1
-                cell.UIImageViewV_.image = image2
+                cell.userIcon.setBackgroundImage(imageicon, for: .normal)
+                cell.setting.setBackgroundImage(#imageLiteral(resourceName: "setting"), for: .normal)
+                cell.UIImageViewVip_.image = #imageLiteral(resourceName: "warning")
+                cell.UIImageViewV_.image = #imageLiteral(resourceName: "v")
                 
-                cell.UILabelDetail.text = "hehe"
-                
-                let TextCount = cell.UILabelDetail.text!.characters.count
-                var TextLineNumber = 0
-                var TotalHeightOfWords = 0
-                
-                switch DeviceWidth {
-                case 320://se 啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿
-                    if TextCount % 20 == 0 {
-                        TextLineNumber = TextCount / 20
-                    } else {
-                        TextLineNumber = ( TextCount - TextCount % 20 ) / 20 + 1
-                    }
-                    TotalHeightOfWords = TextLineNumber * 15
-                    TableViewHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
-                    
-                case 375://6  啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿 发卡机是
-                    if TextCount % 24 == 0 {
-                        TextLineNumber = TextCount / 24
-                    } else {
-                        TextLineNumber = ( TextCount - TextCount % 24 ) / 24 + 1
-                    }
-                    TotalHeightOfWords = TextLineNumber * 15
-                    TableViewHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
-                case 414://6p 啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿 发卡机是打发收
-                    if TextCount % 27 == 0 {
-                        TextLineNumber = TextCount / 27
-                    } else {
-                        TextLineNumber = ( TextCount - TextCount % 27 ) / 27 + 1
-                    }
-                    TotalHeightOfWords = TextLineNumber * 15
-                    TableViewHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
-                default: //se 啊发发还是 地方哈迪斯 阿卡哈尔法 和发达阿什顿
-                    if TextCount % 20 == 0 {
-                        TextLineNumber = TextCount / 20
-                    } else {
-                        TextLineNumber = ( TextCount - TextCount % 20 ) / 20 + 1
-                    }
-                    TotalHeightOfWords = TextLineNumber * 15
-                    TableViewHeight = 80 + CGFloat(TotalHeightOfWords) //10 + 47 + 5 + 0+ ?
-                }
+                cell.UILabelUserName.text = label1
+                cell.UILabelInformation.text = label2
+                cell.UILabelDetail.text = label3
+
+                TableViewHeight = WorksHieghts().WorkWordsHeightForInformation(Words: cell.UILabelDetail.text!)
                 return cell
             } else {//Photos
                 switch imgaeNumber {
@@ -165,7 +130,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                     cell.image_1.setImage(imagelist[0], for: .normal)
                     cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     
-                    TableViewHeight = CGFloat(Int(DeviceWidth * 0.618 ))
+                    TableViewHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 1)
                     return cell
                     
                 case 2,3:
@@ -186,7 +151,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                         break
                     }
 
-                    TableViewHeight = CGFloat(Int(DeviceWidth * 0.333 ))
+                    TableViewHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 3)
                     return cell
                     
                 case 4,5,6:
@@ -214,7 +179,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                         break
                     }
      
-                    TableViewHeight = CGFloat(Int(DeviceWidth * 0.666 ))
+                    TableViewHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 4)
                     return cell
                     
                 case 7,8,9:
@@ -248,7 +213,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                         break
                     }
                     
-                    TableViewHeight = CGFloat(Int(DeviceWidth ))
+                    TableViewHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 8)
                     return cell
                     
                 default:
