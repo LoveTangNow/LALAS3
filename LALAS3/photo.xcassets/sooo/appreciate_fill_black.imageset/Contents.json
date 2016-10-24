@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "appreciate_fill_black.jpg",
+      "filename" : "appreciate_fill_black.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "appreciate_fill_black@2x.jpg",
+      "filename" : "appreciate_fill_black@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "appreciate_fill_black@3x.jpg",
+      "filename" : "appreciate_fill_black@3x.png",
       "scale" : "3x"
     }
   ],
