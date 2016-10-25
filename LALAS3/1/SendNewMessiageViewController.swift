@@ -443,6 +443,10 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         print("did")
         print(imageNumbersAlreadyGot)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "SendNewMessiageViewController", FORKEY: "whereifrom")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

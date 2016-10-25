@@ -83,7 +83,8 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-         navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        Defalts_ReadWrite().Settssssss_h(DATA: "ViewPhotoWithScroll_ViewController", FORKEY: "whereifrom")
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

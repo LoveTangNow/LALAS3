@@ -161,9 +161,12 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             if a == "" {
                 GotoLogin()
             } else {
-                parameters = ["userid": a]
-                print(parameters)
-                GetDataWithHUD(parameters: parameters)
+                let whereifrom = Defalts_ReadWrite().ReadDefalts_String(KEY: "whereifrom")!
+                if whereifrom == "SendNewMessiageViewController" {
+                    parameters = ["userid": a]
+                    print(parameters)
+                    GetDataWithHUD(parameters: parameters)
+                }
             }
         }
         else{

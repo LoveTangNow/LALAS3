@@ -234,6 +234,10 @@ class Login_ViewController: UIViewController{
             }
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "Login_ViewController", FORKEY: "whereifrom")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

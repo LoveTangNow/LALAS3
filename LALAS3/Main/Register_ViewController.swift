@@ -39,6 +39,10 @@ class Register_ViewController: UIViewController {
         // Do any additional setup after loading the view.
         ChuShiHua_KongJian()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "Register_ViewController", FORKEY: "whereifrom")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
