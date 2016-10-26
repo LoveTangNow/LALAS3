@@ -161,4 +161,8 @@ class Defalts_ReadWrite: AnyObject {
     func ReadDefalts_Float(KEY:String) -> Float? {
         return UserDefaults.standard.value(forKey: KEY) as? Float
     }
+    
+    func CleanWhereIFrom() -> () {
+        Settssssss_h(DATA: "", FORKEY: "whereifrom")
+    }
 }

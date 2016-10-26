@@ -57,11 +57,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     
     //MARK: - 函数
-    override func viewDidDisappear(_ animated: Bool) {
-        
-    }
     override func viewWillDisappear(_ animated: Bool) {
-        
+        Defalts_ReadWrite().Settssssss_h(DATA: "FirstViewController", FORKEY: "whereifrom")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,9 +121,11 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     for i in 0..<json.count
                     {
                         let new_i = json.count - 1 - i
-                        //    0     1      2       3          4          5        6
-                        // detail device newsid newstime photohumber senderid sendername
-                        let aaaaaaaaaaa = [json[new_i]["detail"].string!,json[new_i]["device"].string!,json[new_i]["newsid"].string!,json[new_i]["newstime"].string!,json[new_i]["photonumer"].string!,json[new_i]["senderid"].string!,json[new_i]["sendername"].string!]
+                        //    0     1      2       3          4          5        6         7
+                        // detail device newsid newstime photohumber senderid sendername height
+                        let detail = json[new_i]["detail"].string!
+                        let height = WorksHieghts().WorkWordsHeightForInformation(Words: detail)
+                        let aaaaaaaaaaa = [json[new_i]["detail"].string!,json[new_i]["device"].string!,json[new_i]["newsid"].string!,json[new_i]["newstime"].string!,json[new_i]["photonumer"].string!,json[new_i]["senderid"].string!,json[new_i]["sendername"].string!,String(describing: height)]
                         self.DataWords[self.DataWords.count] = aaaaaaaaaaa
                         
                         let NumberOfPhotos = Int(json[new_i]["photonumer"].string!)!
@@ -152,6 +151,8 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        Defalts_ReadWrite().CleanWhereIFrom()
+        
         navigationController?.navigationBar.barTintColor = UIColor.red
         navigationController?.navigationBar.tintColor = UIColor.white
         tabBarController?.tabBar.isHidden = false
@@ -362,7 +363,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 
                 cell.UILabelInformation.text  =  year + "年" + month + "日" + day + "日 " + hour + ":" + minute + " 来自" + device
 
-                TableViewCellHeight = WorksHieghts().WorkWordsHeightForInformation(Words: cell.UILabelDetail.text!)
+                TableViewCellHeight = CGFloat(Float(DataWords[indexPath.section]![7])!)
                 
                 return cell
             case 1://图片区
