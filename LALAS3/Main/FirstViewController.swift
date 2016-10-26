@@ -42,17 +42,22 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     /**顶部 Bar右侧按钮点击*/
     @IBAction func Right_Click(_ sender: AnyObject) {
         //ViewPhotoViewController
-        self.tabBarController?.tabBar.isHidden = true
-        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "SomeOne_ViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
+        let user_id = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
+        if  user_id != "" || user_id == nil{
+            self.tabBarController?.tabBar.isHidden = true
+            let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "SomeOne_ViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     /**顶部 左侧侧按钮点击*/
     @IBAction func Send_Click(_ sender: AnyObject) {
         //SendNewMessiageViewController
-        
-        let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
+        let user_id = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
+        if  user_id != "" || user_id == nil{
+            let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     
@@ -150,9 +155,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        Defalts_ReadWrite().CleanWhereIFrom()
-        
+    override func viewWillAppear(_ animated: Bool) {        
         navigationController?.navigationBar.barTintColor = UIColor.red
         navigationController?.navigationBar.tintColor = UIColor.white
         tabBarController?.tabBar.isHidden = false
@@ -160,22 +163,35 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         if let a = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id") {
             if a == "" {
-                GotoLogin()
+                DataPhotoNames.removeAll()
+                DataWords.removeAll()
+                UITableView_Main.reloadData()
+                alertController_GotoLogin()
             } else {
-                let whereifrom = Defalts_ReadWrite().ReadDefalts_String(KEY: "whereifrom")!
-                if whereifrom == "SendNewMessiageViewController" {
+                //userid不是空
+                if DataWords.isEmpty || DataPhotoNames.isEmpty {
                     parameters = ["userid": a]
                     print(parameters)
                     GetDataWithHUD(parameters: parameters)
+                } else {
+                    let whereifrom = Defalts_ReadWrite().ReadDefalts_String(KEY: "whereifrom")!
+                    if whereifrom == "SendNewMessiageViewController" {
+                        parameters = ["userid": a]
+                        print(parameters)
+                        GetDataWithHUD(parameters: parameters)
+                    }
                 }
             }
         }
         else{
-            GotoLogin()
+            DataPhotoNames.removeAll()
+            DataWords.removeAll()
+            UITableView_Main.reloadData()
+            alertController_GotoLogin()
         }
     }
     
-    func GotoLogin() -> () {
+    private func alertController_GotoLogin() -> () {
         let alertController = UIAlertController(title: "系统提示",
                                                 message: "您需要登录",
                                                 preferredStyle: .alert)
@@ -193,7 +209,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         
         

@@ -152,7 +152,8 @@ class Login_ViewController: UIViewController{
                             if password == password_got{
                                 //成功后呢进行页面跳转该干啥个干啥去
                                 MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "登录成功")
-                                Defalts_ReadWrite().Settssssss_h(DATA: self.UITextField_Zhanghao.text!, FORKEY: "user_id")
+                                Defalts_ReadWrite().Settssssss_h(DATA: userName, FORKEY: "user_id")
+                                print(Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"))
                                 print("*-*-*-*-*-*-*-*-*")
                                 print(Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"))
                                 self.dismiss(animated: true, completion: nil)

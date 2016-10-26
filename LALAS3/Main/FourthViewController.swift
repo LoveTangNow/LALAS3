@@ -134,13 +134,17 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
                 cell.UIButton_Main.addTarget(self, action: #selector(ME_GO), for: UIControlEvents.touchUpInside)
                 
-                Alamofire.request(GotServers().GotImageIconServer(ai: true) + "1.png")
-                    .responseData { response in
-                        if let data = response.result.value {
-                            cell.UIButton_Main.setBackgroundImage(UIImage(data: data), for: .normal)
-                        }
-                }
                 
+                if let user_id  = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"){
+                    Alamofire.request(GotServers().GotImageIconServer(ai: true) + user_id + ".png")
+                        .responseData { response in
+                            if let data = response.result.value {
+                                cell.UIButton_Main.setBackgroundImage(UIImage(data: data), for: .normal)
+                            }
+                    }
+                } else {
+                    cell.UIButton_Main.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
+                }
                 
                 cell.UIButton_Main.setTitle("", for: .normal)
                 cell.UIButton_Small.setTitle("", for: .normal)

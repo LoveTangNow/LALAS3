@@ -34,6 +34,13 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         
         //self.UITableView_M.setEditing(true, animated: true)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "SecondViewController", FORKEY: "whereifrom")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

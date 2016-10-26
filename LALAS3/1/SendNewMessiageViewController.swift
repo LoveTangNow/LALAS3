@@ -152,7 +152,6 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                                 aaaaa += 1
                                 if aaaaa == imagelist.count{
                                     self.updateWords()
-                                    SVProgressHUD.dismiss()
                                 }
                             case .failure(let error)://失败
                                 SVProgressHUD.dismiss()
@@ -169,7 +168,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         
         let parameters:Parameters = [
             //newsid
-            "senderid":1,
+            "senderid":Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")!,
             "detail":self.UITextView_Main.text,
             //"pinglun_number":0,
             //"zan_number":0,
@@ -183,8 +182,12 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                 switch response.result {
                 case .success:
                     print("word succcccccccccccccccccccccc")
+                    SVProgressHUD.dismiss()
+                    Defalts_ReadWrite().Settssssss_h(DATA: "SendNewMessiageViewController", FORKEY: "whereifrom")
+                    _ = self.navigationController?.popViewController(animated: true)
                 case .failure(let error):
                     print(error)
+                    SVProgressHUD.dismiss()
                 }
         }
     }
@@ -238,11 +241,11 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                     }
                 }
                 else if stringType == kUTTypeImage as String{
-                    let metadata = info[UIImagePickerControllerMediaMetadata] as? NSDictionary
-                    if let themetadata = metadata {
+                    //let metadata = info[UIImagePickerControllerMediaMetadata] as? NSDictionary
+                    //if let themetadata = metadata {
                         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
                         if let theimage = image {
-                            print("\(themetadata)")
+                            //print("\(themetadata)")
                             //得到了 IMAGE
                             switch buttonClickNumber {
                             case 1:
@@ -271,7 +274,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                                 break
                             }
                         }
-                    }
+                    //}
                 }
             }
         }
@@ -445,7 +448,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        Defalts_ReadWrite().Settssssss_h(DATA: "SendNewMessiageViewController", FORKEY: "whereifrom")
+        //Defalts_ReadWrite().Settssssss_h(DATA: "SendNewMessiageViewController", FORKEY: "whereifrom")
     }
 
     override func didReceiveMemoryWarning() {
