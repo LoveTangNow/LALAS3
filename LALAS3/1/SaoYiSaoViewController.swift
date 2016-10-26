@@ -21,6 +21,9 @@ class SaoYiSaoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "SaoYiSaoViewController", FORKEY: "whereifrom")
+    }
 
     /*
     // MARK: - Navigation

@@ -11,6 +11,7 @@ import Foundation
 import MobileCoreServices
 
 
+/**我的拍照可行性类*/
 class PhotoAvilable: AnyObject {
     
     func CanmraSupportsMedia(mediaType:String,sourceType:UIImagePickerControllerSourceType) ->Bool {

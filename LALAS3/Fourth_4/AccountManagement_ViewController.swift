@@ -27,11 +27,17 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
     var TableviewHeight:CGFloat = 0
      var NowModel = Enum_Models.Normal_Model
     
-    var list = [["用户昵称 和 头像","性别","所在地","生日","用户简介"],["工作信息"], ["教育信息","小学","初中","高中","大学","硕士","博士","博士后"], ["绑定","邮箱","手机","QQ","微博","微信","支付宝"],["其他","等级","积分","注册时间"]]
+    var list = [["用户昵称 和 头像","性别","所在地","生日","用户简介"],
+                ["工作信息"],
+                ["教育信息","小学","初中","高中","大学"],
+                ["绑定","邮箱","手机","QQ","微博","微信","支付宝"],
+                ["其他","等级","积分","注册时间"]]
 
-
-    var list_ = [["","","","","安老师看到房间爱看书的反馈拉黑谁都快放假哈啥地方哈伦裤水电费哈哈涉及到客服哈啥地方还是"],[""],["","","","","","","",""],["","","","","","",""],["","","",""] ] //不可更改
-    
+    var list_ = ["用户昵称 和 头像":true,"性别":"","所在地":"","生日":"","用户简介":"",
+                 "工作信息":"",
+                 "教育信息":"","小学":"","初中":"","高中":"","大学":"",
+                 "绑定":"","邮箱":"","手机":"","QQ":"","微博":"","微信":"","支付宝":"",
+                 "其他":"","等级":0,"积分":0,"注册时间":""] as [String : Any]
     
     //账号管理：昵称0、性别1、所在地（省2、市3、区4）、生日5、简介6、工作信息7、教育信息（小学8、初中9、\\高中0、大学1、硕士2、博士3、博士后4）、(qq5、手机6、邮箱7、微博8、微信9、支付宝0、)、等级1、积分2、注册时间3
 
@@ -42,17 +48,30 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
     
     @IBOutlet var UIPickerView_M: UIPickerView!
     
+    //日期选择器
     @IBOutlet var UIDatePicker_M: UIDatePicker!
-    @IBAction func UIdatepiker_chaged(_ sender: AnyObject) {
+    @IBAction func UIdatepiker_chaged(_ sender: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日"//"yyyy年MM月dd日 HH:mm:ss"  //日期样式
-        list_[0][3] = formatter.string(from: UIDatePicker_M.date)
-        UserDefaults.standard.set(list_[0][3],forKey:"Brithday")
+        list_["生日"] = formatter.string(from: sender.date)
+        
+        let formatter_Int = DateFormatter()
+        formatter_Int.dateFormat = "yyyyMMdd"
+        let aaaa =  Int(formatter_Int.string(from: sender.date))!
+        
+        let year = aaaa / 10000
+        let month = (aaaa / 100) % 100
+        let day = aaaa % 100
+        
+        Defalts_ReadWrite().Settssssss(DATA: year, FORKEY: "birthday_year")
+        Defalts_ReadWrite().Settssssss(DATA: month, FORKEY: "birthday_month")
+        Defalts_ReadWrite().Settssssss(DATA: day, FORKEY: "birthday_day")
         UserDefaults.standard.synchronize()
         print(self.list_)
         self.UITableView_m.reloadData()
     }
     
+    //个人简介
     @IBOutlet var UIView_Text: UIView!
     @IBOutlet weak var UITextView_t: UITextView!
     @IBOutlet weak var UIButton_cancel: UIButton!
@@ -65,13 +84,12 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 self.NowModel = Enum_Models.Normal_Model
                 self.UITableView_m.isScrollEnabled = true
         })
-
     }
-
     @IBOutlet weak var UIButton_yes: UIButton!
     @IBAction func UIButton_YES_T(_ sender: AnyObject) {
         UITextView_t.resignFirstResponder()
-        self.list_[0][4] = UITextView_t.text
+        self.list_["用户简介"] = UITextView_t.text
+        Defalts_ReadWrite().Settssssss(DATA: UITextView_t.text, FORKEY: "introduction")
         self.UITableView_m.reloadData()
         UIView.animate(withDuration: 0.3, animations: {
             self.UIView_Text.center.y += 200
@@ -89,34 +107,34 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         //[["用户昵称 和 头像","性别","所在地","生日","用户简介"],["工作信息"], ["教育信息","小学","初中","高中","大学","硕士","博士","博士后"], ["邮箱","手机","QQ","微博","微信","支付宝"],["等级","积分","注册时间"]]
         //从 plist 中同步数据过来
         
-        list_[0][1] = UserDefaults.standard.value(forKey: "Sex") as! String
-        list_[0][2] = UserDefaults.standard.value(forKey: "Location") as! String
-        list_[0][3] = UserDefaults.standard.value(forKey: "Brithday") as! String
-        list_[0][4] = UserDefaults.standard.value(forKey: "Summary") as! String
+        list_["性别"] = SettingModel_DefaltsAccount().sex
+        list_["所在地"] = SettingModel_DefaltsAccount().province //??????/
+        let aaaaaaaaaaaaa = String(describing: SettingModel_DefaltsAccount().birthday_year) + "年" + String(describing: SettingModel_DefaltsAccount().birthday_month) + "月" + String(describing: SettingModel_DefaltsAccount().birthday_day) + "日"
+        list_["生日"] = aaaaaaaaaaaaa
+        list_["用户简介"] = SettingModel_DefaltsAccount().introduction
         
-        list_[1][0] = UserDefaults.standard.value(forKey: "Work") as! String
+        list_["工作信息"] = SettingModel_DefaltsAccount().work
         
-        list_[2][1] = UserDefaults.standard.value(forKey: "XX") as! String
-        list_[2][2] = UserDefaults.standard.value(forKey: "CZ") as! String
-        list_[2][3] = UserDefaults.standard.value(forKey: "GZ") as! String
-        list_[2][4] = UserDefaults.standard.value(forKey: "DZ") as! String
-        list_[2][5] = UserDefaults.standard.value(forKey: "SS") as! String
-        list_[2][6] = UserDefaults.standard.value(forKey: "BS") as! String
-        list_[2][7] = UserDefaults.standard.value(forKey: "BSH") as! String
+        list_["小学"] = SettingModel_DefaltsAccount().primary
+        list_["初中"] = SettingModel_DefaltsAccount().middle
+        list_["高中"] = SettingModel_DefaltsAccount().j_middle
+        list_["大学"] = SettingModel_DefaltsAccount().university
         
-        list_[3][0] = UserDefaults.standard.value(forKey: "Email") as! String
-        list_[3][1] = UserDefaults.standard.value(forKey: "Phone") as! String
-        list_[3][2] = UserDefaults.standard.value(forKey: "QQ") as! String
-        list_[3][3] = UserDefaults.standard.value(forKey: "WB") as! String
-        list_[3][4] = UserDefaults.standard.value(forKey: "WX") as! String
-        list_[3][5] = UserDefaults.standard.value(forKey: "ZFB") as! String
+        list_["邮箱"] = SettingModel_DefaltsAccount().email
+        list_["手机"] = SettingModel_DefaltsAccount().phone
+        list_["QQ"] = SettingModel_DefaltsAccount().qq
+        list_["微博"] = SettingModel_DefaltsAccount().weibo
+        list_["微信"] = SettingModel_DefaltsAccount().wechat
+        list_["支付宝"] = SettingModel_DefaltsAccount().alipay
         
-        list_[4][0] = UserDefaults.standard.value(forKey: "DJ") as! String
-        list_[4][1] = UserDefaults.standard.value(forKey: "JF") as! String
-        list_[4][2] = UserDefaults.standard.value(forKey: "ZCSJ") as! String
+        list_["等级"] = SettingModel_DefaltsAccount().level
+        list_["积分"] = SettingModel_DefaltsAccount().score
+        
+        let aaaaaaaaaaaaa2 = String(describing: SettingModel_DefaltsAccount().register_year) + "年" + String(describing: SettingModel_DefaltsAccount().register_month) + "月" + String(describing: SettingModel_DefaltsAccount().register_day) + "日"
+        list_["注册时间"] = aaaaaaaaaaaaa2
 
         UIImageView_Cover.alpha = 0
-        UIImageView_Cover.image = #imageLiteral(resourceName: "alipay")
+        UIImageView_Cover.image = #imageLiteral(resourceName: "Black")
         
         UITableView_m.dataSource = self
         UITableView_m.delegate = self
@@ -226,7 +244,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 }
                 if indexPath.row == 4 {//简介行动作
                     UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.5, initialSpringVelocity: 5, animations: {
-                        self.UITextView_t.text = self.list_[indexPath.section][indexPath.row]
+                        self.UITextView_t.text = self.list_["用户简介"] as! String!
                         self.UIView_Text.center.y -= 200
                         self.UIImageView_Cover.alpha = 0.5
                         }, completion: {_ in
@@ -247,10 +265,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
                 let okAction = UIAlertAction(title: "确定", style: .default,handler: {action in
                     //也可以用下标的形式获取textField let login = alertController.textFields![0]
-                    let login = alertController.textFields!.first! as UITextField
-                    if login.text != nil{
-                        self.list_[indexPath.section][indexPath.row] = login.text!
-                    }
+                    //let login = alertController.textFields!.first! as UITextField
                     self.UITableView_m.reloadData()
                     //print(self.list_[indexPath.section])
                     //let password = alertController.textFields!.last! as UITextField
@@ -285,7 +300,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         case Enum_Models.Jianjie_Model:
             UITextView_t.resignFirstResponder()
             //数据变化
-            self.list_[0][4] = UITextView_t.text
+            self.list_["用户简介"] = UITextView_t.text
             self.UITableView_m.reloadData()
             UIView.animate(withDuration: 0.3, animations: {
                 self.UIView_Text.center.y += 200
@@ -319,7 +334,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
             case "用户昵称 和 头像"://头像 昵称
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Label_And_RightBigImage_TableViewCell", for: indexPath) as! Label_And_RightBigImage_TableViewCell
                 cell.UILabel_.text = "啦啦同学"
-                Alamofire.request(FFFFFunctions().GotImageIconServer(ai: true) + "1.png")
+                Alamofire.request(GotServers().GotImageIconServer(ai: true) + "1.png")
                     .responseData { response in
                         if let data = response.result.value {
                             cell.UIImageView_.image = UIImage(data: data)
@@ -336,9 +351,9 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 cell.UISegmentedControl_M.setTitle("男", forSegmentAt: 1)
                 cell.UISegmentedControl_M.setTitle("女", forSegmentAt: 0)
                 
-                let a  = UserDefaults.standard.value(forKey: "Sex") as! String
+                let a  = Defalts_ReadWrite().ReadDefalts_Bool(KEY: "sex")
                 
-                if  a == "男"{
+                if  a! {//ture 是男
                     cell.UISegmentedControl_M.selectedSegmentIndex = 1
                 } else {
                     cell.UISegmentedControl_M.selectedSegmentIndex = 0
@@ -349,16 +364,16 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
             case "用户简介"://简介
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
                 cell.UILabel_l.text = "简介"
-                cell.UILabel_r.text = list_[indexPath.section][indexPath.row]
+                cell.UILabel_r.text = list_["用户简介"] as! String?
                 
                 TableviewHeight = 100
                 
                 return cell
            
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Label_And_TextView_TableViewCell", for: indexPath) as! Label_And_TextView_TableViewCell
-                cell.UILabel_.text = list[indexPath.section][indexPath.row]
-                cell.UILabel_rrr.text = list_[indexPath.section][indexPath.row]
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+                cell.UILabel_l.text = list[indexPath.section][indexPath.row]
+                cell.UILabel_r.text = ""
                 TableviewHeight = 45
                 return cell
             }
@@ -368,22 +383,85 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
             cell.UILabel_l.text = list[indexPath.section][indexPath.row]
             TableviewHeight = 45
             return cell
-        default://其他 教育 绑定
-            if indexPath.row == 0 {
+            
+        case 2://教育
+            switch indexPath.row {
+            case 1,2,3,4:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+                cell.UILabel_l.text = list[indexPath.section][indexPath.row]
+                switch indexPath.row {
+                case 1:
+                    cell.UILabel_r.text = list_["小学"] as! String?
+                case 2:
+                    cell.UILabel_r.text = list_["初中"] as! String?
+                case 3:
+                    cell.UILabel_r.text = list_["高中"] as! String?
+                default:
+                    cell.UILabel_r.text = list_["大学"] as! String?
+                }
+                TableviewHeight = 45
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath) as! OnlyOneLabel_TableViewCell
+                cell.UILabel_M.text = list[indexPath.section][indexPath.row]
+                TableviewHeight = 45
+                return cell
+            }
+
+        case 3://绑定
+            switch indexPath.row {
+            case 1,2,3,4,5,6:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+                cell.UILabel_l.text = list[indexPath.section][indexPath.row]
+                //"绑定":"","邮箱":"","手机":"","QQ":"","微博":"","微信":"","支付宝":"",
+                switch indexPath.row {
+                case 1:
+                    cell.UILabel_r.text = list_["邮箱"] as! String?
+                case 2:
+                    cell.UILabel_r.text = list_["手机"] as! String?
+                case 3:
+                    cell.UILabel_r.text = list_["QQ"] as! String?
+                case 4:
+                    cell.UILabel_r.text = list_["微博"] as! String?
+                case 5:
+                    cell.UILabel_r.text = list_["微信"] as! String?
+                default:
+                    cell.UILabel_r.text = list_["支付宝"] as! String?
+                }
+                TableviewHeight = 45
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath) as! OnlyOneLabel_TableViewCell
+                cell.UILabel_M.text = list[indexPath.section][indexPath.row]
+                TableviewHeight = 45
+                return cell
+            }
+        default://其他
+            switch indexPath.row {
+            case 1,2,3:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+                cell.UILabel_l.text = list[indexPath.section][indexPath.row]
+                //"其他":"","等级":0,"积分":0,"注册时间":""
+                switch indexPath.row {
+                case 1:
+                    let a  =  list_["等级"] as! Int
+                    cell.UILabel_r.text = String(a)
+                case 2:
+                    let a  =  list_["积分"] as! Int
+                    cell.UILabel_r.text = String(a)
+                default:
+                    cell.UILabel_r.text = list_["注册时间"] as! String!
+                }
+                TableviewHeight = 45
+                return cell
+            default:
                 //AccountManagement_OneLabel_TableViewCell
                 let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath) as! OnlyOneLabel_TableViewCell
                 cell.UILabel_M.text = list[indexPath.section][indexPath.row]
                 TableviewHeight = 45
                 return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
-                cell.UILabel_l.text = list[indexPath.section][indexPath.row]
-                cell.UILabel_r.text = list_[indexPath.section][indexPath.row]
-                TableviewHeight = 45
-                return cell
             }
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -448,7 +526,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         // Dispose of any resources that can be recreated.
     }
 
-    private func ConnectNib () {
+    func ConnectNib () {
         UITableView_m.register(UINib(nibName: "Label_And_RightBigImage_TableViewCell", bundle: nil), forCellReuseIdentifier: "Label_And_RightBigImage_TableViewCell")
         UITableView_m.register(UINib(nibName: "Select_TableViewCell", bundle: nil), forCellReuseIdentifier: "Select_TableViewCell")
         UITableView_m.register(UINib(nibName: "Label_And_TextView_TableViewCell", bundle: nil), forCellReuseIdentifier: "Label_And_TextView_TableViewCell")

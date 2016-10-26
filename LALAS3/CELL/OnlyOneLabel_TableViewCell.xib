@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l6I-Lt-R4C" id="QOE-pj-83W">
-                <frame key="frameInset" width="375" height="68.5"/>
+                <frame key="frameInset" width="375" height="68"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZJ-jM-LUI">
@@ -23,7 +23,7 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="tZJ-jM-LUI" firstAttribute="leading" secondItem="QOE-pj-83W" secondAttribute="leadingMargin" constant="10" id="C12-yH-fOe"/>
+                    <constraint firstItem="tZJ-jM-LUI" firstAttribute="leading" secondItem="QOE-pj-83W" secondAttribute="leadingMargin" constant="20" id="C12-yH-fOe"/>
                     <constraint firstItem="tZJ-jM-LUI" firstAttribute="centerY" secondItem="QOE-pj-83W" secondAttribute="centerY" id="JW0-po-JU8"/>
                 </constraints>
             </tableViewCellContentView>

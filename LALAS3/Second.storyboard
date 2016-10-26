@@ -26,8 +26,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Rge-jr-9Em" firstAttribute="width" secondItem="una-4z-ll2" secondAttribute="width" id="1pg-Yy-oLH"/>
-                            <constraint firstItem="Rge-jr-9Em" firstAttribute="height" secondItem="una-4z-ll2" secondAttribute="height" id="4PI-w6-jl3"/>
-                            <constraint firstItem="Rge-jr-9Em" firstAttribute="centerY" secondItem="una-4z-ll2" secondAttribute="centerY" id="azd-do-nkb"/>
+                            <constraint firstItem="Rge-jr-9Em" firstAttribute="height" secondItem="una-4z-ll2" secondAttribute="height" constant="-48" id="4PI-w6-jl3"/>
+                            <constraint firstItem="Rge-jr-9Em" firstAttribute="centerY" secondItem="una-4z-ll2" secondAttribute="centerY" constant="-24" id="azd-do-nkb"/>
                             <constraint firstItem="Rge-jr-9Em" firstAttribute="centerX" secondItem="una-4z-ll2" secondAttribute="centerX" id="j0q-cA-aFK"/>
                         </constraints>
                     </view>

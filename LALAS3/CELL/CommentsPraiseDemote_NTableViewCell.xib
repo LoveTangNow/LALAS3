@@ -13,25 +13,22 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O0l-wT-XdQ" id="DpP-wc-pAc">
-                <frame key="frameInset" width="375" height="49.5"/>
+                <frame key="frameInset" width="375" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="CNc-2A-TGa">
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqI-9B-OKS">
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="UIButton1c:" destination="O0l-wT-XdQ" eventType="touchUpInside" id="tLi-O9-9FH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdX-zm-tEf">
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="UIButton2c:" destination="O0l-wT-XdQ" eventType="touchUpInside" id="STP-5n-YZ6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lU-1X-FBc">
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="UIButton3c:" destination="O0l-wT-XdQ" eventType="touchUpInside" id="blB-im-OG9"/>
                                 </connections>

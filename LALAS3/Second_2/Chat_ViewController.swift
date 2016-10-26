@@ -15,6 +15,7 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     let deviceHeight  = UIScreen.main.bounds.height
     
     var Informations = chatmodel()
+    var list = [[String]]()
     
     //MARK: - 绑定
     @IBOutlet weak var UITextView_Word: UITextView!
@@ -53,6 +54,7 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
 
         self.title = "chat"
         ConnectNib()
+        list = [["1","1"],["1","2"],["1","3"],["1","4"],["1","5"],["1","6"]]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +77,15 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //UITableView_M.isHidden = true
+        //NSUInteger newIndex[] = {0, 1}
+        //NSIndexPath *newPath = [[NSIndexPath alloc] initWithIndexes:newIndex length:2];
+        
+        let  indexPath = IndexPath.init(row: 0, section: 0)
+    
+        UITableView_M.beginUpdates()
+        UITableView_M.insertRows(at: [indexPath], with: .right)
+        list.insert(["1","5"], at: indexPath.row)
+        UITableView_M.endUpdates()
     }
     
     func keyBoardWillShow(note:NSNotification)
@@ -157,14 +167,16 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     
     //MARK: - TableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row % 2 == 0 {
+        if Int(list[indexPath.row][1])! % 2 == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChatYou_TableViewCell") as! ChatYou_TableViewCell
             return cell
-        } else {
+        }
+        else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChatMe_TableViewCell") as! ChatMe_TableViewCell
             return cell
         }
     }
+    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UITextView_Word.resignFirstResponder()
@@ -178,7 +190,7 @@ class Chat_ViewController: UIViewController ,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return list.count
     }
     
     //MARK: - CollectionView

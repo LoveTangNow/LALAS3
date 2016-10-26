@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
 
 class FFFFFunctions: AnyObject {
@@ -49,9 +50,17 @@ class FFFFFunctions: AnyObject {
     //计算需要高度的方法
     func Height_Work(Words:String,Width:CGFloat) -> Int {
         /*
-         320
-         375.5
-         414
+         iphone 5 = 320.0
+         iphone 5s = 320.0
+         
+         iphone 6 = 375.0
+         iphone 6p = 414.0
+         
+         iphone 6s = 375.0
+         iphone 6sp = 414.0
+         
+         iphone 7 = 375.0
+         iphone 7p = 414.0
          */
         switch Width {
         case 320:
@@ -70,7 +79,6 @@ class FFFFFunctions: AnyObject {
 
     
     //解析 json
-
     func json(A:Data) -> String {
         let username:String = ""
         
@@ -83,71 +91,17 @@ class FFFFFunctions: AnyObject {
         return username
     }
     
-    //MARK: - GotServerAliScripts
-    func GotServerAliScripts() -> String {
-        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
-        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
-        return data.object(forKey: "ServerAliScripts") as! String
-    }
-   
-     //MARK: - GotServer
-    func GotServer(ai:Bool) -> String {
-        if ai == true {
-            let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
-            let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
-            return data.object(forKey: "ServerAli") as! String
-            //阿里服务器
-        } else {
-            let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
-            let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
-            return data.object(forKey: "Server") as! String
-            //本地服务器
-        }
-    }
     
-     //MARK: - GotImageIconServer
-    func GotImageIconServer(ai:Bool) -> String {
-        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
-        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
-        let a = data.object(forKey: "ImageIcon") as! String
-        return GotServer(ai: ai) + a
+    //MARK: -
+    /**截取字符串 - 字符串 - 第一个空位 - 第二个空位*/
+    func getsubtring(string:String,space_start:Int,space_end:Int) -> String{
+        let index_1 = string.index(string.startIndex, offsetBy: space_end)
+        let string1 = string.substring(to: index_1)
+        let index_2 = string1.index(string1.startIndex, offsetBy: space_start)
+        let string2 = string1.substring(from: index_2)
+        return string2
     }
-    
-     //MARK: - GotImageTServer
-    func GotImageTServer(ai:Bool) -> String {
-        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
-        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
-        let a = data.object(forKey: "ImageT") as! String
-        return GotServer(ai: ai) + a
-    }
-     //MARK: - GotImageMainServer
-    func GotImageMainServer(ai:Bool) -> String {
-        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
-        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
-        let a = data.object(forKey: "ImageMain") as! String
-        return GotServer(ai: ai) + a
-
-    }
-     //MARK: - GotImageADServer
-    func GotImageADServer(ai:Bool) -> String {
-        let diaryList:String = Bundle.main.path(forResource: "/Server", ofType:"plist")!
-        let data:NSMutableDictionary = NSMutableDictionary(contentsOfFile:diaryList)!
-        let a = data.object(forKey: "ImageAD") as! String
-        return GotServer(ai: ai) + a
-    }
-     //MARK: - SetUserDefaults
-    
-    func SetUserDefaults(DATA:String,FORKEY:String) {
-        UserDefaults.standard.set(DATA,forKey:FORKEY)
-        UserDefaults.standard.synchronize()
-    }
-     //MARK: - 
-     //MARK: -
-     //MARK: - 
-     //MARK: - 
-     //MARK: - 
-     //MARK: - 
-     //MARK: -
-    
+    //MARK: -
     
 }
+

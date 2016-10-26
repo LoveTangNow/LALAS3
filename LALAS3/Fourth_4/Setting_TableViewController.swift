@@ -26,7 +26,7 @@ class Setting_TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "设置"
-        
+        tableView.tableFooterView = UIView(frame:CGRect.zero)
         ConnectNib()
     }
 
@@ -68,12 +68,18 @@ class Setting_TableViewController: UITableViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         default://退出
+            let alertController = UIAlertController(title: "系统提示",
+                                                    message: "确定要退出么",
+                                                    preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                action in
+                Defalts_ReadWrite().Settssssss_h(DATA: "", FORKEY: "user_id")
+            })
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
             
-            //self.view.alpha = 0.5
-
-            //let sb = UIStoryboard(name: "Fourth", bundle:nil)
-            //let vc = sb.instantiateViewController(withIdentifier: "Alfa_ViewController") as UIViewController
-            //self.present(vc, animated: true, completion: nil)
             break
         }
     }

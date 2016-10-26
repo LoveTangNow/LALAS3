@@ -22,7 +22,7 @@
                             <constraint firstAttribute="height" constant="20" id="Qmx-tj-QdK"/>
                             <constraint firstAttribute="width" secondItem="Lg1-on-vxb" secondAttribute="height" multiplier="1:1" id="XxS-rl-4uJ"/>
                         </constraints>
-                        <state key="normal" image="appreciate_fill"/>
+                        <state key="normal" image="appreciate_fill_black"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjy-Xh-Dfh">
                         <constraints>
@@ -80,6 +80,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="appreciate_fill" width="128" height="128"/>
+        <image name="appreciate_fill_black" width="44" height="44"/>
     </resources>
 </document>

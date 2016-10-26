@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     //MARK: - 绑定
@@ -28,6 +30,8 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.UITableView_M.delegate = self
         self.UITableView_M.dataSource = self
         UITableView_M.backgroundColor = UIColor.white
+        UITableView_M.tableFooterView = UIView(frame:CGRect.zero)
+        
         
         self.navigationController?.navigationBar.barTintColor = UIColor.red
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -38,52 +42,6 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         //self.UITableView_M.addSubview(myview)
         
         ConnectNib()
-        
-        //UserDefaults.standard.set("noSetle", forKey: "isSet")
-        
-        let a = UserDefaults.standard.value(forKey: "isSet") as? String
-        if a == "noSetle" {
-            //没有设置过
-            UserDefaults.standard.set("Setle", forKey: "isSet")
-            UserDefaults.standard.synchronize()
-            
-            /**
-             账号管理：昵称、性别、所在地（省、市、区）、生日、简介、工作信息、教育信息（小学、初中、高中、大学、硕士、博士、博士后）、(qq、手机、邮箱、微博、微信、支付宝、)、等级、积分、注册时间
-             账号安全：昵称、id、手机、邮箱、证件信息、
-             通用设置：
-             通知设置：
-             */
-            
-            //登录注册时已经设置过的有:昵称，id，手机/邮箱
-            //我们需要设置其他的一下东西
-
-            //SetUserDefaults(DATA:"",FORKEY:"NiCheng")
-            //SetUserDefaults(DATA:"",FORKEY:"ID")
-            
-            SetUserDefaultsM(DATA:"",FORKEY: "Phone")
-            SetUserDefaultsM(DATA:"",FORKEY: "Email")
-            SetUserDefaultsM(DATA:"男",FORKEY: "Sex")
-            SetUserDefaultsM(DATA:"北京",FORKEY: "Location")
-            SetUserDefaultsM(DATA:"",FORKEY: "Brithday")
-            SetUserDefaultsM(DATA:"",FORKEY: "Summary")
-            SetUserDefaultsM(DATA:"",FORKEY: "Work")
-            SetUserDefaultsM(DATA:"",FORKEY: "XX")
-            SetUserDefaultsM(DATA:"",FORKEY: "CZ")
-            SetUserDefaultsM(DATA:"",FORKEY: "GZ")
-            SetUserDefaultsM(DATA:"",FORKEY: "DZ")
-            SetUserDefaultsM(DATA:"",FORKEY: "SS")
-            SetUserDefaultsM(DATA:"",FORKEY: "BS")
-            SetUserDefaultsM(DATA:"",FORKEY: "BSH")
-            SetUserDefaultsM(DATA:"",FORKEY: "QQ")
-            SetUserDefaultsM(DATA:"",FORKEY: "WB")
-            SetUserDefaultsM(DATA:"",FORKEY: "WX")
-            SetUserDefaultsM(DATA:"",FORKEY: "ZFB")
-            SetUserDefaultsM(DATA:"",FORKEY: "DJ")
-            SetUserDefaultsM(DATA:"",FORKEY: "JF")
-            SetUserDefaultsM(DATA:"",FORKEY: "ZCSJ")
-            SetUserDefaultsM(DATA:"",FORKEY: "ZJ")
-            
-        }
         
         // Do any additional setup after loading the view.
     }
@@ -173,9 +131,15 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ME_TableViewCell", for: indexPath) as! ME_TableViewCell
                 
-                cell.UIButton_Main.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
-                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
+                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
                 cell.UIButton_Main.addTarget(self, action: #selector(ME_GO), for: UIControlEvents.touchUpInside)
+                
+                Alamofire.request(GotServers().GotImageIconServer(ai: true) + "1.png")
+                    .responseData { response in
+                        if let data = response.result.value {
+                            cell.UIButton_Main.setBackgroundImage(UIImage(data: data), for: .normal)
+                        }
+                }
                 
                 
                 cell.UIButton_Main.setTitle("", for: .normal)
@@ -189,21 +153,25 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 return cell
             }
         } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
             switch indexPath.row {
-            case 4:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
-                cell.UIImageView_m.image = #imageLiteral(resourceName: "settings-vector")
-                cell.UILabel_m.text = list[indexPath.row]
-                TableViewHeights[indexPath.section][indexPath.row] = 45
-                return cell
+            case 0://我的微博
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "weibo")
+            case 1://我的图片
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "picture")
+            case 2://我的赞
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "appreciate_fill_black")
+            case 3://其他
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "list")
+            case 4://设置
+                cell.UIImageView_m.image = #imageLiteral(resourceName: "setting")
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSamllImageAndLabel_TableViewCell", for: indexPath) as! LeftSamllImageAndLabel_TableViewCell
-                cell.UIImageView_m.image = #imageLiteral(resourceName: "White")
-                cell.UILabel_m.text = list[indexPath.row]
-                TableViewHeights[indexPath.section][indexPath.row] = 45
-                return cell
-
+                cell.UIImageView_m.image =  #imageLiteral(resourceName: "White")
             }
+            
+            cell.UILabel_m.text = list[indexPath.row]
+            TableViewHeights[indexPath.section][indexPath.row] = 45
+            return cell
         }
         
     }
@@ -272,22 +240,7 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     
     //MARK: - FUNCS
     
-    func SetUserDefaults(DATA:String,FORKEY:String) {
-        UserDefaults.standard.set(DATA,forKey:FORKEY)
-        UserDefaults.standard.synchronize()
-    }
-    
-    func SetUserDefaultsM(DATA:String,FORKEY:String) {
-        //先判断这个属性有没有设置过 
-        //设置过了 什么也不干 
-        //没有设置过 NIL 那就设置默认值
 
-        if  UserDefaults.standard.value(forKey: FORKEY) == nil {
-            UserDefaults.standard.set(DATA,forKey:FORKEY)
-            UserDefaults.standard.synchronize()
-        }
-        
-    }
     
     func ConnectNib ()  {
         UITableView_M.register(UINib(nibName: "ThreeWhat_TableViewCell", bundle: nil), forCellReuseIdentifier: "ThreeWhat_TableViewCell")
