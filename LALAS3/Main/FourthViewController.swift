@@ -123,6 +123,10 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 break
             }
         }
+        if indexPath.section == 1 && indexPath.row == 3 {
+            let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "Health_ViewController") as! Health_ViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     
