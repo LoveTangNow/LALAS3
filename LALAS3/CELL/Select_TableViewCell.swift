@@ -18,9 +18,9 @@ class Select_TableViewCell: UITableViewCell {
         let a  = UISegmentedControl_M.titleForSegment(at: UISegmentedControl_M.selectedSegmentIndex)! as String
         print(a)
         if a == "男" {
-            Defalts_ReadWrite().Settssssss(DATA: true, FORKEY: "sex")
+            Defalts_ReadWrite().Settssssss_h(DATA: true, FORKEY: "sex")
         } else {
-            Defalts_ReadWrite().Settssssss(DATA: false, FORKEY: "sex")
+            Defalts_ReadWrite().Settssssss_h(DATA: false, FORKEY: "sex")
         }
     }
     

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Friends" syncable="YES"/>
+    <entity name="Me" syncable="YES">
+        <attribute name="myid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="News" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="T" syncable="YES">
+        <attribute name="t" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Friends" positionX="9" positionY="54" width="128" height="45"/>
+        <element name="Me" positionX="9" positionY="-27" width="128" height="58"/>
+        <element name="News" positionX="-216" positionY="27" width="128" height="73"/>
+        <element name="T" positionX="-54" positionY="63" width="128" height="60"/>
+    </elements>
+</model>

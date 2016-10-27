@@ -63,11 +63,14 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         let month = (aaaa / 100) % 100
         let day = aaaa % 100
         
-        Defalts_ReadWrite().Settssssss(DATA: year, FORKEY: "birthday_year")
-        Defalts_ReadWrite().Settssssss(DATA: month, FORKEY: "birthday_month")
-        Defalts_ReadWrite().Settssssss(DATA: day, FORKEY: "birthday_day")
+        print(year)
+        print(month)
+        print(day)
+        
+        Defalts_ReadWrite().Settssssss_h(DATA: year, FORKEY: "birthday_year")
+        Defalts_ReadWrite().Settssssss_h(DATA: month, FORKEY: "birthday_month")
+        Defalts_ReadWrite().Settssssss_h(DATA: day, FORKEY: "birthday_day")
         UserDefaults.standard.synchronize()
-        print(self.list_)
         self.UITableView_m.reloadData()
     }
     
@@ -89,7 +92,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
     @IBAction func UIButton_YES_T(_ sender: AnyObject) {
         UITextView_t.resignFirstResponder()
         self.list_["用户简介"] = UITextView_t.text
-        Defalts_ReadWrite().Settssssss(DATA: UITextView_t.text, FORKEY: "introduction")
+        Defalts_ReadWrite().Settssssss_h(DATA: UITextView_t.text, FORKEY: "introduction")
         self.UITableView_m.reloadData()
         UIView.animate(withDuration: 0.3, animations: {
             self.UIView_Text.center.y += 200
@@ -101,37 +104,48 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
 
     }
     
+    /////////>>
+    private func handalint (number:Int) -> String {
+        switch number {
+        case 0,1,2,3,4,5,6,7,8,9:
+            return "0" + String(number)
+        default:
+            return String(number)
+        }
+    }
+    
     //MARK: - VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
         //[["用户昵称 和 头像","性别","所在地","生日","用户简介"],["工作信息"], ["教育信息","小学","初中","高中","大学","硕士","博士","博士后"], ["邮箱","手机","QQ","微博","微信","支付宝"],["等级","积分","注册时间"]]
         //从 plist 中同步数据过来
         
-        list_["性别"] = SettingModel_DefaltsAccount().sex
-        list_["所在地"] = SettingModel_DefaltsAccount().province //??????/
-        let aaaaaaaaaaaaa = String(describing: SettingModel_DefaltsAccount().birthday_year) + "年" + String(describing: SettingModel_DefaltsAccount().birthday_month) + "月" + String(describing: SettingModel_DefaltsAccount().birthday_day) + "日"
-        list_["生日"] = aaaaaaaaaaaaa
-        list_["用户简介"] = SettingModel_DefaltsAccount().introduction
+        list_["性别"] = Defalts_ReadWrite().ReadDefalts_Bool(KEY: "sex")!
+        list_["所在地"] = String(describing: Defalts_ReadWrite().ReadDefalts_String(KEY: "province")!) + " " + String(describing: Defalts_ReadWrite().ReadDefalts_String(KEY: "municipality")!) + " " + String(describing: Defalts_ReadWrite().ReadDefalts_String(KEY: "county")!)
         
-        list_["工作信息"] = SettingModel_DefaltsAccount().work
+        list_["生日"] = handalint(number: Defalts_ReadWrite().ReadDefalts_Int(KEY: "birthday_year")!) + "年" + handalint(number: Defalts_ReadWrite().ReadDefalts_Int(KEY: "birthday_month")!) + "月" + handalint(number: Defalts_ReadWrite().ReadDefalts_Int(KEY: "birthday_day")!) + "日"
+        list_["用户简介"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "introduction")!
         
-        list_["小学"] = SettingModel_DefaltsAccount().primary
-        list_["初中"] = SettingModel_DefaltsAccount().middle
-        list_["高中"] = SettingModel_DefaltsAccount().j_middle
-        list_["大学"] = SettingModel_DefaltsAccount().university
+        list_["工作信息"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "work")!
         
-        list_["邮箱"] = SettingModel_DefaltsAccount().email
-        list_["手机"] = SettingModel_DefaltsAccount().phone
-        list_["QQ"] = SettingModel_DefaltsAccount().qq
-        list_["微博"] = SettingModel_DefaltsAccount().weibo
-        list_["微信"] = SettingModel_DefaltsAccount().wechat
-        list_["支付宝"] = SettingModel_DefaltsAccount().alipay
+        list_["小学"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "primary")!
+        list_["初中"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "middle")!
+        list_["高中"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "j_middle")!
+        list_["大学"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "university")!
         
-        list_["等级"] = SettingModel_DefaltsAccount().level
-        list_["积分"] = SettingModel_DefaltsAccount().score
+        list_["邮箱"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "email")!
+        list_["手机"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "phone")!
+        list_["QQ"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "qq")!
+        list_["微博"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "weibo")!
+        list_["微信"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "wechat")!
+        list_["支付宝"] = Defalts_ReadWrite().ReadDefalts_String(KEY: "alipay")!
         
-        let aaaaaaaaaaaaa2 = String(describing: SettingModel_DefaltsAccount().register_year) + "年" + String(describing: SettingModel_DefaltsAccount().register_month) + "月" + String(describing: SettingModel_DefaltsAccount().register_day) + "日"
-        list_["注册时间"] = aaaaaaaaaaaaa2
+        list_["等级"] = Defalts_ReadWrite().ReadDefalts_Int(KEY: "level")!
+        list_["积分"] = Defalts_ReadWrite().ReadDefalts_Int(KEY: "score")!
+        
+        list_["注册时间"] = handalint(number: Defalts_ReadWrite().ReadDefalts_Int(KEY: "register_year")!) + "年" + handalint(number: Defalts_ReadWrite().ReadDefalts_Int(KEY: "register_month")!) + "月" + handalint(number: Defalts_ReadWrite().ReadDefalts_Int(KEY: "register_day")!) + "日"
+        
+        print(list_)
 
         UIImageView_Cover.alpha = 0
         UIImageView_Cover.image = #imageLiteral(resourceName: "Black")
@@ -218,6 +232,17 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
          */
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "AccountManagement_ViewController", FORKEY: "whereifrom")
+        uploadDataBack()
+    }
+    
+    //传回数据
+    private func uploadDataBack()  {
+        
+    }
+    
     // MARK: - Table view data source
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -351,12 +376,14 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 cell.UISegmentedControl_M.setTitle("男", forSegmentAt: 1)
                 cell.UISegmentedControl_M.setTitle("女", forSegmentAt: 0)
                 
-                let a  = Defalts_ReadWrite().ReadDefalts_Bool(KEY: "sex")
                 
-                if  a! {//ture 是男
-                    cell.UISegmentedControl_M.selectedSegmentIndex = 1
-                } else {
-                    cell.UISegmentedControl_M.selectedSegmentIndex = 0
+                if let a  = Defalts_ReadWrite().ReadDefalts_Bool(KEY: "sex")
+                {
+                    if a {//ture 是男
+                        cell.UISegmentedControl_M.selectedSegmentIndex = 1
+                    } else {
+                        cell.UISegmentedControl_M.selectedSegmentIndex = 0
+                    }
                 }
                 
                 TableviewHeight = 45
@@ -369,11 +396,16 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 TableviewHeight = 100
                 
                 return cell
-           
-            default:
+            case "生日"://生日
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
-                cell.UILabel_l.text = list[indexPath.section][indexPath.row]
-                cell.UILabel_r.text = ""
+                cell.UILabel_l.text = "生日"
+                cell.UILabel_r.text = list_["生日"] as! String?
+                TableviewHeight = 45
+                return cell
+            default://所在地
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
+                cell.UILabel_l.text = "所在地"
+                cell.UILabel_r.text = list_["所在地"] as! String?
                 TableviewHeight = 45
                 return cell
             }
@@ -381,6 +413,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         case 1://工作信息
             let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabel_TableViewCell", for: indexPath) as! TwoLabel_TableViewCell
             cell.UILabel_l.text = list[indexPath.section][indexPath.row]
+            cell.UILabel_r.text = list_["工作信息"] as! String?
             TableviewHeight = 45
             return cell
             
@@ -444,11 +477,11 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
                 //"其他":"","等级":0,"积分":0,"注册时间":""
                 switch indexPath.row {
                 case 1:
-                    let a  =  list_["等级"] as! Int
-                    cell.UILabel_r.text = String(a)
+                    let a  =  list_["等级"] as? Int
+                    cell.UILabel_r.text = String(describing: a)
                 case 2:
-                    let a  =  list_["积分"] as! Int
-                    cell.UILabel_r.text = String(a)
+                    let a  =  list_["积分"] as? Int
+                    cell.UILabel_r.text = String(describing: a)
                 default:
                     cell.UILabel_r.text = list_["注册时间"] as! String!
                 }

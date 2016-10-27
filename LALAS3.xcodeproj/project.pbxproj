@@ -128,7 +128,7 @@
 		7FE5BF2D1D8E756A00586166 /* AboutUs_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE5BF2C1D8E756A00586166 /* AboutUs_ViewController.swift */; };
 		7FEA9A6B1D9F464F00B1351F /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEA9A6A1D9F464F00B1351F /* MainModel.swift */; };
 		7FF0C8511D91114400B85248 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF0C8501D91114400B85248 /* libsqlite3.tbd */; };
-		7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0C8531D91173F00B85248 /* R.xcdatamodeld */; };
+		7FF0C8551D91173F00B85248 /* LALAS3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF0C8531D91173F00B85248 /* LALAS3.xcdatamodeld */; };
 		7FFA9E441D960570002380C0 /* OnePhoto_H_NTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA9E431D960570002380C0 /* OnePhoto_H_NTableViewCell.swift */; };
 		7FFA9E461D960587002380C0 /* OnePhoto_Z_NTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA9E451D960587002380C0 /* OnePhoto_Z_NTableViewCell.swift */; };
 		7FFA9E481D96059E002380C0 /* ThreePhoto_NTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA9E471D96059E002380C0 /* ThreePhoto_NTableViewCell.swift */; };
@@ -372,7 +372,7 @@
 		7FEA9A6A1D9F464F00B1351F /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainModel.swift; path = Main/MainModel.swift; sourceTree = "<group>"; };
 		7FF0C8501D91114400B85248 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LALAS3-Bridging-Header.h"; sourceTree = "<group>"; };
-		7FF0C8541D91173F00B85248 /* R.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = R.xcdatamodel; sourceTree = "<group>"; };
+		7FF0C8541D91173F00B85248 /* LALAS3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LALAS3.xcdatamodel; sourceTree = "<group>"; };
 		7FFA9E431D960570002380C0 /* OnePhoto_H_NTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhoto_H_NTableViewCell.swift; path = CELL/OnePhoto_H_NTableViewCell.swift; sourceTree = "<group>"; };
 		7FFA9E451D960587002380C0 /* OnePhoto_Z_NTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhoto_Z_NTableViewCell.swift; path = CELL/OnePhoto_Z_NTableViewCell.swift; sourceTree = "<group>"; };
 		7FFA9E471D96059E002380C0 /* ThreePhoto_NTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreePhoto_NTableViewCell.swift; path = CELL/ThreePhoto_NTableViewCell.swift; sourceTree = "<group>"; };
@@ -500,6 +500,7 @@
 		7F1367971DB7C3F000802F7B /* FountionsClasses */ = {
 			isa = PBXGroup;
 			children = (
+				7F4B10221DB1BF2A000E5C3C /* GotPhoto.swift */,
 				7FA6E9231D89ABCF003F6186 /* Functions.swift */,
 				7F1367941DB7173800802F7B /* GotServers.swift */,
 				7FDDBE261DAE0D23005B2F0D /* PhotoAvilable.swift */,
@@ -789,9 +790,8 @@
 				7F9F8AE31D9D4EF200C49C12 /* Voice */,
 				7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */,
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
-				7FF0C8531D91173F00B85248 /* R.xcdatamodeld */,
+				7FF0C8531D91173F00B85248 /* LALAS3.xcdatamodeld */,
 				7FD101571D89764D009BB6A6 /* LaunchScreen.storyboard */,
-				7F4B10221DB1BF2A000E5C3C /* GotPhoto.swift */,
 			);
 			path = LALAS3;
 			sourceTree = "<group>";
@@ -1418,7 +1418,7 @@
 				7F00308E1DA7955A00CCACB4 /* ThreeWhat_TableViewCell.swift in Sources */,
 				7F2475741D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift in Sources */,
 				7FE5BF291D8E753D00586166 /* HuanCun_ViewController.swift in Sources */,
-				7FF0C8551D91173F00B85248 /* R.xcdatamodeld in Sources */,
+				7FF0C8551D91173F00B85248 /* LALAS3.xcdatamodeld in Sources */,
 				7FFA9E541D9610B7002380C0 /* Pinglun_NTableViewCell.swift in Sources */,
 				7FEA9A6B1D9F464F00B1351F /* MainModel.swift in Sources */,
 				7F1367951DB7173800802F7B /* GotServers.swift in Sources */,
@@ -2130,13 +2130,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		7FF0C8531D91173F00B85248 /* R.xcdatamodeld */ = {
+		7FF0C8531D91173F00B85248 /* LALAS3.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				7FF0C8541D91173F00B85248 /* R.xcdatamodel */,
+				7FF0C8541D91173F00B85248 /* LALAS3.xcdatamodel */,
 			);
-			currentVersion = 7FF0C8541D91173F00B85248 /* R.xcdatamodel */;
-			path = R.xcdatamodeld;
+			currentVersion = 7FF0C8541D91173F00B85248 /* LALAS3.xcdatamodel */;
+			path = LALAS3.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
