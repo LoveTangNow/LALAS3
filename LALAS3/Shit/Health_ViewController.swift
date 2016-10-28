@@ -11,7 +11,6 @@ import HealthKit
 import CoreData
 
 class Health_ViewController: UIViewController {
-    let EntityName = "T"
     
     @IBAction func add(_ sender: UIButton) {
         AddData(id: 1, detail: "11")
@@ -22,6 +21,7 @@ class Health_ViewController: UIViewController {
     }
     
     @IBAction func delete_(_ sender: UIButton) {
+        DeleteData(id: 1)
     }
 
     @IBAction func change(_ sender: UIButton) {
@@ -54,7 +54,7 @@ class Health_ViewController: UIViewController {
         // 定义一个entity，这个entity一定要在xcdatamodeld中做好定义
         let entity = NSEntityDescription.entity(forEntityName: "News", in: context)
         let person = NSManagedObject(entity: entity!, insertInto: context)
-        person.setValue(id, forKey: "id")
+        person.setValue(id, forKey: "senderId")
         person.setValue(detail, forKey: "detail")
         do {
             try context.save()
@@ -70,8 +70,8 @@ class Health_ViewController: UIViewController {
         do {
             let searchResults = try getContext().fetch(fetchRequest)
             for p in (searchResults as! [NSManagedObject]){
-                if (p.value(forKey: "id") as! Int) == id {
-                    print("name:  \(p.value(forKey: "id")!) age: \(p.value(forKey: "detail")!)")
+                if (p.value(forKey: "senderId") as! Int) == id {
+                    print("name:  \(p.value(forKey: "senderId")!) age: \(p.value(forKey: "detail")!)")
                 }
             }
         } catch  {
@@ -79,7 +79,24 @@ class Health_ViewController: UIViewController {
         }
     }
     
-    func CheckData_(id:Int){
+    func DeleteData(id:Int){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "senderId") as! Int) == id {
+                    p.managedObjectContext?.delete(p)
+                    print("name:  \(p.value(forKey: "senderId")!) age: \(p.value(forKey: "detail")!)")
+                }
+            }
+        } catch  {
+            print(error)
+        }
+    }
+    
+    
+    func ChangeData(id:Int){
+        //转换一下可以先删除 后添加。
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
         do {
             let searchResults = try getContext().fetch(fetchRequest)
@@ -96,11 +113,12 @@ class Health_ViewController: UIViewController {
     func CheckDataall(){
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
         do {
+            
             let searchResults = try getContext().fetch(fetchRequest)
             print("--------all--------")
             print("numbers of \(searchResults.count)")
             for p in (searchResults as! [NSManagedObject]){
-                print("name:  \(p.value(forKey: "id")!) age: \(p.value(forKey: "detail")!)")
+                print("name:  \(p.value(forKey: "senderId")!) age: \(p.value(forKey: "detail")!)")
             }
         } catch  {
             print(error)

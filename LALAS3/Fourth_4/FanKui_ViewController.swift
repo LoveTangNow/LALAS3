@@ -13,6 +13,13 @@ class FanKui_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let a  = ["9","3","6","4","7"]
+        let b  = Paixu().Stringlike_Number(Data: a)
+        for i  in b{
+            print(i)
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
 
