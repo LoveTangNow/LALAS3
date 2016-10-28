@@ -131,8 +131,8 @@ class MessiageDetail_TableViewController: UITableViewController {
                 case 1:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     
-                    cell.image_1.setImage(imagelist[0], for: .normal)
-                    cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    //cell.image_1.setImage(imagelist[0], for: .normal)
+                    //cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     
                     TableViewHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 1)
                     return cell
@@ -300,7 +300,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         switch imgaeNumber {
         case 1 :
             let a = tableView.cellForRow(at: indexpath)! as! OnePhoto_H_NTableViewCell
-            imagelist.append(a.image_1.currentImage)
+            imagelist.append(a.image1.image)
             break
         case 2,3:
             let a = tableView.cellForRow(at: indexpath)! as! ThreePhoto_NTableViewCell

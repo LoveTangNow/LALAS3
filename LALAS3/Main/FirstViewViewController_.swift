@@ -58,6 +58,12 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
         tabBarController?.tabBar.isHidden = false
         self.myTableView.isHidden = false
         
+        
+        self.NewsIDs = MyCoreData().ReadNewsIDsAll()
+        self.NewsTimes = MyCoreData().ReadNewsTimesAll()
+        let aaaaaaaa = Paixu().Diclike(ID: self.NewsIDs, Date: self.NewsTimes)
+        self.NewsIDs = aaaaaaaa.0
+        self.NewsTimes = aaaaaaaa.1
         if let a = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id") {
             if a == "" {
                 //UITableView_Main.reloadData()
@@ -66,10 +72,7 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                 //userid不是空
                 let whereifrom = Defalts_ReadWrite().ReadDefalts_String(KEY: "whereifrom")!
                 print(whereifrom)
-                parameters = ["userid": a]
-                print(parameters)
-                GetDataWithHUD(parameters: parameters)
-                if whereifrom == "SendNewMessiageViewController" || whereifrom == "Login_ViewController" || whereifrom == "FirstViewController" {
+                if whereifrom == "SendNewMessiageViewController" || whereifrom == "Login_ViewController" {
                     parameters = ["userid": a]
                     print(parameters)
                     GetDataWithHUD(parameters: parameters)
@@ -197,20 +200,6 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
         self.imageviewzooooom.contentMode = .scaleAspectFill
         self.imageviewzooooom.clipsToBounds = true
         
-        let imageviewzooooom_ = UIImageView(image:sender.currentImage)
-        let imagekuangaobi = imageviewzooooom_.frame.height / imageviewzooooom_.frame.width //获取宽高比
-        //let w  = (UIScreen.main.bounds.width - 20 - 6) / 3
-        //imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:w,height:w)
-        
-        imageviewzooooom_.image = #imageLiteral(resourceName: "Black")
-        imageviewzooooom_.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
-        imageviewzooooom_.alpha = 0
-        self.view.addSubview(imageviewzooooom_)
-        
-        imageviewzooooom.layer.cornerRadius = 2
-        self.view.addSubview(imageviewzooooom)
-        imageviewzooooom.image = sender.currentImage
-        
         var indexPath = IndexPath()
         indexPath = self.myTableView.indexPath(for: sender.superview?.superview as! UITableViewCell)!
         let a = GotPhoto(A: Userid_Read_ImageNumber(id: NewsIDs[indexPath.section]), indexpath: indexPath)//获取图片组 和图片数目
@@ -222,6 +211,22 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
         print(a.0.count)
         print(a.1)
         vc.image_Dijizhang = sender.tag
+        print(sender.tag - 1)
+        let imageviewzooooom_ = UIImageView(image:(a.0)[sender.tag - 1])
+        let imagekuangaobi = imageviewzooooom_.frame.height / imageviewzooooom_.frame.width //获取宽高比
+        //let w  = (UIScreen.main.bounds.width - 20 - 6) / 3
+        //imageviewzooooom.frame = CGRect(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height,width:w,height:w)
+        
+        imageviewzooooom_.image = #imageLiteral(resourceName: "Black")
+        imageviewzooooom_.frame = CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
+        imageviewzooooom_.alpha = 0
+        self.view.addSubview(imageviewzooooom_)
+        
+        imageviewzooooom.layer.cornerRadius = 2
+        self.view.addSubview(imageviewzooooom)
+        imageviewzooooom.image = (a.0)[sender.tag - 1]
+        
+        
         
         /*
          print("-------------")
@@ -248,16 +253,16 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                     //self.imageviewzooooom.center = self.view.center
                     self.imageviewzooooom.frame = CGRect(x:0,y:(UIScreen.main.bounds.height / 2) - (UIScreen.main.bounds.width * imagekuangaobi / 2),width:UIScreen.main.bounds.width,height:UIScreen.main.bounds.width * imagekuangaobi)
                     self.navigationController?.navigationBar.alpha = 0
-                },
-                               completion: { (_) in
-                                self.navigationController?.pushViewController(vc, animated: false)
-                                self.inlema = true
-                                imageviewzooooom_.removeFromSuperview()
-                                self.navigationController?.navigationBar.alpha = 1
-                                self.navigationController?.navigationBar.isHidden = true
+                    },
+                    completion: { (_) in
+                        self.navigationController?.pushViewController(vc, animated: false)
+                        self.inlema = true
+                        imageviewzooooom_.removeFromSuperview()
+                        self.navigationController?.navigationBar.alpha = 1
+                        self.navigationController?.navigationBar.isHidden = true
+                        }
+                    )
                 }
-                )
-            }
             )
         }
     }
@@ -376,12 +381,11 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                             }
                         }
                     }*/
-                    let v = UIImageView()
                     let urlstring = GotServers().GotImageTServer(ai: true) + self.Userid_Read_ImageName(id: self.NewsIDs[flag]) + ".jpeg"
-                    v.sd_setImage(with: NSURL(string:urlstring)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"))
-                    cell.image_1.setImage(v.image, for: .normal)
+                    //v.sd_setImage(with: NSURL(string:urlstring)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                    //v.sd_setImage(with: NSURL(string:urlstring)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"))
+                    cell.image1.sd_setImage(with: NSURL(string:urlstring)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
                     
-                    cell.image_1.tag = 1
                     cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     
                     self.TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 1)
@@ -390,30 +394,18 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                     let imageNames = Userid_Read_ImageName(id: NewsIDs[flag]).components(separatedBy: "&")
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
                     
-                    for i in 0..<imageNames.count
-                    {
-                        Alamofire.request(GotServers().GotImageTServer(ai: true) + imageNames[i] + ".jpeg")
-                            .responseData { response in
-                                print("--------alamo")
-                                if let data = response.result.value {
-                                    let asd = UIImage(data: data)
-                                    switch i {
-                                    case 0 :
-                                        cell.image_1.setImage(asd, for: .normal)
-                                        cell.image_1.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
-                                        cell.image_1.tag = 1
-                                    case 1 :
-                                        cell.image_2.setImage(asd, for: .normal)
-                                        cell.image_2.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
-                                        cell.image_2.tag = 2
-                                    case 2 :
-                                        cell.image_3.setImage(asd, for: .normal)
-                                        cell.image_3.addTarget(self, action: #selector(self.GoDetail), for: UIControlEvents.touchUpInside)
-                                        cell.image_3.tag = 3
-                                    default:break
-                                    }
-                                }
-                            }
+                    let urlstring1 = GotServers().GotImageTServer(ai: true) + imageNames[0] + ".jpeg"
+                    cell.image1.sd_setImage(with: NSURL(string:urlstring1)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    
+                    let urlstring2 = GotServers().GotImageTServer(ai: true) + imageNames[1] + ".jpeg"
+                    cell.image2.sd_setImage(with: NSURL(string:urlstring2)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                    cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    
+                    if imageNames.count == 3 {
+                        let urlstring3 = GotServers().GotImageTServer(ai: true) + imageNames[2] + ".jpeg"
+                        cell.image3.sd_setImage(with: NSURL(string:urlstring3)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                        cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     }
                     
                     TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 3)
@@ -421,42 +413,34 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                 case 4,5,6:
                     let imageNames = Userid_Read_ImageName(id: NewsIDs[flag]).components(separatedBy: "&")
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SixPhoto_TableViewCell", for: indexPath) as! SixPhoto_TableViewCell
-                    for i in 0..<imageNames.count
-                    {
-                        Alamofire.request(GotServers().GotImageTServer(ai: true) + imageNames[i] + ".jpeg")
-                            .responseData { response in
-                                if let data = response.result.value {
-                                    let asd = UIImage(data: data)
-                                    switch i {
-                                    case 0 :
-                                        cell.image_1.setImage(asd, for: .normal)
-                                        cell.image_1.addTarget(self, action: #selector(self.GoDetail), for: .touchUpInside)
-                                        cell.image_1.tag = 1
-                                    case 1 :
-                                        cell.image_2.setImage(asd, for: .normal)
-                                        cell.image_2.addTarget(self, action: #selector(self.GoDetail), for: .touchUpInside)
-                                        cell.image_2.tag = 2
-                                    case 2 :
-                                        cell.image_3.setImage(asd, for: .normal)
-                                        cell.image_3.addTarget(self, action: #selector(self.GoDetail), for: .touchUpInside)
-                                        cell.image_3.tag = 3
-                                    case 3 :
-                                        cell.image_4.setImage(asd, for: .normal)
-                                        cell.image_4.addTarget(self, action: #selector(self.GoDetail), for: .touchUpInside)
-                                        cell.image_4.tag = 4
-                                    case 4 :
-                                        cell.image_5.setImage(asd, for: .normal)
-                                        cell.image_5.addTarget(self, action: #selector(self.GoDetail), for: .touchUpInside)
-                                        cell.image_5.tag = 5
-                                    case 5 :
-                                        cell.image_6.setImage(asd, for: .normal)
-                                        cell.image_6.addTarget(self, action: #selector(self.GoDetail), for: .touchUpInside)
-                                        cell.image_6.tag = 6
-                                    default:break
-                                    }
-                                }
-                        }
+                    let urlstring1 = GotServers().GotImageTServer(ai: true) + imageNames[0] + ".jpeg"
+                    cell.image1.sd_setImage(with: NSURL(string:urlstring1)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    
+                    let urlstring2 = GotServers().GotImageTServer(ai: true) + imageNames[1] + ".jpeg"
+                    cell.image2.sd_setImage(with: NSURL(string:urlstring2)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                    cell.image_2.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    
+                    let urlstring3 = GotServers().GotImageTServer(ai: true) + imageNames[2] + ".jpeg"
+                    cell.image3.sd_setImage(with: NSURL(string:urlstring3)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                    cell.image_3.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    
+                    let urlstring4 = GotServers().GotImageTServer(ai: true) + imageNames[3] + ".jpeg"
+                    cell.image4.sd_setImage(with: NSURL(string:urlstring4)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                    cell.image_4.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    
+                    if imageNames.count == 5  || imageNames.count == 6{
+                        let urlstring5 = GotServers().GotImageTServer(ai: true) + imageNames[4] + ".jpeg"
+                        cell.image5.sd_setImage(with: NSURL(string:urlstring5)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                        cell.image_5.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     }
+                    
+                    if imageNames.count == 6 {
+                        let urlstring6 = GotServers().GotImageTServer(ai: true) + imageNames[5] + ".jpeg"
+                        cell.image6.sd_setImage(with: NSURL(string:urlstring6)! as URL!, placeholderImage: #imageLiteral(resourceName: "White"), options: .progressiveDownload)
+                        cell.image_6.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    }
+
                     TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 4)
                     return cell
                 case 7,8,9:
@@ -755,34 +739,34 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
         switch a_ {
         case 1 :
             let a = myTableView.cellForRow(at: indexpath)! as! OnePhoto_H_NTableViewCell
-            imagelist.append(a.image_1.currentImage)
+            imagelist.append(a.image1.image)
             imagenumber_in = 1
             break
         case 2,3:
             let a = myTableView.cellForRow(at: indexpath)! as! ThreePhoto_NTableViewCell
-            imagelist.append(a.image_1.currentImage)
-            imagelist.append(a.image_2.currentImage)
+            imagelist.append(a.image1.image)
+            imagelist.append(a.image2.image)
             imagenumber_in = 2
             if a_ == 3 {
-                imagelist.append(a.image_3.currentImage)
+                imagelist.append(a.image3.image)
                 imagenumber_in = 3
             }
             
         case 4,5,6 :
             let a = myTableView.cellForRow(at: indexpath)! as! SixPhoto_TableViewCell
-            imagelist.append(a.image_1.currentImage)
-            imagelist.append(a.image_2.currentImage)
-            imagelist.append(a.image_3.currentImage)
-            imagelist.append(a.image_4.currentImage)
+            imagelist.append(a.image1.image)
+            imagelist.append(a.image2.image)
+            imagelist.append(a.image3.image)
+            imagelist.append(a.image4.image)
             imagenumber_in = 4
             if a_ == 5 {
                 imagenumber_in = 5
-                imagelist.append(a.image_5.currentImage)
+                imagelist.append(a.image5.image)
             }
             if a_ == 6 {
                 imagenumber_in = 6
-                imagelist.append(a.image_5.currentImage)
-                imagelist.append(a.image_6.currentImage)
+                imagelist.append(a.image5.image)
+                imagelist.append(a.image6.image)
             }
         case 7,8,9:
             let a = myTableView.cellForRow(at: indexpath)! as! NinePhoto_TableViewCell

@@ -390,11 +390,11 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                         .responseData { response in
                             if let data = response.result.value {
                                 let asd = UIImage(data: data)
-                                cell.image_1.setImage(asd, for: UIControlState.normal)
+                                //cell.image_1.setImage(asd, for: UIControlState.normal)
                             }
                         }
-                    cell.image_1.tag = 1
-                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    //cell.image_1.tag = 1
+                    //cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     
                     self.TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 1)
                     return cell
@@ -795,7 +795,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         switch a_ {
         case 1 :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! OnePhoto_H_NTableViewCell
-            imagelist.append(a.image_1.currentImage)
+            imagelist.append(a.image1.image)
             imagenumber_in = 1
             break
         case 2,3:

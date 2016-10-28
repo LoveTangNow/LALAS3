@@ -653,7 +653,6 @@
 			children = (
 				7FD101521D89764D009BB6A6 /* Main.storyboard */,
 				7FC4275B1DC3B2B500FC9FAE /* FirstViewViewController_.swift */,
-				7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */,
 				7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */,
 				7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */,
 				7FA6E8F51D89A535003F6186 /* FourthViewController.swift */,
@@ -717,6 +716,7 @@
 		7FAECEEA1D8A6AC4004592EA /* shit */ = {
 			isa = PBXGroup;
 			children = (
+				7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */,
 				7F11B5641D997C080084BAE5 /* T.storyboard */,
 				7FBCFDEC1D997E3D00831823 /* TViewController.swift */,
 				7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */,
