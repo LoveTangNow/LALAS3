@@ -19,7 +19,6 @@ class Paixu : AnyObject {
         }
         let repeatTimr = End - 1
         let EndPlace = End - 2
-        
         for _  in 0...repeatTimr {
             for i in 0...EndPlace {
                 if NumberData[i] > NumberData[i + 1]  {
@@ -52,6 +51,46 @@ class Paixu : AnyObject {
             End -= 1
         }
         return Data
+    }
+    
+    /*
+     一个是 id ，一个是时间。
+     我们是按照时间来排列顺序
+     */
+    
+    func Diclike(ID:[Int],Date:[String]) ->([Int],[String]) {
+        var End = ID.count
+        var ID  = ID
+        let Date = Date
+        //得到外来两个数据
+        var NewDate = [Int]()
+        for i in Date {
+            NewDate.append(Int(i)!)
+        }
+        let repeatTimr = End - 1
+        let EndPlace = End - 2
+        for _  in 0...repeatTimr {
+            for i in 0...EndPlace {
+                
+                if  NewDate[i] < NewDate[i + 1]  {
+                    //对调 两个
+                    let inin = NewDate[i + 1]
+                    NewDate[i + 1] = NewDate[i]
+                    NewDate[i] = inin
+                    
+                    let ininin = ID[i + 1]
+                    ID[i + 1] = ID[i]
+                    ID[i] = ininin
+                }
+            }
+            End -= 1
+        }
+        var NewDate_ = [String]()
+        for i in NewDate {
+            NewDate_.append(String(i))
+        }
+        return (ID,NewDate_)
+        
     }
 
 }

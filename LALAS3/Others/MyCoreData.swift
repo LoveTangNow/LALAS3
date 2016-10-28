@@ -116,6 +116,23 @@ class MyCoreData: AnyObject {
             print(error)
         }
     }
+    
+    func ReadAData_News(senderId:Int) ->() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            //print("numbers of \(searchResults.count)")
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "senderId") as! Int) == senderId {
+                    //senderId: senderId, height: height, detail: detail, device: device, image1: image1, image2: image2, image3: image3, image4: image4, image5: image5, image6: image6, image7: image7, image8: image8, image9: image9, senderName: senderName, sendTime: sendTime, saved: saved)
+                    //对于 bool 值     false->0     true->1
+                    print("senderId:  \(p.value(forKey: "senderId")!) ,device: \(p.value(forKey: "device")!),saved: \(p.value(forKey: "saved")!)")
+                }
+            }
+        } catch  {
+            print(error)
+        }
+    }
     //--------------------------------------------------------------------------------------
     
     

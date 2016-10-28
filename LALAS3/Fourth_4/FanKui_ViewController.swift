@@ -12,10 +12,15 @@ class FanKui_ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let a  = ["9","3","6","4","7"]
-        let b  = Paixu().Stringlike_Number(Data: a)
-        for i  in b{
+        let bb  = [9,3,6,4,7]
+        
+        let b  = Paixu().Diclike(ID: bb, Date: a)
+        for i  in b.0{
+            print(i)
+        }
+        for i  in b.1{
             print(i)
         }
         
@@ -27,16 +32,6 @@ class FanKui_ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -41,8 +41,9 @@ class HuanCun_ViewController: UIViewController , UITableViewDelegate , UITableVi
             MyCoreData().AddData_News_Reall(senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1", senderName: "1", sendTime: "1", saved: true)
             MyCoreData().CheckNumber(entityName: "News")
             
-            MyCoreData().AddData_News_Reall(senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1", senderName: "1", sendTime: "1", saved: true)
+            MyCoreData().AddData_News_Reall(senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1", senderName: "1", sendTime: "1", saved: false)
             MyCoreData().CheckNumber(entityName: "News")
+            MyCoreData().ReadAData_News(senderId: 1)
         }
         
     }
