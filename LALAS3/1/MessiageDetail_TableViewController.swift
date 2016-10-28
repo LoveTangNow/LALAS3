@@ -52,7 +52,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                 case .success:
                     //成功
                     //print(response.result.value)
-                    let json = JSON(response.result.value)
+                    let json = JSON(response.result.value!)
                     //数据包括：评论序号，评论者 id，评论时间，评论内容
                     //print(json)
                     for i  in 0..<json.count {

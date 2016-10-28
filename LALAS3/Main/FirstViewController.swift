@@ -120,7 +120,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    let json = JSON(response.result.value)
+                    let json = JSON(response.result.value!)
                     print(json)
                     
                     for i in 0..<json.count

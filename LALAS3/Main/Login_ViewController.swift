@@ -144,7 +144,7 @@ class Login_ViewController: UIViewController{
                     switch response.result {
                     case .success:
                         print("成功请求到")
-                        let json = JSON(response.result.value)
+                        let json = JSON(response.result.value!)
                         //print(json)
                         
                         let password_got = json[0]["user_password"].string
@@ -153,9 +153,9 @@ class Login_ViewController: UIViewController{
                                 //成功后呢进行页面跳转该干啥个干啥去
                                 MyAnimates().Start_A_HUD_With_Time_Words_Image(time: 2, image: nil, words: "登录成功")
                                 Defalts_ReadWrite().Settssssss_h(DATA: userName, FORKEY: "user_id")
-                                print(Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"))
+                                print(Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")!)
                                 print("*-*-*-*-*-*-*-*-*")
-                                print(Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"))
+                                print(Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")!)
                                 self.dismiss(animated: true, completion: nil)
                             }
                             else{
@@ -185,7 +185,7 @@ class Login_ViewController: UIViewController{
                 switch response.result {
                 case .success:
                     print("成功请求到")
-                    let json = JSON(response.result.value)
+                    let json = JSON(response.result.value!)
                     //print(json)
                     
                 case .failure(let error):

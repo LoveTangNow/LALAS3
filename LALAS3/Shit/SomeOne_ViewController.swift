@@ -117,7 +117,7 @@ class SomeOne_ViewController: UIViewController , UITableViewDelegate , UITableVi
                 .responseJSON { response in
                 switch response.result {
                 case .success:
-                    let json = JSON(response.result.value)
+                    let json = JSON(response.result.value!)
                     for i in 0..<json.count
                     {
                         let new_i = json.count - 1 - i

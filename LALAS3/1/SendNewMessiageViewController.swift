@@ -141,7 +141,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
                             case .success:
                                 print("Success: \(response.result.isSuccess)")
                                 //这里最好能返回图片的名字
-                                let json = JSON(response.result.value)
+                                let json = JSON(response.result.value!)
                                 for i in 0..<json.count
                                 {
                                     if let a = json[i]["name"].int{

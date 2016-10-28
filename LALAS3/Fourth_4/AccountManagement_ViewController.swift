@@ -194,8 +194,8 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         //let aTime = userInfo.object(forKey: UIKeyboardAnimationDurationUserInfoKey) as! TimeInterval
         //5
         let deltaY = beginY! - endY!
-        print(beginY)
-        print(endY)
+        //print(beginY)
+        //print(endY)
         print(deltaY)
         //print(aTime)//0.25
         print("show")
