@@ -9,6 +9,7 @@ target 'LALAS3' do
 	pod 'SwiftyJSON'
 	pod 'SVProgressHUD'
 	pod 'RealmSwift'
+    pod 'SDWebImage', '~>3.8'
 end
 
 post_install do |installer|
