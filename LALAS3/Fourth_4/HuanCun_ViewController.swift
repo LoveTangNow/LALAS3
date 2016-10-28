@@ -36,14 +36,14 @@ class HuanCun_ViewController: UIViewController , UITableViewDelegate , UITableVi
         switch indexPath.row {
         case 0:
             MyCoreData().DeleteAll(entityName: "News")
-            MyCoreData().CheckNumber(entityName: "News")
+            _ = MyCoreData().CheckNumber(entityName: "News")
         default:
-            MyCoreData().AddData_News_Reall(senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1", senderName: "1", sendTime: "1", saved: true)
-            MyCoreData().CheckNumber(entityName: "News")
+            MyCoreData().AddData_News_Reall(id:1,senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1",imageNumber: 1 ,senderName: "1", sendTime: "1", saved: true)
+            _ = MyCoreData().CheckNumber(entityName: "News")
             
-            MyCoreData().AddData_News_Reall(senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1", senderName: "1", sendTime: "1", saved: false)
-            MyCoreData().CheckNumber(entityName: "News")
-            MyCoreData().ReadAData_News(senderId: 1)
+            MyCoreData().AddData_News_Reall(id:1,senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1",imageNumber: 1,senderName: "1", sendTime: "1", saved: false)
+            _ = MyCoreData().CheckNumber(entityName: "News")
+            MyCoreData().ReadAData_News(id: 1)
         }
         
     }

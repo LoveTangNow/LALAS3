@@ -72,7 +72,7 @@ class Paixu : AnyObject {
         for _  in 0...repeatTimr {
             for i in 0...EndPlace {
                 
-                if  NewDate[i] < NewDate[i + 1]  {
+                if  NewDate[i] > NewDate[i + 1]  {
                     //对调 两个
                     let inin = NewDate[i + 1]
                     NewDate[i + 1] = NewDate[i]
