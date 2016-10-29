@@ -308,9 +308,36 @@
                     </tableView>
                     <connections>
                         <outlet property="UITableView_m" destination="iLF-jP-72P" id="awO-9x-eQg"/>
+                        <outlet property="item1" destination="lee-PL-mRH" id="ruw-sz-mzo"/>
+                        <outlet property="item2" destination="SGC-5B-8x0" id="XGa-az-wrm"/>
+                        <outlet property="item3" destination="oJm-E8-rle" id="DiU-Xh-Lhs"/>
+                        <outlet property="myToolBar" destination="bgY-Nv-Eiu" id="Il9-IV-apM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZmN-nH-Km2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bgY-Nv-Eiu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="Item" id="lee-PL-mRH">
+                            <connections>
+                                <action selector="itemAcion1:" destination="GgW-O6-Rnt" id="xlz-Ay-yLb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="aNP-JD-iuk"/>
+                        <barButtonItem title="Item" id="SGC-5B-8x0">
+                            <connections>
+                                <action selector="itemAcion2:" destination="GgW-O6-Rnt" id="Xgn-TX-quc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="5o1-EL-n0h"/>
+                        <barButtonItem title="Item" id="oJm-E8-rle">
+                            <connections>
+                                <action selector="itemAcion3:" destination="GgW-O6-Rnt" id="YI8-4c-wo0"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="-1029" y="882"/>
         </scene>

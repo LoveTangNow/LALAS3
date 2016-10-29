@@ -12,6 +12,7 @@ import SwiftyJSON
 import SVProgressHUD
 import CoreData
 import SDWebImage
+import swiftScan
 
 class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableViewDataSource{
 
@@ -96,9 +97,20 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
         let user_id = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
         if  user_id != "" || user_id == nil{
             self.tabBarController?.tabBar.isHidden = true
-            let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "SomeOne_ViewController")
+            let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SaoYiSaoViewController")
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func qqStyle()
+    {
+        print("qqStyle")
+        let vc = SaoYiSaoViewController();
+        var style = LBXScanViewStyle()
+        style.animationImage = UIImage(named: "CodeScan.bundle/qrcode_scan_light_green")
+        vc.scanStyle = style
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 
     //MARK: - Views
@@ -378,6 +390,7 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
             print(a.0.count)
             vc.imagelist = a.0
             vc.imgaeNumber = a.1
+            vc.newsids = NewsIDs[indexPath.section]
             
             let aaaaaaaaaaa = myTableView.cellForRow(at: indexPath)! as! News_Information_TableViewCell
             vc.imageicon = (aaaaaaaaaaa.userIcon.imageView?.image)!
@@ -595,7 +608,7 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                 
             case 2://三按钮区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsPraiseDemote_NTableViewCell", for: indexPath) as! CommentsPraiseDemote_NTableViewCell
-                cell.number = [110,112,119]
+                cell.number = [0,0,0]
                 cell.UIButton1.addTarget(self, action: #selector(self.Funczhuan), for: UIControlEvents.touchUpInside)
                 cell.UIButton2.addTarget(self, action: #selector(self.Pinglun), for: UIControlEvents.touchUpInside)
                 cell.UIButton3.addTarget(self, action: #selector(self.Zan), for: UIControlEvents.touchUpInside)
@@ -612,13 +625,50 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
     func Funczhuan() -> () {
         print("Funczhuan")
     }
-    func Pinglun() ->() {
-        print("Pinglun")
+    func Pinglun(_ sender:UIButton) ->() {
+        var indexPath = IndexPath()
+        indexPath = self.myTableView.indexPath(for: sender.superview?.superview?.superview as! UITableViewCell)!
+
         let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "Pinglun_ViewController") as!  Pinglun_ViewController
+        vc.newsid = NewsIDs[indexPath.section]
         self.present(vc, animated: true, completion: nil)
     }
-    func Zan () -> () {
+    func Zan (_ sender:UIButton) -> () {
         print("Zan")
+        var indexPath = IndexPath()
+        let a  = sender.superview?.superview?.superview as! CommentsPraiseDemote_NTableViewCell
+        let b  = a.did[2]
+        var c  = ""
+        
+        if b {//--
+            c = "0"
+            a.did[2] = false
+        }else{//++
+            c = "1"
+            a.did[2] = true
+        }
+        indexPath = self.myTableView.indexPath(for: a)!
+        let newsid = NewsIDs[indexPath.section]
+        
+        
+        
+        let data:Parameters = ["newsid":String(newsid),"up_or_down":c]
+        Alamofire.request(GotServers().GotServerAliScripts() + "UPDATE_ZAN.php", method: .post, parameters: data)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success://success
+                    print("success")
+                    let json = JSON(response.result.value!)
+                    let nnow_zan = json[0]["nnow_zan"].int
+                    if let aaaa = nnow_zan{
+                        a.UIButton3.setTitle("👍" + String(aaaa), for: .normal)
+                    }
+                case .failure(let error)://failure
+                    print(error)
+                }
+        }
+        
     }
     
 

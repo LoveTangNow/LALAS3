@@ -60,6 +60,8 @@
 		7F5C8E3D1DC06C500001482D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBCFE2E1D9C07C000831823 /* MapKit.framework */; };
 		7F6AA6B31DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6AA6B21DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift */; };
 		7F6AA6B51DA2754600A7292B /* Chat_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6AA6B41DA2754600A7292B /* Chat_ViewController.swift */; };
+		7F85040C1DC4F14A00899D06 /* ScanResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85040B1DC4F14A00899D06 /* ScanResultController.swift */; };
+		7F85040E1DC4F1E400899D06 /* MyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85040D1DC4F1E400899D06 /* MyCodeViewController.swift */; };
 		7F9F8A881D9D16D700C49C12 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */; };
 		7F9F8A8A1D9D16D700C49C12 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9F8A891D9D16D700C49C12 /* UserNotificationsUI.framework */; };
 		7F9F8A8D1D9D16D700C49C12 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8A8C1D9D16D700C49C12 /* NotificationViewController.swift */; };
@@ -78,7 +80,6 @@
 		7F9F8B011D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8B001D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift */; };
 		7F9F8B031D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8B021D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift */; };
 		7F9F8B051D9D653400C49C12 /* Label_And_RightBigImage_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F8B041D9D653400C49C12 /* Label_And_RightBigImage_TableViewCell.swift */; };
-		7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */; };
 		7FA6E8F21D89A50F003F6186 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */; };
 		7FA6E8F41D89A526003F6186 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */; };
 		7FA6E8F61D89A535003F6186 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6E8F51D89A535003F6186 /* FourthViewController.swift */; };
@@ -290,6 +291,8 @@
 		7F6AA6B21DA2734200A7292B /* OnePhotoWithTwoLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnePhotoWithTwoLabel_TableViewCell.swift; path = CELL/OnePhotoWithTwoLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7F6AA6B41DA2754600A7292B /* Chat_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chat_ViewController.swift; path = Second_2/Chat_ViewController.swift; sourceTree = "<group>"; };
 		7F6CEC571DB5A55A00C867C5 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		7F85040B1DC4F14A00899D06 /* ScanResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanResultController.swift; path = 1/ScanResultController.swift; sourceTree = "<group>"; };
+		7F85040D1DC4F1E400899D06 /* MyCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyCodeViewController.swift; path = 1/MyCodeViewController.swift; sourceTree = "<group>"; };
 		7F9F8A861D9D16D700C49C12 /* NotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9F8A871D9D16D700C49C12 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		7F9F8A891D9D16D700C49C12 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
@@ -311,7 +314,6 @@
 		7F9F8B001D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftSamllImageAndLabel_TableViewCell.swift; path = CELL/LeftSamllImageAndLabel_TableViewCell.swift; sourceTree = "<group>"; };
 		7F9F8B021D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Label_And_TextView_TableViewCell.swift; path = CELL/Label_And_TextView_TableViewCell.swift; sourceTree = "<group>"; };
 		7F9F8B041D9D653400C49C12 /* Label_And_RightBigImage_TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Label_And_RightBigImage_TableViewCell.swift; path = CELL/Label_And_RightBigImage_TableViewCell.swift; sourceTree = "<group>"; };
-		7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Main/FirstViewController.swift; sourceTree = "<group>"; };
 		7FA6E8F11D89A50F003F6186 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = Main/SecondViewController.swift; sourceTree = "<group>"; };
 		7FA6E8F31D89A526003F6186 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = Main/ThirdViewController.swift; sourceTree = "<group>"; };
 		7FA6E8F51D89A535003F6186 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FourthViewController.swift; path = Main/FourthViewController.swift; sourceTree = "<group>"; };
@@ -674,6 +676,8 @@
 				7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */,
 				7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */,
 				7FC4275F1DC41D2B00FC9FAE /* Pinglun_ViewController.swift */,
+				7F85040B1DC4F14A00899D06 /* ScanResultController.swift */,
+				7F85040D1DC4F1E400899D06 /* MyCodeViewController.swift */,
 			);
 			name = First_1;
 			sourceTree = "<group>";
@@ -719,7 +723,6 @@
 		7FAECEEA1D8A6AC4004592EA /* shit */ = {
 			isa = PBXGroup;
 			children = (
-				7FA6E8EF1D89A4FF003F6186 /* FirstViewController.swift */,
 				7F11B5641D997C080084BAE5 /* T.storyboard */,
 				7FBCFDEC1D997E3D00831823 /* TViewController.swift */,
 				7FBCFDF21D9A9A1A00831823 /* Web_ViewController.swift */,
@@ -795,7 +798,6 @@
 			isa = PBXGroup;
 			children = (
 				7FBCFE321D9C07C900831823 /* LALAS3.entitlements */,
-				7FAECEED1D8A7399004592EA /* Server.plist */,
 				7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */,
 				7F1367971DB7C3F000802F7B /* FountionsClasses */,
 				7F1367961DB7C37E00802F7B /* AllViews */,
@@ -805,6 +807,7 @@
 				7F9F8AE31D9D4EF200C49C12 /* Voice */,
 				7FF0C8521D91127600B85248 /* LALAS3-Bridging-Header.h */,
 				7FD1015A1D89764D009BB6A6 /* Info.plist */,
+				7FAECEED1D8A7399004592EA /* Server.plist */,
 				7FF0C8531D91173F00B85248 /* LALAS3.xcdatamodeld */,
 				7FD101571D89764D009BB6A6 /* LaunchScreen.storyboard */,
 			);
@@ -1422,6 +1425,7 @@
 				7FA6E8F21D89A50F003F6186 /* SecondViewController.swift in Sources */,
 				7FFA9E581D97F1BB002380C0 /* Picker_TableViewCell.swift in Sources */,
 				7F3F21EE1D93ACCB00ACF590 /* ChatPeople_TableViewCell.swift in Sources */,
+				7F85040E1DC4F1E400899D06 /* MyCodeViewController.swift in Sources */,
 				7F9F8AFF1D9D64C700C49C12 /* TwoLabel_TableViewCell.swift in Sources */,
 				7F9F8AF11D9D610C00C49C12 /* Tongyong_ViewController.swift in Sources */,
 				7FFE73161DBD81EA00E9A1B9 /* WorksHieghts.swift in Sources */,
@@ -1455,7 +1459,6 @@
 				7FA6E9241D89ABCF003F6186 /* Functions.swift in Sources */,
 				7FDDBE271DAE0D23005B2F0D /* PhotoAvilable.swift in Sources */,
 				7FFA9E501D960A0F002380C0 /* CommentsPraiseDemote_NTableViewCell.swift in Sources */,
-				7FA6E8F01D89A4FF003F6186 /* FirstViewController.swift in Sources */,
 				7FBCFDEF1D9A45D800831823 /* Select_TableViewCell.swift in Sources */,
 				7FA6E9201D89A994003F6186 /* Login_ViewController.swift in Sources */,
 				7FBCFDED1D997E3D00831823 /* TViewController.swift in Sources */,
@@ -1467,6 +1470,7 @@
 				7FBCFDF31D9A9A1A00831823 /* Web_ViewController.swift in Sources */,
 				7FDDBE2B1DAE85A6005B2F0D /* SomePeople_ViewController.swift in Sources */,
 				7F4B10231DB1BF2A000E5C3C /* GotPhoto.swift in Sources */,
+				7F85040C1DC4F14A00899D06 /* ScanResultController.swift in Sources */,
 				7FC4275E1DC3CFB400FC9FAE /* ImagePath.swift in Sources */,
 				7FBCFE341D9C08DB00831823 /* Map_ViewController.swift in Sources */,
 				7F9F8B031D9D651400C49C12 /* Label_And_TextView_TableViewCell.swift in Sources */,
