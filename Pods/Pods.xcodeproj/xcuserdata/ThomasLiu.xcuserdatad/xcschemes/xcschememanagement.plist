@@ -49,15 +49,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>swiftScan.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00F2CB61C1C950FD6AF0BEA4182C87FE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>232DE03A1FEE99B32D02D0E476F0F148</key>
+		<key>2403A210254CC130FF7506BDB94E8D75</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,7 +67,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4249719812F0DF866965187F2B4C6D21</key>
+		<key>521ABD7B6A44E82FC5D6F10E4BFDBABE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +77,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>58C092FF5E8110F6E2041EAE0F622383</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58C2D4A6AAF1524A3BF58F8A8448C481</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA4C8B017B81162984C2EAE59AE53512</key>
+		<key>93EF7D7FC62AED27D41D958BB555B986</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF658BD9DBDB9404789C63090178D8F2</key>
+		<key>BA5A78A9F02178E05D11387C3A0FC40A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E311CCD1E96CFEBCE1B5694E1E567358</key>
+		<key>CF03D1C5262317E1FCDB63CD90F11CA7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
