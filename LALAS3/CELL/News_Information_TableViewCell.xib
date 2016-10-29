@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,18 +17,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dn6-Ib-tUz" id="hhZ-qa-JAw">
-                <frame key="frameInset" width="375" height="217"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-BQ-2zX">
+                        <rect key="frame" x="70" y="18" width="38" height="29"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="29" id="2lV-cV-Bwg"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="1" green="0.5859789252281189" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzp-EM-AX8">
+                        <rect key="frame" x="70" y="48" width="29" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="WA1-j3-GVp"/>
                         </constraints>
@@ -34,31 +39,35 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auk-Vk-ZxK">
-                        <frame key="frameInset" minX="18" minY="70" width="339" height="46"/>
+                        <rect key="frame" x="18" y="70" width="339" height="46"/>
                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                         <size key="shadowOffset" width="0.0" height="0.0"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YaO-Qx-ByV">
+                        <rect key="frame" x="111" y="25" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="16" id="Nfq-dt-zYv"/>
                             <constraint firstAttribute="width" secondItem="YaO-Qx-ByV" secondAttribute="height" multiplier="1:1" id="ulC-P9-1X0"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfM-XO-Bn1">
+                        <rect key="frame" x="337" y="27" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="28D-kH-Kil"/>
                             <constraint firstAttribute="width" secondItem="YfM-XO-Bn1" secondAttribute="height" multiplier="1:1" id="64b-f1-cUM"/>
                         </constraints>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clb-40-Zx7">
+                        <rect key="frame" x="18" y="18" width="47" height="47"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="clb-40-Zx7" secondAttribute="height" multiplier="1:1" id="2PS-ht-SPP"/>
                             <constraint firstAttribute="height" constant="47" id="hB4-81-6KK"/>
                         </constraints>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oms-Wo-2vU">
+                        <rect key="frame" x="50" y="50" width="12" height="12"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Oms-Wo-2vU" secondAttribute="height" multiplier="1:1" id="AoG-cR-E2U"/>
                             <constraint firstAttribute="width" constant="12" id="VFu-65-ria"/>

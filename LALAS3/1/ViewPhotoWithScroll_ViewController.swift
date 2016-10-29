@@ -108,8 +108,10 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     }
     
     @IBAction func Tabeeee(_ sender: AnyObject) {
-        
-        _ = self.navigationController?.popViewController(animated: false)
+        if Defalts_ReadWrite().ReadDefalts_String(KEY: "whereifrom") != "MessiageDetail_TableViewController"
+        {
+            _ = self.navigationController?.popViewController(animated: false)
+        }
 
         /*
         if navigationController?.navigationBar.isHidden == true {

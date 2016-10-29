@@ -111,6 +111,7 @@
 		7FBCFE671D9C1EFA00831823 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7FBCFE5B1D9C1EFA00831823 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7FC4275C1DC3B2B500FC9FAE /* FirstViewViewController_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4275B1DC3B2B500FC9FAE /* FirstViewViewController_.swift */; };
 		7FC4275E1DC3CFB400FC9FAE /* ImagePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4275D1DC3CFB400FC9FAE /* ImagePath.swift */; };
+		7FC427601DC41D2B00FC9FAE /* Pinglun_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4275F1DC41D2B00FC9FAE /* Pinglun_ViewController.swift */; };
 		7FD1014D1D89764D009BB6A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */; };
 		7FD101541D89764D009BB6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101521D89764D009BB6A6 /* Main.storyboard */; };
 		7FD101591D89764D009BB6A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FD101571D89764D009BB6A6 /* LaunchScreen.storyboard */; };
@@ -351,6 +352,7 @@
 		7FBCFE6E1D9C229700831823 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		7FC4275B1DC3B2B500FC9FAE /* FirstViewViewController_.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewViewController_.swift; path = Main/FirstViewViewController_.swift; sourceTree = "<group>"; };
 		7FC4275D1DC3CFB400FC9FAE /* ImagePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePath.swift; path = Others/ImagePath.swift; sourceTree = "<group>"; };
+		7FC4275F1DC41D2B00FC9FAE /* Pinglun_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pinglun_ViewController.swift; path = 1/Pinglun_ViewController.swift; sourceTree = "<group>"; };
 		7FD101491D89764D009BB6A6 /* LALAS3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LALAS3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD1014C1D89764D009BB6A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FD101531D89764D009BB6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				7F3F21D91D92B02200ACF590 /* MessiageDetail_TableViewController.swift */,
 				7F2475731D917599003B40B4 /* ViewPhotoWithScroll_ViewController.swift */,
 				7FA6E8FA1D89A5B4003F6186 /* SaoYiSaoViewController.swift */,
+				7FC4275F1DC41D2B00FC9FAE /* Pinglun_ViewController.swift */,
 			);
 			name = First_1;
 			sourceTree = "<group>";
@@ -1474,6 +1477,7 @@
 				7F9F8AFD1D9D64B200C49C12 /* Lable_And_Switch_TableViewCell.swift in Sources */,
 				7F9F8B011D9D64F100C49C12 /* LeftSamllImageAndLabel_TableViewCell.swift in Sources */,
 				7F1367991DB7CDE800802F7B /* MyUIAlertController.swift in Sources */,
+				7FC427601DC41D2B00FC9FAE /* Pinglun_ViewController.swift in Sources */,
 				7FAECEF01D8ABAD9004592EA /* Setting_TableViewController.swift in Sources */,
 				7F6AA6B51DA2754600A7292B /* Chat_ViewController.swift in Sources */,
 				7FDDBE291DAE3CCA005B2F0D /* OnePhotoTwoLableTableViewCell.swift in Sources */,

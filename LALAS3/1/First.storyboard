@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="写点什么吧" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7h4-Sk-svo">
-                                <frame key="frameInset" minX="10" width="355" height="300"/>
+                                <rect key="frame" x="10" y="0.0" width="355" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -29,7 +33,7 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zo2-Z9-cM1">
-                                <frame key="frameInset" minX="16" minY="308" width="89" height="84"/>
+                                <rect key="frame" x="16" y="308" width="89" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -37,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3d-GV-dim">
-                                <frame key="frameInset" minX="16" minY="557" width="349" height="43"/>
+                                <rect key="frame" x="16" y="557" width="349" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="哈哈哈">
@@ -49,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg4-wz-yll">
-                                <frame key="frameInset" minX="113" minY="308" width="77" height="84"/>
+                                <rect key="frame" x="113" y="308" width="77" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -57,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgE-Gf-TZo">
-                                <frame key="frameInset" minX="198" minY="308" width="77" height="84"/>
+                                <rect key="frame" x="198" y="308" width="77" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -65,7 +69,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUC-AD-xW3">
-                                <frame key="frameInset" minX="288" minY="308" width="77" height="84"/>
+                                <rect key="frame" x="288" y="308" width="77" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -73,7 +77,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zr1-x6-saL">
-                                <frame key="frameInset" minX="16" minY="456" width="343" height="29"/>
+                                <rect key="frame" x="16" y="456" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="低画质"/>
@@ -111,6 +115,72 @@
             </objects>
             <point key="canvasLocation" x="-354.39999999999998" y="882.90854572713647"/>
         </scene>
+        <!--Pinglun View Controller-->
+        <scene sceneID="QRZ-5U-Z9a">
+            <objects>
+                <viewController storyboardIdentifier="Pinglun_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vrw-wm-fw9" customClass="Pinglun_ViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H2r-JU-cxI"/>
+                        <viewControllerLayoutGuide type="bottom" id="jRn-YB-YO4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EVi-ZC-G7F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J9M-6p-5nb">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut eatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="svl-HJ-aJF" appends="YES" id="dhI-A7-nAl"/>
+                                </connections>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCF-9P-bEz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="lL2-Kw-r64">
+                                        <barButtonItem key="leftBarButtonItem" title="取消" id="lGz-oE-3hu">
+                                            <connections>
+                                                <action selector="LeftClick:" destination="vrw-wm-fw9" id="ieA-fa-JRy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="发送" id="mJ6-ax-NWM">
+                                            <connections>
+                                                <action selector="RightClick:" destination="vrw-wm-fw9" id="pzk-b2-QJt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jRn-YB-YO4" firstAttribute="top" secondItem="J9M-6p-5nb" secondAttribute="bottom" id="51w-wr-fku"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J9M-6p-5nb" secondAttribute="trailing" id="78O-gh-KEZ"/>
+                            <constraint firstItem="J9M-6p-5nb" firstAttribute="leading" secondItem="EVi-ZC-G7F" secondAttribute="leadingMargin" id="cXl-5x-Iip"/>
+                            <constraint firstItem="J9M-6p-5nb" firstAttribute="top" secondItem="H2r-JU-cxI" secondAttribute="bottom" constant="44" id="jVJ-Kq-s9B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="leftItem" destination="lGz-oE-3hu" id="QOG-Hl-ryI"/>
+                        <outlet property="myTextView" destination="J9M-6p-5nb" id="iTg-GE-22A"/>
+                        <outlet property="navigationBar" destination="VCF-9P-bEz" id="hG1-vg-9ti"/>
+                        <outlet property="rightItem" destination="mJ6-ax-NWM" id="wDZ-6h-lds"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ksd-BF-eNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="svl-HJ-aJF">
+                    <connections>
+                        <action selector="ActionSlide:" destination="vrw-wm-fw9" id="cyU-K6-2PK"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-359" y="1634"/>
+        </scene>
         <!--View Photo With Scroll View Controller-->
         <scene sceneID="f36-xe-1xP">
             <objects>
@@ -124,6 +194,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="kii-MN-fVk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kii-MN-fVk" secondAttribute="height" multiplier="375:667" id="Es9-D0-ctO"/>
                                 </constraints>
@@ -131,8 +202,11 @@
                                     <outletCollection property="gestureRecognizers" destination="k8x-H3-vU0" appends="YES" id="kBw-cj-c3Y"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IPH-5L-l6U"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IPH-5L-l6U">
+                                <rect key="frame" x="168" y="530" width="39" height="37"/>
+                            </pageControl>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-XJ-BBh">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="boq-uM-EsQ">
                                         <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="4CN-RL-YMF">

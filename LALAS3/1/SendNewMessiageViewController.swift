@@ -457,8 +457,12 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
     }
     
     //MARK: -  textView
+    var isfristediting = true
     func textViewDidBeginEditing(_ textView: UITextView) {
-        UITextView_Main.text = ""
+        if isfristediting {
+            UITextView_Main.text = ""
+            isfristediting = false
+        }
     }
     
     func textViewDidChange(_ textView: UITextView) {

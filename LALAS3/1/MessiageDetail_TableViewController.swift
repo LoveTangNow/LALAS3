@@ -129,30 +129,27 @@ class MessiageDetail_TableViewController: UITableViewController {
             } else {//Photos
                 switch imgaeNumber {
                 case 1:
+                    print("OnePhoto_H_NTableViewCell")
+                    print(imagelist.count)
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
                     
-                    //cell.image_1.setImage(imagelist[0], for: .normal)
-                    //cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image1.image = imagelist[0]
+                    cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     
                     TableViewHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 1)
                     return cell
                     
                 case 2,3:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
-                    cell.image_1.setImage(imagelist[0], for: .normal)
+                    cell.image1.image = imagelist[0]
                     cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
 
-                    switch imgaeNumber {
-                    case 2:
-                        cell.image_2.setImage(imagelist[1], for: .normal)
-                        cell.image_2.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
-                    case 3:
-                        cell.image_2.setImage(imagelist[1], for: .normal)
-                        cell.image_3.setImage(imagelist[2], for: .normal)
-                        cell.image_2.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    cell.image2.image = imagelist[1]
+                    cell.image_2.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
+                    if imgaeNumber == 3{
+                        cell.image3.image = imagelist[2]
                         cell.image_3.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
-                    default:
-                        break
+
                     }
 
                     TableViewHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 3)
@@ -160,10 +157,10 @@ class MessiageDetail_TableViewController: UITableViewController {
                     
                 case 4,5,6:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SixPhoto_TableViewCell", for: indexPath) as! SixPhoto_TableViewCell
-                    cell.image_1.setImage(imagelist[0], for: .normal)
-                    cell.image_2.setImage(imagelist[1], for: .normal)
-                    cell.image_3.setImage(imagelist[2], for: .normal)
-                    cell.image_4.setImage(imagelist[3], for: .normal)
+                    cell.image1.image = imagelist[0]
+                    cell.image2.image = imagelist[1]
+                    cell.image3.image = imagelist[2]
+                    cell.image4.image = imagelist[3]
                     
                     cell.image_1.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     cell.image_2.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
@@ -172,11 +169,11 @@ class MessiageDetail_TableViewController: UITableViewController {
                     
                     switch imgaeNumber {
                     case 5:
-                        cell.image_5.setImage(imagelist[4], for: .normal)
+                        cell.image5.image = imagelist[4]
                         cell.image_5.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     case 6:
-                        cell.image_5.setImage(imagelist[4], for: .normal)
-                        cell.image_6.setImage(imagelist[5], for: .normal)
+                        cell.image5.image = imagelist[4]
+                        cell.image6.image = imagelist[5]
                         cell.image_5.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                         cell.image_6.addTarget(self, action: #selector(GoImageDetail), for: UIControlEvents.touchUpInside)
                     default:
@@ -279,7 +276,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         vc.imagelist = GotPhoto(indexpath: indexpath)
         vc .imgaeNumber = imgaeNumber
         
-        self.navigationController?.pushViewController(vc, animated: false)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func ConnectNib() {

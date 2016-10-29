@@ -14,6 +14,72 @@ import CoreData
 import SDWebImage
 
 class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+    //////////
+    var myview = UIView()
+    var myWord = UILabel()
+    var myactivity = UIActivityIndicatorView()
+    
+    var old:CGFloat = 0
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        /*
+         小于70，展示下拉刷新：松开上滑
+         大于70，展开松开刷新：松开上滑到70，刷新并且更新数据，上滑到0
+         */
+        //print("--")
+        //print(self.UITableView_Main.contentInset.top)
+        //print(-self.UITableView_Main.contentOffset.y)//现在的位置
+        let heightToNavagateBarBottom = -self.myTableView.contentOffset.y - 64
+        let space = heightToNavagateBarBottom - old
+        UIView.animate(withDuration: 0, animations: {
+            self.myactivity.center.y += space
+            self.myWord.center.y += space
+        })
+        //print(space)
+        let myViewAlpha = (heightToNavagateBarBottom)/80
+        //print(myViewAlpha)
+        myview.alpha = 1 - myViewAlpha
+        if -self.myTableView.contentOffset.y - self.myTableView.contentInset.top <= 80{
+            myview.backgroundColor = UIColor.lightGray
+            UIView.animate(withDuration: 0, animations: {
+                self.myview.frame =  CGRect(x:0,y:64,width:UIScreen.main.bounds.width,height:heightToNavagateBarBottom)
+            })
+        }
+        else{//到90的时候就会触发，这个时候开始
+            myWord.text = "松手刷新"
+            myview.backgroundColor = UIColor.lightGray
+            UIView.animate(withDuration: 0, animations: {
+                self.myview.frame =  CGRect(x:0,y:64,width:UIScreen.main.bounds.width,height:heightToNavagateBarBottom)
+            })
+            if space > 0  {
+                willReloadData = true
+            }
+            //UITableView_M.isScrollEnabled = true
+        }
+        old = heightToNavagateBarBottom
+        if !myactivity.isAnimating {
+            myactivity.startAnimating()
+        }
+    }
+    
+    var willReloadData = false
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if willReloadData == true {
+            if let userid = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"){
+                let parameters: Parameters = ["userid": userid]
+                GetDataWithHUD(parameters: parameters)
+            } else {
+                let sb = UIStoryboard(name: "Main", bundle:nil)
+                let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as UIViewController
+                self.present(vc, animated: true, completion: nil)
+            }
+            willReloadData = false
+        }
+        myWord.text = "下拉刷新"
+        myactivity.stopAnimating()
+        print("scrollViewDidEndDecelerating")
+    }
     //MARK: - Navigatebar??
     
     @IBAction func LeftAction(_ sender: UIBarButtonItem) {
@@ -45,6 +111,22 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
         self.imagewhite.layer.cornerRadius = 2
         self.imagewhite.clipsToBounds = true
         self.imagewhite.isHidden = true
+        
+        myview.frame =  CGRect(x:0,y:64,width:UIScreen.main.bounds.width,height:0)
+        myview.backgroundColor = UIColor.blue
+        self.view.addSubview(myview)
+        
+        myWord.frame = CGRect(x:0,y:30,width:UIScreen.main.bounds.width,height:20)
+        myWord.text = "下拉刷新"
+        myWord.font = UIFont(name:"GillSans", size:16)
+        myWord.textColor = UIColor.darkGray
+        myWord.textAlignment = .center
+        self.view.addSubview(myWord)
+        
+        myactivity.frame = CGRect(x:UIScreen.main.bounds.width / 2 - 8,y:14,width:16,height:16)
+        myactivity.color = UIColor.darkGray
+        myactivity.isHidden = false
+        self.view.addSubview(myactivity)
         
         // Do any additional setup after loading the view.
         ConnectNib()
@@ -176,6 +258,10 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
             )
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "FirstViewViewController_", FORKEY: "whereifrom")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -281,9 +367,11 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
         if indexPath.row == 0 {
             var aa = indexPath
             aa.row += 1
-            let a = GotPhoto(A: Userid_Read_ImageNumber(id: indexPath.section), indexpath: aa)
+            let a = GotPhoto(A: Userid_Read_ImageNumber(id: NewsIDs[indexPath.section]), indexpath: aa)
             let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "MessiageDetail_TableViewController") as!  MessiageDetail_TableViewController
             UserDefaults.standard.synchronize()
+            print("----+------+-------")
+            print(a.0.count)
             vc.imagelist = a.0
             vc.imgaeNumber = a.1
             
@@ -321,10 +409,14 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                             cell.userIcon.setImage(asd, for: UIControlState.normal)
                         }
                 }
+                cell.userIcon.addTarget(self, action: #selector(GoSomeOne), for: UIControlEvents.touchUpInside)
+                cell.userIcon.addTarget(self, action: #selector(IconClock_Double ), for: UIControlEvents.touchDownRepeat)
                 cell.setting.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
                 cell.UIImageViewV_.image = #imageLiteral(resourceName: "v")
                 cell.UIImageViewVip_.image = #imageLiteral(resourceName: "alipay")
                 cell.setting.setImage(#imageLiteral(resourceName: "setting"), for: .normal)
+                cell.setting.isHidden = true
+                cell.setting.addTarget(self, action: #selector(Setting), for: UIControlEvents.touchUpInside)
                 if indexPath.section == 0 {
                     print("0000000000")
                     print(Userid_Read_SenderDetail(id: NewsIDs[flag]))
@@ -506,6 +598,9 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
             case 2://三按钮区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsPraiseDemote_NTableViewCell", for: indexPath) as! CommentsPraiseDemote_NTableViewCell
                 cell.number = [110,112,119]
+                cell.UIButton1.addTarget(self, action: #selector(self.Funczhuan), for: UIControlEvents.touchUpInside)
+                cell.UIButton2.addTarget(self, action: #selector(self.Pinglun), for: UIControlEvents.touchUpInside)
+                cell.UIButton3.addTarget(self, action: #selector(self.Zan), for: UIControlEvents.touchUpInside)
                 cell.UpDateUI()
                 TableViewCellHeight = 40
                 return cell
@@ -516,7 +611,29 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
             }
         }
     }
+    func Funczhuan() -> () {
+        print("Funczhuan")
+    }
+    func Pinglun() ->() {
+        print("Pinglun")
+        let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "Pinglun_ViewController") as!  Pinglun_ViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    func Zan () -> () {
+        print("Zan")
+    }
+    
 
+    func GoSomeOne() -> () {
+        print("GoSomeOne")
+    }
+    func IconClock_Double() -> () {
+        print("IconClock_Double")
+    }
+    
+    func Setting () -> () {
+        print("Setting")
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         print("heightForRowAt")
