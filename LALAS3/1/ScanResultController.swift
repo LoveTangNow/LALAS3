@@ -1,9 +1,9 @@
 //
 //  ScanResultController.swift
-//  swiftScan
+//  LALAS3
 //
-//  Created by xialibing on 15/12/11.
-//  Copyright © 2015年 xialibing. All rights reserved.
+//  Created by Thomas Liu on 16/9/14.
+//  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit

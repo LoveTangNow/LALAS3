@@ -1,9 +1,9 @@
 //
 //  MyCodeViewController.swift
-//  swiftScan
+//  LALAS3
 //
-//  Created by xialibing on 15/12/10.
-//  Copyright © 2015年 xialibing. All rights reserved.
+//  Created by Thomas Liu on 16/9/14.
+//  Copyright © 2016年 ThomasLiu. All rights reserved.
 //
 
 import UIKit
@@ -78,6 +78,7 @@ class MyCodeViewController: UIViewController {
         
     }
     
+    //方块儿码
     func createQR1()
     {
         // qrView.hidden = false
@@ -85,15 +86,15 @@ class MyCodeViewController: UIViewController {
         
         let qrImg = LBXScanWrapper.createCode(codeType: "CIQRCodeGenerator",codeString:"lbxia20091227@foxmail.com", size: qrImgView.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)
         
-        let logoImg = UIImage(named: "logo.JPG")
-        qrImgView.image = LBXScanWrapper.addImageLogo(srcImg: qrImg!, logoImg: logoImg!, logoSize: CGSize(width: 30, height: 30))
+        //let logoImg = UIImage(named: "logo.JPG")
+        qrImgView.image = LBXScanWrapper.addImageLogo(srcImg: qrImg!, logoImg: #imageLiteral(resourceName: "user"), logoSize: CGSize(width: 30, height: 30))
     }
     
+    //条码
     func createCode128()
     {
         
         let qrImg = LBXScanWrapper.createCode128(codeString: "005103906002", size: qrImgView.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)
-        
         
         tImgView.image = qrImg
         
