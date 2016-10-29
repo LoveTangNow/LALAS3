@@ -60,6 +60,9 @@ class Paixu : AnyObject {
     
     func Diclike(ID:[Int],Date:[String]) ->([Int],[String]) {
         var End = ID.count
+        if End == 1 || End == 0{
+            return (ID,Date)
+        }
         var ID  = ID
         let Date = Date
         //得到外来两个数据

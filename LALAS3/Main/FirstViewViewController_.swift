@@ -14,6 +14,8 @@ import CoreData
 import SDWebImage
 
 class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+
+
     //////////
     var myview = UIView()
     var myWord = UILabel()
@@ -128,13 +130,14 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
         myactivity.isHidden = false
         self.view.addSubview(myactivity)
         
+        
         // Do any additional setup after loading the view.
         ConnectNib()
     }
     
     var parameters = Parameters()
     override func viewWillAppear(_ animated: Bool) {
-        print("willappear--")
+        print("---------------willappear--")
         navigationController?.navigationBar.barTintColor = UIColor.red
         navigationController?.navigationBar.tintColor = UIColor.white
         tabBarController?.tabBar.isHidden = false
@@ -245,6 +248,7 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        print("did---------------")
         self.navigationController?.navigationBar.isHidden = false
         if inlema == true {
             UIView.animate(withDuration: 0.2, animations: {
@@ -386,7 +390,6 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("cellForRowAt")
         if NewsIDs.isEmpty{
         //if MyCoreData().CheckNumber(entityName: "News") == 0 {
             print("0")
@@ -417,11 +420,6 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                 cell.setting.setImage(#imageLiteral(resourceName: "setting"), for: .normal)
                 cell.setting.isHidden = true
                 cell.setting.addTarget(self, action: #selector(Setting), for: UIControlEvents.touchUpInside)
-                if indexPath.section == 0 {
-                    print("0000000000")
-                    print(Userid_Read_SenderDetail(id: NewsIDs[flag]))
-                }
-                
                 //  0       1      2       3        4           5         6
                 // detail device newsid newstime photohumber senderid sendername
                 cell.UILabelDetail.text = Userid_Read_SenderDetail(id: NewsIDs[flag])
@@ -636,12 +634,10 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("heightForRowAt")
         return TableViewCellHeight
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        print("numberOfSections")
         if NewsIDs.isEmpty {
             return 1
         }
@@ -649,15 +645,15 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("numberOfRowsInSection")
         return 3
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        print("heightForFooterInSection")
         return 15
         
     }
+    
+    
     
     //MAEK: - Functions
     func ConnectNib() {

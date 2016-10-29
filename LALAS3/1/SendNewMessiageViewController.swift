@@ -12,9 +12,11 @@ import MobileCoreServices
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
+import CoreLocation
 
-class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate
+class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate,CLLocationManagerDelegate
 {
+    
     //MARK: - 变量
     var lmagelist = UIImage()
     
@@ -433,9 +435,42 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         self.view.addSubview(btn)
         //给按钮添加点击事件
         btn.addTarget(self, action: #selector(click), for: UIControlEvents.touchUpInside)*/
-
+        
+        //设置定位服务管理器代理
+        locationManager.delegate = self
+        //设置定位进度
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        //更新距离
+        locationManager.distanceFilter = 100
+        ////发送授权申请
+        locationManager.requestAlwaysAuthorization()
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            //允许使用定位服务的话，开启定位服务更新
+            locationManager.startUpdatingLocation()
+            print("定位开始")
+        }
     }
     
+    let locationManager:CLLocationManager = CLLocationManager()
+    //定位改变执行，可以得到新位置、旧位置
+    private func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //获取最新的坐标
+        let currLocation:CLLocation = locations.last!
+        print("经度：\(currLocation.coordinate.longitude)")
+        //获取纬度
+        //label2.text = "纬度：\(currLocation.coordinate.latitude)"
+        //获取海拔
+        //label3.text = "海拔：\(currLocation.altitude)"
+        //获取水平精度
+        //label4.text = "水平精度：\(currLocation.horizontalAccuracy)"
+        //获取垂直精度
+        //label5.text = "垂直精度：\(currLocation.verticalAccuracy)"
+        //获取方向
+        //label6.text = "方向：\(currLocation.course)"
+        //获取速度
+        //label7.text = "速度：\(currLocation.speed)"
+    }
     //
     override func viewWillAppear(_ animated: Bool) {
         print("will")
@@ -548,7 +583,7 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         }
         return a
     }
-    
+
     /*
      private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
      let mediaType = info[UIImagePickerControllerMediaType] as! String

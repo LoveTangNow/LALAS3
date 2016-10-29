@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Title</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>one</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>sub</string>
+		</dict>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -59,6 +70,12 @@
 	<string>此App需要您的同意才能访问麦克风</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>此App需要您的同意才能读取媒体资料库</string>
+	<key>NSLocationUsageDescription</key>
+	<string>此App需要您的同意才能访问位置</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>此App需要您的同意才能访问位置</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>此App需要您的同意才能访问位置</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

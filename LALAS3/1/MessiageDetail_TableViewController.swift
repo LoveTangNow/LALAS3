@@ -14,7 +14,7 @@ import MapKit//用于显示位置
 
 class MessiageDetail_TableViewController: UITableViewController {
     
-    var TableViewHeight:CGFloat = 100
+    var TableViewHeight:CGFloat = 0
     let DeviceWidth =  UIScreen.main.bounds.width
     var imagelist = [UIImage?]()
     var imgaeNumber = Int()
