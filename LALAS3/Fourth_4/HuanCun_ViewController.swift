@@ -35,15 +35,27 @@ class HuanCun_ViewController: UIViewController , UITableViewDelegate , UITableVi
 
         switch indexPath.row {
         case 0:
+            let alertController = UIAlertController(title: "系统提示",
+                                                    message: "确定要清楚缓存嘛？",
+                                                    preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+            let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                action in
+                self.clearCache()
+                _ = self.popoverPresentationController
+            })
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        case 2:
+            MyCoreData().DeleteAll(entityName: "News")
+            _ = MyCoreData().CheckNumber(entityName: "News")
+        case 3:
             MyCoreData().DeleteAll(entityName: "News")
             _ = MyCoreData().CheckNumber(entityName: "News")
         default:
-            MyCoreData().AddData_News_Reall(id:1,senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1",imageNumber: 1 ,senderName: "1", sendTime: "1", saved: true)
-            _ = MyCoreData().CheckNumber(entityName: "News")
-            
-            MyCoreData().AddData_News_Reall(id:1,senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1",imageNumber: 1,senderName: "1", sendTime: "1", saved: false)
-            _ = MyCoreData().CheckNumber(entityName: "News")
-            MyCoreData().ReadAData_News(id: 1)
+           break
         }
         
     }
@@ -52,9 +64,11 @@ class HuanCun_ViewController: UIViewController , UITableViewDelegate , UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath) as! OnlyOneLabel_TableViewCell
         switch indexPath.row {
         case 0:
-            cell.UILabel_M.text = "清空 News 数据"
+            cell.UILabel_M.text = "清理缓存 缓存大小是：" + String(fileSizeOfCache()) + "MB"
         case 1:
-            cell.UILabel_M.text = "测试1"
+            cell.UILabel_M.text = ""//"测试1"
+        case 2:
+            cell.UILabel_M.text = ""//"清空 News 数据"
         default:
             cell.UILabel_M.text = ""
         }
@@ -72,6 +86,48 @@ class HuanCun_ViewController: UIViewController , UITableViewDelegate , UITableVi
     //MARK: - Functions
     func ConnectNib() {
         myTableView.register(UINib(nibName: "OnlyOneLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnlyOneLabel_TableViewCell")
+    }
+    
+    func fileSizeOfCache()-> Int {
+        
+        // 取出cache文件夹目录 缓存文件都在这个目录下
+        let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+        // 取出文件夹下所有文件数组
+        let fileArr = FileManager.default.subpaths(atPath: cachePath!)
+        //快速枚举出所有文件名 计算文件大小
+        var size = 0
+        for file in fileArr! {
+            // 把文件名拼接到路径中
+            let path = cachePath! + "/\(file)"
+            // 取出文件属性
+            let floder = try! FileManager.default.attributesOfItem(atPath: path)
+            // 用元组取出文件大小属性
+            for (abc, bcd) in floder {
+                // 累加文件大小
+                if abc == FileAttributeKey.size {
+                    size += (bcd as AnyObject).integerValue
+                }
+            }
+        }
+        let mm = size / 1024 / 1024
+        return mm
+    }
+    
+    func clearCache() {
+        // 取出cache文件夹目录 缓存文件都在这个目录下
+        let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+        // 取出文件夹下所有文件数组
+        let fileArr = FileManager.default.subpaths(atPath: cachePath!)
+        // 遍历删除
+        for file in fileArr! {
+            let path = cachePath! + "/\(file)"
+            if FileManager.default.fileExists(atPath: path) {
+                do {
+                    try FileManager.default.removeItem(atPath: path)
+                } catch {
+                }
+            }
+        }
     }
     
 }
