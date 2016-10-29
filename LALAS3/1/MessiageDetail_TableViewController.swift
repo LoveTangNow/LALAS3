@@ -13,7 +13,28 @@ import SVProgressHUD
 import MapKit//用于显示位置
 
 class MessiageDetail_TableViewController: UITableViewController {
+    //MARK: - BOTTOM
     
+    @IBOutlet var myToolBar: UIToolbar!
+    @IBOutlet weak var item1: UIBarButtonItem!
+    @IBOutlet weak var item2: UIBarButtonItem!
+    @IBOutlet weak var item3: UIBarButtonItem!
+    
+    @IBAction func itemAcion1(_ sender: UIBarButtonItem) {
+        //转发
+    }
+    
+    @IBAction func itemAcion2(_ sender: UIBarButtonItem) {
+        //评论
+        let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "Pinglun_ViewController") as!  Pinglun_ViewController
+        vc.newsid = newsids
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func itemAcion3(_ sender: UIBarButtonItem) {
+        //赞
+    }
+    //MARK: - View
     var TableViewHeight:CGFloat = 0
     let DeviceWidth =  UIScreen.main.bounds.width
     var imagelist = [UIImage?]()
@@ -27,11 +48,23 @@ class MessiageDetail_TableViewController: UITableViewController {
     var label3 = String()
     
     var imageicon = UIImage()
+    var newsids = Int()
     
     @IBOutlet var UITableView_m: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        item1.tintColor = #colorLiteral(red: 1, green: 0.5859789252, blue: 0, alpha: 1)
+        item1.title = "    转发"
+        item2.tintColor = #colorLiteral(red: 1, green: 0.5859789252, blue: 0, alpha: 1)
+        item2.title = "评论"
+        item3.tintColor = #colorLiteral(red: 1, green: 0.5859789252, blue: 0, alpha: 1)
+        item3.title = "赞    "
+        
+        self.tableView.tableFooterView = UIView(frame:CGRect.zero)
+        //myToolBar.frame  =  CGRect(x:0,y:UIScreen.main.bounds.height - 110,width:UIScreen.main.bounds.width,height:44)
+        //self.view.addSubview(myToolBar)
         
         self.title = "动态详情"
         //self.tableView.register(MD_Words_TableViewCell.self, forCellReuseIdentifier: "MD_Words_TableViewCell"
@@ -44,7 +77,8 @@ class MessiageDetail_TableViewController: UITableViewController {
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.clear)
         SVProgressHUD.show()
         //请求评论们:参数是一个 news id
-        let newsid: Parameters = ["newsid": "1"]
+        
+        let newsid: Parameters = ["newsid": String(newsids)]
         Alamofire.request(GotServers().GotServerAliScripts() + "GIVE_BACK_PINGLUN.php", method: .post, parameters: newsid)
             .validate()
             .responseJSON { response in
@@ -57,7 +91,7 @@ class MessiageDetail_TableViewController: UITableViewController {
                     //print(json)
                     for i  in 0..<json.count {
                         //"userid":"2","sendtime":"201610132148","detail":"??1","zannumber":"0"
-                        self.pinglunData.append([json[i]["userid"].string!,json[i]["sendtime"].string!,json[i]["detail"].string!,json[i]["zannumber"].string!])
+                        self.pinglunData.append([json[i]["userid"].string!,json[i]["sendtime"].string!,json[i]["detail"].string!,json[i]["zannumber"].string!,json[i]["username"].string!])
                     }
                     
                     //print(self.pinglunData)
@@ -109,6 +143,17 @@ class MessiageDetail_TableViewController: UITableViewController {
         }*/
     }
     
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == 1 {
+            let a = UILabel()
+            return a
+        } else {
+            
+            myToolBar.frame  =  CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:44)
+            return myToolBar
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
@@ -128,6 +173,10 @@ class MessiageDetail_TableViewController: UITableViewController {
                 return cell
             } else {//Photos
                 switch imgaeNumber {
+                case 0:
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement_TableViewCell", for: indexPath)
+                    TableViewHeight = 0
+                    return cell
                 case 1:
                     print("OnePhoto_H_NTableViewCell")
                     print(imagelist.count)
@@ -236,8 +285,10 @@ class MessiageDetail_TableViewController: UITableViewController {
             //userid —— username—— 时间 内容 赞数目
             cell.UILabelWords.text = pinglunData[indexPath.row][2]
             cell.UILabelTime.text = pinglunData[indexPath.row][1]
+            cell.UILabel_Name.text = pinglunData[indexPath.row][4]
             
-            TableViewHeight = CGFloat(Int(DeviceWidth * 0.3 ))
+            
+            TableViewHeight = 107
             return cell
         }
     }
@@ -248,7 +299,7 @@ class MessiageDetail_TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == 0 {
-            return 15
+            return 44
         } else {
             return 0
         }
@@ -288,6 +339,7 @@ class MessiageDetail_TableViewController: UITableViewController {
         
         UITableView_m.register(UINib(nibName: "News_Information_TableViewCell", bundle: nil), forCellReuseIdentifier: "News_Information_TableViewCell")
         UITableView_m.register(UINib(nibName: "Pinglun_NTableViewCell", bundle: nil), forCellReuseIdentifier: "Pinglun_NTableViewCell")
+        UITableView_m.register(UINib(nibName: "Advertisement_TableViewCell", bundle: nil), forCellReuseIdentifier: "Advertisement_TableViewCell")
     }
 
 

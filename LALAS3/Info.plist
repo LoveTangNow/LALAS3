@@ -2,17 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Title</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>one</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>sub</string>
-		</dict>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -64,8 +53,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>此App需要您的同意才能使用摄像头</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>此App需要您的同意才能访问麦克风</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -76,6 +63,8 @@
 	<string>此App需要您的同意才能访问位置</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>此App需要您的同意才能访问位置</string>
+	<key>NSCameraUsageDescription</key>
+	<string>此App需要您的同意才能使用摄像头</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -110,6 +99,19 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>测试3D Touch</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>1</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string></string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeShare</string>
+		</dict>
 	</array>
 </dict>
 </plist>

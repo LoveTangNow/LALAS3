@@ -22,13 +22,36 @@ class Pinglun_ViewController: UIViewController ,UITextViewDelegate{
     }
     
     @IBAction func RightClick(_ sender: UIBarButtonItem) {
-        
+        //发送
+        SendData()
     }
+    
+    func SendData () {
+        let Data: Parameters = ["newsid": String(newsid),"userid":userid!,"detail":myTextView.text]
+        print(Data)
+        Alamofire.request(GotServers().GotServerAliScripts() + "SEND_PINGLUN.php", method: .post, parameters: Data)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success://success
+                    print("success")
+                    self.dismiss(animated: true, completion: nil)
+                    //let json = JSON(response.result.value!)
+                case .failure(let error)://failure
+                    print(error)
+                }
+        }
+    }
+    
     @IBAction func ActionSlide(_ sender: UIPanGestureRecognizer) {
         myTextView.resignFirstResponder()
         
     }
 
+    var newsid = Int()//从第一页面获取
+    var userid = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
+    //时间：服务器获取
+    //内容在textview 中
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +64,7 @@ class Pinglun_ViewController: UIViewController ,UITextViewDelegate{
     
     override func viewWillDisappear(_ animated: Bool) {
         Defalts_ReadWrite().Settssssss_h(DATA: "Pinglun_ViewController", FORKEY: "whereifrom")
+        //如果来自首页，那么进入详情页；如果来自详情页，那么什么也不跳转
     }
 
     override func didReceiveMemoryWarning() {
