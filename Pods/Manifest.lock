@@ -8,7 +8,11 @@ PODS:
   - Realm/Headers (2.0.2)
   - RealmSwift (2.0.2):
     - Realm (= 2.0.2)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SVProgressHUD (2.0.3)
+  - swiftScan (1.0.8)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
@@ -16,8 +20,20 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.1)
   - Dollar
   - RealmSwift
+  - SDWebImage (~> 3.8)
   - SVProgressHUD
+  - swiftScan (from `https://github.com/CNKCQ/swiftScan.git`, branch `Swift3.0`)
   - SwiftyJSON
+
+EXTERNAL SOURCES:
+  swiftScan:
+    :branch: Swift3.0
+    :git: https://github.com/CNKCQ/swiftScan.git
+
+CHECKOUT OPTIONS:
+  swiftScan:
+    :commit: fa41b99a893f8201bb2d3a1ef62da2e2c6bbc43b
+    :git: https://github.com/CNKCQ/swiftScan.git
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -25,9 +41,11 @@ SPEC CHECKSUMS:
   Dollar: 0a9883680f2c1104adf0d19b827c3be71d3e3121
   Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
   RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  swiftScan: 2dc76303bc7c2dcb7bde9c539f9bd6a7520abc8e
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: fe4f5644b14ee7c773d89c708ae2e0d74dbc85e1
+PODFILE CHECKSUM: 928aef25b55558796b6f904b8421934f193e7b58
 
 COCOAPODS: 1.1.0.beta.2

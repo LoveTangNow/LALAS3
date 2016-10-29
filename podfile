@@ -9,6 +9,8 @@ target 'LALAS3' do
 	pod 'SwiftyJSON'
 	pod 'SVProgressHUD'
 	pod 'RealmSwift'
+    pod 'SDWebImage', '~>3.8'
+    pod 'swiftScan', :git => 'https://github.com/CNKCQ/swiftScan.git', :branch => 'Swift3.0'
 end
 
 post_install do |installer|

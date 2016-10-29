@@ -10,7 +10,18 @@ import UIKit
 import CoreData
 
 
-class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource{
+class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource,UIViewControllerPreviewingDelegate{
+    //MARK: - Preview
+    @available(iOS 9.0, *)
+    public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        print("go?")
+        show(viewControllerToCommit, sender: self)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "SomeOne_ViewController")
+        return vc
+    }
     
     @IBOutlet weak var UITableView_M: UITableView!
     @IBAction func UIButton_L_Click(_ sender: AnyObject) {
@@ -31,8 +42,15 @@ class SecondViewController: UIViewController ,UITableViewDelegate , UITableViewD
         UITableView_M.dataSource = self
         
         ConnectNib()
-        
+        registerForPreviewing(with: self, sourceView: UITableView_M)
         //self.UITableView_M.setEditing(true, animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "SecondViewController", FORKEY: "whereifrom")
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,48 +8,19 @@
 
 import UIKit
 
-class HuanCun_ViewController: UIViewController {
+class HuanCun_ViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let  a = 5
-        
-        switch a {
-        case 9...9:
-            print(1)
-            fallthrough
-        case 8...9:
-            print(2)
-            fallthrough
-        case 7...9:
-            print(3)
-            fallthrough
-        case 6...9:
-            print(4)
-            fallthrough
-        case 5...9:
-            print(5)
-            fallthrough
-        case 4...9:
-            print(6)
-            fallthrough
-        case 3...9:
-            print(7)
-            fallthrough
-        case 2...9:
-            print(8)
-            fallthrough
-        case 1...9:
-            print(9)
-            fallthrough
-
-        default:
-            break
-        }
-        
-        
         // Do any additional setup after loading the view.
+        myTableView.delegate = self
+        myTableView.dataSource = self
+        
+        ConnectNib()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "HuanCun_ViewController", FORKEY: "whereifrom")
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,15 +28,50 @@ class HuanCun_ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - TableView
+    @IBOutlet weak var myTableView: UITableView!
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        switch indexPath.row {
+        case 0:
+            MyCoreData().DeleteAll(entityName: "News")
+            _ = MyCoreData().CheckNumber(entityName: "News")
+        default:
+            MyCoreData().AddData_News_Reall(id:1,senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1",imageNumber: 1 ,senderName: "1", sendTime: "1", saved: true)
+            _ = MyCoreData().CheckNumber(entityName: "News")
+            
+            MyCoreData().AddData_News_Reall(id:1,senderId: 1, height: 1, detail: "1", device: "1", image1: "1", image2: "1", image3: "1", image4: "1", image5: "1", image6: "1", image7: "1", image8: "1", image9: "1",imageNumber: 1,senderName: "1", sendTime: "1", saved: false)
+            _ = MyCoreData().CheckNumber(entityName: "News")
+            MyCoreData().ReadAData_News(id: 1)
+        }
+        
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OnlyOneLabel_TableViewCell", for: indexPath) as! OnlyOneLabel_TableViewCell
+        switch indexPath.row {
+        case 0:
+            cell.UILabel_M.text = "清空 News 数据"
+        case 1:
+            cell.UILabel_M.text = "测试1"
+        default:
+            cell.UILabel_M.text = ""
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    //MARK: - Functions
+    func ConnectNib() {
+        myTableView.register(UINib(nibName: "OnlyOneLabel_TableViewCell", bundle: nil), forCellReuseIdentifier: "OnlyOneLabel_TableViewCell")
+    }
+    
 }

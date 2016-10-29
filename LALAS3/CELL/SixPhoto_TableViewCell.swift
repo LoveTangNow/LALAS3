@@ -19,6 +19,13 @@ class SixPhoto_TableViewCell: UITableViewCell {
     @IBOutlet weak var image_5: UIButton!
     @IBOutlet weak var image_6: UIButton!
     
+    @IBOutlet weak var image1: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
+    @IBOutlet weak var image3: UIImageView!
+    @IBOutlet weak var image4: UIImageView!
+    @IBOutlet weak var image5: UIImageView!
+    @IBOutlet weak var image6: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,31 +35,67 @@ class SixPhoto_TableViewCell: UITableViewCell {
         image_1.imageView?.contentMode = .scaleAspectFill
         image_1.clipsToBounds = true
         image_1.layer.cornerRadius = 2
+        image_1.tag = 1
         
         image_2.frame = CGRect(x:10 + w + 3,y:0,width:w,height:w)
         image_2.imageView?.contentMode = .scaleAspectFill
         image_2.clipsToBounds = true
         image_2.layer.cornerRadius = 2
+        image_2.tag = 2
         
         image_3.frame = CGRect(x:10 + 2 * w + 6,y:0,width:w,height:w)
         image_3.imageView?.contentMode = .scaleAspectFill
         image_3.clipsToBounds = true
         image_3.layer.cornerRadius = 2
+        image_3.tag = 3
         
         image_4.frame = CGRect(x:10,y:w + 3,width:w,height:w)
         image_4.imageView?.contentMode = .scaleAspectFill
         image_4.clipsToBounds = true
         image_4.layer.cornerRadius = 2
+        image_4.tag = 4
         
         image_5.frame = CGRect(x:10 + w + 3,y:w + 3,width:w,height:w)
         image_5.imageView?.contentMode = .scaleAspectFill
         image_5.clipsToBounds = true
         image_5.layer.cornerRadius = 2
+        image_5.tag = 5
         
         image_6.frame = CGRect(x:10 + 2 * w + 6,y:w + 3,width:w,height:w)
         image_6.imageView?.contentMode = .scaleAspectFill
         image_6.clipsToBounds = true
         image_6.layer.cornerRadius = 2
+        image_6.tag = 6
+        //--------------------//
+        image1.frame = CGRect(x:10,y:0,width:w,height:w)
+        image1.contentMode = .scaleAspectFill
+        image1.clipsToBounds = true
+        image1.layer.cornerRadius = 2
+        
+        image2.frame = CGRect(x:10 + w + 3,y:0,width:w,height:w)
+        image2.contentMode = .scaleAspectFill
+        image2.clipsToBounds = true
+        image2.layer.cornerRadius = 2
+        
+        image3.frame = CGRect(x:10 + 2 * w + 6,y:0,width:w,height:w)
+        image3.contentMode = .scaleAspectFill
+        image3.clipsToBounds = true
+        image3.layer.cornerRadius = 2
+        
+        image4.frame = CGRect(x:10,y:w + 3,width:w,height:w)
+        image4.contentMode = .scaleAspectFill
+        image4.clipsToBounds = true
+        image4.layer.cornerRadius = 2
+        
+        image5.frame = CGRect(x:10 + w + 3,y:w + 3,width:w,height:w)
+        image5.contentMode = .scaleAspectFill
+        image5.clipsToBounds = true
+        image5.layer.cornerRadius = 2
+        
+        image6.frame = CGRect(x:10 + 2 * w + 6,y:w + 3,width:w,height:w)
+        image6.contentMode = .scaleAspectFill
+        image6.clipsToBounds = true
+        image6.layer.cornerRadius = 2
 
     }
 

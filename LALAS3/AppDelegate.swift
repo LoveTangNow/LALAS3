@@ -17,14 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
-        /*
+        /*UIApplicationLaunchOptionsShortcutItemKey
          判断有没有写入过
             没有写如果
                 写入
             写若果
                 什么也不干
          */
+        //_ = MyCoreData().DeleteAll(entityName: "News")
         let a = Defalts_ReadWrite().ReadDefalts_Bool(KEY: "setOrNot")
         if a == nil {
             Defalts_ReadWrite().Settssssss(DATA: true, FORKEY: "setOrNot")
@@ -33,6 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Defalts_ReadWrite().SetDefalts_TongYong()
         }
         return true
+        
+        
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        Defalts_ReadWrite().Settssssss_h(DATA: true, FORKEY: "quick1")
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -68,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "R")
+        let container = NSPersistentContainer(name: "LALAS3")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

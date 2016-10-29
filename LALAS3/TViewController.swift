@@ -47,14 +47,14 @@ class TViewController: UIViewController {
                     } else {
                         //输入错误之后
                         print("错误")
-                        print(evaluateError)
+                        print(evaluateError!)
                         // User did not authenticate successfully, look at error and take appropriate action
                     }
                 }
             } else {
                 //touchid被锁定后
                 print("锁定")
-                print(authError)
+                print(authError!)
                 //myContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: nil)
                 
                 // Could not evaluate policy; look at authError and present an appropriate message to user

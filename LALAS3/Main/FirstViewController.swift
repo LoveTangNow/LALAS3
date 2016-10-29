@@ -13,6 +13,7 @@ import SVProgressHUD
 
 //测试版？？！
 import SwiftyJSON
+import CoreData
 
 
 class FirstViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
@@ -27,49 +28,49 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     /**设备宽度*/
     var DeviceWidth =  UIScreen.main.bounds.width
     
-    /**动态数据*/
-    var DataWords = Dictionary<Int,[String]>()//每一个 ID 对应着一个字符串数组 包括各种信息：NewsID,SenderID,SenderName,SendTime,SendDevice,Detail
-    /**动态图片数据*/
-    var DataPhotoNames = Dictionary<Int,[String]>()//每一个 ID 对应着一个字符串数组 图片名称们
-    
     var row = 0
     /**是否请求阿里云服务器*/
     var ali = true
-    
-    var MODEL = FirstPageModel()
-    
-    
     /**顶部 Bar右侧按钮点击*/
     @IBAction func Right_Click(_ sender: AnyObject) {
         //ViewPhotoViewController
-        self.tabBarController?.tabBar.isHidden = true
-        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "SomeOne_ViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
+        let user_id = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
+        if  user_id != "" || user_id == nil{
+            self.tabBarController?.tabBar.isHidden = true
+            let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "SomeOne_ViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     /**顶部 左侧侧按钮点击*/
     @IBAction func Send_Click(_ sender: AnyObject) {
         //SendNewMessiageViewController
-        
-        let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
+        let user_id = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
+        if  user_id != "" || user_id == nil{
+            let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
+    
+
     
     
     //MARK: - 函数
-    override func viewDidDisappear(_ animated: Bool) {
-        
-    }
     override func viewWillDisappear(_ animated: Bool) {
-        
+        Defalts_ReadWrite().Settssssss_h(DATA: "FirstViewController", FORKEY: "whereifrom")
     }
+    
+    override func loadView() {
+        //MyCoreData().DeleteAll(entityName: "News")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "动态"
+    
+        self.UITableView_Main.dataSource = self
+        self.UITableView_Main.delegate = self
         self.UITableView_Main.tableFooterView = UIView(frame:CGRect.zero)
-        
-        UITableView_Main.dataSource = self
-        UITableView_Main.delegate = self
         
         self.view.addSubview(imagewhite)
         self.imagewhite.image = #imageLiteral(resourceName: "White")
@@ -85,73 +86,79 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         myWord.center = myview.center
         self.view.addSubview(myWord)
 
-        
         ConnectNib()
-        // Do any additional setup after loading the view.
         print("viewDidLoad")
-        /*
-        if let userid = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"){
-            parameters = ["userid": userid]
-        } else {
-            //表明来自首页
-            let RegisterBool :Bool = true
-            UserDefaults.standard.set(RegisterBool, forKey: "data1")
-            UserDefaults.standard.synchronize()
-            
-            let sb = UIStoryboard(name: "Main", bundle:nil)
-            let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as! Login_ViewController
-            self.present(vc, animated: false, completion: nil)
-        }*/
         
     }
     var parameters = Parameters()
     
+    var NewsIDs = [Int]()
+    var NewsTimes = [String]()
+    
     private func GetDataWithHUD(parameters:Parameters) -> () {
+        print("GetDataWithHUD")
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.dark)//前后颜色
         SVProgressHUD.setDefaultAnimationType(SVProgressHUDAnimationType.native)//菊花
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         SVProgressHUD.show()
-        DataPhotoNames.removeAll()
-        DataWords.removeAll()
         Alamofire.request(GotServers().GotServerAliScripts() + "GIVE_BACK_INFORMATION.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    let json = JSON(response.result.value)
+                    let json = JSON(response.result.value!)
                     print(json)
-                    
                     for i in 0..<json.count
                     {
                         let new_i = json.count - 1 - i
-                        //    0     1      2       3          4          5        6
-                        // detail device newsid newstime photohumber senderid sendername
-                        let aaaaaaaaaaa = [json[new_i]["detail"].string!,json[new_i]["device"].string!,json[new_i]["newsid"].string!,json[new_i]["newstime"].string!,json[new_i]["photonumer"].string!,json[new_i]["senderid"].string!,json[new_i]["sendername"].string!]
-                        self.DataWords[self.DataWords.count] = aaaaaaaaaaa
+                        //    0     1      2       3          4          5        6         7
+                        // detail device newsid newstime photohumber senderid sendername height
+                        
+                        //(senderId:Int,height:Float,detail:String,device:String,
+                        //image1:String?,image2:String?,image3:String?,image4:String?,image5:String?,
+                        //image6:String?,image7:String?,image8:String?,image9:String?,imageNumber:Int,
+                        //senderName:String,sendTime:String,saved:Bool)
+                        let id = json[new_i]["newsid"].string!
+                        let detail = json[new_i]["detail"].string!
+                        let height = WorksHieghts().WorkWordsHeightForInformation(Words: detail)
+                        let device = json[new_i]["device"].string!
+                        
+                        let imageNumber = Int(json[new_i]["photonumer"].string!)!
+                        let senderName = json[new_i]["sendername"].string!
+                        let senderId = json[new_i]["senderid"].string!
+                        let sendTime = json[new_i]["newstime"].string!
+                        let saved = false
                         
                         let NumberOfPhotos = Int(json[new_i]["photonumer"].string!)!
-                        var ArryOfNameOfPhotos = [String]()
+                        var ArryOfNameOfPhotos = ""
                         for j in 0..<NumberOfPhotos
                         {
-                            let a = json[new_i ]["photo"][j].string!
-                            ArryOfNameOfPhotos.append(a)
+                            if j == 0{
+                                ArryOfNameOfPhotos = json[new_i ]["photo"][j].string!
+                            }
+                            else{
+                                ArryOfNameOfPhotos += "&"
+                                ArryOfNameOfPhotos += json[new_i ]["photo"][j].string!
+                            }
                         }
-                        self.DataPhotoNames[self.DataPhotoNames.count] = ArryOfNameOfPhotos
+                        MyCoreData().AddData_News_Reall(id:Int(id)!,senderId: Int(senderId)!, height: Float(height), detail: detail, device: device, image1: ArryOfNameOfPhotos, image2: nil, image3: nil, image4: nil, image5: nil, image6: nil, image7: nil, image8: nil, image9: nil, imageNumber: imageNumber, senderName: senderName, sendTime: sendTime, saved: saved)
                     }
+                    //读取 COREDATA 更新 NewsIDS NewsTimes
+                    self.NewsIDs = MyCoreData().ReadNewsIDsAll()
+                    self.NewsTimes = MyCoreData().ReadNewsTimesAll()
+                    print(MyCoreData().CheckNumber(entityName: "News"))
                     
-                    //print(self.DataWords)
-                    //print(self.DataPhotoNames)
-                    
-                    self.UITableView_Main.reloadData()
+                    //self.UITableView_Main.reloadData()
                     SVProgressHUD.dismiss()
                 case .failure(let error):
                     print(error)
                     SVProgressHUD.dismiss()
                 }
             }
+       
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {        
         navigationController?.navigationBar.barTintColor = UIColor.red
         navigationController?.navigationBar.tintColor = UIColor.white
         tabBarController?.tabBar.isHidden = false
@@ -159,8 +166,10 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         if let a = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id") {
             if a == "" {
-                GotoLogin()
+                //UITableView_Main.reloadData()
+                alertController_GotoLogin()
             } else {
+                //userid不是空
                 let whereifrom = Defalts_ReadWrite().ReadDefalts_String(KEY: "whereifrom")!
                 if whereifrom == "SendNewMessiageViewController" {
                     parameters = ["userid": a]
@@ -170,39 +179,37 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             }
         }
         else{
-            GotoLogin()
+            //UITableView_Main.reloadData()
+            alertController_GotoLogin()
         }
     }
     
-    func GotoLogin() -> () {
-        let alertController = UIAlertController(title: "系统提示",
-                                                message: "您需要登录",
-                                                preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: {
-            action in
-            self.UITableView_Main.isHidden = true
-        })
-        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
-            action in
-            let sb = UIStoryboard(name: "Main", bundle:nil)
-            let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as! Login_ViewController
-            self.present(vc, animated: false, completion: nil)
-        })
-        alertController.addAction(cancelAction)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
+    private func alertController_GotoLogin() -> () {
+//        let alertController = UIAlertController(title: "系统提示",
+//                                                message: "您需要登录",
+//                                                preferredStyle: .alert)
+//        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: {
+//            action in
+//            self.UITableView_Main.isHidden = true
+//        })
+//        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+//            action in
+//            let sb = UIStoryboard(name: "Main", bundle:nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as! Login_ViewController
+//            self.present(vc, animated: false, completion: nil)
+//        })
+//        alertController.addAction(cancelAction)
+//        alertController.addAction(okAction)
+//        self.present(alertController, animated: true, completion: nil)
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
-        
-        
         self.navigationController?.navigationBar.isHidden = false
         if inlema == true {
             UIView.animate(withDuration: 0.2, animations: {
                 self.imageviewzooooom.frame = self.rext3
                 }, completion: { (_) in
                     self.inlema = false
-                    
                     self.imageviewzooooom.frame = self.rext3
                     self.imageviewzooooom.isHidden = true
                     self.imagewhite.isHidden = true
@@ -250,7 +257,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         
         var indexPath = IndexPath()
         indexPath = self.UITableView_Main.indexPath(for: sender.superview?.superview as! UITableViewCell)!
-        let a = GotPhoto(A: DataWords[indexPath.section]![4], indexpath: indexPath)//获取图片组 和图片数目
+        let a = GotPhoto(A: Userid_Read_ImageNumber(id: indexPath.section), indexpath: indexPath)//获取图片组 和图片数目
         let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "ViewPhotoWithScroll_ViewController") as!  ViewPhotoWithScroll_ViewController
         vc.imagelist = a.0
         vc.imgaeNumber = a.1
@@ -307,7 +314,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         if indexPath.row == 0 {
             var aa = indexPath
             aa.row += 1
-            let a = GotPhoto(A: DataWords[indexPath.section]![4], indexpath: aa)
+            let a = GotPhoto(A: Userid_Read_ImageNumber(id: indexPath.section), indexpath: aa)
             let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "MessiageDetail_TableViewController") as!  MessiageDetail_TableViewController
             UserDefaults.standard.synchronize()
             vc.imagelist = a.0
@@ -323,9 +330,15 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         }
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if DataWords.isEmpty {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement_TableViewCell", for: indexPath) as! Advertisement_TableViewCell
+        cell.imgae_main.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
+        TableViewCellHeight = UIScreen.main.bounds.height
+        return cell
+        print("cellForRowAt")
+        if MyCoreData().CheckNumber(entityName: "News") == 0 {
+            print("0")
             let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement_TableViewCell", for: indexPath) as! Advertisement_TableViewCell
             cell.imgae_main.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
             TableViewCellHeight = UIScreen.main.bounds.height
@@ -334,7 +347,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             switch indexPath.row {
             case 0://文字区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "News_Information_TableViewCell", for: indexPath) as! News_Information_TableViewCell
-                Alamofire.request(GotServers().GotImageIconServer(ai: ali) + String(DataWords[indexPath.section]![5] ) + ".png")
+                Alamofire.request(GotServers().GotImageIconServer(ai: ali) + Userid_Read_Senderid(id: NewsIDs[indexPath.section]) + ".png")
                     .responseData { response in
                         if let data = response.result.value {
                             let asd = UIImage(data: data)
@@ -348,11 +361,11 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 
                 //  0       1      2       3        4           5         6
                 // detail device newsid newstime photohumber senderid sendername
-                cell.UILabelDetail.text = DataWords[indexPath.section]![0] + DataWords[indexPath.section]![4]
-                cell.UILabelUserName.text = DataWords[indexPath.section]![6]
+                cell.UILabelDetail.text = Userid_Read_SenderDetail(id: indexPath.section)
+                cell.UILabelUserName.text = Userid_Read_SenderName(id: indexPath.section)
                 
-                let time = DataWords[indexPath.section]![3]
-                let device = DataWords[indexPath.section]![1]//长度12 1234 12 34 12 34
+                let time = Userid_Read_SenderTime(id: indexPath.section)
+                let device = Userid_Read_SenderDevice(id: indexPath.section)//长度12 1234 12 34 12 34
                 
                 let year = time.substring(to: time.index(time.startIndex, offsetBy: 4))
                 let month = FFFFFunctions().getsubtring(string: time, space_start: 4, space_end: 6)
@@ -362,43 +375,35 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                 
                 cell.UILabelInformation.text  =  year + "年" + month + "日" + day + "日 " + hour + ":" + minute + " 来自" + device
 
-                TableViewCellHeight = WorksHieghts().WorkWordsHeightForInformation(Words: cell.UILabelDetail.text!)
+                TableViewCellHeight = Userid_Read_SenderHeight(id: indexPath.section)
                 
                 return cell
             case 1://图片区
-                switch DataWords[indexPath.section]![4] {
-                case "0":
+                switch Userid_Read_ImageNumber(id: indexPath.section) {
+                case 0:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "Advertisement_TableViewCell", for: indexPath) as! Advertisement_TableViewCell
                     self.TableViewCellHeight = 0
                     return cell
-                case "1":
+                case 1:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_H_NTableViewCell", for: indexPath) as! OnePhoto_H_NTableViewCell
-                    if cell.GotPhoto != true {
-                    let a = DataPhotoNames[indexPath.section]![0]
-                    Alamofire.request(GotServers().GotImageTServer(ai: ali) + a + ".jpeg")
+                    Alamofire.request(GotServers().GotImageTServer(ai: ali) + Userid_Read_ImageName(id: indexPath.section) + ".jpeg")
                         .responseData { response in
                             if let data = response.result.value {
                                 let asd = UIImage(data: data)
-                                cell.image_1.setImage(asd, for: UIControlState.normal)
+                                //cell.image_1.setImage(asd, for: UIControlState.normal)
                             }
                         }
-                    } else {
-                        print("old-1")
-                    }
-                    cell.image_1.tag = 1
-                    cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
+                    //cell.image_1.tag = 1
+                    //cell.image_1.addTarget(self, action: #selector(GoDetail), for: UIControlEvents.touchUpInside)
                     
                     self.TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 1)
                     return cell
-                case "2","3":
-                    let imageNumberForThisCell = Int(DataWords[indexPath.section]![4])!
+                case 2,3:
+                    let imageNames = Userid_Read_ImageName(id: indexPath.section).components(separatedBy: "&")
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ThreePhoto_NTableViewCell", for: indexPath) as! ThreePhoto_NTableViewCell
-                    
-                    if cell.GotPhoto != true {
-                        for i in 0..<imageNumberForThisCell
+                        for i in 0..<imageNames.count
                         {
-                            let a = DataPhotoNames[indexPath.section]![i]
-                            Alamofire.request(GotServers().GotImageTServer(ai: ali) + a + ".jpeg")
+                            Alamofire.request(GotServers().GotImageTServer(ai: ali) + imageNames[i] + ".jpeg")
                                 .responseData { response in
                                 if let data = response.result.value {
                                     switch i {
@@ -416,27 +421,19 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                         cell.image_3.tag = 3
                                     default:break
                                     }
-                                    if i == imageNumberForThisCell{
-                                        cell.GotPhoto = true
-                                    }
                                 }
                             }
                         }
-                    } else {
-                        print("old - 3")
-                    }
                     
                     TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 3)
                     return cell
 
-                case "4","5","6":
-                    let imageNumberForThisCell = Int(DataWords[indexPath.section]![4])!
+                case 4,5,6:
+                    let imageNames = Userid_Read_ImageName(id: indexPath.section).components(separatedBy: "&")
                     let cell = tableView.dequeueReusableCell(withIdentifier: "SixPhoto_TableViewCell", for: indexPath) as! SixPhoto_TableViewCell
-                    if cell.GotPhoto != true {
-                        for i in 0..<imageNumberForThisCell
+                        for i in 0..<imageNames.count
                         {
-                            let a_imageName = DataPhotoNames[indexPath.section]![i]
-                            Alamofire.request(GotServers().GotImageTServer(ai: ali) + a_imageName + ".jpeg")
+                            Alamofire.request(GotServers().GotImageTServer(ai: ali) + imageNames[i] + ".jpeg")
                                 .responseData { response in
                                 if let data = response.result.value {
                                     switch i {
@@ -466,21 +463,13 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                         cell.image_6.tag = 6
                                     default:break
                                     }
-                                    if i == imageNumberForThisCell{
-                                        cell.GotPhoto = true
-                                    }
                                 }
                             }
                         }
-
-                    } else {
-                        print("old-6")
-                    }
-                    
                     TableViewCellHeight = WorksHieghts().WorkWordsHeightForPhotots(photoNumber: 4)
                     return cell
-                case "7","8","9":
-                    let imageNumberForThisCell = Int(DataWords[indexPath.section]![4])!
+                case 7,8,9:
+                    let imageNames = Userid_Read_ImageName(id: indexPath.section).components(separatedBy: "&")
                     let cell = tableView.dequeueReusableCell(withIdentifier: "NinePhoto_TableViewCell", for: indexPath) as! NinePhoto_TableViewCell
                     
                     cell.image_1.tag = 1
@@ -493,8 +482,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                     cell.image_8.tag = 8
                     cell.image_9.tag = 9
                     
-                    if cell.GotPhoto != true {
-                    for i in 0..<imageNumberForThisCell
+                    for i in 0..<imageNames.count
                     {
                         Alamofire.request(GotServers().GotImageMainServer(ai: ali) + "Zhu000" + String(i + 70) + ".jpg")
                                 .responseData { response in
@@ -532,16 +520,14 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
                                 }
                             }
                         }
-                    }
-                    else{
-                        print("old-9")
-                    }
                     TableViewCellHeight = DeviceWidth
                     return cell
+                
                 default:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "OnePhoto_Z_NTableViewCell", for: indexPath) as! OnePhoto_Z_NTableViewCell
                     return cell
                 }
+            
             default://三按钮区
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CommentsPraiseDemote_NTableViewCell", for: indexPath) as! CommentsPraiseDemote_NTableViewCell
                 cell.number = [110,112,119]
@@ -554,25 +540,29 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        if DataWords.isEmpty {
+        print("numberOfSections")
+        if NewsIDs.isEmpty {
             return 1
         }
-        return DataWords.count 
+        return NewsIDs.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if DataWords.isEmpty {
+        print("numberOfRowsInSection")
+        if NewsIDs.isEmpty {
             return 1
         }
         return 3
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print("heightForRowAt")
         return TableViewCellHeight
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == DataWords.count - 1 {
+        print("heightForFooterInSection")
+        if section == NewsIDs.count - 1 {
             return 0
         } else {
             return 15
@@ -584,7 +574,6 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     var old:CGFloat = 0
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         /*
          小于70，展示下拉刷新：松开上滑
          大于70，展开松开刷新：松开上滑到70，刷新并且更新数据，上滑到0
@@ -622,10 +611,7 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
     
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
         if willReloadData == true {
-            DataPhotoNames.removeAll()
-            DataWords.removeAll()
             if let userid = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id"){
                 let parameters: Parameters = ["userid": userid]
                 GetDataWithHUD(parameters: parameters)
@@ -637,8 +623,155 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
             willReloadData = false
         }
         print("scrollViewDidEndDecelerating")
+    }
+    
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
+    func Userid_Read_Senderid(id:Int) -> String {
+        var senderid = String()
         
-
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            //print("numbers of \(searchResults.count)")
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "id") as! Int) == id {
+                    senderid = p.value(forKey: "senderId") as! String
+                }
+            }
+        } catch  {
+            print(error)
+        }
+        return senderid
+    }
+    
+    func Userid_Read_SenderName(id:Int) -> String {
+        var senderName = String()
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            //print("numbers of \(searchResults.count)")
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "id") as! Int) == id {
+                    senderName = p.value(forKey: "senderName") as! String
+                }
+            }
+        } catch  {
+            print(error)
+        }
+        return senderName
+    }
+    
+    func Userid_Read_SenderTime(id:Int) -> String {
+        var sendTime = String()
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            //print("numbers of \(searchResults.count)")
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "id") as! Int) == id {
+                    sendTime = p.value(forKey: "sendTime") as! String
+                }
+            }
+        } catch  {
+            print(error)
+        }
+        return sendTime
+    }
+    
+    func Userid_Read_SenderDevice(id:Int) -> String {
+        var device = String()
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            //print("numbers of \(searchResults.count)")
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "id") as! Int) == id {
+                    device = p.value(forKey: "device") as! String
+                }
+            }
+        } catch  {
+            print(error)
+        }
+        return device
+    }
+    
+    func Userid_Read_SenderDetail(id:Int) -> String {
+        var detail = String()
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            //print("numbers of \(searchResults.count)")
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "id") as! Int) == id {
+                    detail = p.value(forKey: "detail") as! String
+                }
+            }
+        } catch  {
+            print(error)
+        }
+        return detail
+    }
+    
+    func Userid_Read_SenderHeight(id:Int) -> CGFloat {
+        var height = Float()
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            //print("numbers of \(searchResults.count)")
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "id") as! Int) == id {
+                    height = p.value(forKey: "height") as! Float
+                }
+            }
+        } catch  {
+            print(error)
+        }
+        return CGFloat(height)
+    }
+    
+    func Userid_Read_ImageNumber(id:Int) -> Int {
+        var imageNumber = Int()
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            //print("numbers of \(searchResults.count)")
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "id") as! Int) == id {
+                    imageNumber = p.value(forKey: "imageNumber") as! Int
+                }
+            }
+        } catch  {
+            print(error)
+        }
+        return imageNumber
+    }
+    
+    func Userid_Read_ImageName(id:Int) -> String {
+        var ImageName = String()
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let searchResults = try getContext().fetch(fetchRequest)
+            //print("numbers of \(searchResults.count)")
+            for p in (searchResults as! [NSManagedObject]){
+                if (p.value(forKey: "id") as! Int) == id {
+                    ImageName = p.value(forKey: "image1") as! String
+                }
+            }
+        } catch  {
+            print(error)
+        }
+        return ImageName
     }
     
     
@@ -654,15 +787,15 @@ class FirstViewController: UIViewController , UITableViewDelegate , UITableViewD
         UITableView_Main.register(UINib(nibName: "News_Information_TableViewCell", bundle: nil), forCellReuseIdentifier: "News_Information_TableViewCell")
     }
     
-    func GotPhoto(A:String,indexpath:IndexPath) -> ([UIImage?],Int) {
+    func GotPhoto(A:Int,indexpath:IndexPath) -> ([UIImage?],Int) {
         var imagelist = [UIImage?]()
         var imagenumber_in = Int()
-        let a_  = Int(A)!
+        let a_  = A
         
         switch a_ {
         case 1 :
             let a = UITableView_Main.cellForRow(at: indexpath)! as! OnePhoto_H_NTableViewCell
-            imagelist.append(a.image_1.currentImage)
+            imagelist.append(a.image1.image)
             imagenumber_in = 1
             break
         case 2,3:

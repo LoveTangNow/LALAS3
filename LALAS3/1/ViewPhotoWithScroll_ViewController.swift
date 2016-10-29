@@ -55,7 +55,6 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
             UIScrollView_MM.delegate = self
             aa.append(imageView.frame)
         }
-
         imagelist.removeAll()
         print("photoload")
         
@@ -78,6 +77,8 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     
     
     override func viewDidAppear(_ animated: Bool) {
+        print(image_Dijizhang)
+        print(aa.count)
         UIScrollView_MM.scrollRectToVisible(aa[image_Dijizhang - 1], animated: false)
         UIScrollView_MM.isHidden = false
     }
@@ -107,8 +108,10 @@ class ViewPhotoWithScroll_ViewController: UIViewController ,UIScrollViewDelegate
     }
     
     @IBAction func Tabeeee(_ sender: AnyObject) {
-        
-        _ = self.navigationController?.popViewController(animated: false)
+        if Defalts_ReadWrite().ReadDefalts_String(KEY: "whereifrom") != "MessiageDetail_TableViewController"
+        {
+            _ = self.navigationController?.popViewController(animated: false)
+        }
 
         /*
         if navigationController?.navigationBar.isHidden == true {

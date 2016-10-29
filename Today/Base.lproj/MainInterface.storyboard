@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -24,13 +24,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OvW-yl-1ta">
-                                <frame key="frameInset" minX="40" minY="41" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alipay" translatesAutoresizingMaskIntoConstraints="NO" id="OvW-yl-1ta"/>
                         </subviews>
                         <constraints>
                             <constraint firstItem="fts-Rx-OAu" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="909-cN-rAQ"/>
+                            <constraint firstItem="OvW-yl-1ta" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="FSw-Pk-OwA"/>
+                            <constraint firstItem="OvW-yl-1ta" firstAttribute="top" secondItem="fts-Rx-OAu" secondAttribute="bottom" id="O10-EU-BX9"/>
                             <constraint firstItem="fts-Rx-OAu" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="xth-9C-4Wn"/>
                         </constraints>
                     </view>
@@ -45,4 +44,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="alipay" width="44" height="44"/>
+    </resources>
 </document>
