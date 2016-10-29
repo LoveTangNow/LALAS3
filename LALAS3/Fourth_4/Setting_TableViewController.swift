@@ -38,15 +38,20 @@ class Setting_TableViewController: UITableViewController {
     // MARK: - Tableview
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         switch indexPath.section {
         case 0://1
-            if indexPath.row == 0 {//账号管理
-                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountManagement_ViewController")
-                self.navigationController?.pushViewController(vc, animated: true)
-            } else {               //账号安全
-                let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountSecurity_TableViewController")
-                self.navigationController?.pushViewController(vc, animated: true)
+            let user_id = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
+            if  user_id != "" || user_id != nil{
+                if indexPath.row == 0 {//账号管理
+                    let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountManagement_ViewController")
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {               //账号安全
+                    let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountSecurity_TableViewController")
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
+
         case 1://2
             if indexPath.row == 0 {//通用设置
                 let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "Tongyong_ViewController")

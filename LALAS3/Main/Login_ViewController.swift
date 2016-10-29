@@ -176,10 +176,10 @@ class Login_ViewController: UIViewController{
     }
     
     private func OtherData () -> () {
-        //同步其他用户的其他资料过来
+        //同步其他用户的其他资料过来  :name
         let userid = ""
         let parameters:Parameters = ["userid":userid]
-        Alamofire.request(GotServers().GotServerAliScripts() + "LOGIN.php", method: .post, parameters: parameters)
+        Alamofire.request(GotServers().GotServerAliScripts() + "USER_DATA.php", method: .post, parameters: parameters)
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -193,7 +193,6 @@ class Login_ViewController: UIViewController{
                     print(error)
                 }
         }
-
         
     }
     

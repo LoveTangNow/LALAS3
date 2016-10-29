@@ -36,9 +36,9 @@ class CommentsPraiseDemote_NTableViewCell: UITableViewCell {
     }
 
     func UpDateUI() {
-        UIButton1.setTitle("⚓️" + String(number[0]), for: .normal)
-        UIButton2.setTitle("💭" + String(number[1]), for: .normal)
-        UIButton3.setTitle("👍🏿" + String(number[2]), for: .normal)
+        UIButton1.setTitle("转发", for: .normal)
+        UIButton2.setTitle("评论", for: .normal)
+        UIButton3.setTitle("点赞", for: .normal)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

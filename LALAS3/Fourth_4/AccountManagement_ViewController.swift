@@ -10,9 +10,9 @@ import UIKit
 import Alamofire
 
 enum Enum_Models {
-    case Normal_Model
-    case Brithday_Model
-    case Jianjie_Model
+    case Normal_Model // 正常模式
+    case Brithday_Model //选择生日
+    case Jianjie_Model //设置简介
     case w
 }
 
@@ -145,7 +145,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
         
         list_["注册时间"] = handalint(number: Defalts_ReadWrite().ReadDefalts_Int(KEY: "register_year")!) + "年" + handalint(number: Defalts_ReadWrite().ReadDefalts_Int(KEY: "register_month")!) + "月" + handalint(number: Defalts_ReadWrite().ReadDefalts_Int(KEY: "register_day")!) + "日"
         
-        print(list_)
+        //print(list_)
 
         UIImageView_Cover.alpha = 0
         UIImageView_Cover.image = #imageLiteral(resourceName: "Black")
@@ -280,26 +280,46 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
             case 1://工作信息
                 break
             case 2://教育
-                
-                let alertController = UIAlertController(title: "教育信息",message: "请输入就读学校名称", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addTextField {
-                    (textField: UITextField!) -> Void in
-                    textField.placeholder = "学校"
+                if indexPath.row != 0 {
+                    let alertController = UIAlertController(title: "教育信息",message: "请输入就读学校名称", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addTextField {
+                        (textField: UITextField!) -> Void in
+                        textField.placeholder = "学校"
+                    }
+                    
+                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                    let okAction = UIAlertAction(title: "确定", style: .default,handler: {action in
+                        //也可以用下标的形式获取textField let login = alertController.textFields![0]
+                        //let login = alertController.textFields!.first! as UITextField
+                        //self.UITableView_m.reloadData()
+                        //print(self.list_[indexPath.section])
+                        //let password = alertController.textFields!.last! as UITextField
+                        //print("用户名：\(login.text) 密码：\(password.text)")
+                        let a = alertController.textFields?[0].text
+                        switch indexPath.row {
+                        case 1:
+                            Defalts_ReadWrite().Settssssss_h(DATA: a!, FORKEY: "primary")
+                            self.list_["小学"] = a!
+                        case 2:
+                            Defalts_ReadWrite().Settssssss_h(DATA: a!, FORKEY: "middle")
+                            self.list_["初中"] = a!
+                        case 3:
+                            Defalts_ReadWrite().Settssssss_h(DATA: a!, FORKEY: "j_middle")
+                            self.list_["高中"] = a!
+                        case 4:
+                            Defalts_ReadWrite().Settssssss_h(DATA: a!, FORKEY: "university")
+                            self.list_["大学"] = a!
+                        default:
+                            break
+                        }
+                        
+                        self.UITableView_m.reloadData()
+                        print(self.list_)
+                    })
+                    alertController.addAction(cancelAction)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
-                
-                let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                let okAction = UIAlertAction(title: "确定", style: .default,handler: {action in
-                    //也可以用下标的形式获取textField let login = alertController.textFields![0]
-                    //let login = alertController.textFields!.first! as UITextField
-                    self.UITableView_m.reloadData()
-                    //print(self.list_[indexPath.section])
-                    //let password = alertController.textFields!.last! as UITextField
-                    //print("用户名：\(login.text) 密码：\(password.text)")
-                    print(self.list_)
-                })
-                alertController.addAction(cancelAction)
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
             case 3://绑定 6
                 
                 break
@@ -309,6 +329,7 @@ class AccountManagement_ViewController: UIViewController ,UIPickerViewDelegate,U
             default:
                 break
             }
+            
         case Enum_Models.Brithday_Model:
             //从生日状态返回
             //数据变化由动作监控

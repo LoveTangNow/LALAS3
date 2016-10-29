@@ -98,7 +98,7 @@
         <!--Account Management View Controller-->
         <scene sceneID="TaX-fs-zg5">
             <objects>
-                <viewController storyboardIdentifier="AccountManagement_ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FHg-gV-Yqj" customClass="AccountManagement_ViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountManagement_ViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FHg-gV-Yqj" customClass="AccountManagement_ViewController" customModule="LALAS3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nQk-bN-fil"/>
                         <viewControllerLayoutGuide type="bottom" id="lSm-AD-ibH"/>

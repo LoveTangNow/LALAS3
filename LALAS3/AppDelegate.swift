@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //_ = MyCoreData().DeleteAll(entityName: "News")
         let a = Defalts_ReadWrite().ReadDefalts_Bool(KEY: "setOrNot")
         if a == nil {
-            Defalts_ReadWrite().Settssssss(DATA: true, FORKEY: "setOrNot")
+            print("------------------reset-----------------")
+            Defalts_ReadWrite().Settssssss_h(DATA: true, FORKEY: "setOrNot")
             Defalts_ReadWrite().SetDefaltsAccount()
             Defalts_ReadWrite().SetDefalts_TongZhi()
             Defalts_ReadWrite().SetDefalts_TongYong()

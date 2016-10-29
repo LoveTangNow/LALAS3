@@ -87,7 +87,7 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
     
     @IBAction func LeftAction(_ sender: UIBarButtonItem) {
         let user_id = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
-        if  user_id != "" || user_id == nil{
+        if  user_id != "" || user_id != nil{
             let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SendNewMessiageViewController")
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -95,7 +95,7 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
     
     @IBAction func RightAction(_ sender: UIBarButtonItem) {
         let user_id = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
-        if  user_id != "" || user_id == nil{
+        if  user_id != "" || user_id != nil{
             self.tabBarController?.tabBar.isHidden = true
             let vc = UIStoryboard(name: "First", bundle: nil).instantiateViewController(withIdentifier: "SaoYiSaoViewController")
             self.navigationController?.pushViewController(vc, animated: true)
@@ -216,6 +216,11 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                         let senderId = json[new_i]["senderid"].string!
                         let sendTime = json[new_i]["newstime"].string!
                         let saved = false
+                        
+                        if senderId == Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
+                        {
+                            Defalts_ReadWrite().Settssssss_h(DATA: senderName, FORKEY: "user_name")
+                        }
                         
                         let NumberOfPhotos = Int(json[new_i]["photonumer"].string!)!
                         var ArryOfNameOfPhotos = ""
@@ -642,9 +647,11 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
         
         if b {//--
             c = "0"
+            a.UIButton3.setTitle("点赞", for: .normal)
             a.did[2] = false
         }else{//++
             c = "1"
+            a.UIButton3.setTitle("取消赞", for: .normal)
             a.did[2] = true
         }
         indexPath = self.myTableView.indexPath(for: a)!
@@ -659,11 +666,12 @@ class FirstViewViewController_: UIViewController ,UITableViewDelegate,UITableVie
                 switch response.result {
                 case .success://success
                     print("success")
+                    /*
                     let json = JSON(response.result.value!)
                     let nnow_zan = json[0]["nnow_zan"].int
                     if let aaaa = nnow_zan{
                         a.UIButton3.setTitle("👍" + String(aaaa), for: .normal)
-                    }
+                    }*/
                 case .failure(let error)://failure
                     print(error)
                 }

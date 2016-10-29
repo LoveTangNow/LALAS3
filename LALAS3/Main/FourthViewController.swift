@@ -17,7 +17,6 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     //MARK: - 变量
     var  list  = ["我的微博","我的图片","我的赞","其他","设置"]
     var TableViewHeight:CGFloat = 0
-    var myview = UIView()
     
     var TableViewHeights = [[Int]]()
     
@@ -36,9 +35,6 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         self.navigationController?.navigationBar.barTintColor = UIColor.red
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
-        myview.frame =  CGRect(x:0,y:0,width:UIScreen.main.bounds.width,height:70)
-        myview.backgroundColor = UIColor.blue
-        self.view.addSubview(myview)
         //self.UITableView_M.addSubview(myview)
         
         ConnectNib()
@@ -50,43 +46,12 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 0, animations: {
-            self.myview.center.y -= 6
-        })
+
     }
     
-    var old:CGFloat = 64
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        /*
-         小于70，展示下拉刷新：松开上滑
-         大于70，展开松开刷新：松开上滑到70，刷新并且更新数据，上滑到0
-         */
-        print("--")
-        print(self.UITableView_M.contentInset.top)
-        print(-self.UITableView_M.contentOffset.y)//现在的位置
-        let a  = -self.UITableView_M.contentOffset.y - old//移动间距
-        print(a)
-        if -self.UITableView_M.contentOffset.y - self.UITableView_M.contentInset.top <= 70{
-            old = -self.UITableView_M.contentOffset.y
-            myview.backgroundColor = UIColor.blue
-            UIView.animate(withDuration: 0, animations: {
-                self.myview.center.y += a
-            })
-        }
-        else{//到70的时候就会触发，这个时候开始
-            //UITableView_M.isScrollEnabled = false
-            old = -self.UITableView_M.contentOffset.y
-            myview.backgroundColor = UIColor.white
-            UIView.animate(withDuration: 0, animations: {
-                self.myview.center.y += a
-            })
-            //UITableView_M.isScrollEnabled = true
-        }
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        Defalts_ReadWrite().Settssssss_h(DATA: "FourthViewController", FORKEY: "whereifrom")
     }
-        
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -99,13 +64,18 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
     
     @IBAction func Login_Click(_ sender: AnyObject) {
-        let sb = UIStoryboard(name: "Main", bundle:nil)
-        let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as UIViewController
-        self.present(vc, animated: true, completion: nil)
+        
+        let user_id = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_id")
+        if  user_id == "" || user_id == nil{
+            let sb = UIStoryboard(name: "Main", bundle:nil)
+            let vc = sb.instantiateViewController(withIdentifier: "Login_ViewController") as UIViewController
+            self.present(vc, animated: true, completion: nil)
+        }
+        
     }
     
     func ME_GO() {
-        let vc = UIStoryboard(name: "T", bundle: nil).instantiateViewController(withIdentifier: "TViewController")
+        let vc = UIStoryboard(name: "Fourth", bundle: nil).instantiateViewController(withIdentifier: "AccountManagement_ViewController")
         self.navigationController?.pushViewController(vc, animated: true)
         print("go")
     }
@@ -135,7 +105,7 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ME_TableViewCell", for: indexPath) as! ME_TableViewCell
                 
-                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "Black"), for: .normal)
+                cell.UIButton_Small.setBackgroundImage(#imageLiteral(resourceName: "White"), for: .normal)
                 cell.UIButton_Main.addTarget(self, action: #selector(ME_GO), for: UIControlEvents.touchUpInside)
                 
                 
@@ -152,6 +122,10 @@ class FourthViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 
                 cell.UIButton_Main.setTitle("", for: .normal)
                 cell.UIButton_Small.setTitle("", for: .normal)
+                
+                cell.UILabel_UP.text = Defalts_ReadWrite().ReadDefalts_String(KEY: "user_name")
+                cell.UILabel_Dwon.text =  Defalts_ReadWrite().ReadDefalts_String(KEY: "introduction")
+
                 
                 TableViewHeights[indexPath.section][indexPath.row] = 100
                 return cell

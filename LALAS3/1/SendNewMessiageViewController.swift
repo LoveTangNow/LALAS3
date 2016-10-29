@@ -550,6 +550,8 @@ class SendNewMessiageViewController: UIViewController,UIImagePickerControllerDel
         UIButton_5.layer.cornerRadius = 3
         UIButton_5.clipsToBounds = true
         UIButton_5.contentHorizontalAlignment = .left
+        UIButton_5.isHidden = true
+        UIButton_5.isEnabled = false
         
     }
     

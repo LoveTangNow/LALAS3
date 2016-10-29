@@ -59,6 +59,8 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
          然后 完成不同的查询 跳转
          */
         
+        
+        /*
         var Words:String = ""
         if UITextField_S.text! == "" {
             Words = UITextField_S.placeholder!
@@ -69,7 +71,7 @@ class ThirdViewController: UIViewController , UITableViewDataSource , UITableVie
         //SearchResults_ViewController
         let vc = UIStoryboard(name: "Third", bundle: nil).instantiateViewController(withIdentifier: "SearchResults_ViewController") as! SearchResults_ViewController
         vc.words = Words
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)*/
         
     }
     //MARK: - Tableview
