@@ -20,18 +20,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bbo-pf-xdG">
-                        <rect key="frame" x="9" y="9" width="357" height="213.5"/>
+                        <rect key="frame" x="12" y="12" width="351" height="207.5"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-Ij-fVZ">
                         <rect key="frame" x="9" y="9" width="357" height="213.5"/>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Bbo-pf-xdG" firstAttribute="leading" secondItem="jZY-Sc-u6j" secondAttribute="leadingMargin" constant="1" id="3xE-fh-Yij"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Bbo-pf-xdG" secondAttribute="trailing" constant="1" id="5Bd-36-fWv"/>
+                    <constraint firstItem="Bbo-pf-xdG" firstAttribute="leading" secondItem="jZY-Sc-u6j" secondAttribute="leadingMargin" constant="4" id="3xE-fh-Yij"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Bbo-pf-xdG" secondAttribute="trailing" constant="4" id="5Bd-36-fWv"/>
                     <constraint firstAttribute="trailingMargin" secondItem="OYD-Ij-fVZ" secondAttribute="trailing" constant="1" id="DX3-0h-MXn"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Bbo-pf-xdG" secondAttribute="bottom" constant="1" id="Swa-TC-wtM"/>
-                    <constraint firstItem="Bbo-pf-xdG" firstAttribute="top" secondItem="jZY-Sc-u6j" secondAttribute="topMargin" constant="1" id="ahZ-An-cRC"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Bbo-pf-xdG" secondAttribute="bottom" constant="4" id="Swa-TC-wtM"/>
+                    <constraint firstItem="Bbo-pf-xdG" firstAttribute="top" secondItem="jZY-Sc-u6j" secondAttribute="topMargin" constant="4" id="ahZ-An-cRC"/>
                     <constraint firstItem="OYD-Ij-fVZ" firstAttribute="top" secondItem="jZY-Sc-u6j" secondAttribute="topMargin" constant="1" id="dEQ-T5-VXm"/>
                     <constraint firstItem="OYD-Ij-fVZ" firstAttribute="leading" secondItem="jZY-Sc-u6j" secondAttribute="leadingMargin" constant="1" id="llr-b1-syp"/>
                     <constraint firstAttribute="bottomMargin" secondItem="OYD-Ij-fVZ" secondAttribute="bottom" constant="1" id="wCV-Jo-KHm"/>
