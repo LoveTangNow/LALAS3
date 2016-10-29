@@ -6,24 +6,13 @@
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage)👆
 * [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD)进度动画
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)json解析
+- [SDWebImage](https://github.com/rs/SDWebImage)图片缓存
+- [swiftScan](https://github.com/MxABC/swiftScan)二维码扫描
+
 ## 导入但是未使用的库：
 
-## 想用但是不支持 Swift3的库：
-
-- ['Kingfisher'](https://github.com/onevcat/Kingfisher)
-- ['RealmSwift']()
-- ['GoogleMaps']()
-- ['Google/SignIn']()
-- ['DZNEmptyDataSet']() tableview填充库
-- ['Spring']()
-- ['Dollar']() 数组库
-
-## 其他想用的库：
-* [Kingfisher](https://github.com/onevcat/Kingfisher)
-- [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
-* [SwiftRecord](https://github.com/arkverse/SwiftRecord)
-* [TOWebViewController](https://github.com/TimOliver/TOWebViewController)
-* 其他尚未说明的库
+- [Dollar](https://github.com/ankurp/Dollar)
+- [RealmSwift](https://realm.io/docs/swift/latest/)某🐂X 数据库
 
 ## 其他：
         随便改改 CSS ：
